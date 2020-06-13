@@ -111,8 +111,7 @@ $(function () {
             $(this).parent().attr("href", $(this).attr("data-original"));
         });
         
-        
-        
+   
 
         // progress bar init
         const progressElement = window.document.querySelector('.progress-bar');
