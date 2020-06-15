@@ -1,4 +1,157 @@
-<!DOCTYPE HTML><html lang="zh-CN"><head><meta charset="utf-8"><meta name="keywords" content="hi, Java,SSM,Mysql,Html等"><meta name="description" content="专注于Java,分享生活,分享知识"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><meta name="renderer" content="webkit|ie-stand|ie-comp"><meta name="mobile-web-app-capable" content="yes"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><title>hi | 特仑苏</title><link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/favicon.png"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/awesome/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/materialize/materialize.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/aos/aos.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/animate/animate.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/lightGallery/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/css/matery.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/css/my.css"><script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/jquery/jquery.min.js"></script><script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script><script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script><style lang="css">#loading-container{position:fixed;top:0;left:0;min-height:100vh;width:100vw;z-index:9999;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#fff;text-align:center;-webkit-transition:opacity 1s ease;-moz-transition:opacity 1s ease;-o-transition:opacity 1s ease;transition:opacity 1s ease}.loading-image{width:120px;height:50px;transform:translate(-50%)}.loading-image div:nth-child(2){-webkit-animation:pacman-balls 1s linear 0s infinite;animation:pacman-balls 1s linear 0s infinite}.loading-image div:nth-child(3){-webkit-animation:pacman-balls 1s linear .33s infinite;animation:pacman-balls 1s linear .33s infinite}.loading-image div:nth-child(4){-webkit-animation:pacman-balls 1s linear .66s infinite;animation:pacman-balls 1s linear .66s infinite}.loading-image div:nth-child(5){-webkit-animation:pacman-balls 1s linear .99s infinite;animation:pacman-balls 1s linear .99s infinite}.loading-image div:first-of-type{width:0;height:0;border:25px solid #49b1f5;border-right-color:transparent;border-radius:25px;-webkit-animation:rotate_pacman_half_up .5s 0s infinite;animation:rotate_pacman_half_up .5s 0s infinite}.loading-image div:nth-child(2){width:0;height:0;border:25px solid #49b1f5;border-right-color:transparent;border-radius:25px;-webkit-animation:rotate_pacman_half_down .5s 0s infinite;animation:rotate_pacman_half_down .5s 0s infinite;margin-top:-50px}@-webkit-keyframes rotate_pacman_half_up{0%{transform:rotate(270deg)}50%{transform:rotate(1turn)}to{transform:rotate(270deg)}}@keyframes rotate_pacman_half_up{0%{transform:rotate(270deg)}50%{transform:rotate(1turn)}to{transform:rotate(270deg)}}@-webkit-keyframes rotate_pacman_half_down{0%{transform:rotate(90deg)}50%{transform:rotate(0)}to{transform:rotate(90deg)}}@keyframes rotate_pacman_half_down{0%{transform:rotate(90deg)}50%{transform:rotate(0)}to{transform:rotate(90deg)}}@-webkit-keyframes pacman-balls{75%{opacity:.7}to{transform:translate(-100px,-6.25px)}}@keyframes pacman-balls{75%{opacity:.7}to{transform:translate(-100px,-6.25px)}}.loading-image div:nth-child(3),.loading-image div:nth-child(4),.loading-image div:nth-child(5),.loading-image div:nth-child(6){background-color:#49b1f5;width:15px;height:15px;border-radius:100%;margin:2px;width:10px;height:10px;position:absolute;transform:translateY(-6.25px);top:25px;left:100px}.loading-text{margin-bottom:20vh;text-align:center;color:#2c3e50;font-size:2rem;box-sizing:border-box;padding:0 10px;text-shadow:0 2px 10px rgba(0,0,0,.2)}@media only screen and (max-width:500px){.loading-text{font-size:1.5rem}}.fadeout{opacity:0}@-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}@keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0)}}</style><script>(function () {
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="hi, Java,SSM,Mysql,Html等">
+    <meta name="description" content="专注于Java,分享生活,分享知识">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>hi | 特仑苏</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/jquery/jquery.min.js"></script>
+
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+    <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
+    
+
+<style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #FFF;
+        text-align: center;
+        /* loader页面消失采用渐隐的方式*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .loading-image{
+        width: 120px;
+        height: 50px;
+        transform: translate(-50%);
+    }
+
+    .loading-image div:nth-child(2) {
+        -webkit-animation: pacman-balls 1s linear 0s infinite;
+        animation: pacman-balls 1s linear 0s infinite
+    }
+
+    .loading-image div:nth-child(3) {
+        -webkit-animation: pacman-balls 1s linear .33s infinite;
+        animation: pacman-balls 1s linear .33s infinite
+    }
+
+    .loading-image div:nth-child(4) {
+        -webkit-animation: pacman-balls 1s linear .66s infinite;
+        animation: pacman-balls 1s linear .66s infinite
+    }
+
+    .loading-image div:nth-child(5) {
+        -webkit-animation: pacman-balls 1s linear .99s infinite;
+        animation: pacman-balls 1s linear .99s infinite
+    }
+
+   .loading-image div:first-of-type {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_up .5s 0s infinite;
+        animation: rotate_pacman_half_up .5s 0s infinite;
+    }
+    .loading-image div:nth-child(2) {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_down .5s 0s infinite;
+        animation: rotate_pacman_half_down .5s 0s infinite;
+        margin-top: -50px;
+    }
+    @-webkit-keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @-webkit-keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @-webkit-keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+    @keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+
+    .loading-image div:nth-child(3),
+    .loading-image div:nth-child(4),
+    .loading-image div:nth-child(5),
+    .loading-image div:nth-child(6){
+        background-color: #49b1f5;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        transform: translateY(-6.25px);
+        top: 25px;
+        left: 100px;
+    }
+    .loading-text{
+        margin-bottom: 20vh;
+        text-align: center;
+        color: #2c3e50;
+        font-size: 2rem;
+        box-sizing: border-box;
+        padding: 0 10px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    @media only screen and (max-width: 500px) {
+         .loading-text{
+            font-size: 1.5rem;
+         }
+    }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    /* logo出现动画 */
+    @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}
+    @keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);}}
+ </style>
+ <script>
+(function () {
     const loaded = function(){
        setTimeout(function(){
             const loader = document.getElementById("loading-container");
@@ -10,7 +163,125 @@
         },1000);//强制显示loading page 1s  
     };
     loaded();
-})()</script><meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css"><style lang="css">#loading-container{position:fixed;top:0;left:0;min-height:100vh;width:100vw;z-index:9999;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#fff;text-align:center;-webkit-transition:opacity 1s ease;-moz-transition:opacity 1s ease;-o-transition:opacity 1s ease;transition:opacity 1s ease}.loading-image{width:120px;height:50px;transform:translate(-50%)}.loading-image div:nth-child(2){-webkit-animation:pacman-balls 1s linear 0s infinite;animation:pacman-balls 1s linear 0s infinite}.loading-image div:nth-child(3){-webkit-animation:pacman-balls 1s linear .33s infinite;animation:pacman-balls 1s linear .33s infinite}.loading-image div:nth-child(4){-webkit-animation:pacman-balls 1s linear .66s infinite;animation:pacman-balls 1s linear .66s infinite}.loading-image div:nth-child(5){-webkit-animation:pacman-balls 1s linear .99s infinite;animation:pacman-balls 1s linear .99s infinite}.loading-image div:first-of-type{width:0;height:0;border:25px solid #49b1f5;border-right-color:transparent;border-radius:25px;-webkit-animation:rotate_pacman_half_up .5s 0s infinite;animation:rotate_pacman_half_up .5s 0s infinite}.loading-image div:nth-child(2){width:0;height:0;border:25px solid #49b1f5;border-right-color:transparent;border-radius:25px;-webkit-animation:rotate_pacman_half_down .5s 0s infinite;animation:rotate_pacman_half_down .5s 0s infinite;margin-top:-50px}@-webkit-keyframes rotate_pacman_half_up{0%{transform:rotate(270deg)}50%{transform:rotate(1turn)}to{transform:rotate(270deg)}}@keyframes rotate_pacman_half_up{0%{transform:rotate(270deg)}50%{transform:rotate(1turn)}to{transform:rotate(270deg)}}@-webkit-keyframes rotate_pacman_half_down{0%{transform:rotate(90deg)}50%{transform:rotate(0)}to{transform:rotate(90deg)}}@keyframes rotate_pacman_half_down{0%{transform:rotate(90deg)}50%{transform:rotate(0)}to{transform:rotate(90deg)}}@-webkit-keyframes pacman-balls{75%{opacity:.7}to{transform:translate(-100px,-6.25px)}}@keyframes pacman-balls{75%{opacity:.7}to{transform:translate(-100px,-6.25px)}}.loading-image div:nth-child(3),.loading-image div:nth-child(4),.loading-image div:nth-child(5),.loading-image div:nth-child(6){background-color:#49b1f5;width:15px;height:15px;border-radius:100%;margin:2px;width:10px;height:10px;position:absolute;transform:translateY(-6.25px);top:25px;left:100px}.loading-text{margin-bottom:20vh;text-align:center;color:#2c3e50;font-size:2rem;box-sizing:border-box;padding:0 10px;text-shadow:0 2px 10px rgba(0,0,0,.2)}@media only screen and (max-width:500px){.loading-text{font-size:1.5rem}}.fadeout{opacity:0}@-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}@keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0)}}</style><script>(function () {
+})()
+ </script><meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #FFF;
+        text-align: center;
+        /* loader页面消失采用渐隐的方式*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .loading-image{
+        width: 120px;
+        height: 50px;
+        transform: translate(-50%);
+    }
+
+    .loading-image div:nth-child(2) {
+        -webkit-animation: pacman-balls 1s linear 0s infinite;
+        animation: pacman-balls 1s linear 0s infinite
+    }
+
+    .loading-image div:nth-child(3) {
+        -webkit-animation: pacman-balls 1s linear .33s infinite;
+        animation: pacman-balls 1s linear .33s infinite
+    }
+
+    .loading-image div:nth-child(4) {
+        -webkit-animation: pacman-balls 1s linear .66s infinite;
+        animation: pacman-balls 1s linear .66s infinite
+    }
+
+    .loading-image div:nth-child(5) {
+        -webkit-animation: pacman-balls 1s linear .99s infinite;
+        animation: pacman-balls 1s linear .99s infinite
+    }
+
+   .loading-image div:first-of-type {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_up .5s 0s infinite;
+        animation: rotate_pacman_half_up .5s 0s infinite;
+    }
+    .loading-image div:nth-child(2) {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_down .5s 0s infinite;
+        animation: rotate_pacman_half_down .5s 0s infinite;
+        margin-top: -50px;
+    }
+    @-webkit-keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @-webkit-keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @-webkit-keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+    @keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+
+    .loading-image div:nth-child(3),
+    .loading-image div:nth-child(4),
+    .loading-image div:nth-child(5),
+    .loading-image div:nth-child(6){
+        background-color: #49b1f5;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        transform: translateY(-6.25px);
+        top: 25px;
+        left: 100px;
+    }
+    .loading-text{
+        margin-bottom: 20vh;
+        text-align: center;
+        color: #2c3e50;
+        font-size: 2rem;
+        box-sizing: border-box;
+        padding: 0 10px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    @media only screen and (max-width: 500px) {
+         .loading-text{
+            font-size: 1.5rem;
+         }
+    }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    /* logo出现动画 */
+    @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}
+    @keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);}}
+ </style>
+ <script>
+(function () {
     const loaded = function(){
        setTimeout(function(){
             const loader = document.getElementById("loading-container");
@@ -22,7 +293,465 @@
         },1000);//强制显示loading page 1s  
     };
     loaded();
-})()</script></head><div id="loading-container"><p class="loading-text">玩命加载中 . . .</p><div class="loading-image"><div></div><div></div><div></div><div></div><div></div></div></div><body><header class="navbar-fixed"><nav id="headNav" class="bg-color nav-transparent"><div id="navContainer" class="nav-wrapper container"><div class="brand-logo"><a href="/" class="waves-effect waves-light"><img src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/logo.png" class="logo-img" alt="LOGO"> <span class="logo-span">特仑苏</span></a></div><a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a><ul class="right nav-menu"><li class="hide-on-med-and-down nav-item"><a href="/" class="waves-effect waves-light"><i class="fas fa-home" style="zoom:.6"></i> <span>首页</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/tags" class="waves-effect waves-light"><i class="fas fa-tags" style="zoom:.6"></i> <span>标签</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/categories" class="waves-effect waves-light"><i class="fas fa-bookmark" style="zoom:.6"></i> <span>分类</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fas fa-archive" style="zoom:.6"></i> <span>归档</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/about" class="waves-effect waves-light"><i class="fas fa-user-circle" style="zoom:.6"></i> <span>关于</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/contact" class="waves-effect waves-light"><i class="fas fa-comments" style="zoom:.6"></i> <span>留言板</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fas fa-address-book" style="zoom:.6"></i> <span>友情链接</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/galleries" class="waves-effect waves-light"><i class="fas fa-image" style="zoom:.6"></i> <span>相册</span></a></li><li><a href="#searchModal" class="modal-trigger waves-effect waves-light"><i id="searchIcon" class="fas fa-search" title="搜索" style="zoom:.85"></i></a></li></ul><div id="mobile-nav" class="side-nav sidenav"><div class="mobile-head bg-color"><img src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/logo.png" class="logo-img circle responsive-img"><div class="logo-name">特仑苏</div><div class="logo-desc">专注于Java,分享生活,分享知识</div></div><ul class="menu-list mobile-menu-list"><li class="m-nav-item"><a href="/" class="waves-effect waves-light"><i class="fa-fw fas fa-home"></i> 首页</a></li><li class="m-nav-item"><a href="/tags" class="waves-effect waves-light"><i class="fa-fw fas fa-tags"></i> 标签</a></li><li class="m-nav-item"><a href="/categories" class="waves-effect waves-light"><i class="fa-fw fas fa-bookmark"></i> 分类</a></li><li class="m-nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fa-fw fas fa-archive"></i> 归档</a></li><li class="m-nav-item"><a href="/about" class="waves-effect waves-light"><i class="fa-fw fas fa-user-circle"></i> 关于</a></li><li class="m-nav-item"><a href="/contact" class="waves-effect waves-light"><i class="fa-fw fas fa-comments"></i> 留言板</a></li><li class="m-nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fa-fw fas fa-address-book"></i> 友情链接</a></li><li class="m-nav-item"><a href="/galleries" class="waves-effect waves-light"><i class="fa-fw fas fa-image"></i> 相册</a></li></ul></div></div></nav></header><div class="bg-cover pd-header post-cover" style="background-image:url(https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/featureimages/11.jpg)"><div class="container" style="right:0;left:0"><div class="row"><div class="col s12 m12 l12"><div class="brand"><h1 class="description center-align post-title">hi</h1></div></div></div></div></div><main class="post-container content"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/tocbot/tocbot.css"><style>#articleContent h1::before,#articleContent h2::before,#articleContent h3::before,#articleContent h4::before,#articleContent h5::before,#articleContent h6::before{display:block;content:" ";height:100px;margin-top:-100px;visibility:hidden}#articleContent :focus{outline:0}.toc-fixed{position:fixed;top:64px}.toc-widget{width:345px;padding-left:20px}.toc-widget .toc-title{margin:35px 0 15px 0;padding-left:17px;font-size:1.5rem;font-weight:700;line-height:1.5rem}.toc-widget ol{padding:0;list-style:none}#toc-content{height:calc(100vh - 250px);overflow:auto}#toc-content ol{padding-left:10px}#toc-content ol li{padding-left:10px}#toc-content .toc-link:hover{color:#42b983;font-weight:700;text-decoration:underline}#toc-content .toc-link::before{background-color:transparent;max-height:25px;position:absolute;right:23.5vw;display:block}#toc-content .is-active-link{color:#42b983}#floating-toc-btn{position:fixed;right:15px;bottom:76px;padding-top:15px;margin-bottom:0;z-index:998}#floating-toc-btn .btn-floating{width:48px;height:48px}#floating-toc-btn .btn-floating i{line-height:48px;font-size:1.4rem}</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"><span class="chip bg-color">无标签</span></div></div><div class="col s5 right-align"></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i> 发布日期:&nbsp;&nbsp; 2020-06-13</div><div class="info-break-policy"><i class="far fa-file-word fa-fw"></i> 文章字数:&nbsp;&nbsp; 6.3k</div><div class="info-break-policy"><i class="far fa-clock fa-fw"></i> 阅读时长:&nbsp;&nbsp; 27 分</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="far fa-eye fa-fw"></i> 阅读次数:&nbsp;&nbsp;<span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><div class="card-content article-card-content"><div id="articleContent"><h1 id="框架-Framework"><a href="#框架-Framework" class="headerlink" title="框架(Framework)"></a>框架(Framework)</h1><h2 id="Mybatis"><a href="#Mybatis" class="headerlink" title="Mybatis"></a>Mybatis</h2><ul><li><p>是一个优秀的基于 java 的持久层框架，它内部封装了 jdbc，使开发者只需要关注 sql语句本身， 而不需要花费精力去处理加载驱动、创建连接、创建 statement 等繁杂的过程</p></li><li><p>采用 ORM 思想解决了实体和数据库映射的问题</p></li><li></li><li><h4 id="Mybatis-与-JDBC-编程的比较"><a href="#Mybatis-与-JDBC-编程的比较" class="headerlink" title="Mybatis 与 JDBC 编程的比较"></a>Mybatis 与 JDBC 编程的比较</h4></li><li><p><img src="/2020/06/13/hi/C:%5CUsers%5C44317%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200527162139445.png" alt="image-20200527162139445"></p></li></ul><h3 id="Mybatis-框架开发的准备"><a href="#Mybatis-框架开发的准备" class="headerlink" title="Mybatis 框架开发的准备"></a>Mybatis 框架开发的准备</h3><ul><li>下载相关的 jar 包或 maven 开发的坐标:Mybatis 版本是 3.4.5 版本</li></ul><h3 id="搭建-Mybatis-开发环境"><a href="#搭建-Mybatis-开发环境" class="headerlink" title="搭建 Mybatis 开发环境"></a>搭建 Mybatis 开发环境</h3><ol><li><p>创建 maven 工程</p></li><li><p>添加 Mybatis3.4.5 的坐标（依赖）</p><pre class="language-xml"><code class="language-xml">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">></span></span>    
+})()
+ </script></head>
+
+
+
+ <div id="loading-container">
+     <p class="loading-text">玩命加载中 . . . </p> 
+     <div class="loading-image">
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div> 
+         <div></div>
+     </div>
+ </div><body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">特仑苏</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/galleries" class="waves-effect waves-light">
+      
+      <i class="fas fa-image" style="zoom: 0.6;"></i>
+      
+      <span>相册</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">特仑苏</div>
+        <div class="logo-desc">
+            
+            专注于Java,分享生活,分享知识
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/galleries" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-image"></i>
+			
+			相册
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/featureimages/11.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">hi</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-06-13
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    6.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    27 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1><span id="kuang-jia-framework">框架(Framework)</span><a href="#kuang-jia-framework" class="header-anchor">#</a></h1><div class="toc">
+
+<!-- toc -->
+
+<ul>
+<li><a href="#mybatis">Mybatis</a><ul>
+<li><a href="#mybatis-kuang-jia-kai-fa-de-zhun-bei">Mybatis 框架开发的准备</a></li>
+<li><a href="#da-jian-mybatis-kai-fa-huan-jing">搭建 Mybatis 开发环境</a></li>
+<li><a href="#zi-ding-yi-mybatis-di-ceng">自定义Mybatis底层</a></li>
+<li><a href="#crud-cao-zuo">CRUD操作</a></li>
+<li><a href="#parametertype-pei-zhi-can-shu">parameterType 配置参数</a></li>
+<li><a href="#resulttype-pei-zhi-jie-guo-lei-xing-zuo-yong-rang-lei-zhong-shu-xing-yu-shu-ju-ku-lie-ming-bao-chi-yi-zhi">resultType 配置结果类型（作用：让类中属性与数据库列名保持一致）</a></li>
+<li><a href="#sqlmapconfig-xml-pei-zhi-wen-jian">SqlMapConfig.xml配置文件</a></li>
+<li><a href="#mybatis-de-lian-jie-chi-ji-zhu">Mybatis 的连接池技术</a></li>
+<li><a href="#mybatis-de-shi-wu-kong-zhi">Mybatis 的事务控制</a></li>
+<li><a href="#dong-tai-sql-gen-ju-bu-tong-tiao-jian-lai-zhui-jia-sql-yu-ju">动态 SQL（根据不同条件来追加sql语句）</a></li>
+<li><a href="#duo-biao-cha-xun">多表查询</a></li>
+<li><a href="#mybatis-yan-chi-jia-zai">Mybatis 延迟加载</a></li>
+<li><a href="#mybatis-huan-cun">Mybatis 缓存</a></li>
+<li><a href="#mybatis-zhu-jie-kai-fa">Mybatis 注解开发</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+</div>
+
+<h2><span id="mybatis">Mybatis</span><a href="#mybatis" class="header-anchor">#</a></h2><ul>
+<li><p>是一个优秀的基于 java 的持久层框架，它内部封装了 jdbc，使开发者只需要关注 sql语句本身， 而不需要花费精力去处理加载驱动、创建连接、创建 statement 等繁杂的过程</p>
+</li>
+<li><p>采用 ORM 思想解决了实体和数据库映射的问题</p>
+</li>
+<li></li>
+<li><h4><span id="mybatis-yu-jdbc-bian-cheng-de-bi-jiao">Mybatis 与 JDBC 编程的比较</span><a href="#mybatis-yu-jdbc-bian-cheng-de-bi-jiao" class="header-anchor">#</a></h4></li>
+<li><p><img src="/2020/06/13/hi/C:%5CUsers%5C44317%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200527162139445.png" alt="image-20200527162139445"></p>
+</li>
+</ul>
+<h3><span id="mybatis-kuang-jia-kai-fa-de-zhun-bei">Mybatis 框架开发的准备</span><a href="#mybatis-kuang-jia-kai-fa-de-zhun-bei" class="header-anchor">#</a></h3><ul>
+<li>下载相关的 jar 包或 maven 开发的坐标:Mybatis 版本是 3.4.5 版本</li>
+</ul>
+<h3><span id="da-jian-mybatis-kai-fa-huan-jing">搭建 Mybatis 开发环境</span><a href="#da-jian-mybatis-kai-fa-huan-jing" class="header-anchor">#</a></h3><ol>
+<li><p>创建 maven 工程 </p>
+</li>
+<li><p>添加 Mybatis3.4.5 的坐标（依赖）</p>
+<pre class=" language-xml"><code class="language-xml">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">></span></span>    
       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>     
           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.mybatis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>     
           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>mybatis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>     
@@ -45,14 +774,36 @@
           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>log4j<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>   
           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.2.12<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>   
       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>  
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">></span></span></code></pre></li><li><p>编写 User 实体类</p></li><li><p>编写持久层接口 IUserDao （也可以写成 UserDao 或者 UserMapper）</p></li><li><p>编写持久层接口的映射文件 IUserDao.xml （也可使用注解，不编写映射文件，具体方法在8）</p><ul><li><strong>要求</strong>：<ul><li><strong>创建位置</strong>：必须和持久层接口在相同的包中。（目录和包不一样，需要创建三次，一次性创建为一级目录）</li><li><strong>名称</strong>：必须以持久层接口名称一样，扩展名是.xml</li></ul></li></ul></li></ol><img src="/2020/06/13/hi/Users\44317\AppData\Roaming\Typora\typora-user-images\image-20200526192732631.png" alt="image-20200526192732631" style="zoom:80%"><pre class="language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span> <span class="token doctype">&lt;!DOCTYPE mapper     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"     "http://mybatis.org/dtd/mybatis-3-mapper.dtd"></span> 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">></span></span></code></pre>
+</li>
+<li><p>编写 User 实体类 </p>
+</li>
+<li><p>编写持久层接口 IUserDao （也可以写成 UserDao 或者 UserMapper）</p>
+</li>
+<li><p>编写持久层接口的映射文件 IUserDao.xml （也可使用注解，不编写映射文件，具体方法在8）</p>
+<ul>
+<li><strong>要求</strong>：  <ul>
+<li><strong>创建位置</strong>：必须和持久层接口在相同的包中。（目录和包不一样，需要创建三次，一次性创建为一级目录）  </li>
+<li><strong>名称</strong>：必须以持久层接口名称一样，扩展名是.xml </li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<img src="/2020/06/13/hi/Users\44317\AppData\Roaming\Typora\typora-user-images\image-20200526192732631.png" alt="image-20200526192732631" style="zoom: 80%;">
+
+<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span> <span class="token doctype">&lt;!DOCTYPE mapper     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"     "http://mybatis.org/dtd/mybatis-3-mapper.dtd"></span> 
 <span class="token comment" spellcheck="true">&lt;!-- 参数namespace是接口全类名 --></span>  
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mapper</span> <span class="token attr-name">namespace</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.itheima.dao.IUserDao<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>   
     <span class="token comment" spellcheck="true">&lt;!-- 配置查询所有操作 --></span>  <span class="token comment" spellcheck="true">&lt;!-- 参数id是接口的方法名，resultType是实体类的全类名 --></span>  
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>findAll<span class="token punctuation">"</span></span> <span class="token attr-name">resultType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.itheima.domain.User<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 
     select * from user  
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span> 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mapper</span><span class="token punctuation">></span></span></code></pre><ol start="6"><li>编写 SqlMapConfig.xml 配置文件</li></ol><pre class="language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span> <span class="token doctype">&lt;!DOCTYPE configuration     PUBLIC "-//mybatis.org//DTD Config 3.0//EN"     "http://mybatis.org/dtd/mybatis-3-config.dtd"></span> 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mapper</span><span class="token punctuation">></span></span></code></pre>
+<ol start="6">
+<li>编写 SqlMapConfig.xml 配置文件 </li>
+</ol>
+<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span> <span class="token doctype">&lt;!DOCTYPE configuration     PUBLIC "-//mybatis.org//DTD Config 3.0//EN"     "http://mybatis.org/dtd/mybatis-3-config.dtd"></span> 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span> 
  <span class="token comment" spellcheck="true">&lt;!-- 配置 mybatis 的环境 --></span>  <span class="token comment" spellcheck="true">&lt;!-- 参数随便起 --></span>  
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>environments</span> <span class="token attr-name">default</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>mysql<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>   
@@ -73,7 +824,13 @@
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mappers</span><span class="token punctuation">></span></span> 
           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mapper</span> <span class="token attr-name">resource</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com/itheima/dao/IUserDao.xml<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>  
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mappers</span><span class="token punctuation">></span></span> 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span></code></pre><ol start="7"><li><p>快速入门</p><ul><li>编写测试类：</li></ul><pre class="language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException <span class="token punctuation">{</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span></code></pre>
+<ol start="7">
+<li><p>快速入门</p>
+<ul>
+<li>编写测试类：</li>
+</ul>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException <span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">//1.读取配置文件</span>
         InputStream is <span class="token operator">=</span> Resources<span class="token punctuation">.</span><span class="token function">getResourceAsStream</span><span class="token punctuation">(</span><span class="token string">"SqlMapConfig.xml"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">//2.创建SqlSessionFactory构建者对象</span>
@@ -92,7 +849,32 @@
         <span class="token comment" spellcheck="true">//7.释放资源</span>
         session<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         is<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span></code></pre><img src="/2020/06/13/hi/Users\44317\AppData\Roaming\Typora\typora-user-images\image-20200526215352563.png" alt="image-20200526215352563" style="zoom:150%"></li><li><p>使用注解，不使用映射配置文件</p><ol><li>将dao接口上加上注解：</li></ol><pre><code>@select(&quot;select * from user&quot;)</code></pre><ol start="2"><li>修改mybatis总配置中的映射配置</li></ol><pre><code>&lt;mapper class=&quot;cn/hm/dao/IUserDao&quot;/&gt;</code></pre><ol start="3"><li>注意：在使用基于注解的 Mybatis 配置时，请移除 xml 的映射配置（IUserDao.xml）。</li></ol></li></ol><h3 id="自定义Mybatis底层"><a href="#自定义Mybatis底层" class="headerlink" title="自定义Mybatis底层"></a>自定义Mybatis底层</h3><p><img src="/2020/06/13/hi/C:%5CUsers%5C44317%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200527140709218.png" alt="image-20200527140709218"></p><hr><h3 id="CRUD操作"><a href="#CRUD操作" class="headerlink" title="CRUD操作"></a>CRUD操作</h3><ul><li>使用要求：</li></ul><ol><li>持久层接口和持久层接口的映射配置必须在相同的包下</li><li>持久层映射配置中 mapper 标签的 namespace 属性取值必须是持久层接口的全限定类名</li><li>SQL 语句的配置标签<select>,<insert>,<delete>,<update>的 id 属性必须和持久层接口的 方法名相同</update></delete></insert></select></li></ol><pre class="language-xml"><code class="language-xml">保存操作:
+    <span class="token punctuation">}</span></code></pre>
+<img src="/2020/06/13/hi/Users\44317\AppData\Roaming\Typora\typora-user-images\image-20200526215352563.png" alt="image-20200526215352563" style="zoom:150%;">
+</li>
+<li><p>使用注解，不使用映射配置文件</p>
+<ol>
+<li>将dao接口上加上注解：</li>
+</ol>
+<pre><code>@select(&quot;select * from user&quot;)</code></pre><ol start="2">
+<li>修改mybatis总配置中的映射配置</li>
+</ol>
+<pre><code>&lt;mapper class=&quot;cn/hm/dao/IUserDao&quot;/&gt;</code></pre><ol start="3">
+<li>注意：在使用基于注解的 Mybatis 配置时，请移除 xml 的映射配置（IUserDao.xml）。 </li>
+</ol>
+</li>
+</ol>
+<h3><span id="zi-ding-yi-mybatis-di-ceng">自定义Mybatis底层</span><a href="#zi-ding-yi-mybatis-di-ceng" class="header-anchor">#</a></h3><p><img src="/2020/06/13/hi/C:%5CUsers%5C44317%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200527140709218.png" alt="image-20200527140709218"></p>
+<hr>
+<h3><span id="crud-cao-zuo">CRUD操作</span><a href="#crud-cao-zuo" class="header-anchor">#</a></h3><ul>
+<li>使用要求：  </li>
+</ul>
+<ol>
+<li>持久层接口和持久层接口的映射配置必须在相同的包下  </li>
+<li>持久层映射配置中 mapper 标签的 namespace 属性取值必须是持久层接口的全限定类名  </li>
+<li>SQL 语句的配置标签<select>,<insert>,<delete>,<update>的 id 属性必须和持久层接口的 方法名相同</update></delete></insert></select></li>
+</ol>
+<pre class=" language-xml"><code class="language-xml">保存操作:
 1.在持久层接口中添加新增方法  void saveUser(User user);
 2.在用户的映射配置文件中配置  
     <span class="token comment" spellcheck="true">&lt;!-- 保存用户--></span> 
@@ -144,7 +926,8 @@ session.commit();
     <span class="token comment" spellcheck="true">&lt;!-- 配置保存时获取插入的 id  参数表中列名称、类中属性名、执行时期、返回值类型--></span>  
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>selectKey</span> <span class="token attr-name">keyColumn</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>id<span class="token punctuation">"</span></span> <span class="token attr-name">keyProperty</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>id<span class="token punctuation">"</span></span> <span class="token attr-name">order</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>AFTER<span class="token punctuation">"</span></span> <span class="token attr-name">resultType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>int<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>   
         select last_insert_id();  
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>selectKey</span><span class="token punctuation">></span></span>  </code></pre><pre class="language-xml"><code class="language-xml">修改操作：
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>selectKey</span><span class="token punctuation">></span></span>  </code></pre>
+<pre class=" language-xml"><code class="language-xml">修改操作：
 1.在持久层接口中添加更新方法  int updateUser(User user); 
 2.在用户的映射配置文件中配置 
     <span class="token comment" spellcheck="true">&lt;!-- 更新用户 --></span>
@@ -159,7 +942,8 @@ session.commit();
      //2.更新操作 
     user.setAddress("北京市顺义区"); 
     int res = userDao.updateUser(user);  
-    System.out.println(res); }     </code></pre><pre class="language-xml"><code class="language-xml">删除操作：
+    System.out.println(res); }     </code></pre>
+<pre class=" language-xml"><code class="language-xml">删除操作：
 1.在持久层接口中添加删除方法 int deleteUser(Integer userId); 
 2.在用户的映射配置文件中配置 
     <span class="token comment" spellcheck="true">&lt;!-- 删除用户 注意，该参数是Int类型，可以是int,Integer,java.lang.Integer--></span> 
@@ -172,7 +956,8 @@ session.commit();
     public void testDeleteUser() throws Exception { 
     //执行操作 
     int res = userDao.deleteUser(52); 
-    System.out.println(res); }</code></pre><pre class="language-xml"><code class="language-xml">查询一个操作：
+    System.out.println(res); }</code></pre>
+<pre class=" language-xml"><code class="language-xml">查询一个操作：
 1.在持久层接口中添加 findById 方法 
 2.在用户的映射配置文件中配置
     <span class="token comment" spellcheck="true">&lt;!-- 根据 id 查询 --></span> 
@@ -204,7 +989,15 @@ session.commit();
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>findTotal<span class="token punctuation">"</span></span> <span class="token attr-name">resultType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>int<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>  
         select count(*) from user; 
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span>    
-3.加入聚合查询的测试方法 </code></pre><hr><h3 id="parameterType-配置参数"><a href="#parameterType-配置参数" class="headerlink" title="parameterType 配置参数"></a>parameterType 配置参数</h3><ul><li><p>该属性的取值可以 是基本类型，引用类型（例如:String 类型），还可以是实体类类型（POJO 类）（需要使用全限定类名），同时也可以使用实体类的包装类。</p></li><li><h4 id="传递-pojo-包装对象（多个对象信息封装进一个查询对象中）"><a href="#传递-pojo-包装对象（多个对象信息封装进一个查询对象中）" class="headerlink" title="传递 pojo 包装对象（多个对象信息封装进一个查询对象中）"></a>传递 pojo 包装对象（多个对象信息封装进一个查询对象中）</h4><ul><li>开发中通过 pojo 传递查询条件 ，查询条件是综合的查询条件，不仅包括用户查询条件还包括其它的查询条件（比如将用户购买商品信息也作为查询条件），这时可以使用包装对象传递输入参数。</li></ul><pre class="language-java"><code class="language-java"><span class="token number">1</span><span class="token punctuation">.</span>编写 QueryVo 
+3.加入聚合查询的测试方法 </code></pre>
+<hr>
+<h3><span id="parametertype-pei-zhi-can-shu">parameterType 配置参数</span><a href="#parametertype-pei-zhi-can-shu" class="header-anchor">#</a></h3><ul>
+<li><p>该属性的取值可以 是基本类型，引用类型（例如:String 类型），还可以是实体类类型（POJO 类）（需要使用全限定类名），同时也可以使用实体类的包装类。</p>
+</li>
+<li><h4><span id="chuan-di-pojo-bao-zhuang-dui-xiang-duo-ge-dui-xiang-xin-xi-feng-zhuang-jin-yi-ge-cha-xun-dui-xiang-zhong">传递 pojo 包装对象（多个对象信息封装进一个查询对象中）</span><a href="#chuan-di-pojo-bao-zhuang-dui-xiang-duo-ge-dui-xiang-xin-xi-feng-zhuang-jin-yi-ge-cha-xun-dui-xiang-zhong" class="header-anchor">#</a></h4><ul>
+<li>开发中通过 pojo 传递查询条件 ，查询条件是综合的查询条件，不仅包括用户查询条件还包括其它的查询条件（比如将用户购买商品信息也作为查询条件），这时可以使用包装对象传递输入参数。 </li>
+</ul>
+<pre class=" language-java"><code class="language-java"><span class="token number">1</span><span class="token punctuation">.</span>编写 QueryVo 
     <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">QueryVo</span> <span class="token keyword">implements</span> <span class="token class-name">Serializable</span> <span class="token punctuation">{</span> 
          <span class="token keyword">private</span> User user<span class="token punctuation">;</span> 
          <span class="token keyword">public</span> User <span class="token function">getUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>   <span class="token keyword">return</span> user<span class="token punctuation">;</span>  <span class="token punctuation">}</span> 
@@ -223,11 +1016,28 @@ session.commit();
         <span class="token keyword">for</span><span class="token punctuation">(</span>User u <span class="token operator">:</span> users<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>u<span class="token punctuation">)</span><span class="token punctuation">;</span> 
         <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span></code></pre></li></ul><h3 id="resultType-配置结果类型（作用：让类中属性与数据库列名保持一致）"><a href="#resultType-配置结果类型（作用：让类中属性与数据库列名保持一致）" class="headerlink" title="resultType 配置结果类型（作用：让类中属性与数据库列名保持一致）"></a>resultType 配置结果类型（作用：让类中属性与数据库列名保持一致）</h3><ul><li><p>以指定结果集的类型，它支持基本类型和实体类类型（需要全限定类名）。</p></li><li><p>当是实体类名称时，实体类中的属性名称必须和查询语句中的列名保持一致，否则无法实现封装。</p><ul><li><h4 id="可以使用起别名的方式解决问题"><a href="#可以使用起别名的方式解决问题" class="headerlink" title="可以使用起别名的方式解决问题"></a>可以使用起别名的方式解决问题</h4></li><li><ol><li>在sql语句中起别名（效率高，但查询的多过于麻烦，不宜于维护）</li></ol><pre class="language-xml"><code class="language-xml">使用别名查询 
+    <span class="token punctuation">}</span></code></pre>
+</li>
+</ul>
+<h3><span id="resulttype-pei-zhi-jie-guo-lei-xing-zuo-yong-rang-lei-zhong-shu-xing-yu-shu-ju-ku-lie-ming-bao-chi-yi-zhi">resultType 配置结果类型（作用：让类中属性与数据库列名保持一致）</span><a href="#resulttype-pei-zhi-jie-guo-lei-xing-zuo-yong-rang-lei-zhong-shu-xing-yu-shu-ju-ku-lie-ming-bao-chi-yi-zhi" class="header-anchor">#</a></h3><ul>
+<li><p>以指定结果集的类型，它支持基本类型和实体类类型（需要全限定类名）。 </p>
+</li>
+<li><p>当是实体类名称时，实体类中的属性名称必须和查询语句中的列名保持一致，否则无法实现封装。</p>
+<ul>
+<li><h4><span id="ke-yi-shi-yong-qi-bie-ming-de-fang-shi-jie-jue-wen-ti">可以使用起别名的方式解决问题</span><a href="#ke-yi-shi-yong-qi-bie-ming-de-fang-shi-jie-jue-wen-ti" class="header-anchor">#</a></h4></li>
+<li><ol>
+<li>在sql语句中起别名（效率高，但查询的多过于麻烦，不宜于维护）</li>
+</ol>
+<pre class=" language-xml"><code class="language-xml">使用别名查询 
 <span class="token comment" spellcheck="true">&lt;!--起的别名与实体类的属性名相同 --></span> 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>findAll<span class="token punctuation">"</span></span> <span class="token attr-name">resultType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.itheima.domain.User<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>  
     select id as userId,username as userName,birthday as userBirthday,  sex as userSex,address as userAddress from user 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span> </code></pre></li><li><ol start="2"><li>使用 resultMap 建立 User 实体和数据库表的对应关系 （多插入了一个标签，效率低，但后期好维护）</li></ol><pre class="language-xml"><code class="language-xml">1.定义 resultMap 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span> </code></pre>
+</li>
+<li><ol start="2">
+<li>使用 resultMap 建立 User 实体和数据库表的对应关系 （多插入了一个标签，效率低，但后期好维护）</li>
+</ol>
+<pre class=" language-xml"><code class="language-xml">1.定义 resultMap 
 <span class="token comment" spellcheck="true">&lt;!-- 建立 User 实体和数据库表的对应关系  
 type 属性：指定实体类的全限定类名  
 id 属性：给定一个唯一标识，是给查询 select 标签引用时用的。 --></span> 
@@ -247,7 +1057,13 @@ property 属性：用于指定实体类属性名称
 <span class="token comment" spellcheck="true">&lt;!-- 不再需要resultType,而是使用resultMap来找到返回类型 --></span> 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>findAll<span class="token punctuation">"</span></span> <span class="token attr-name">resultMap</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>userMap<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 
     select * from user
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span></code></pre></li></ul></li></ul><hr><h3 id="SqlMapConfig-xml配置文件"><a href="#SqlMapConfig-xml配置文件" class="headerlink" title="SqlMapConfig.xml配置文件"></a>SqlMapConfig.xml配置文件</h3><h4 id="1-SqlMapConfig-xml-中配置的内容和顺序"><a href="#1-SqlMapConfig-xml-中配置的内容和顺序" class="headerlink" title="1. SqlMapConfig.xml 中配置的内容和顺序"></a>1. SqlMapConfig.xml 中配置的内容和顺序</h4><pre><code>-properties（属性）
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span></code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3><span id="sqlmapconfig-xml-pei-zhi-wen-jian">SqlMapConfig.xml配置文件</span><a href="#sqlmapconfig-xml-pei-zhi-wen-jian" class="header-anchor">#</a></h3><h4><span id="1-sqlmapconfig-xml-zhong-pei-zhi-de-nei-rong-he-shun-xu">1. SqlMapConfig.xml 中配置的内容和顺序</span><a href="#1-sqlmapconfig-xml-zhong-pei-zhi-de-nei-rong-he-shun-xu" class="header-anchor">#</a></h4><pre><code>-properties（属性）
     --property 
 -settings（全局配置参数） 
     --setting 
@@ -263,15 +1079,20 @@ property 属性：用于指定实体类属性名称
     ---dataSource（数据源） 
 -mappers（映射器）  
     --mapper  
-    --packag</code></pre><h4 id="2-properties（属性）（作用：将参数封装在外部）"><a href="#2-properties（属性）（作用：将参数封装在外部）" class="headerlink" title="2.properties（属性）（作用：将参数封装在外部）"></a>2.properties（属性）（作用：将参数封装在外部）</h4><ol><li><p>第一种：在SqlMapConfig.xml配置文件中</p><pre class="language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>properties</span><span class="token punctuation">></span></span> 
+    --packag</code></pre><h4><span id="2-properties-shu-xing-zuo-yong-jiang-can-shu-feng-zhuang-zai-wai-bu">2.properties（属性）（作用：将参数封装在外部）</span><a href="#2-properties-shu-xing-zuo-yong-jiang-can-shu-feng-zhuang-zai-wai-bu" class="header-anchor">#</a></h4><ol>
+<li><p>第一种：在SqlMapConfig.xml配置文件中</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>properties</span><span class="token punctuation">></span></span> 
      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>jdbc.driver<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.mysql.jdbc.Driver<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span> 
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>jdbc.url<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>jdbc:mysql://localhost:3306/eesy<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span> 
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>jdbc.username<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>root<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span> 
      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>jdbc.password<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1234<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>  
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>properties</span><span class="token punctuation">></span></span></code></pre></li><li><p>第二种：在classPath下定义 db.properties 文件</p><pre><code>jdbc.driver=com.mysql.jdbc.Driver 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>properties</span><span class="token punctuation">></span></span></code></pre>
+</li>
+<li><p>第二种：在classPath下定义 db.properties 文件 </p>
+<pre><code>jdbc.driver=com.mysql.jdbc.Driver 
 jdbc.url=jdbc:mysql://localhost:3306/eesy 
 jdbc.username=root 
-jdbc.password=1234</code></pre><pre class="language-xml"><code class="language-xml">在SqlMapConfig.xml中加上properties：
+jdbc.password=1234</code></pre><pre class=" language-xml"><code class="language-xml">在SqlMapConfig.xml中加上properties：
 <span class="token comment" spellcheck="true">&lt;!-- 配置连接数据库的信息    
 resource 属性：用于指定 properties 配置文件的位置，要求配置文件必须在类路径下                            resource="jdbcConfig.properties" 
 url 属性：    
@@ -282,25 +1103,66 @@ URI：Uniform Resource Identifier 统一资源标识符     /mystroe/CategorySer
     它是可以在 web 应用中唯一定位一个资源的路径 --></span> 
 <span class="token comment" spellcheck="true">&lt;!-- 属性常用resource 也可以用url 效果一样--></span>
 &lt;properties url= "
-file:///D:/IdeaProjects/day02_eesy_01mybatisCRUD/src/main/resources/jdbcConfig.prop erties"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>properties</span><span class="token punctuation">></span></span> </code></pre></li><li><p>dataSource 标签就变成了引用上面的配置</p><pre class="language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dataSource</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>POOLED<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>  
+file:///D:/IdeaProjects/day02_eesy_01mybatisCRUD/src/main/resources/jdbcConfig.prop erties"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>properties</span><span class="token punctuation">></span></span> </code></pre>
+</li>
+<li><p>dataSource 标签就变成了引用上面的配置</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dataSource</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>POOLED<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>  
      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>driver<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>${jdbc.driver}<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>  
      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>url<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>${jdbc.url}<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>  
      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>username<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>${jdbc.username}<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span> 
      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>${jdbc.password}<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span> 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dataSource</span><span class="token punctuation">></span></span></code></pre></li></ol><h4 id="3-typeAliases（类型别名）（给类型起别名，resultType和parameterType在使用全类名时可直接写类名）"><a href="#3-typeAliases（类型别名）（给类型起别名，resultType和parameterType在使用全类名时可直接写类名）" class="headerlink" title="3.typeAliases（类型别名）（给类型起别名，resultType和parameterType在使用全类名时可直接写类名）"></a>3.typeAliases（类型别名）（给类型起别名，resultType和parameterType在使用全类名时可直接写类名）</h4><ul><li><p>自定义别名</p><pre class="language-xml"><code class="language-xml">在 SqlMapConfig.xml 中配置：
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dataSource</span><span class="token punctuation">></span></span></code></pre>
+</li>
+</ol>
+<h4><span id="3-typealiases-lei-xing-bie-ming-gei-lei-xing-qi-bie-ming-resulttype-he-parametertype-zai-shi-yong-quan-lei-ming-shi-ke-zhi-jie-xie-lei-ming">3.typeAliases（类型别名）（给类型起别名，resultType和parameterType在使用全类名时可直接写类名）</span><a href="#3-typealiases-lei-xing-bie-ming-gei-lei-xing-qi-bie-ming-resulttype-he-parametertype-zai-shi-yong-quan-lei-ming-shi-ke-zhi-jie-xie-lei-ming" class="header-anchor">#</a></h4><ul>
+<li><p>自定义别名</p>
+<pre class=" language-xml"><code class="language-xml">在 SqlMapConfig.xml 中配置：
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>typeAliases</span><span class="token punctuation">></span></span> 
     <span class="token comment" spellcheck="true">&lt;!-- 单个别名定义 alias:指定别名 type:原名 使用package标签就不需要typeAlias标签了--></span>  
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>typeAlias</span> <span class="token attr-name">alias</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.itheima.domain.User<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>  
     <span class="token comment" spellcheck="true">&lt;!-- 批量别名定义，扫描整个包下的类，别名为类名（首字母大写或小写都可以） --></span> 
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>package</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.itheima.domain<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span> 
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>package</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span> 包名 <span class="token punctuation">"</span></span><span class="token punctuation">/></span></span> 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>typeAliases</span><span class="token punctuation">></span></span> </code></pre></li></ul><h4 id="4-mappers（映射器）（作用：不用单独映射，直接封装映射，注解和Xml配置都起效）"><a href="#4-mappers（映射器）（作用：不用单独映射，直接封装映射，注解和Xml配置都起效）" class="headerlink" title="4.mappers（映射器）（作用：不用单独映射，直接封装映射，注解和Xml配置都起效）"></a>4.mappers（映射器）（作用：不用单独映射，直接封装映射，注解和Xml配置都起效）</h4><ol><li><p><mapper resource=" ">用在配置文件的配置</mapper></p><pre><code>使用相对于类路径的资源 
-如：&lt;mapper resource=&quot;com/itheima/dao/IUserDao.xml&quot; /&gt; </code></pre></li><li><p><mapper>用在注解配置</mapper></p><pre><code>使用 mapper 接口类路径 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>typeAliases</span><span class="token punctuation">></span></span> </code></pre>
+</li>
+</ul>
+<h4><span id="4-mappers-ying-she-qi-zuo-yong-bu-yong-dan-du-ying-she-zhi-jie-feng-zhuang-ying-she-zhu-jie-he-xml-pei-zhi-du-qi-xiao">4.mappers（映射器）（作用：不用单独映射，直接封装映射，注解和Xml配置都起效）</span><a href="#4-mappers-ying-she-qi-zuo-yong-bu-yong-dan-du-ying-she-zhi-jie-feng-zhuang-ying-she-zhu-jie-he-xml-pei-zhi-du-qi-xiao" class="header-anchor">#</a></h4><ol>
+<li><p><mapper resource=" "> 用在配置文件的配置</mapper></p>
+<pre><code>使用相对于类路径的资源 
+如：&lt;mapper resource=&quot;com/itheima/dao/IUserDao.xml&quot; /&gt; </code></pre></li>
+<li><p><mapper class=" ">用在注解配置</mapper></p>
+<pre><code>使用 mapper 接口类路径 
 如：&lt;mapper class=&quot;com.itheima.dao.UserDao&quot;/&gt; 
-注意：此种方法要求 mapper 接口名称和 mapper 映射文件名称相同，且放在同一个目录中。 </code></pre></li><li><p><package name>用在批量配置</package></p><pre><code>注册指定包下的所有 mapper 接口 
+注意：此种方法要求 mapper 接口名称和 mapper 映射文件名称相同，且放在同一个目录中。 </code></pre></li>
+<li><p><package name>用在批量配置</package></p>
+<pre><code>注册指定包下的所有 mapper 接口 
 如：&lt;package name=&quot;cn.itcast.dao&quot;/&gt; //name：接口文件夹
-注意：此种方法要求 mapper 接口名称和 mapper 映射文件名称相同，且放在同一个目录中</code></pre></li></ol><h3 id="Mybatis-的连接池技术"><a href="#Mybatis-的连接池技术" class="headerlink" title="Mybatis 的连接池技术"></a>Mybatis 的连接池技术</h3><ul><li><p>在 Mybatis 的 SqlMapConfig.xml 配置文件中，通过<datasource type="pooled">来实 现 Mybatis 中连接池的配置。</datasource></p></li><li><h4 id="Mybatis-连接池的分类（）"><a href="#Mybatis-连接池的分类（）" class="headerlink" title="Mybatis 连接池的分类（）"></a>Mybatis 连接池的分类（<datasource type="其中的属性">）</datasource></h4><ul><li>UNPOOLED 不使用连接池的数据源</li><li>POOLED 使用连接池的数据源</li><li>JNDI 使用 JNDI 实现的数据源 (根据服务器获得不同的连接池，c3p0,druid)</li></ul></li></ul><hr><h3 id="Mybatis-的事务控制"><a href="#Mybatis-的事务控制" class="headerlink" title="Mybatis 的事务控制"></a>Mybatis 的事务控制</h3><ul><li><h4 id="Mybatis-自动提交事务的设置"><a href="#Mybatis-自动提交事务的设置" class="headerlink" title="Mybatis 自动提交事务的设置"></a>Mybatis 自动提交事务的设置</h4><pre><code>在测试类的init方法中，将openSession增加参数true
-session = factory.openSession(true); </code></pre><ul><li>虽然这也是一种方式，但就 编程而言，设置为自动提交方式为 false再根据情况决定是否进行提交，这种方式更常用。因为我们可以根据业务 情况来决定提交是否进行提交。</li></ul></li></ul><hr><h3 id="动态-SQL（根据不同条件来追加sql语句）"><a href="#动态-SQL（根据不同条件来追加sql语句）" class="headerlink" title="动态 SQL（根据不同条件来追加sql语句）"></a>动态 SQL（根据不同条件来追加sql语句）</h3><ul><li><p><if>标签（拼接条件语句）</if></p><ul><li><p>持久层 Dao 映射配置</p><pre class="language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--注意：BindingException异常的原因：select的id属性和方法名不一样导致--></span>
+注意：此种方法要求 mapper 接口名称和 mapper 映射文件名称相同，且放在同一个目录中</code></pre></li>
+</ol>
+<h3><span id="mybatis-de-lian-jie-chi-ji-zhu">Mybatis 的连接池技术</span><a href="#mybatis-de-lian-jie-chi-ji-zhu" class="header-anchor">#</a></h3><ul>
+<li><p>在 Mybatis 的 SqlMapConfig.xml 配置文件中，通过<datasource type="pooled">来实 现 Mybatis 中连接池的配置。 </datasource></p>
+</li>
+<li><h4><span id="mybatis-lian-jie-chi-de-fen-lei">Mybatis 连接池的分类（<datasource type="其中的属性">）</datasource></span><a href="#mybatis-lian-jie-chi-de-fen-lei" class="header-anchor">#</a></h4><ul>
+<li>UNPOOLED     不使用连接池的数据源 </li>
+<li>POOLED       使用连接池的数据源 </li>
+<li>JNDI            使用 JNDI 实现的数据源 (根据服务器获得不同的连接池，c3p0,druid)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3><span id="mybatis-de-shi-wu-kong-zhi">Mybatis 的事务控制</span><a href="#mybatis-de-shi-wu-kong-zhi" class="header-anchor">#</a></h3><ul>
+<li><h4><span id="mybatis-zi-dong-ti-jiao-shi-wu-de-she-zhi">Mybatis 自动提交事务的设置</span><a href="#mybatis-zi-dong-ti-jiao-shi-wu-de-she-zhi" class="header-anchor">#</a></h4><pre><code>在测试类的init方法中，将openSession增加参数true
+session = factory.openSession(true); </code></pre><ul>
+<li>虽然这也是一种方式，但就 编程而言，设置为自动提交方式为 false再根据情况决定是否进行提交，这种方式更常用。因为我们可以根据业务 情况来决定提交是否进行提交。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3><span id="dong-tai-sql-gen-ju-bu-tong-tiao-jian-lai-zhui-jia-sql-yu-ju">动态 SQL（根据不同条件来追加sql语句）</span><a href="#dong-tai-sql-gen-ju-bu-tong-tiao-jian-lai-zhui-jia-sql-yu-ju" class="header-anchor">#</a></h3><ul>
+<li><p><if>标签（拼接条件语句）</if></p>
+<ul>
+<li><p>持久层 Dao 映射配置 </p>
+<pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--注意：BindingException异常的原因：select的id属性和方法名不一样导致--></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>findByUser<span class="token punctuation">"</span></span> <span class="token attr-name">resultType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span> <span class="token attr-name">parameterType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>  
     select * from user where 1=1 
  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>username!<span class="token punctuation">=</span>null and username !<span class="token punctuation">=</span> <span class="token punctuation">'</span><span class="token punctuation">'</span> <span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 
@@ -310,18 +1172,35 @@ session = factory.openSession(true); </code></pre><ul><li>虽然这也是一种�
      and address like #{address} 
  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span class="token punctuation">></span></span>    
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span> 
-注意：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span><span class="token punctuation">></span></span>标签的 test 属性中写的是对象的属性名</code></pre></li></ul></li><li><p><where>标签 (简化上面 where 1=1 的条件拼装)</where></p><ul><li><p>持久层 Dao 映射配置</p><pre class="language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>where</span><span class="token punctuation">></span></span> 
+注意：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span><span class="token punctuation">></span></span>标签的 test 属性中写的是对象的属性名</code></pre>
+</li>
+</ul>
+</li>
+<li><p><where>标签 (简化上面 where 1=1 的条件拼装)</where></p>
+<ul>
+<li><p>持久层 Dao 映射配置 </p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>where</span><span class="token punctuation">></span></span> 
    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>username!<span class="token punctuation">=</span>null and username !<span class="token punctuation">=</span> <span class="token punctuation">'</span><span class="token punctuation">'</span> <span class="token punctuation">"</span></span><span class="token punctuation">></span></span>    
        and username like #{username}    
    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span class="token punctuation">></span></span> 
    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>if</span> <span class="token attr-name">test</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>address !<span class="token punctuation">=</span> null<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>  
        and address like #{address}   
    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>if</span><span class="token punctuation">></span></span>   
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>where</span><span class="token punctuation">></span></span></code></pre></li></ul></li><li><p><foreach>标签 （拼接 in 条件语句）</foreach></p><ul><li><p>在 QueryVo 中加入一个 List 集合用于封装参数</p><pre class="language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">QueryVo</span> <span class="token keyword">implements</span> <span class="token class-name">Serializable</span> <span class="token punctuation">{</span> 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>where</span><span class="token punctuation">></span></span></code></pre>
+</li>
+</ul>
+</li>
+<li><p><foreach>标签 （拼接 in 条件语句）</foreach></p>
+<ul>
+<li><p>在 QueryVo 中加入一个 List 集合用于封装参数 </p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">QueryVo</span> <span class="token keyword">implements</span> <span class="token class-name">Serializable</span> <span class="token punctuation">{</span> 
      <span class="token keyword">private</span> List<span class="token operator">&lt;</span>Integer<span class="token operator">></span> ids<span class="token punctuation">;</span> 
      <span class="token keyword">public</span> List<span class="token operator">&lt;</span>Integer<span class="token operator">></span> <span class="token function">getIds</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>   <span class="token keyword">return</span> ids<span class="token punctuation">;</span>  <span class="token punctuation">}</span> 
      <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setIds</span><span class="token punctuation">(</span>List<span class="token operator">&lt;</span>Integer<span class="token operator">></span> ids<span class="token punctuation">)</span> <span class="token punctuation">{</span>   <span class="token keyword">this</span><span class="token punctuation">.</span>ids <span class="token operator">=</span> ids<span class="token punctuation">;</span>  <span class="token punctuation">}</span>    
- <span class="token punctuation">}</span></code></pre></li><li><p>持久层 Dao 映射配置</p><pre class="language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!-- 查询所有用户在 id 的集合之中 --></span>  
+ <span class="token punctuation">}</span></code></pre>
+</li>
+<li><p>持久层 Dao 映射配置 </p>
+<pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!-- 查询所有用户在 id 的集合之中 --></span>  
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>findInIds<span class="token punctuation">"</span></span> <span class="token attr-name">resultType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span> <span class="token attr-name">parameterType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>queryvo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>  
     <span class="token comment" spellcheck="true">&lt;!--  select * from user where id in (1,2,3,4,5); --></span> 
      select * from user
@@ -340,10 +1219,34 @@ select 字段 from user where id in (?)
     open:代表语句的开始部分  
     close:代表结束部分
     item:代表中间插入的数（随意写，#{要和item起的名一样}）
-    separator：分隔符</code></pre></li></ul></li></ul><hr><h3 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h3><ul><li><h4 id="一对一查询-多对一"><a href="#一对一查询-多对一" class="headerlink" title="一对一查询(多对一)"></a>一对一查询(多对一)</h4></li><li><p>需求 ：查询所有账户信息，关联查询下单用户信息</p><ul><li><p>使用 resultMap，定义专门的 resultMap 用于映射一对一查询结果</p></li><li><ol><li>修改 Account 类</li></ol><pre class="language-java"><code class="language-java">增加用户信息
+    separator：分隔符</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3><span id="duo-biao-cha-xun">多表查询</span><a href="#duo-biao-cha-xun" class="header-anchor">#</a></h3><ul>
+<li><h4><span id="yi-dui-yi-cha-xun-duo-dui-yi">一对一查询(多对一)</span><a href="#yi-dui-yi-cha-xun-duo-dui-yi" class="header-anchor">#</a></h4></li>
+<li><p>需求 ：查询所有账户信息，关联查询下单用户信息</p>
+<ul>
+<li><p>使用 resultMap，定义专门的 resultMap 用于映射一对一查询结果</p>
+</li>
+<li><ol>
+<li>修改 Account 类 </li>
+</ol>
+<pre class=" language-java"><code class="language-java">增加用户信息
 <span class="token keyword">private</span> User user<span class="token punctuation">;</span>    
 <span class="token keyword">public</span> User <span class="token function">getUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>   <span class="token keyword">return</span> user<span class="token punctuation">;</span>  <span class="token punctuation">}</span>  
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setUser</span><span class="token punctuation">(</span>User user<span class="token punctuation">)</span> <span class="token punctuation">{</span>   <span class="token keyword">this</span><span class="token punctuation">.</span>user <span class="token operator">=</span> user<span class="token punctuation">;</span>  <span class="token punctuation">}</span></code></pre></li><li><ol start="2"><li>接口方法返回值</li></ol><pre><code>将返回值改 为了 Account 类型。 因为 Account 类中包含了一个 User 类的对象，它可以封装账户所对应的用户信息。 </code></pre></li><li><ol start="3"><li>重新定义 AccountDao.xml 文件</li></ol><pre class="language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!-- 建立对应关系 --></span>  
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setUser</span><span class="token punctuation">(</span>User user<span class="token punctuation">)</span> <span class="token punctuation">{</span>   <span class="token keyword">this</span><span class="token punctuation">.</span>user <span class="token operator">=</span> user<span class="token punctuation">;</span>  <span class="token punctuation">}</span></code></pre>
+</li>
+<li><ol start="2">
+<li>接口方法返回值</li>
+</ol>
+<pre><code>将返回值改 为了 Account 类型。 因为 Account 类中包含了一个 User 类的对象，它可以封装账户所对应的用户信息。 </code></pre></li>
+<li><ol start="3">
+<li>重新定义 AccountDao.xml 文件 </li>
+</ol>
+<pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!-- 建立对应关系 --></span>  
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>resultMap</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>account<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>accountMap<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>  
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span> <span class="token attr-name">column</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>aid<span class="token punctuation">"</span></span> <span class="token attr-name">property</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>id<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>   
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>result</span> <span class="token attr-name">column</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>uid<span class="token punctuation">"</span></span> <span class="token attr-name">property</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>uid<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
@@ -360,17 +1263,39 @@ select 字段 from user where id in (?)
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>findAll<span class="token punctuation">"</span></span> <span class="token attr-name">resultMap</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>accountMap<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>   
     select u.*,a.id as aid,a.uid,a.money from account a,user u where a.uid =u.id;  
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span> </code></pre></li><li><ol start="4"><li>在 AccountTest 类中加入测试方法</li></ol><pre class="language-java"><code class="language-java"><span class="token annotation punctuation">@Test</span>  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span> </code></pre>
+</li>
+<li><ol start="4">
+<li>在 AccountTest 类中加入测试方法 </li>
+</ol>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Test</span>  
 <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testFindAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token punctuation">{</span>    
     List<span class="token operator">&lt;</span>Account<span class="token operator">></span> accounts <span class="token operator">=</span> accountDao<span class="token punctuation">.</span><span class="token function">findAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
     <span class="token keyword">for</span><span class="token punctuation">(</span>Account au <span class="token operator">:</span> accounts<span class="token punctuation">)</span> <span class="token punctuation">{</span>   
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>au<span class="token punctuation">)</span><span class="token punctuation">;</span>   
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>au<span class="token punctuation">.</span><span class="token function">getUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
     <span class="token punctuation">}</span>  
-<span class="token punctuation">}</span> </code></pre></li></ul></li><li><h4 id="一对多查询"><a href="#一对多查询" class="headerlink" title="一对多查询"></a>一对多查询</h4></li><li><p>需求： 查询所有用户信息及用户关联的账户信息。</p></li><li><p>分析： 用户信息和他的账户信息为一对多关系，并且查询过程中如果用户没有账户信息，此时也要将用户信息 查询出来，我们想到了左外连接查询比较合适</p></li><li><ol><li>修改User类</li></ol><pre class="language-java"><code class="language-java">增加账户信息
+<span class="token punctuation">}</span> </code></pre>
+</li>
+</ul>
+</li>
+<li><h4><span id="yi-dui-duo-cha-xun">一对多查询</span><a href="#yi-dui-duo-cha-xun" class="header-anchor">#</a></h4></li>
+<li><p>需求：  查询所有用户信息及用户关联的账户信息。 </p>
+</li>
+<li><p>分析：  用户信息和他的账户信息为一对多关系，并且查询过程中如果用户没有账户信息，此时也要将用户信息 查询出来，我们想到了左外连接查询比较合适</p>
+</li>
+<li><ol>
+<li>修改User类</li>
+</ol>
+<pre class=" language-java"><code class="language-java">增加账户信息
     <span class="token keyword">private</span> List<span class="token operator">&lt;</span>Account<span class="token operator">></span> accounts<span class="token punctuation">;</span>     
      <span class="token keyword">public</span> List<span class="token operator">&lt;</span>Account<span class="token operator">></span> <span class="token function">getAccounts</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>   <span class="token keyword">return</span> accounts<span class="token punctuation">;</span>  <span class="token punctuation">}</span>  
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setAccounts</span><span class="token punctuation">(</span>List<span class="token operator">&lt;</span>Account<span class="token operator">></span> accounts<span class="token punctuation">)</span> <span class="token punctuation">{</span>   <span class="token keyword">this</span><span class="token punctuation">.</span>accounts <span class="token operator">=</span> accounts<span class="token punctuation">;</span>  <span class="token punctuation">}</span> </code></pre></li><li><ol start="2"><li>重新定义 AccountDao.xml 文件</li></ol><pre class="language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>resultMap</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>userMap<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>  
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setAccounts</span><span class="token punctuation">(</span>List<span class="token operator">&lt;</span>Account<span class="token operator">></span> accounts<span class="token punctuation">)</span> <span class="token punctuation">{</span>   <span class="token keyword">this</span><span class="token punctuation">.</span>accounts <span class="token operator">=</span> accounts<span class="token punctuation">;</span>  <span class="token punctuation">}</span> </code></pre>
+</li>
+<li><ol start="2">
+<li>重新定义 AccountDao.xml 文件 </li>
+</ol>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>resultMap</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>userMap<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>  
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span> <span class="token attr-name">column</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>id<span class="token punctuation">"</span></span> <span class="token attr-name">property</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>id<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">></span></span>   
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>result</span> <span class="token attr-name">column</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>username<span class="token punctuation">"</span></span> <span class="token attr-name">property</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>username<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>  
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>result</span> <span class="token attr-name">column</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>address<span class="token punctuation">"</span></span> <span class="token attr-name">property</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>address<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>  
@@ -392,9 +1317,28 @@ collection
 property="accList" ：
 关联查询的结果集存储在 User 对象的上哪个属性。 
 ofType="account" ：
-指定关联查询的结果集中的对象类型即List中的对象类型。此处可以使用别名，也可以使用全限定名。 </code></pre></li><li><h4 id="多对多"><a href="#多对多" class="headerlink" title="多对多"></a>多对多</h4></li><li><p>需求： 实现查询所有角色并且加载它所分配的用户信息。</p></li><li><p>分析： 查询角色我们需要用到Role表，但角色分配的用户的信息我们并不能直接找到用户信息，而是要通过中 间表(USER_ROLE 表)才能关联到用户信息。</p><ul><li><ol><li>编写角色实体类</li></ol><pre class="language-java"><code class="language-java">     <span class="token keyword">private</span> List<span class="token operator">&lt;</span>User<span class="token operator">></span> users<span class="token punctuation">;</span> 
+指定关联查询的结果集中的对象类型即List中的对象类型。此处可以使用别名，也可以使用全限定名。 </code></pre>
+</li>
+<li><h4><span id="duo-dui-duo">多对多</span><a href="#duo-dui-duo" class="header-anchor">#</a></h4></li>
+<li><p>需求：  实现查询所有角色并且加载它所分配的用户信息。 </p>
+</li>
+<li><p>分析：  查询角色我们需要用到Role表，但角色分配的用户的信息我们并不能直接找到用户信息，而是要通过中 间表(USER_ROLE 表)才能关联到用户信息。</p>
+<ul>
+<li><ol>
+<li>编写角色实体类 </li>
+</ol>
+<pre class=" language-java"><code class="language-java">     <span class="token keyword">private</span> List<span class="token operator">&lt;</span>User<span class="token operator">></span> users<span class="token punctuation">;</span> 
     <span class="token keyword">public</span> List<span class="token operator">&lt;</span>User<span class="token operator">></span> <span class="token function">getUsers</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>         <span class="token keyword">return</span> users<span class="token punctuation">;</span>     <span class="token punctuation">}</span> 
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setUsers</span><span class="token punctuation">(</span>List<span class="token operator">&lt;</span>User<span class="token operator">></span> users<span class="token punctuation">)</span> <span class="token punctuation">{</span>         <span class="token keyword">this</span><span class="token punctuation">.</span>users <span class="token operator">=</span> users<span class="token punctuation">;</span>     <span class="token punctuation">}</span> </code></pre></li><li><ol start="2"><li>编写 Role 持久层接口</li></ol></li><li><ol start="3"><li>编写映射文件</li></ol><pre class="language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span> <span class="token doctype">&lt;!DOCTYPE mapper         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"         "http://mybatis.org/dtd/mybatis-3-mapper.dtd"></span> 
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setUsers</span><span class="token punctuation">(</span>List<span class="token operator">&lt;</span>User<span class="token operator">></span> users<span class="token punctuation">)</span> <span class="token punctuation">{</span>         <span class="token keyword">this</span><span class="token punctuation">.</span>users <span class="token operator">=</span> users<span class="token punctuation">;</span>     <span class="token punctuation">}</span> </code></pre>
+</li>
+<li><ol start="2">
+<li>编写 Role 持久层接口 </li>
+</ol>
+</li>
+<li><ol start="3">
+<li>编写映射文件 </li>
+</ol>
+<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span> <span class="token doctype">&lt;!DOCTYPE mapper         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"         "http://mybatis.org/dtd/mybatis-3-mapper.dtd"></span> 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mapper</span> <span class="token attr-name">namespace</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.itheima.dao.IRoleDao<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 
 
 <span class="token comment" spellcheck="true">&lt;!--定义 role 表的 ResultMap--></span>     
@@ -418,36 +1362,121 @@ ofType="account" ：
         left outer join user_role ur  on r.id = ur.rid        
         left outer join user u on u.id = ur.uid    
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span> 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mapper</span><span class="token punctuation">></span></span></code></pre></li></ul></li></ul><hr><h3 id="Mybatis-延迟加载"><a href="#Mybatis-延迟加载" class="headerlink" title="Mybatis 延迟加载"></a>Mybatis 延迟加载</h3><ul><li><p>延迟加载： 就是在需要用到数据时才进行加载，不需要用到数据时就不加载数据。延迟加载也称懒加载.</p></li><li><p>好处：先从单表查询，需要时再从关联表去关联查询，大大提高数据库性能，因为查询单表要比关联查询多张表速 度要快。</p></li><li><p>坏处： 因为只有当需要用到数据时，才会进行数据库查询，这样在大批量数据查询时，因为查询工作也要消耗 时间，所以可能造成用户等待时间变长，造成用户体验下降</p></li><li><p>通常：一对一正常立即加载 一对多使用延迟加载</p></li><li><h4 id="使用-assocation-实现延迟加载"><a href="#使用-assocation-实现延迟加载" class="headerlink" title="使用 assocation 实现延迟加载"></a>使用 assocation 实现延迟加载</h4><ul><li><ol><li>SqlMapConfig.xml 文件中添加延迟加载的配置</li></ol><pre class="language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>settings</span><span class="token punctuation">></span></span> 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mapper</span><span class="token punctuation">></span></span></code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3><span id="mybatis-yan-chi-jia-zai">Mybatis 延迟加载</span><a href="#mybatis-yan-chi-jia-zai" class="header-anchor">#</a></h3><ul>
+<li><p>延迟加载：   就是在需要用到数据时才进行加载，不需要用到数据时就不加载数据。延迟加载也称懒加载. </p>
+</li>
+<li><p>好处：先从单表查询，需要时再从关联表去关联查询，大大提高数据库性能，因为查询单表要比关联查询多张表速 度要快。  </p>
+</li>
+<li><p>坏处：   因为只有当需要用到数据时，才会进行数据库查询，这样在大批量数据查询时，因为查询工作也要消耗 时间，所以可能造成用户等待时间变长，造成用户体验下降</p>
+</li>
+<li><p>通常：一对一正常立即加载 一对多使用延迟加载</p>
+</li>
+<li><h4><span id="shi-yong-assocation-shi-xian-yan-chi-jia-zai">使用 assocation 实现延迟加载</span><a href="#shi-yong-assocation-shi-xian-yan-chi-jia-zai" class="header-anchor">#</a></h4><ul>
+<li><ol>
+<li>SqlMapConfig.xml 文件中添加延迟加载的配置</li>
+</ol>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>settings</span><span class="token punctuation">></span></span> 
      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>setting</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>lazyLoadingEnabled<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>  
        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>setting</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>aggressiveLazyLoading<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span> 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>settings</span><span class="token punctuation">></span></span></code></pre></li><li><ol start="2"><li>持久层映射文件</li></ol><pre class="language-xml"><code class="language-xml">resultMap中：
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>settings</span><span class="token punctuation">></span></span></code></pre>
+</li>
+<li><ol start="2">
+<li>持久层映射文件</li>
+</ol>
+<pre class=" language-xml"><code class="language-xml">resultMap中：
 <span class="token comment" spellcheck="true">&lt;!-- 它是用于指定从表方的引用实体属性的 select参数是调用的方法--></span>  
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>association</span> <span class="token attr-name">property</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span> <span class="token attr-name">javaType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span> <span class="token attr-name">select</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.itheima.dao.IUserDao.findById<span class="token punctuation">"</span></span>     <span class="token attr-name">column</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>uid<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>   
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>association</span><span class="token punctuation">></span></span></code></pre></li><li><ol start="3"><li>编写select对应的方法</li></ol></li></ul></li><li><h4 id="使用-Collection-实现延迟加载"><a href="#使用-Collection-实现延迟加载" class="headerlink" title="使用 Collection 实现延迟加载"></a>使用 Collection 实现延迟加载</h4><ul><li><ol><li>SqlMapConfig.xml 文件中添加延迟加载的配置</li><li>持久层映射文件</li></ol><pre class="language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!-- collection 是用于建立一对多中集合属性的对应关系    
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>association</span><span class="token punctuation">></span></span></code></pre>
+</li>
+<li><ol start="3">
+<li>编写select对应的方法</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><h4><span id="shi-yong-collection-shi-xian-yan-chi-jia-zai">使用 Collection 实现延迟加载</span><a href="#shi-yong-collection-shi-xian-yan-chi-jia-zai" class="header-anchor">#</a></h4><ul>
+<li><ol>
+<li>SqlMapConfig.xml 文件中添加延迟加载的配置</li>
+<li>持久层映射文件</li>
+</ol>
+<pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!-- collection 是用于建立一对多中集合属性的对应关系    
  ofType 用于指定集合元素的数据类型   
  select 是用于指定查询账户的唯一标识（账户的 dao 全限定类名加上方法名称）   
  column 是用于指定使用哪个字段的值作为条件查询    --></span> 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>collection</span> <span class="token attr-name">property</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>accounts<span class="token punctuation">"</span></span> <span class="token attr-name">ofType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>account<span class="token punctuation">"</span></span>      <span class="token attr-name">select</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.itheima.dao.IAccountDao.findByUid<span class="token punctuation">"</span></span>     <span class="token attr-name">column</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>id<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>   
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>collection</span><span class="token punctuation">></span></span></code></pre></li><li><ol start="3"><li>编写select对应的方法</li></ol></li></ul></li></ul><hr><h3 id="Mybatis-缓存"><a href="#Mybatis-缓存" class="headerlink" title="Mybatis 缓存"></a>Mybatis 缓存</h3><p><img src="/2020/06/13/hi/C:%5CUsers%5C44317%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200531153243729.png" alt="image-20200531153243729"></p><ul><li><h4 id="一级缓存：一级缓存是-SqlSession-范围的缓存，当调用-SqlSession-的修改，添加，删除，commit-，close-等方法时，就会清空一级缓存。"><a href="#一级缓存：一级缓存是-SqlSession-范围的缓存，当调用-SqlSession-的修改，添加，删除，commit-，close-等方法时，就会清空一级缓存。" class="headerlink" title="一级缓存：一级缓存是 SqlSession 范围的缓存，当调用 SqlSession 的修改，添加，删除，commit()，close()等方法时，就会清空一级缓存。"></a>一级缓存：一级缓存是 SqlSession 范围的缓存，当调用 SqlSession 的修改，添加，删除，commit()，close()等方法时，就会清空一级缓存。</h4><ul><li><p>也可手动清除一级缓存：</p><pre><code>sqlSession.clearCache();//此方法也可以清空缓存        
-userDao = sqlSession.getMapper(IUserDao.class);</code></pre></li></ul></li><li><h4 id="二级缓存：二级缓存是-mapper-映射级别的缓存，多个-SqlSession-去操作同一个-Mapper-映射的-sql-语句，多个-SqlSession-可以共用二级缓存，二级缓存是跨-SqlSession-的。"><a href="#二级缓存：二级缓存是-mapper-映射级别的缓存，多个-SqlSession-去操作同一个-Mapper-映射的-sql-语句，多个-SqlSession-可以共用二级缓存，二级缓存是跨-SqlSession-的。" class="headerlink" title="二级缓存：二级缓存是 mapper 映射级别的缓存，多个 SqlSession 去操作同一个 Mapper 映射的 sql 语句，多个 SqlSession 可以共用二级缓存，二级缓存是跨 SqlSession 的。"></a>二级缓存：二级缓存是 mapper 映射级别的缓存，多个 SqlSession 去操作同一个 Mapper 映射的 sql 语句，多个 SqlSession 可以共用二级缓存，二级缓存是跨 SqlSession 的。</h4><ul><li><p>二级缓存的开启与关闭</p><ul><li><ol><li>在 SqlMapConfig.xml 文件开启二级缓存</li></ol><pre class="language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>settings</span><span class="token punctuation">></span></span> 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>collection</span><span class="token punctuation">></span></span></code></pre>
+</li>
+<li><ol start="3">
+<li>编写select对应的方法</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3><span id="mybatis-huan-cun">Mybatis 缓存</span><a href="#mybatis-huan-cun" class="header-anchor">#</a></h3><p><img src="/2020/06/13/hi/C:%5CUsers%5C44317%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200531153243729.png" alt="image-20200531153243729"></p>
+<ul>
+<li><h4><span id="yi-ji-huan-cun-yi-ji-huan-cun-shi-sqlsession-fan-wei-de-huan-cun-dang-diao-yong-sqlsession-de-xiu-gai-tian-jia-shan-chu-commit-close-deng-fang-fa-shi-jiu-hui-qing-kong-yi-ji-huan-cun">一级缓存：一级缓存是 SqlSession 范围的缓存，当调用 SqlSession 的修改，添加，删除，commit()，close()等方法时，就会清空一级缓存。</span><a href="#yi-ji-huan-cun-yi-ji-huan-cun-shi-sqlsession-fan-wei-de-huan-cun-dang-diao-yong-sqlsession-de-xiu-gai-tian-jia-shan-chu-commit-close-deng-fang-fa-shi-jiu-hui-qing-kong-yi-ji-huan-cun" class="header-anchor">#</a></h4><ul>
+<li><p>也可手动清除一级缓存：</p>
+<pre><code>sqlSession.clearCache();//此方法也可以清空缓存        
+userDao = sqlSession.getMapper(IUserDao.class);</code></pre></li>
+</ul>
+</li>
+<li><h4><span id="er-ji-huan-cun-er-ji-huan-cun-shi-mapper-ying-she-ji-bie-de-huan-cun-duo-ge-sqlsession-qu-cao-zuo-tong-yi-ge-mapper-ying-she-de-sql-yu-ju-duo-ge-sqlsession-ke-yi-gong-yong-er-ji-huan-cun-er-ji-huan-cun-shi-kua-sqlsession-de">二级缓存：二级缓存是 mapper 映射级别的缓存，多个 SqlSession 去操作同一个 Mapper 映射的 sql 语句，多个 SqlSession 可以共用二级缓存，二级缓存是跨 SqlSession 的。</span><a href="#er-ji-huan-cun-er-ji-huan-cun-shi-mapper-ying-she-ji-bie-de-huan-cun-duo-ge-sqlsession-qu-cao-zuo-tong-yi-ge-mapper-ying-she-de-sql-yu-ju-duo-ge-sqlsession-ke-yi-gong-yong-er-ji-huan-cun-er-ji-huan-cun-shi-kua-sqlsession-de" class="header-anchor">#</a></h4><ul>
+<li><p>二级缓存的开启与关闭</p>
+<ul>
+<li><ol>
+<li>在 SqlMapConfig.xml 文件开启二级缓存</li>
+</ol>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>settings</span><span class="token punctuation">></span></span> 
  <span class="token comment" spellcheck="true">&lt;!-- 开启二级缓存的支持 --></span>  
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>setting</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>cacheEnabled<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span> 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>settings</span><span class="token punctuation">></span></span> 
-因为 cacheEnabled 的取值默认就为 true，所以这一步可以省略。为 true 代表开启二级缓存</code></pre></li><li><ol start="2"><li>配置相关的 Mapper 映射文件</li></ol><pre class="language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--&lt;cache>标签表示当前这个 mapper 映射将使用二级缓存，区分的标准就看 mapper 的 namespace 值。 --></span>
+因为 cacheEnabled 的取值默认就为 true，所以这一步可以省略。为 true 代表开启二级缓存</code></pre>
+</li>
+<li><ol start="2">
+<li>配置相关的 Mapper 映射文件</li>
+</ol>
+<pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--&lt;cache>标签表示当前这个 mapper 映射将使用二级缓存，区分的标准就看 mapper 的 namespace 值。 --></span>
 <span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span> <span class="token doctype">&lt;!DOCTYPE mapper     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"     "http://mybatis.org/dtd/mybatis-3-mapper.dtd"></span> 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mapper</span> <span class="token attr-name">namespace</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.itheima.dao.IUserDao<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>  
     <span class="token comment" spellcheck="true">&lt;!-- 开启二级缓存的支持 --></span>  
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>cache</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>cache</span><span class="token punctuation">></span></span> 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mapper</span><span class="token punctuation">></span></span> </code></pre></li><li><ol start="3"><li>配置 statement 上面的 useCache 属性</li></ol><pre class="language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!-- 根据 id 查询 --></span> 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mapper</span><span class="token punctuation">></span></span> </code></pre>
+</li>
+<li><ol start="3">
+<li>配置 statement 上面的 useCache 属性 </li>
+</ol>
+<pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!-- 根据 id 查询 --></span> 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>findById<span class="token punctuation">"</span></span> <span class="token attr-name">resultType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>user<span class="token punctuation">"</span></span> <span class="token attr-name">parameterType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>int<span class="token punctuation">"</span></span> <span class="token attr-name">useCache</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>  
     select * from user where id = #{uid} 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span> 
 将 UserDao.xml 映射文件中的<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span><span class="token punctuation">></span></span>标签中设置 
 useCache=”true”代表当前这个 statement 要使用二级缓存，如果不使用二级缓存可以设置为 false。 
 
-注意：针对每次查询都需要最新的数据 sql，要设置成 useCache=false，禁用二级缓存。</code></pre></li><li><ol start="4"><li>二级缓存需序列化接口</li></ol><pre><code>因为二级缓存保存到的是数据，不是map，当读取时会将数据重新封装成对象。
-public class User implements Serializable { }</code></pre></li></ul></li></ul></li></ul><hr><h3 id="Mybatis-注解开发"><a href="#Mybatis-注解开发" class="headerlink" title="Mybatis 注解开发"></a>Mybatis 注解开发</h3><ul><li><p>注意：使用注解开发就不能使用xml配置，mapper映射中使用package，如果同时存在会报错</p></li><li><h4 id="mybatis-的常用注解说明"><a href="#mybatis-的常用注解说明" class="headerlink" title="mybatis 的常用注解说明"></a>mybatis 的常用注解说明</h4><pre><code>*@Insert:实现新增 
+注意：针对每次查询都需要最新的数据 sql，要设置成 useCache=false，禁用二级缓存。</code></pre>
+</li>
+<li><ol start="4">
+<li>二级缓存需序列化接口</li>
+</ol>
+<pre><code>因为二级缓存保存到的是数据，不是map，当读取时会将数据重新封装成对象。
+public class User implements Serializable { }</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3><span id="mybatis-zhu-jie-kai-fa">Mybatis 注解开发</span><a href="#mybatis-zhu-jie-kai-fa" class="header-anchor">#</a></h3><ul>
+<li><p>注意：使用注解开发就不能使用xml配置，mapper映射中使用package，如果同时存在会报错</p>
+</li>
+<li><h4><span id="mybatis-de-chang-yong-zhu-jie-shuo-ming">mybatis 的常用注解说明</span><a href="#mybatis-de-chang-yong-zhu-jie-shuo-ming" class="header-anchor">#</a></h4><pre><code>*@Insert:实现新增 
 *@Update:实现更新 
 *@Delete:实现删除 
 *@Select:实现查询 
@@ -457,13 +1486,26 @@ public class User implements Serializable { }</code></pre></li></ul></li></ul></
 *@One:实现一对一结果集封装 
 *@Many:实现一对多结果集封装 
 @SelectProvider: 实现动态 SQL 映射 
-*@CacheNamespace:实现注解二级缓存的使用 true</code></pre></li><li><h4 id="Mybatis-注解实现基本-CRUD"><a href="#Mybatis-注解实现基本-CRUD" class="headerlink" title="Mybatis 注解实现基本 CRUD"></a>Mybatis 注解实现基本 CRUD</h4><ul><li><p>编写接口</p><pre class="language-java"><code class="language-java"><span class="token annotation punctuation">@Select</span><span class="token punctuation">(</span><span class="token string">"select * from user where id = #{uid} "</span><span class="token punctuation">)</span> 
+*@CacheNamespace:实现注解二级缓存的使用 true</code></pre></li>
+<li><h4><span id="mybatis-zhu-jie-shi-xian-ji-ben-crud">Mybatis 注解实现基本 CRUD</span><a href="#mybatis-zhu-jie-shi-xian-ji-ben-crud" class="header-anchor">#</a></h4><ul>
+<li><p>编写接口</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Select</span><span class="token punctuation">(</span><span class="token string">"select * from user where id = #{uid} "</span><span class="token punctuation">)</span> 
 <span class="token comment" spellcheck="true">//解决类属性名与数据库列名不对应的方式</span>
 <span class="token annotation punctuation">@Results</span><span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token string">"userMap"</span><span class="token punctuation">,</span>value<span class="token operator">=</span> <span class="token punctuation">{</span>     <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>id<span class="token operator">=</span><span class="token boolean">true</span><span class="token punctuation">,</span>column<span class="token operator">=</span><span class="token string">"id"</span><span class="token punctuation">,</span>property<span class="token operator">=</span><span class="token string">"userId"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>                                             <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>column<span class="token operator">=</span><span class="token string">"username"</span><span class="token punctuation">,</span>property<span class="token operator">=</span><span class="token string">"userName"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>                                         <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>column<span class="token operator">=</span><span class="token string">"sex"</span><span class="token punctuation">,</span>property<span class="token operator">=</span><span class="token string">"userSex"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>                                                 <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>column<span class="token operator">=</span><span class="token string">"address"</span><span class="token punctuation">,</span>property<span class="token operator">=</span><span class="token string">"userAddress"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>                                         <span class="token annotation punctuation">@Result</span><span class="token punctuation">(</span>column<span class="token operator">=</span><span class="token string">"birthday"</span><span class="token punctuation">,</span>property<span class="token operator">=</span><span class="token string">"userBirthday"</span><span class="token punctuation">)</span>    <span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">//其他的方法可直接用 @Results("userMap")</span></code></pre></li><li><p>编写 SqlMapConfig 配置文件</p><pre><code>&lt;!-- 配置映射信息 --&gt;  
+<span class="token comment" spellcheck="true">//其他的方法可直接用 @Results("userMap")</span></code></pre>
+</li>
+<li><p>编写 SqlMapConfig 配置文件 </p>
+<pre><code>&lt;!-- 配置映射信息 --&gt;  
 &lt;mappers&gt;
     &lt;package name=&quot;com.itheima.dao&quot;/&gt;  
-&lt;/mappers&gt; </code></pre></li><li><p>编写测试方法</p></li></ul></li><li><h4 id="注解实现复杂关系映射开发"><a href="#注解实现复杂关系映射开发" class="headerlink" title="注解实现复杂关系映射开发"></a>注解实现复杂关系映射开发</h4></li><li><p>复杂关系映射的注解说明</p><pre><code>@Results 注解 代替的是标签&lt;resultMap&gt;  
+&lt;/mappers&gt; </code></pre></li>
+<li><p>编写测试方法</p>
+</li>
+</ul>
+</li>
+<li><h4><span id="zhu-jie-shi-xian-fu-za-guan-xi-ying-she-kai-fa">注解实现复杂关系映射开发</span><a href="#zhu-jie-shi-xian-fu-za-guan-xi-ying-she-kai-fa" class="header-anchor">#</a></h4></li>
+<li><p>复杂关系映射的注解说明</p>
+<pre><code>@Results 注解 代替的是标签&lt;resultMap&gt;  
 该注解中可以使用单个@Result 注解，也可以使用@Result 集合 
 @Results（{@Result（），@Result（）}）或@Results（@Result（）） 
 
@@ -483,14 +1525,645 @@ fetchType 会覆盖全局的配置参数 lazyLoadingEnabled。  参数：FetchTy
 
 @Many 注解（一对多） 代替了&lt;Collection&gt;标签,是多表查询的关键，在注解中用来指定子查询返回对象集合。  
 注意：聚集元素用来处理“一对多”的关系。需要指定映射的 Java 实体类的属性，属性的 javaType （一般为 ArrayList）但是注解中可以不定义；  
-使用格式：   @Result(property=&quot;&quot;,column=&quot;&quot;,many=@Many(select=&quot;&quot;)</code></pre></li></ul></div><hr><div class="reprint" id="reprint-statement"><div class="reprint__author"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-user">文章作者:</i></span> <span class="reprint-info"><a href="/about" rel="external nofollow noreferrer">JM</a></span></div><div class="reprint__type"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-link">文章链接:</i></span> <span class="reprint-info"><a href="https://fenghen0918@github.io/2020/06/13/hi/">https://fenghen0918@github.io/2020/06/13/hi/</a></span></div><div class="reprint__notice"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-copyright">版权声明:</i></span> <span class="reprint-info">本博客所有文章除特別声明外，均采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a> 许可协议。转载请注明来源 <a href="/about" target="_blank">JM</a> !</span></div></div><script async defer>document.addEventListener("copy", function (e) {
+使用格式：   @Result(property=&quot;&quot;,column=&quot;&quot;,many=@Many(select=&quot;&quot;)</code></pre></li>
+</ul>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">JM</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://fenghen0918@github.io/2020/06/13/hi/">https://fenghen0918@github.io/2020/06/13/hi/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">JM</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
         let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML})
       });
 
       function navToReprintStatement() {
         $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
-      }</script><div class="tag_share" style="display:block"><div class="post-meta__tag-list" style="display:inline-block"><div class="article-tag"><span class="chip bg-color">无标签</span></div></div><div class="post_share" style="zoom:80%;width:fit-content;display:inline-block;float:right;margin:-.15rem 0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/share/css/share.min.css"><div id="article-share"><div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div><script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/share/js/social-share.min.js"></script></div></div></div><style>#reward{margin:40px 0;text-align:center}#reward .reward-link{font-size:1.4rem;line-height:38px}#reward .btn-floating:hover{box-shadow:0 6px 12px rgba(0,0,0,.2),0 5px 15px rgba(0,0,0,.2)}#rewardModal{width:320px;height:350px}#rewardModal .reward-title{margin:15px auto;padding-bottom:5px}#rewardModal .modal-content{padding:10px}#rewardModal .close{position:absolute;right:15px;top:15px;color:rgba(0,0,0,.5);font-size:1.3rem;line-height:20px;cursor:pointer}#rewardModal .close:hover{color:#ef5350;transform:scale(1.3);-moz-transform:scale(1.3);-webkit-transform:scale(1.3);-o-transform:scale(1.3)}#rewardModal .reward-tabs{margin:0 auto;width:210px}.reward-tabs .tabs{height:38px;margin:10px auto;padding-left:0}.reward-content ul{padding-left:0!important}.reward-tabs .tabs .tab{height:38px;line-height:38px}.reward-tabs .tab a{color:#fff;background-color:#ccc}.reward-tabs .tab a:hover{background-color:#ccc;color:#fff}.reward-tabs .wechat-tab .active{color:#fff!important;background-color:#22ab38!important}.reward-tabs .alipay-tab .active{color:#fff!important;background-color:#019fe8!important}.reward-tabs .reward-img{width:210px;height:210px}</style><div id="reward"><a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a><div id="rewardModal" class="modal"><div class="modal-content"><a class="close modal-close"><i class="fas fa-times"></i></a><h4 class="reward-title">你的赏识是我前进的动力</h4><div class="reward-content"><div class="reward-tabs"><ul class="tabs row"><li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li><li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li></ul><div id="alipay"><img src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码"></div><div id="wechat"><img src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码"></div></div></div></div></div></div><script>$(function(){$(".tabs").tabs()})</script></div></div><style>.valine-card{margin:1.5rem auto}.valine-card .card-content{padding:20px 20px 5px 20px}#vcomments textarea{box-sizing:border-box;background:url(/medias/comment_bg.png) 100% 100% no-repeat}#vcomments p{margin:2px 2px 10px;font-size:1.05rem;line-height:1.78rem}#vcomments blockquote p{text-indent:.2rem}#vcomments a{padding:0 2px;color:#4cbf30;font-weight:500;text-decoration:none}#vcomments img{max-width:100%;height:auto;cursor:pointer}#vcomments ol li{list-style-type:decimal}#vcomments ol,ul{display:block;padding-left:2em;word-spacing:.05rem}#vcomments ul li,ol li{display:list-item;line-height:1.8rem;font-size:1rem}#vcomments ul li{list-style-type:disc}#vcomments ul ul li{list-style-type:circle}#vcomments table,td,th{padding:12px 13px;border:1px solid #dfe2e5}#vcomments table,td,th{border:0}table tr:nth-child(2n),thead{background-color:#fafafa}#vcomments table th{background-color:#f2f2f2;min-width:80px}#vcomments table td{min-width:80px}#vcomments h1{font-size:1.85rem;font-weight:700;line-height:2.2rem}#vcomments h2{font-size:1.65rem;font-weight:700;line-height:1.9rem}#vcomments h3{font-size:1.45rem;font-weight:700;line-height:1.7rem}#vcomments h4{font-size:1.25rem;font-weight:700;line-height:1.5rem}#vcomments h5{font-size:1.1rem;font-weight:700;line-height:1.4rem}#vcomments h6{font-size:1rem;line-height:1.3rem}#vcomments p{font-size:1rem;line-height:1.5rem}#vcomments hr{margin:12px 0;border:0;border-top:1px solid #ccc}#vcomments blockquote{margin:15px 0;border-left:5px solid #42b983;padding:1rem .8rem .3rem .8rem;color:#666;background-color:rgba(66,185,131,.1)}#vcomments pre{font-family:monospace,monospace;padding:1.2em;margin:.5em 0;background:#272822;overflow:auto;border-radius:.3em;tab-size:4}#vcomments code{font-family:monospace,monospace;padding:1px 3px;font-size:.92rem;color:#e96900;background-color:#f8f8f8;border-radius:2px}#vcomments pre code{font-family:monospace,monospace;padding:0;color:#e8eaf6;background-color:#272822}#vcomments pre[class*=language-]{padding:1.2em;margin:.5em 0}#vcomments code[class*=language-],pre[class*=language-]{color:#e8eaf6}#vcomments [type=checkbox]:not(:checked),[type=checkbox]:checked{position:inherit;margin-left:-1.3rem;margin-right:.4rem;margin-top:-1px;vertical-align:middle;left:unset;visibility:visible}#vcomments b,strong{font-weight:700}#vcomments dfn{font-style:italic}#vcomments small{font-size:85%}#vcomments cite{font-style:normal}#vcomments mark{background-color:#fcf8e3;padding:.2em}#vcomments table,td,th{padding:12px 13px;border:1px solid #dfe2e5}table tr:nth-child(2n),thead{background-color:#fafafa}#vcomments table th{background-color:#f2f2f2;min-width:80px}#vcomments table td{min-width:80px}#vcomments [type=checkbox]:not(:checked),[type=checkbox]:checked{position:inherit;margin-left:-1.3rem;margin-right:.4rem;margin-top:-1px;vertical-align:middle;left:unset;visibility:visible}</style><div class="card valine-card" data-aos="fade-up"><div class="comment_headling" style="font-size:20px;font-weight:700;position:relative;padding-left:20px;top:15px;padding-bottom:5px"><i class="fas fa-comments fa-fw" aria-hidden="true"></i> <span>评论</span></div><div id="vcomments" class="card-content" style="display:grid"></div></div><script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/valine/av-min.js"></script><script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/valine/Valine.min.js"></script><script>new Valine({el:"#vcomments",appId:"RDuG5KcdRjN8LhR7EAWfCA6o-gzGzoHsz",appKey:"WJ5YBfWdQCSxR0tcrqOKHlAp",notify:!1,verify:!1,visitor:!0,avatar:"mm",pageSize:"10",lang:"zh-cn",placeholder:"ヾﾉ≧∀≦)o来啊，快活啊!"})</script><article id="prenext-posts" class="prev-next articles"><div class="row article-row"><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge left-badge text-color"><i class="fas fa-chevron-left"></i> &nbsp;上一篇</div><div class="card"><a href="/2020/06/13/aa/"><div class="card-image"><img src="/medias/featureimages/1.jpg" class="responsive-img" alt="aa"> <span class="card-title">aa</span></div></a><div class="card-content article-content"><div class="summary block-with-text">1啊 啊 啊 啊 啊 啊 22.13</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i> 2020-06-13</span><span class="publish-author"><i class="fas fa-user fa-fw"></i> JM</span></div></div></div></div><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge right-badge text-color">下一篇&nbsp;<i class="fas fa-chevron-right"></i></div><div class="card"><a href="/2020/06/13/My-First-Md/"><div class="card-image"><img src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/featureimages/5.jpg" class="responsive-img" alt="我的 First Md"> <span class="card-title">我的 First Md</span></div></a><div class="card-content article-content"><div class="summary block-with-text">这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i> 2020-06-13</span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/Markdown/" class="post-category">Markdown</a></span></div></div><div class="card-action article-tags"><a href="/tags/Typora/"><span class="chip bg-color">Typora</span></a> <a href="/tags/%E6%9C%89%E9%81%93%E4%BA%91/"><span class="chip bg-color">有道云</span></a></div></div></div></div></article></div><script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeBlockFuction.js"></script><script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeLang.js"></script><script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeCopy.js"></script><script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeShrink.js"></script><style>code[class*=language-],pre[class*=language-]{white-space:pre!important}</style></div><div id="toc-aside" class="expanded col l3 hide-on-med-and-down"><div class="toc-widget"><div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div><div id="toc-content"></div></div></div></div><div id="floating-toc-btn" class="hide-on-med-and-down"><a class="btn-floating btn-large bg-color"><i class="fas fa-list-ul"></i></a></div><script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/tocbot/tocbot.min.js"></script><script>$(function () {
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/valine/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'RDuG5KcdRjN8LhR7EAWfCA6o-gzGzoHsz',
+        appKey: 'WJ5YBfWdQCSxR0tcrqOKHlAp',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!'
+    });
+</script>
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/06/13/aa/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="aa">
+                        
+                        <span class="card-title">aa</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            1#啊
+啊
+啊
+ 啊
+啊
+啊
+2#2.1#3#
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-13
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            JM
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/06/13/My-First-Md/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/featureimages/5.jpg" class="responsive-img" alt="我的 First Md">
+                        
+                        <span class="card-title">我的 First Md</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Markdown/" class="post-category">
+                                    Markdown
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Typora/">
+                        <span class="chip bg-color">Typora</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9C%89%E9%81%93%E4%BA%91/">
+                        <span class="chip bg-color">有道云</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
         tocbot.init({
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
@@ -561,4 +2234,333 @@ fetchType 会覆盖全局的配置参数 lazyLoadingEnabled。  参数：FetchTy
             fixPostCardWidth('artDetail', 'prenext-posts');
         });
         
-    });</script></main><footer class="page-footer bg-color"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/aplayer/APlayer.min.css"><style>.aplayer .aplayer-lrc p{display:none;font-size:12px;font-weight:700;line-height:16px!important}.aplayer .aplayer-lrc p.aplayer-lrc-current{display:none;font-size:15px;color:#42b983}.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body{left:-66px!important}.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover{left:0!important}</style><div><div class="row"><meting-js class="col l8 offset-l2 m10 offset-m1 s12" server="netease" type="playlist" id="411680085" fixed="true" autoplay theme="#42b983" loop order="random" preload="auto" volume="0.7" list-folded="false"></meting-js></div></div><script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/aplayer/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><div class="container row center-align" style="margin-bottom:15px!important"><div class="col s12 m8 l8 copy-right">&copy; <span id="year">2020</span>-<span id="year">2021</span>&nbsp;By&nbsp; <a href="/about" target="_blank">JM</a><br>Hi , Weclome to My Home .<br>This is My Stage!<br>&nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">6.4k</span>&nbsp;字 <span id="busuanzi_container_site_pv">|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次</span> <span id="busuanzi_container_site_uv">|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人</span><br><span id="sitetime">载入运行时间...</span><script>function siteTime(){var e=36e5,t=24*e,n=new Date,o="2020",r=n.getFullYear(),a=n.getMonth()+1,i=n.getDate(),l=n.getHours(),m=n.getMinutes(),M=n.getSeconds(),g=Date.UTC(o,"6","12","0","0","0"),d=Date.UTC(r,a,i,l,m,M)-g,s=Math.floor(d/31536e6),u=Math.floor(d/t-365*s),T=Math.floor((d-(365*s+u)*t)/e),c=Math.floor((d-(365*s+u)*t-T*e)/6e4),f=Math.floor((d-(365*s+u)*t-T*e-6e4*c)/1e3);o==r?(document.getElementById("year").innerHTML=r,document.getElementById("sitetime").innerHTML="本站已安全运行 "+u+" 天 "+T+" 小时 "+c+" 分钟 "+f+" 秒"):(document.getElementById("year").innerHTML=o+" - "+r,document.getElementById("sitetime").innerHTML="本站已安全运行 "+s+" 年 "+u+" 天 "+T+" 小时 "+c+" 分钟 "+f+" 秒")}setInterval(siteTime,1e3)</script><br></div><div class="col s12 m4 l4 social-link social-statis"><a href="https://github.com/fenghen0918" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50"><i class="fab fa-github"></i></a><a href="mailto:443175565@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50"><i class="fas fa-envelope-open"></i></a><a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=443175565" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 443175565" data-position="top" data-delay="50"><i class="fab fa-qq"></i></a><a href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/imgs/wechat.png" class="tooltipped" target="_blank" data-tooltip="微信联系我: " data-position="top" data-delay="50"><i class="fab fa-weixin"></i></a></div></div></footer><div class="progress-bar"></div><div id="searchModal" class="modal"><div class="modal-content"><div class="search-header"><span class="title"><i class="fas fa-search"></i> &nbsp;&nbsp;搜索</span> <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input"></div><div id="searchResult"></div></div></div><script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/js/search.js"></script><script>$(function(){searchFunc("https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/search.xml","searchInput","searchResult")})</script><div id="backTop" class="top-scroll"><a class="btn-floating btn-large waves-effect waves-light" href="#!"><i class="fas fa-arrow-up"></i></a></div><script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/materialize/materialize.min.js"></script><script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/masonry/masonry.pkgd.min.js"></script><script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/aos/aos.js"></script><script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/scrollprogress/scrollProgress.min.js"></script><script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script><script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/js/matery.js"></script><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}()</script><script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/others/clicklove.js" async></script><script async src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/others/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/background/ribbon-dynamic.js" async></script><script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/instantpage/instantpage.js" type="module"></script><script>var st,OriginTitile=document.title;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="ヽ(●-`Д´-)ノ你要玩捉迷藏嘛",clearTimeout(st)):(document.title="(Ő∀Ő3)ノ好哦！",st=setTimeout(function(){document.title=OriginTitile},3e3))})</script><script>var a_idx=0;function delay(){$(".buryit").removeAttr("onclick")}jQuery(document).ready(function(n){n("body").click(function(e){var t=new Array("富强","民主","文明","和谐","自由","平等","公正","法治","爱国","敬业","诚信","友善"),o=n("<span/>").text(t[a_idx]);a_idx=(a_idx+1)%t.length;var a=e.pageX,i=e.pageY;o.css({"z-index":5,top:i-20,left:a,position:"absolute","font-weight":"bold",color:"#FF0000"}),n("body").append(o),o.animate({top:i-180,opacity:0},3e3,function(){o.remove()})}),setTimeout("delay()",2e3)})</script><script color="122 103 238" opacity="0.7" zindex="-2" count="150" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script><script>var windowWidth=$(window).width();768<windowWidth&&document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>')</script></body></html>
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="411680085"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='false'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            &copy;
+            <span id="year">2020</span>-<span id="year">2021</span>&nbsp;By&nbsp;
+            <a href="/about" target="_blank">JM</a>
+            
+            <br>Hi , Weclome to My Home .
+            <br>This is My Stage!
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">6.5k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "6";
+                    var startDate = "12";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/fenghen0918" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:443175565@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=443175565" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 443175565" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+
+    <a href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/imgs/wechat.png" class="tooltipped" target="_blank" data-tooltip="微信联系我: " data-position="top" data-delay="50">
+        <i class="fab fa-weixin"></i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <script type="text/javascript">
+        var OriginTitile=document.title,st;
+        document.addEventListener("visibilitychange",function(){
+            document.hidden?(document.title="ヽ(●-`Д´-)ノ你要玩捉迷藏嘛",clearTimeout(st)):(document.title="(Ő∀Ő3)ノ好哦！",st=setTimeout(function(){document.title=OriginTitile},3e3))
+        })
+    </script>
+    
+    <script type="text/javascript">
+    var a_idx = 0;
+jQuery(document).ready(function ($) {
+    $("body").click(function (e) {
+        var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+        var $i = $("<span/>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+            y = e.pageY;
+        $i.css({
+            "z-index": 5,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": "#FF0000"
+        });
+        $("body").append($i);
+        $i.animate({
+                "top": y - 180,
+                "opacity": 0
+            },
+            3000,
+            function () {
+                $i.remove();
+            });
+    });
+    setTimeout('delay()', 2000);
+});
+
+function delay() {
+    $(".buryit").removeAttr("onclick");
+}
+
+    </script>
+
+<!-- tianqi -->
+<!-- <script type="text/javascript">
+    WIDGET = {FID: 'kxeODGotwh'}
+    </script>
+    <script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script> -->
+
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="122 103 238" opacity='0.7' zIndex="-2" count="150" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+<!--樱花散落-->
+<script type="text/javascript">
+    //只在桌面版网页启用特效
+    var windowWidth = $(window).width();
+    if (windowWidth > 768) {
+        document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+    }
+    </script>
+    
+   
+
+</html>
