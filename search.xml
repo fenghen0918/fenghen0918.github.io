@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>test3</title>
+      <link href="/2020/06/15/test3/"/>
+      <url>/2020/06/15/test3/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>testmd2</title>
       <link href="/2020/06/15/testmd2/"/>
       <url>/2020/06/15/testmd2/</url>
@@ -11,18 +24,6 @@
         <content type="html"><![CDATA[]]></content>
       
       
-      <categories>
-          
-          <category> 分类 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 标签 </tag>
-            
-        </tags>
       
     </entry>
     
