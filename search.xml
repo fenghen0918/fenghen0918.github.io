@@ -129,6 +129,31 @@
     
     
     <entry>
+      <title>Hexo博客备份</title>
+      <link href="/2020/08/01/hexo/hexo-bo-ke-bei-fen/"/>
+      <url>/2020/08/01/hexo/hexo-bo-ke-bei-fen/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Hexo博客备份"><a href="#Hexo博客备份" class="headerlink" title="Hexo博客备份"></a>Hexo博客备份</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用Hexo在github搭建的博客，博客作为一个单独的GitHub仓库存在，但是这个仓库只有生成的静态网页文件，并没有Hexo的源文件，如果要换电脑或者重装系统后，就比较麻烦了，这里推荐一种方法。</p><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>我们的博客是托管到 GitHub（Coding） 上的。而我们每次上传（<code>hexo d</code>）的是网页文件，不是我们的文章，所以我们如果想上传文章，但同时不会干扰到网页部署，就在 GitHub 的博客仓库上建立一个分支 hexo。</p><p>这个 hexo 分支的作用就是用来保存我的博客所有文件。所以第一步我们就获得了博客仓库的 .git 文件夹，作用就是利用它连接到我们的博客仓库，而且建立分支 hexo。所以拿到这个文件夹，我们就把除了它的其他文件删掉。</p><p>然后利用这个分支，把我们的 MarkDown 文章和其他文件上传到 GitHub 托管。这样 <code>hexo d</code>推送的是 master 分支，而 <code>git push</code> 推送的是 hexo 分支，互不干扰。</p><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="1-获取-git文件"><a href="#1-获取-git文件" class="headerlink" title="1. 获取.git文件"></a>1. 获取.git文件</h3><ol><li><p>我们先建立一个文件夹，名字随便，我这里叫 hexo，在该文件夹空白处，启动 GitBash</p></li><li><p>先克隆我们博客的仓库</p><pre><code>git clone https://e.coding.net/fenghen0918/fenghen0918.git</code></pre><p>这里仅仅只是为了获得版本管理的 <strong>.git</strong> 隐藏文件夹。</p></li></ol><h3 id="2-建立分支"><a href="#2-建立分支" class="headerlink" title="2. 建立分支"></a>2. 建立分支</h3><p>建立一个分支，我这里分支名为 hexo ，输入代码</p><pre><code>git checkout -b hexo</code></pre><h3 id="3-清空-hexo-分支"><a href="#3-清空-hexo-分支" class="headerlink" title="3. 清空 hexo 分支"></a>3. 清空 hexo 分支</h3><p>克隆下来的都是编译后的静态页面，直接删除留下.git即可。</p><ol><li><p>删除除了 .git 文件夹的所有文件。我们只需要这个版本管理，在删除后通过代码 <code>git status</code> 查看</p><p>![WSOIFA5K14~NIS6MQ1`7M4K](<a href="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/hb1.png" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/hb1.png</a>)</p></li><li><p>增加到暂存区</p><pre><code>git add --all</code></pre></li><li><p>提交到本地仓库</p><pre><code>git commit -m  "清空hexo分支仓库"</code></pre></li><li><p>最后我们推送到远端更新</p><pre><code>git push --set-upstream origin hexo</code></pre><p>这里同时设置了以后默认为hexo分支，回到博客的根目录下就能看到。</p><p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/JJ4@GVG%5BHYUI8$NL~TMR5_S.png" alt="img"></p><blockquote><p>注意：这时默认分支为hexo，但博客部署的还是master分支，此配置在config.yml中配置的</p><pre><code>deploy:  type: git  repo: https://github.com/Witman1999/Witman1999.github.io.git  branch: master #提交的默认分支</code></pre></blockquote></li></ol><h3 id="4-移动-git文件"><a href="#4-移动-git文件" class="headerlink" title="4. 移动.git文件"></a>4. 移动.git文件</h3><p>把 .git 文件夹移动到博客的根目录下</p><h3 id="5-提交源文件"><a href="#5-提交源文件" class="headerlink" title="5. 提交源文件"></a>5. 提交源文件</h3><blockquote><p>注意：如果你的主题文件，是克隆 Github 下来的，那么会带有该主题的 Github 的 .git 版本管理文件，也就是 .git 文件夹。所以主题下面的要删除 .git 文件夹和 .gitignore 文件，否则会忽略这个 next 主题的上传。</p></blockquote><p>推送 Github 的仓库的步骤，在博客的根目录下，输入</p><pre><code>git add --allgit commit -m “提交源文件”git push （这里要确保提交的分支为 hexo ，在前面的步骤可以查看，如果不是可以输入 git checkout hexo切换分支）</code></pre><p>此时会发现在远程仓库的Hexo分支中已经推送了绝大部分文件，只有一些被忽略的文件，这些被忽略的并不需要拷贝</p><ol><li><p><code>_config.yml</code>站点的配置文件，需要拷贝；</p></li><li><p><code>themes/</code>主题文件夹，需要拷贝；</p></li><li><p><code>source</code>博客文章的.md文件，需要拷贝；</p></li><li><p><code>scaffolds/</code>文章的模板，需要拷贝；</p></li><li><p><code>package.json</code>安装包的名称，需要拷贝；</p></li><li><p><code>.gitignore</code>限定在push时哪些文件可以忽略，需要拷贝；</p></li><li><p><code>.git/</code>主题和站点都有，标志这是一个git项目，不需要拷贝；</p></li><li><p><code>node_modules/</code>是安装包的目录，在执行<code>npm install</code>的时候会重新生成，不需要拷贝；</p></li><li><p><code>public</code>是<code>hexo g</code>生成的静态网页，不需要拷贝；</p></li><li><p><code>.deploy_git</code>同上，<code>hexo g</code>也会生成，不需要拷贝；</p></li><li><p><code>db.json</code>文件，不需要拷贝。</p></li></ol><p>其实不需要拷贝的文件正是<code>.gitignore</code>中所忽略的。</p><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>在本地对博客修改（包括修改主题样式、发布新文章等）后：</p><ol><li>依次执行<code>git add .</code>、<code>git commit -m "推送"</code>、<code>git push origin hexo</code>来提交hexo网站源文件；</li><li>执行<code>hexo g -d</code>生成静态网页部署至Github上，我使用了gulp插件压缩代码，所以直接输入<code>gulp</code>，<code>hexo d</code>即可。</li></ol><h2 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h2><h3 id="1-配置Hexo环境"><a href="#1-配置Hexo环境" class="headerlink" title="1.配置Hexo环境"></a>1.配置Hexo环境</h3><p>重装电脑后，或者在其它电脑上想修改博客：</p><ol><li>安装git；</li><li>安装Nodejs和npm；</li><li>使用<code>git clone git@github.com:WincerChan/WincerChan.github.io.git</code>将仓库拷贝至本地；</li><li>在文件夹内执行以下命令<code>npm install hexo-cli -g</code>、<code>npm install</code>、<code>npm install hexo-deployer-git</code>。</li></ol><p>###2.添加ssh-keys</p><ol><li>在终端下运行：<code>ssh-keygen -t rsa -C "yourname@email.com"</code>，一路回车；</li><li>会在.ssh目录生成<code>id_rsa</code>、<code>id_rsa.pub</code>两个文件，这就是密钥对，id_rsa是私钥，千万不能泄漏出去；</li><li>登录Github，打开「Settings」–&gt;「SSH and GPG keys」，然后点击「new SSH key」，填上任意Title，在Key文本框里粘贴公钥id_rsa.pub文件的内容，注意不要粘贴成<code>id_rsa</code>，最后点击「Add SSH Key」。</li></ol><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux</title>
       <link href="/2020/07/29/qian-duan/linux/"/>
       <url>/2020/07/29/qian-duan/linux/</url>
