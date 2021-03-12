@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>VScode使用sftp快速同步服务器文件</title>
+      <link href="/2021/03/12/util/vscode-shi-yong-sftp-kuai-su-tong-bu-fu-wu-qi-wen-jian/"/>
+      <url>/2021/03/12/util/vscode-shi-yong-sftp-kuai-su-tong-bu-fu-wu-qi-wen-jian/</url>
+      
+        <content type="html"><![CDATA[<h1 id="VScode使用sftp快速同步服务器文件"><a href="#VScode使用sftp快速同步服务器文件" class="headerlink" title="VScode使用sftp快速同步服务器文件"></a>VScode使用sftp快速同步服务器文件</h1><blockquote><p>写这一片文章的目的，是在学习Nginx时需要在Linux上修改配置文件，但使用vim命令多次修改会比较繁琐。有没有一种方式可以像SecureCRT远程操控Linux命令行一样，操作服务器上的配置文件呢？答案是有的，VScode是一个十分强大的编辑器，可以集成很多插件。sftp这个插件就可以满足这一点。</p></blockquote><h2 id="VScode设置中文模式"><a href="#VScode设置中文模式" class="headerlink" title="VScode设置中文模式"></a>VScode设置中文模式</h2><blockquote><p>由于我的VScode还是英文版，在操作前打算把它设置成中文版，插件也可以满足这一需求。</p></blockquote><ol><li><p>打开vscode,界面如下</p><p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/20210312203735.png" alt=""></p></li><li><p>安装插件的方法：</p><p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/20210312203805.png" alt=""></p><p>输入Chinese，选择第一个插件，进行安装</p><p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/20210312204049.png" alt=""></p><p>安装完成后，点击按钮进行重启软件</p><p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/20210312204125.png" alt=""></p><p>完成，界面已经变成中文</p></li></ol><h2 id="使用sftp快速同步服务器文件"><a href="#使用sftp快速同步服务器文件" class="headerlink" title="使用sftp快速同步服务器文件"></a>使用sftp快速同步服务器文件</h2><ol><li><p>安装sftp插件</p><p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/20210312203931.png" alt=""></p></li><li><p>添加一个本地文件夹到工作区(准备同步到服务器上的)</p><p>我这里选择了桌面</p><p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/20210312204410.png" alt=""></p></li><li><p>进行配置</p><ol><li><p>按F1或者ctrl+shift+p调出搜索栏, 输入”sftp”, 选择SFTP:Config</p><blockquote><p>如果点击出现expect to open……，文件并没有打开，证明没有完成第二步，需要打开一个本地文件夹到工作区，就可以打开</p></blockquote></li></ol><p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/20210312210026.png" alt=""></p><ol start="2"><li>具体配置</li></ol><p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/20210312210415.png" alt=""></p><pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>    <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"My Server"</span><span class="token punctuation">,</span>    <span class="token property">"host"</span><span class="token operator">:</span> <span class="token string">"xxx.xxx.xxx.xxx"</span><span class="token punctuation">,</span>    <span class="token property">"protocol"</span><span class="token operator">:</span> <span class="token string">"sftp"</span><span class="token punctuation">,</span>    <span class="token property">"port"</span><span class="token operator">:</span> <span class="token number">22</span><span class="token punctuation">,</span>    <span class="token property">"username"</span><span class="token operator">:</span> <span class="token string">"root"</span><span class="token punctuation">,</span>    <span class="token property">"password"</span><span class="token operator">:</span> <span class="token string">"你的密码"</span><span class="token punctuation">,</span>    <span class="token property">"remotePath"</span><span class="token operator">:</span> <span class="token string">"/"</span><span class="token punctuation">,</span>    <span class="token property">"uploadOnSave"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>    <span class="token property">"connectTimeout"</span><span class="token operator">:</span> <span class="token number">40000</span><span class="token punctuation">}</span></code></pre><p>保存文件之后就会自动连接，等待一段时间如果右下角出现连接超时timeout，需要加上<code>"connectTimeout": 40000</code>，默认为10000</p><blockquote><p>有可能还需要将远程端关闭防火墙。</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/20210312210744.png" alt=""></p><p>图中最下面的按钮，就是远程端的界面，连接成功之后就可以看到远程目录。</p></li><li><p>使用</p><p>在远程目录中找到要修改的配置文件，进行修改之后保存就可以自动同步到远程端。</p></li></ol><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> util </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> VScode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Nginx</title>
       <link href="/2021/03/07/util/nginx/"/>
       <url>/2021/03/07/util/nginx/</url>
