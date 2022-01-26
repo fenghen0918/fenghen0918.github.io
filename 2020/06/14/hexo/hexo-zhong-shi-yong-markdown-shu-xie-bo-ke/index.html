@@ -1,0 +1,2160 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Hexo中使用MarkDown书写博客, Java,Linux,Mysql,Oracle">
+    <meta name="description" content="专注业务，专注代码,分享生活,分享知识">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Hexo中使用MarkDown书写博客 | 特仑苏</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/jquery/jquery.min.js"></script>
+
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+    <!-- <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script> -->
+
+
+
+    <link type='text/css' rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" media='all'/>
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+
+<meta name="generator" content="Hexo 6.0.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+ <div id="loading-container">
+     <p class="loading-text">玩命加载中 . . . </p> 
+     <div class="loading-image">
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div> 
+         <div></div>
+     </div>
+ </div><body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">特仑苏</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-book" style="zoom: 0.6;"></i>
+      
+      <span>文章</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tags" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>标签</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>分类</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/archives">
+          
+          <i class="fas fa-archive" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>归档</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于我</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/artitalk" class="waves-effect waves-light">
+      
+      <i class="fas fa-comment" style="zoom: 0.6;"></i>
+      
+      <span>特仑说</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留个言</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-rainbow" style="zoom: 0.6;"></i>
+      
+      <span>友人帐</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/galleries" class="waves-effect waves-light">
+      
+      <i class="fas fa-image" style="zoom: 0.6;"></i>
+      
+      <span>相册</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-bicycle" style="zoom: 0.6;"></i>
+      
+      <span>爱好</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/bangumis">
+          
+          <i class="fas fa-play-circle" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>追番</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>音乐</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+    <a onclick="switchNightMode()" id="sma" title="模式切换" class="waves-effect waves-light">
+      <i class="fa fa-moon-o" id="nightMode" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">特仑苏</div>
+        <div class="logo-desc">
+            
+            专注业务，专注代码,分享生活,分享知识
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-book"></i>
+			
+			文章
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/tags " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-tags" style="position: absolute;left:50px" ></i>
+			      
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/categories " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>分类</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/archives " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-archive" style="position: absolute;left:50px" ></i>
+			      
+		          <span>归档</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/artitalk" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comment"></i>
+			
+			特仑说
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-rainbow"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/galleries" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-image"></i>
+			
+			相册
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-bicycle"></i>
+			
+			爱好
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/bangumis " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-play-circle" style="position: absolute;left:50px" ></i>
+			      
+		          <span>追番</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/musics " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>音乐</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    <main id="main_wrap">
+        
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn2.sublimerui.top/2020/10/13/7d984fd0731cf.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Hexo中使用MarkDown书写博客</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+        background-color: rgb(255, 255, 255,0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Hexo/">
+                                <span class="chip bg-color">Hexo</span>
+                            </a>
+                        
+                            <a href="/tags/MarkDown/">
+                                <span class="chip bg-color">MarkDown</span>
+                            </a>
+                        
+                            <a href="/tags/Typora/">
+                                <span class="chip bg-color">Typora</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Hexo/" class="post-category">
+                                Hexo
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-06-14
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    8 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <blockquote>
+<p>这是小苏写的第一个博客，写的不好见谅哈，有问题可以留言呦，小苏会第一时间进行修改<span class="github-emoji"><span>😄</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+</blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>毕竟是第一篇博客，需要先介绍一下该如何在Hexo个人静态博客中使用MarkDown来编写，有哪些注意事项，方便在之后写博客的时候有个参考，也希望能够给新博主一些帮助！</p>
+<p>本篇使用的Typora编写的MarkDown，Hexo的主题是Matery，其实不同的主题都是基于Hexo，相差不是很大。</p>
+<p><a target="_blank" rel="noopener" href="https://fenghen0918.github.io/2020/06/18/typora-jian-yao-yu-fa/">MarkDown的简要语法</a></p>
+<hr>
+<h2 id="1-了解文章存放的位置"><a href="#1-了解文章存放的位置" class="headerlink" title="1.了解文章存放的位置"></a>1.了解文章存放的位置</h2><blockquote>
+<p>说明：之后文章中提到的主目录都是你搭建个人博客的目录，如我的为blog目录</p>
+</blockquote>
+<p>系统生成的文章和你的文章都会存放在主目录<strong>source</strong>文件夹下的**_posts**中，此处是我的存放目录：<code> E:\blog\source\_posts</code></p>
+<p>说明：</p>
+<ol>
+<li>将来文章会有很多，可以在_post目录下创建多级文件夹，系统是自动识别，便于分类</li>
+</ol>
+<hr>
+<h2 id="2-创建文章"><a href="#2-创建文章" class="headerlink" title="2. 创建文章"></a>2. 创建文章</h2><h3 id="2-1方法一：使用命令创建"><a href="#2-1方法一：使用命令创建" class="headerlink" title="2.1方法一：使用命令创建"></a>2.1方法一：使用命令创建</h3><p>在主目录下右键，选择Git Bash Here进入命令行，输入</p>
+<pre><code>hexo n 你的文章名
+</code></pre>
+<p>之后，_post目录下就会出现你的文件名.md文件，在文件中书写保存即可</p>
+<p><strong>好处</strong>：Hexo会帮助你一些配置，名为Front-matter，在后面会提到</p>
+<h3 id="2-2方法二：将md文件复制粘贴"><a href="#2-2方法二：将md文件复制粘贴" class="headerlink" title="2.2方法二：将md文件复制粘贴"></a>2.2方法二：将md文件复制粘贴</h3><p>直接将写到的md文件复制粘贴到_post文件夹中即可</p>
+<hr>
+<h2 id="3-文章的配置Front-matter"><a href="#3-文章的配置Front-matter" class="headerlink" title="3.文章的配置Front-matter"></a>3.文章的配置Front-matter</h2><p>当我们使用命令创建md文章，Hexo会帮助我们生成一些配置信息(Front-matter)：</p>
+<pre><code>---
+title: typora-vue-theme主题介绍
+date: 2018-09-07 09:25:00
+---
+</code></pre>
+<p>复制粘贴插入配置信息的方法：右键文章的空白处，插入，YAML Front-matter</p>
+<h3 id="3-1Front-matter配置详情信息"><a href="#3-1Front-matter配置详情信息" class="headerlink" title="3.1Front-matter配置详情信息"></a>3.1Front-matter配置详情信息</h3><p>这些主要是关于这篇文章的配置，这些所有的配置都是<strong>非必填项</strong>，不过最好将title和date值填写上，以下是关于配置的详情介绍：</p>
+<table>
+<thead>
+<tr>
+<th align="center">配置选项</th>
+<th align="center">默认值</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">title</td>
+<td align="center"><code>Markdown</code> 的文件标题</td>
+<td align="center">文章标题，强烈建议填写此选项</td>
+</tr>
+<tr>
+<td align="center">date</td>
+<td align="center">文件创建时的日期时间</td>
+<td align="center">发布时间，强烈建议填写此选项，且最好保证全局唯一</td>
+</tr>
+<tr>
+<td align="center">author</td>
+<td align="center">根 <code>_config.yml</code> 中的 <code>author</code></td>
+<td align="center">文章作者</td>
+</tr>
+<tr>
+<td align="center">img</td>
+<td align="center"><code>featureImages</code> 中的某个值</td>
+<td align="center">文章特征图，推荐使用图床(腾讯云、七牛云、又拍云等)来做图片的路径.如: <code>http://xxx.com/xxx.jpg</code></td>
+</tr>
+<tr>
+<td align="center">top</td>
+<td align="center"><code>true</code></td>
+<td align="center">推荐文章（文章是否置顶），如果 <code>top</code> 值为 <code>true</code>，则会作为首页推荐文章</td>
+</tr>
+<tr>
+<td align="center">cover</td>
+<td align="center"><code>false</code></td>
+<td align="center"><code>v1.0.2</code>版本新增，表示该文章是否需要加入到首页轮播封面中</td>
+</tr>
+<tr>
+<td align="center">coverImg</td>
+<td align="center">无</td>
+<td align="center"><code>v1.0.2</code>版本新增，表示该文章在首页轮播封面需要显示的图片路径，如果没有，则默认使用文章的特色图片</td>
+</tr>
+<tr>
+<td align="center">password</td>
+<td align="center">无</td>
+<td align="center">文章阅读密码，如果要对文章设置阅读验证密码的话，就可以设置 <code>password</code> 的值，该值必须是用 <code>SHA256</code> 加密后的密码，防止被他人识破。前提是在主题的 <code>config.yml</code> 中激活了 <code>verifyPassword</code> 选项</td>
+</tr>
+<tr>
+<td align="center">toc</td>
+<td align="center"><code>true</code></td>
+<td align="center">是否开启 TOC，可以针对某篇文章单独关闭 TOC 的功能。前提是在主题的 <code>config.yml</code> 中激活了 <code>toc</code> 选项</td>
+</tr>
+<tr>
+<td align="center">mathjax</td>
+<td align="center"><code>false</code></td>
+<td align="center">是否开启数学公式支持 ，本文章是否开启 <code>mathjax</code>，且需要在主题的 <code>_config.yml</code> 文件中也需要开启才行</td>
+</tr>
+<tr>
+<td align="center">summary</td>
+<td align="center">无</td>
+<td align="center">文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要</td>
+</tr>
+<tr>
+<td align="center">categories</td>
+<td align="center">无</td>
+<td align="center">文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类</td>
+</tr>
+<tr>
+<td align="center">tags</td>
+<td align="center">无</td>
+<td align="center">文章标签，一篇文章可以多个标签</td>
+</tr>
+<tr>
+<td align="center">keywords</td>
+<td align="center">文章标题</td>
+<td align="center">文章关键字，SEO 时需要</td>
+</tr>
+<tr>
+<td align="center">reprintPolicy</td>
+<td align="center">cc_by</td>
+<td align="center">文章转载规则， 可以是 cc_by, cc_by_nd, cc_by_sa, cc_by_nc, cc_by_nc_nd, cc_by_nc_sa, cc0, noreprint 或 pay 中的一个</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>注意：</p>
+<ol>
+<li>如果要对文章设置阅读验证密码的功能，不仅要在 Front-matter 中设置采用了 SHA256 加密的 password 的值，还需要在主题的 <code>_config.yml</code> 中激活了配置。有些在线的 SHA256 加密的地址，可供你使用：<a target="_blank" rel="noopener" href="http://tool.oschina.net/encrypt?type=2">开源中国在线工具</a>、<a target="_blank" rel="noopener" href="http://encode.chahuo.com/">chahuo</a>、<a target="_blank" rel="noopener" href="http://tool.chinaz.com/tools/hash.aspx">站长工具</a>。</li>
+<li><code>date</code> 的值尽量保证每篇文章是唯一的，因为本主题中 <code>Gitalk</code> 和 <code>Gitment</code> 识别 <code>id</code> 是通过 <code>date</code> 的值来作为唯一标识的。</li>
+</ol>
+</blockquote>
+<p>关于Front-matter的演示：</p>
+<p><strong>最简配置</strong>：</p>
+<pre><code>---
+title: typora-vue-theme主题介绍
+date: 2018-09-07 09:25:00
+---
+</code></pre>
+<p><strong>最全配置</strong>：</p>
+<pre><code>---
+title: typora-vue-theme主题介绍
+date: 2020-06-18 13:30:00
+author: 小苏
+img: /source/images/xxx.jpg
+top: true
+cover: true
+coverImg: /images/1.jpg
+password: 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92
+toc: false
+mathjax: false
+summary: 这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
+categories: Markdown
+tags:
+  - Typora
+  - Markdown
+---
+</code></pre>
+<h3 id="3-2修改默认文章配置"><a href="#3-2修改默认文章配置" class="headerlink" title="3.2修改默认文章配置"></a>3.2修改默认文章配置</h3><p>在每次创建文章只有title和date，如果想要再设置其他属性还需要翻看文档，有些麻烦，因此我们可以设置常用的属性作为默认配置。</p>
+<p>只要去主目录下找到<code>scaffolds</code>文件夹下找到一个<strong>post.md</strong> 文件修改即可，这里是我的目录<code> E:\blog\scaffolds</code></p>
+<p>以下是我的配置：</p>
+<pre><code># 标题
+title: {{ title }}
+date: {{ date }}
+author: 小苏
+# 简述
+summary: 
+# 使用自定义封面 
+img: 
+# 是否置顶true，或者去掉
+top: 
+# 轮播
+cover: 
+# 轮播图
+coverImg: 
+# 标签
+tags: 
+# 分类
+categories: 
+# 是否加密文章，SHA256加密
+password: 
+</code></pre>
+<hr>
+<h2 id="4-在Typora中插入图片"><a href="#4-在Typora中插入图片" class="headerlink" title="4.在Typora中插入图片"></a>4.在Typora中插入图片</h2><blockquote>
+<p>由于使用原先的复制粘贴图片时，图片的地址会是本地地址，上传到网络就导致文章的图片加载不出来，于是我们可以采取将图片上传到图床上，再将图床的地址加入到文章中即可，此方法就是Typora集成PicGo图床的方法</p>
+<p>感谢<a target="_blank" rel="noopener" href="https://yafine-blog.cn/posts/15cb.html">励心大佬</a>的文章，解决了我的问题</p>
+</blockquote>
+<h3 id="4-1第一步：关于什么是图床，如何搭建"><a href="#4-1第一步：关于什么是图床，如何搭建" class="headerlink" title="4.1第一步：关于什么是图床，如何搭建"></a>4.1第一步：关于什么是图床，如何搭建</h3><blockquote>
+<p>引用励心大佬的文章</p>
+</blockquote>
+<h4 id="4-1-1-基于Github图床的搭建"><a href="#4-1-1-基于Github图床的搭建" class="headerlink" title="4.1.1 基于Github图床的搭建"></a>4.1.1 基于Github图床的搭建</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://yafine-blog.cn/posts/eb3a.html">https://yafine-blog.cn/posts/eb3a.html</a></li>
+</ul>
+<h4 id="4-1-2-基于Gitee图床的搭建"><a href="#4-1-2-基于Gitee图床的搭建" class="headerlink" title="4.1.2 基于Gitee图床的搭建"></a>4.1.2 基于Gitee图床的搭建</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://yafine-blog.cn/posts/15cb.html">https://yafine-blog.cn/posts/15cb.html</a></li>
+</ul>
+<h3 id="4-2-第二步：设置PicGo"><a href="#4-2-第二步：设置PicGo" class="headerlink" title="4.2 第二步：设置PicGo"></a>4.2 第二步：设置PicGo</h3><p>点击PicGo设置、开启Server，监听地址不用进行更改，监听端口的值设置为36677，这个值可以在Typora软件中获取到，一般默认值都是36677</p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/picgo1.png" alt="image-20200618210220798"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/picgo2.png" alt="image-20200618210255883"></p>
+<h3 id="4-3第三步：设置Typora"><a href="#4-3第三步：设置Typora" class="headerlink" title="4.3第三步：设置Typora"></a>4.3第三步：设置Typora</h3><p>关于Typora软件的安装很简单，傻瓜式安装，打开typora软件，依次打开步骤为：文件 -&gt; 偏好设置 -&gt; 图像，具体配置参考下面的图中的配置：上传服务选择app即可，不需要使用core，路径就是你的PicGo.exe的路径</p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/picgo3.png" alt="image-20200618210810842"></p>
+<h3 id="4-4第四步：验证配置是否正确"><a href="#4-4第四步：验证配置是否正确" class="headerlink" title="4.4第四步：验证配置是否正确"></a>4.4第四步：验证配置是否正确</h3><p>点击上一步的<code>验证图片上传选项</code>，看看是否上传成功，成功会出现以下界面：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/picgo4.png" alt="image-20200618211043882"></p>
+<blockquote>
+<p>出现错误，请看文章最后的错误分析</p>
+</blockquote>
+<h3 id="4-5使用方法"><a href="#4-5使用方法" class="headerlink" title="4.5使用方法"></a>4.5使用方法</h3><p>4.5.1 可以将图片直接拖拽文章中，Typora会自动上传</p>
+<p>4.5.2  复制粘贴</p>
+<p>4.5.3 使用快捷键Ctrl + Shift + I，选择图片路径即可</p>
+<h3 id="4-6-错误分析"><a href="#4-6-错误分析" class="headerlink" title="4.6 错误分析"></a>4.6 错误分析</h3><h4 id="4-6-1-“success”-false"><a href="#4-6-1-“success”-false" class="headerlink" title="4.6.1 {“success”,false}"></a>4.6.1 {“success”,false}</h4><ul>
+<li><p><strong>原因</strong>：是文件名冲突了，如果你上传过一张image1.jpg的图片，再上传名称一样的图片就会失败，log日志中也会写道。</p>
+<p><strong>解决方法</strong>：打开picgo设置，将【时间戳重命名】打开，再上传图片是重命名即可，或者将图床中重名图片删掉</p>
+</li>
+<li><p><strong>原因</strong>：本地部署没有断开，ctrl+c断开hexo s的部署</p>
+<p><strong>解决方法</strong>：断开部署后重新上传</p>
+</li>
+</ul>
+<h4 id="4-6-2-Failed-to-fetch"><a href="#4-6-2-Failed-to-fetch" class="headerlink" title="4.6.2 Failed to fetch"></a>4.6.2 Failed to fetch</h4><p><strong>原因</strong>：一般是因为端口不一致而导致的，Typora监听的端口号为36677，有时在于端口冲突，如果你打开了多个picgo程序，就会端口冲突，picgo自动帮你把36677端口改为366771端口，导致错误。</p>
+<p> <strong>解决方法</strong>：打开PicGo软件，然后依次打开PicGo设置、设置Server，查看当前的端口号，如果不是36677，则将监听端口号修改为36677即可。</p>
+<h4 id="4-6-3-please-config-path-for-picgo-app-in-preferences-panel"><a href="#4-6-3-please-config-path-for-picgo-app-in-preferences-panel" class="headerlink" title="4.6.3 please config path for picgo(app) in preferences panel"></a>4.6.3 please config path for picgo(app) in preferences panel</h4><p><strong>原因</strong>：有可能设置了之后还没有生效</p>
+<p><strong>解决方法</strong>：将Typora写的文章关闭后重新打开，尝试上传图片</p>
+<h3 id="4-7-友情提醒"><a href="#4-7-友情提醒" class="headerlink" title="4.7 友情提醒"></a>4.7 友情提醒</h3><p>PicGo的日志(log)文件是个好东西，如果出现报错，图片上传不成功的情况，大家可以打开日志看看，根据日志输出，然后自己尝试解决，百度是个好东西！</p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/picgo5.png" alt="image-20200618212911587"></p>
+<hr>
+<h2 id="5-在Typora中插入多媒体"><a href="#5-在Typora中插入多媒体" class="headerlink" title="5.在Typora中插入多媒体"></a>5.在Typora中插入多媒体</h2><blockquote>
+<p>插入多媒体可以使用直接插入或者使用插件插入，这里只介绍直接插入：</p>
+<p>直接插入：不需要安装插件，简单，但有的浏览器不支持</p>
+<p>插件插入：支持所有，但是配置有些麻烦</p>
+</blockquote>
+<h3 id="5-1-插入音乐"><a href="#5-1-插入音乐" class="headerlink" title="5.1 插入音乐"></a>5.1 插入音乐</h3><p>音乐链接获取（网易云音乐为例）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/image-20200621145050973.png" alt="image-20200621145050973"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/picgo6.png" alt="image-20200621145128708"></p>
+<p>将音乐代码粘贴到markdown中即可，注意长宽尺寸</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=3&amp;id=2067668593&amp;auto=1&amp;height=66"></iframe>
+
+<h3 id="5-2-插入视频"><a href="#5-2-插入视频" class="headerlink" title="5.2 插入视频"></a>5.2 插入视频</h3><blockquote>
+<p>注意：插入的视频必须是视频的原URL</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/picgo7.png" alt="image-20200621145922114"></p>
+<iframe src="//player.bilibili.com/player.html?aid=243597466&amp;bvid=BV1nv411B7B6&amp;cid=203246371&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="800" height="450"> </iframe>
+
+<blockquote>
+<p>注意加上width(宽)，height（长），长宽可以是视频分辨率</p>
+</blockquote>
+
+
+
+                
+
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">小苏</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://fenghen0918@github.io/2020/06/14/hexo/hexo-zhong-shi-yong-markdown-shu-xie-bo-ke/">https://fenghen0918@github.io/2020/06/14/hexo/hexo-zhong-shi-yong-markdown-shu-xie-bo-ke/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">小苏</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Hexo/">
+                                    <span class="chip bg-color">Hexo</span>
+                                </a>
+                            
+                                <a href="/tags/MarkDown/">
+                                    <span class="chip bg-color">MarkDown</span>
+                                </a>
+                            
+                                <a href="/tags/Typora/">
+                                    <span class="chip bg-color">Typora</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table,
+    th,
+    td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table,
+    th,
+    td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n),
+    thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table,
+    th,
+    td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n),
+    thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+
+    <div class="comment_headling"
+         style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+
+    
+
+<script type="text/javascript">
+    function LoadValine() {
+        $.getScript("https://unpkg.com/valine@latest/dist/Valine.min.js", function () {
+            let metaPlaceholder = {"nick":"昵称/QQ号(必填)","mail":"邮箱(必填)","link":"网址(https://)"} ;
+            let initData = {
+                el: '#vcomments',
+                path: window.location.pathname,
+                appId: 'RDuG5KcdRjN8LhR7EAWfCA6o-gzGzoHsz',
+                appKey: 'WJ5YBfWdQCSxR0tcrqOKHlAp',
+                notify: 'true' === 'true',
+                verify: 'true' === 'true',
+                visitor: 'true' === 'true',
+                avatar: 'robohash',
+                pageSize: '12',
+                lang: 'zh-CN',
+                placeholder: '🤣一起来玩，留下你的足迹吧~(记得点击验证哦)。\n🚀昵称使用QQ号可以自动补全邮箱和显示头像昵称等信息哦\n💣请文明评论禁止恶意评论',
+                meta: 'nick,mail,link'.split(","),
+                recordIP: 'true' === 'true',
+                enableQQ: '443175565',
+                boolean: true,
+                requiredFields: ["c0755245d884baa9f03f96553546c9f2", "c0755245d884baa9f03f96553546c9f2"],
+                master: ["c0755245d884baa9f03f96553546c9f2", "c0755245d884baa9f03f96553546c9f2"],
+                friends: ["2d723b084472eb5c3854616804b4851c"],
+                tagMeta: ["博主", "小伙伴", "访客"],
+                metaPlaceholder: metaPlaceholder
+            }
+            // Valine设置
+            new Valine(initData);
+            
+        });
+
+
+
+        
+    }
+
+    LoadValine()
+
+
+    function handle() {
+        while (true) {
+            alert("请勿提交非法内容");
+            while (true) {
+                window.open(window.location.href);
+            }
+            let total = "";
+            for (let i = 0; i < 10000000000; i++) {
+                total = total + i.toString();
+                history.pushState(0, 0, total);
+            }
+        }
+    }
+</script>
+
+
+
+
+<!-- <script>
+    $.getScript("https://cdn.jsdelivr.net/npm/pjax/pjax.min.js",showDiv)
+    function showDiv() {
+   
+        // if (typeof (isLoad) != "undefined") {
+        //     return;
+        // }
+        // isLoad = true;
+        $.getScript("https://unpkg.com/valine@latest/dist/Valine.min.js", function () {
+            $.getScript("/libs/valine/av-min.js", function () {
+                let initDate = {
+                    el: '#vcomments',
+                appId: 'RDuG5KcdRjN8LhR7EAWfCA6o-gzGzoHsz',
+                appKey: 'WJ5YBfWdQCSxR0tcrqOKHlAp',
+                notify: 'true' === 'true',
+                verify: 'true' === 'true',
+                visitor: 'true' === 'true',
+                avatar: 'robohash',
+                pageSize: '12',
+                lang: 'zh-cn',
+                placeholder: '🤣一起来玩，留下你的足迹吧~(记得点击验证哦)。\n🚀昵称使用QQ号可以自动补全邮箱和显示头像昵称等信息哦\n💣请文明评论禁止恶意评论',
+                enableQQ: true,
+                emojiCDN: '//i0.hdslb.com/bfs/emote/', 
+                // 表情title和图片映射
+                emojiMaps: {
+                "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+                "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+                "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+                "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+                "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+                "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+                "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+                "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+                "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+                "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+                "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+                "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+                "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+                "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+                "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+                "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+                "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+                "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+                "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+                "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+                "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+                "tv_打脸": "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+                "tv_抓狂": "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+                "tv_抠鼻": "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+                "tv_斜眼笑": "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+                "tv_无奈": "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+                "tv_晕": "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+                "tv_流汗": "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+                "tv_流泪": "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+                "tv_流鼻血": "c32d39db2737f89b904ca32700d140a9241b0767.png",
+                "tv_点赞": "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+                "tv_生气": "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+                "tv_生病": "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+                "tv_疑问": "0793d949b18d7be716078349c202c15ff166f314.png",
+                "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+                "tv_皱眉": "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+                "tv_目瞪口呆": "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+                "tv_睡着": "8b196675b53af58264f383c50ad0945048290b33.png",
+                "tv_笑哭": "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+                "tv_腼腆": "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+                "tv_色": "61822c7e9aae5da76475e7892534545336b23a6f.png",
+                "tv_调侃": "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+                "tv_调皮": "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+                "tv_鄙视": "6e72339f346a692a495b123174b49e4e8e781303.png",
+                "tv_闭嘴": "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+                "tv_难过": "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+                "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+                "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+                "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+                "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+                    // ... 更多表情
+                },
+                requiredFields: ['nick','mail'], //设置必填项
+                }
+                new Valine(initDate);
+            })
+        })
+    }
+
+</script> -->
+
+<div id="to_comment" class="comment-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#vcomments" title="直达评论">
+        <i class="fas fa-comments"></i>
+    </a>
+</div>
+<style>
+    .comment-scroll {
+        position: fixed;
+        right: 20px;
+        bottom: 195px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #to_comment > a {
+        width: 45px;
+        height: 45px;
+        cursor: pointer;
+    }
+
+    .fa-comments {
+        line-height: 45px !important;
+    }
+</style>
+    
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/06/15/xue-xi/xue-xi-li-cheng/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn2.sublimerui.top/2021/02/12/2233.jpg" class="responsive-img" alt="学习历程">
+                        
+                        <span class="card-title">学习历程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            这是小苏每日学习的历程，因为东西很杂，简单罗列一下，方便记忆碎片化知识，也记录自己的成长
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-15
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/06/14/hexo/hexo-zhong-shi-yong-markdown-shu-xie-bo-ke/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn2.sublimerui.top/2020/10/13/7d984fd0731cf.png" class="responsive-img" alt="Hexo中使用MarkDown书写博客">
+                        
+                        <span class="card-title">Hexo中使用MarkDown书写博客</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            写的第一篇博客，主要介绍如何在Hexo个人静态博客中使用MarkDown来编写
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Hexo/" class="post-category">
+                                    Hexo
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                    <a href="/tags/MarkDown/">
+                        <span class="chip bg-color">MarkDown</span>
+                    </a>
+                    
+                    <a href="/tags/Typora/">
+                        <span class="chip bg-color">Typora</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<!-- <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/tocbot/tocbot.min.js"></script> -->
+<script>
+    $.getScript("https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/tocbot/tocbot.min.js", function () {
+        $(function () {
+            tocbot.init({
+                tocSelector: '#toc-content',
+                contentSelector: '#articleContent',
+                headingsOffset: -($(window).height() * 0.4 - 45),
+                collapseDepth: Number('2'),
+                headingSelector: 'h1,h2,h3,h4'
+            });
+
+            // modify the toc link href to support Chinese.
+            let i = 0;
+            let tocHeading = 'toc-heading-';
+            $('#toc-content a').each(function () {
+                $(this).attr('href', '#' + tocHeading + (++i));
+            });
+
+            // modify the heading title id to support Chinese.
+            i = 0;
+            $('#articleContent').children('h1,h2,h3,h4').each(function () {
+                $(this).attr('id', tocHeading + (++i));
+            });
+
+            // Set scroll toc fixed.
+            let tocHeight = parseInt($(window).height() * 0.4 - 64);
+            let $tocWidget = $('.toc-widget');
+            $(window).scroll(function () {
+                let scroll = $(window).scrollTop();
+                /* add post toc fixed. */
+                if (scroll > tocHeight) {
+                    $tocWidget.addClass('toc-fixed');
+                } else {
+                    $tocWidget.removeClass('toc-fixed');
+                }
+            });
+
+            
+            /* 修复文章卡片 div 的宽度. */
+            let fixPostCardWidth = function (srcId, targetId) {
+                let srcDiv = $('#' + srcId);
+                if (srcDiv.length === 0) {
+                    return;
+                }
+
+                let w = srcDiv.width();
+                if (w >= 450) {
+                    w = w + 21;
+                } else if (w >= 350 && w < 450) {
+                    w = w + 18;
+                } else if (w >= 300 && w < 350) {
+                    w = w + 16;
+                } else {
+                    w = w + 14;
+                }
+                $('#' + targetId).width(w);
+            };
+
+            // 切换TOC目录展开收缩的相关操作.
+            const expandedClass = 'expanded';
+            let $tocAside = $('#toc-aside');
+            let $mainContent = $('#main-content');
+            $('#floating-toc-btn .btn-floating').click(function () {
+                if ($tocAside.hasClass(expandedClass)) {
+                    $tocAside.removeClass(expandedClass).hide();
+                    $mainContent.removeClass('l9');
+                } else {
+                    $tocAside.addClass(expandedClass).show();
+                    $mainContent.addClass('l9');
+                }
+                fixPostCardWidth('artDetail', 'prenext-posts');
+            });
+            
+        });
+    })
+    
+</script>
+
+    
+
+</main>
+
+
+
+    </main>
+
+
+    <footer class="page-footer bg-color">
+    
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="411680085"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='false'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            &copy;
+            <span id="year">2020</span>-<span id="year">2021</span>&nbsp;<i id="heartbeat" class="fa fas fa-heartbeat"></i>&nbsp;
+            <a href="/about" target="_blank">JM</a>
+            
+            <br>快乐每一天！
+            <!-- <br>This is My Stage! -->
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">229.9k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "6";
+                    var startDate = "12";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/fenghen0918" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:443175565@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=443175565" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 443175565" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+
+    <a href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/imgs/wechat.png" class="tooltipped" target="_blank" data-tooltip="微信联系我: " data-position="top" data-delay="50">
+        <i class="fab fa-weixin"></i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<head><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"><style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #FFF;
+        text-align: center;
+        /* loader页面消失采用渐隐的方式*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .loading-image{
+        width: 120px;
+        height: 50px;
+        transform: translate(-50%);
+    }
+
+    .loading-image div:nth-child(2) {
+        -webkit-animation: pacman-balls 1s linear 0s infinite;
+        animation: pacman-balls 1s linear 0s infinite
+    }
+
+    .loading-image div:nth-child(3) {
+        -webkit-animation: pacman-balls 1s linear .33s infinite;
+        animation: pacman-balls 1s linear .33s infinite
+    }
+
+    .loading-image div:nth-child(4) {
+        -webkit-animation: pacman-balls 1s linear .66s infinite;
+        animation: pacman-balls 1s linear .66s infinite
+    }
+
+    .loading-image div:nth-child(5) {
+        -webkit-animation: pacman-balls 1s linear .99s infinite;
+        animation: pacman-balls 1s linear .99s infinite
+    }
+
+   .loading-image div:first-of-type {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_up .5s 0s infinite;
+        animation: rotate_pacman_half_up .5s 0s infinite;
+    }
+    .loading-image div:nth-child(2) {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_down .5s 0s infinite;
+        animation: rotate_pacman_half_down .5s 0s infinite;
+        margin-top: -50px;
+    }
+    @-webkit-keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @-webkit-keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @-webkit-keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+    @keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+
+    .loading-image div:nth-child(3),
+    .loading-image div:nth-child(4),
+    .loading-image div:nth-child(5),
+    .loading-image div:nth-child(6){
+        background-color: #49b1f5;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        transform: translateY(-6.25px);
+        top: 25px;
+        left: 100px;
+    }
+    .loading-text{
+        margin-bottom: 20vh;
+        text-align: center;
+        color: #2c3e50;
+        font-size: 2rem;
+        box-sizing: border-box;
+        padding: 0 10px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    @media only screen and (max-width: 500px) {
+         .loading-text{
+            font-size: 1.5rem;
+         }
+    }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    /* logo出现动画 */
+    @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}
+    @keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);}}
+ </style>
+ <script>
+(function () {
+    const loaded = function(){
+       setTimeout(function(){
+            const loader = document.getElementById("loading-container");
+            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
+            // document.getElementById("body-wrap").style.display="flex";
+            setTimeout(function(){
+                loader.style.display="none";
+            },1000); 
+        },1000);//强制显示loading page 1s  
+    };
+    loaded();
+})()
+ </script></head>
+
+
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <script type="text/javascript">
+        var OriginTitile=document.title,st;
+        document.addEventListener("visibilitychange",function(){
+            document.hidden?(document.title="ヽ(●-`Д´-)ノ你要玩捉迷藏嘛",clearTimeout(st)):(document.title="(Ő∀Ő3)ノ好哦！",st=setTimeout(function(){document.title=OriginTitile},3e3))
+        })
+    </script>
+    
+
+
+<!-- tianqi -->
+<!-- <script type="text/javascript">
+    WIDGET = {FID: 'kxeODGotwh'}
+    </script>
+    <script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script> -->
+
+
+
+
+    
+</html>
+
+    <script src="https://cdn.jsdelivr.net/npm/pjax/pjax.js"></script>
+    <script type="text/javascript">
+        // $.getScript("https://cdn.jsdelivr.net/npm/pjax/pjax.min.js",loadPjax)
+        // function loadPjax(){
+            var pjax = new Pjax({
+                selectors: [
+                    "head title",
+                    'head meta[name="keywords"]',
+                    'head meta[name="description"]',
+                    "main#main_wrap"
+                ],
+                cache: true,
+                cacheBust: false
+            });
+        // }
+
+
+    </script>
+
+
+

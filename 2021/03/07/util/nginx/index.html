@@ -1,0 +1,2250 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Nginx, Java,Linux,Mysql,Oracle">
+    <meta name="description" content="专注业务，专注代码,分享生活,分享知识">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Nginx | 特仑苏</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/jquery/jquery.min.js"></script>
+
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+    <!-- <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script> -->
+
+
+
+    <link type='text/css' rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" media='all'/>
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+
+<meta name="generator" content="Hexo 6.0.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+ <div id="loading-container">
+     <p class="loading-text">玩命加载中 . . . </p> 
+     <div class="loading-image">
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div> 
+         <div></div>
+     </div>
+ </div><body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">特仑苏</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-book" style="zoom: 0.6;"></i>
+      
+      <span>文章</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tags" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>标签</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>分类</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/archives">
+          
+          <i class="fas fa-archive" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>归档</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于我</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/artitalk" class="waves-effect waves-light">
+      
+      <i class="fas fa-comment" style="zoom: 0.6;"></i>
+      
+      <span>特仑说</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留个言</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-rainbow" style="zoom: 0.6;"></i>
+      
+      <span>友人帐</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/galleries" class="waves-effect waves-light">
+      
+      <i class="fas fa-image" style="zoom: 0.6;"></i>
+      
+      <span>相册</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-bicycle" style="zoom: 0.6;"></i>
+      
+      <span>爱好</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/bangumis">
+          
+          <i class="fas fa-play-circle" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>追番</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>音乐</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+    <a onclick="switchNightMode()" id="sma" title="模式切换" class="waves-effect waves-light">
+      <i class="fa fa-moon-o" id="nightMode" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">特仑苏</div>
+        <div class="logo-desc">
+            
+            专注业务，专注代码,分享生活,分享知识
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-book"></i>
+			
+			文章
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/tags " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-tags" style="position: absolute;left:50px" ></i>
+			      
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/categories " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>分类</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/archives " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-archive" style="position: absolute;left:50px" ></i>
+			      
+		          <span>归档</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/artitalk" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comment"></i>
+			
+			特仑说
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-rainbow"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/galleries" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-image"></i>
+			
+			相册
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-bicycle"></i>
+			
+			爱好
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/bangumis " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-play-circle" style="position: absolute;left:50px" ></i>
+			      
+		          <span>追番</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/musics " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>音乐</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    <main id="main_wrap">
+        
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn2.sublimerui.top/2021/01/26/7b68b6e61b59a.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Nginx</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+        background-color: rgb(255, 255, 255,0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Nginx/">
+                                <span class="chip bg-color">Nginx</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/util/" class="post-category">
+                                util
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-03-07
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    9 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h1><p>是一款高性能的反向代理服务器，可以实现反向代理、负载均衡、动静分离等功能</p>
+<h2 id="Nginx在Linux下的安装"><a href="#Nginx在Linux下的安装" class="headerlink" title="Nginx在Linux下的安装"></a>Nginx在Linux下的安装</h2><ol>
+<li><p>需要安装 gcc 的环境</p>
+<p><code>yum install gcc-c++</code></p>
+</li>
+<li><p>第三方的开发包</p>
+<p><code>yum install -y pcre pcre-devel</code></p>
+<p><code>yum install -y zlib zlib-devel</code></p>
+<p><code>yum install -y openssl openssl-devel</code></p>
+</li>
+<li><p>上传Nginx文件</p>
+</li>
+<li><p>解压缩</p>
+<p><code>tar -zxvf nginx-1.8.0.tar.gz</code></p>
+<p>进入nginx-1.8.0目录  使用 configure 命令创建一 makeFile 文件。</p>
+<pre><code>./configure \
+--prefix=/usr/local/nginx \
+--pid-path=/var/run/nginx/nginx.pid \
+--lock-path=/var/lock/nginx.lock \
+--error-log-path=/var/log/nginx/error.log \
+--http-log-path=/var/log/nginx/access.log \
+--with-http_gzip_static_module \
+--http-client-body-temp-path=/var/temp/nginx/client \
+--http-proxy-temp-path=/var/temp/nginx/proxy \
+--http-fastcgi-temp-path=/var/temp/nginx/fastcgi \
+--http-uwsgi-temp-path=/var/temp/nginx/uwsgi \
+--http-scgi-temp-path=/var/temp/nginx/scgi
+</code></pre>
+<p>执行后可以看到Makefile文件</p>
+</li>
+<li><p>编译</p>
+<p><code>make</code></p>
+</li>
+<li><p>安装</p>
+<p><code>make install</code></p>
+<p>注意：启动nginx 之前，上边将临时文件目录指定为/var/temp/nginx/client， 需要在/var 下创建此 目录</p>
+<p><code>mkdir /var/temp/nginx/client -p</code></p>
+</li>
+<li><p><strong>启动</strong></p>
+<p><code>cd /usr/local/nginx/sbin</code></p>
+<p><code>./nginx</code></p>
+<p><strong>查看进程</strong></p>
+<p><code>ps aux|grep nginx</code></p>
+</li>
+<li><p>访问</p>
+<p>默认为80端口，可以直接Localhost访问</p>
+<p>地址栏输入虚拟机的IP即可访问（默认为80端口）</p>
+<p><code>192.168.176.128</code></p>
+<blockquote>
+<p>如果没有访问成功，有可能是因为防火墙没有关闭</p>
+<p>centos7关闭防火墙：<code>systemctl stop firewalld</code></p>
+<p>如果不想关闭防火墙，可以设置开放端口</p>
+<p><code>firewall-cmd --add-port=8080/tcp --permanent</code></p>
+<p>重启防火墙：<code>firewall-cmd -reload</code></p>
+<p>查看开放的端口号：<code>firewall-cmd --list-all</code></p>
+</blockquote>
+<p><strong>关闭：</strong></p>
+<p>​    方式一（杀进程）：<code>./nginx -s stop</code></p>
+<p>​    方式二（退出）：<code>./nginx -s quit</code></p>
+<p><strong>重启：</strong></p>
+<p>​    <code>./nginx -s reload</code></p>
+<p><strong>查看版本</strong></p>
+<p>​    <code>./nginx -v</code></p>
+</li>
+</ol>
+<h2 id="Nginx配置文件"><a href="#Nginx配置文件" class="headerlink" title="Nginx配置文件"></a>Nginx配置文件</h2><p>位置：<code>/usr/local/nginx/conf/nginx.conf</code></p>
+<p>配置文件有三部分组成</p>
+<ol>
+<li><p>全局块</p>
+<p>从配置文件开始到events间的区域</p>
+<p>作用：主要设置一些影响nginx服务器整体运行的配置指令</p>
+<p><code>worker_processes</code>：处理并发量的值，值越大处理并发量越多</p>
+</li>
+<li><p>events块</p>
+<p>作用：影响Nginx服务器与用户网络连接</p>
+<p><code>worker_connections</code>：支持最大的连接数</p>
+</li>
+<li><p><strong>http块</strong></p>
+<p>配置最频繁的部分</p>
+<p>包括http全局块、sever块</p>
+</li>
+</ol>
+<h2 id="部署静态页面"><a href="#部署静态页面" class="headerlink" title="部署静态页面"></a>部署静态页面</h2><p>作用：在nginx服务器中访问静态页面</p>
+<ol>
+<li><p>将静态页面上传到nginx目录中</p>
+</li>
+<li><p>修改配置文件（conf/nginx.conf）</p>
+<pre><code>        location / {
+            root   index;
+            index  index.html index.htm;
+        }
+# root代表文件夹，index代表首页
+#将root 改为index（自己的静态页面文件夹）
+</code></pre>
+</li>
+</ol>
+<blockquote>
+<p>修改配置文件的方法：</p>
+<p>由于在linux上大量修改配置文件使用vim命令会很繁琐，这里推荐一种vscode远程修改上传配置文件的方法。</p>
+<p><a target="_blank" rel="noopener" href="https://sulog.top/2021/03/12/util/vscode-shi-yong-sftp-kuai-su-tong-bu-fu-wu-qi-wen-jian/">VScode使用sftp快速同步服务器文件</a></p>
+</blockquote>
+<h2 id="配置虚拟主机"><a href="#配置虚拟主机" class="headerlink" title="配置虚拟主机"></a>配置虚拟主机</h2><h3 id="端口绑定"><a href="#端口绑定" class="headerlink" title="端口绑定"></a>端口绑定</h3><p>作用：输入不同端口号就可以进入不同页面</p>
+<ol>
+<li><p>修改nginx配置文件</p>
+<pre class=" language-json"><code class="language-json">server <span class="token punctuation">{</span>
+    listen       <span class="token number">81</span><span class="token punctuation">;</span> #端口号
+    server_name  localhost<span class="token punctuation">;</span> #域名或者Ip
+
+    location / <span class="token punctuation">{</span> #访问路径配置
+        root   index<span class="token punctuation">;</span> #目录
+        index  index.html index.htm<span class="token punctuation">;</span> #默认首页
+    <span class="token punctuation">}</span>
+
+    error_page   <span class="token number">500</span> <span class="token number">502</span> <span class="token number">503</span> <span class="token number">504</span>  /50x.html<span class="token punctuation">;</span> #错误页面
+        location = /50x.html <span class="token punctuation">{</span>
+        root   html<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+#复制两份server，就可以有两台虚拟主机
+server <span class="token punctuation">{</span>
+    listen       <span class="token number">82</span><span class="token punctuation">;</span> #端口号
+    server_name  localhost<span class="token punctuation">;</span> #域名或者Ip
+
+    location / <span class="token punctuation">{</span> #访问路径配置
+        root   regist<span class="token punctuation">;</span> #目录
+        index  regist.html regist.htm<span class="token punctuation">;</span> #默认首页
+    <span class="token punctuation">}</span>
+
+    error_page   <span class="token number">500</span> <span class="token number">502</span> <span class="token number">503</span> <span class="token number">504</span>  /50x.html<span class="token punctuation">;</span> #错误页面
+        location = /50x.html <span class="token punctuation">{</span>
+        root   html<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li><p>重启nginx</p>
+<p><code>./nginx -s reload</code></p>
+</li>
+<li><p>访问页面</p>
+<p><code>192.168.179.128:81</code>    来到主页</p>
+<p><code>192.168.179.128:82</code>    来到注册页面</p>
+</li>
+</ol>
+<h3 id="域名绑定"><a href="#域名绑定" class="headerlink" title="域名绑定"></a>域名绑定</h3><p>作用：输入域名就可以进入页面</p>
+<p>一个域名对应一个 ip 地址，一个 ip 地址可以被多个域名绑定。</p>
+<ol>
+<li><p>本地测试可以修改 hosts 文件（C:\Windows\System32\drivers\etc\host）</p>
+<p><code>192.168.177.129   www.hmtravel.com</code></p>
+<p><code>192.168.177.129   regist.hmtravel.com</code></p>
+</li>
+<li><p>修改nginx配置文件</p>
+<pre class=" language-json"><code class="language-json">    server <span class="token punctuation">{</span>
+        listen       <span class="token number">80</span><span class="token punctuation">;</span> #这里全配置成<span class="token number">80</span>
+        server_name  regist.hmtravel.com<span class="token punctuation">;</span> #修改此处
+
+        location / <span class="token punctuation">{</span>
+            root   regist<span class="token punctuation">;</span>
+            index  regist.html regist.htm<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    server <span class="token punctuation">{</span>
+        listen        <span class="token number">80</span><span class="token punctuation">;</span> #这里全配置成<span class="token number">80</span>
+        server_name  www.hmtravel.com<span class="token punctuation">;</span> #修改此处
+
+        location / <span class="token punctuation">{</span>
+            root   index<span class="token punctuation">;</span>
+            index  index.html index.htm<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li><p>重启nginx</p>
+<p><code>./nginx -s reload</code></p>
+</li>
+<li><p>访问页面</p>
+<p><code>www.hmtravel.com</code></p>
+<p><code>regist.hmtravel.com</code></p>
+</li>
+</ol>
+<h2 id="Nginx反向代理"><a href="#Nginx反向代理" class="headerlink" title="Nginx反向代理"></a>Nginx反向代理</h2><p>作用：网络和服务器之间加上nginx</p>
+<blockquote>
+<p>反向代理是指以代理服务器来接受internet上的连接请求，然后将请求转发给内部网络上的服务器</p>
+<p>正向代理是针对你的客户端，而反向代理是针对服务器的</p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/20210312160914.png" alt="正向代理"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/20210312160949.png" alt="反向代理"></p>
+<p>反向代理的好处：</p>
+<ol>
+<li>当服务器并发量变大时，搭建服务器集群，反向代理能将大并发量转移到反向代理服务器上，再由自己按照一定规则将请求发送给服务器</li>
+<li>反向代理接收所有请求，反向代理服务器和服务器集群之间可以建立防火墙，从而提高安全性</li>
+</ol>
+</blockquote>
+<h3 id="应用一"><a href="#应用一" class="headerlink" title="应用一"></a>应用一</h3><p>效果：访问<a href="http://www.hmtravel.com或192.168.179.128:80，实际访问的是tomcat页面">www.hmtravel.com或192.168.179.128:80，实际访问的是tomcat页面</a></p>
+<ol>
+<li><p>修改nginx配置文件</p>
+<pre class=" language-json"><code class="language-json">upstream tomcat-travel<span class="token punctuation">{</span>
+    server <span class="token number">192.168</span>.<span class="token number">179.128</span><span class="token operator">:</span><span class="token number">8080</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+server <span class="token punctuation">{</span>
+    listen       <span class="token number">80</span><span class="token punctuation">;</span>
+    server_name  www.hmtravel.com<span class="token punctuation">;</span>
+
+    location / <span class="token punctuation">{</span>
+    #root index<span class="token punctuation">;</span> #注释掉
+    proxy_pass http<span class="token operator">:</span>//tomcat-travel<span class="token punctuation">;</span> #代理上面的ip
+    index  index.html index.htm<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li><p>重启nginx</p>
+<p><code>./nginx -s reload</code></p>
+</li>
+<li><p>访问页面</p>
+<p>输入<code>www.hmtravel.com</code>，效果看到tomcat页面</p>
+<p>流程：访问域名<a target="_blank" rel="noopener" href="http://www.hmtravel.com,找到/">www.hmtravel.com，找到</a> proxy_pass代理tomcat-travel，tomcat-travel对应的服务器是192.168.179.128:8080，返回tomcat页面</p>
+</li>
+</ol>
+<div class="tip error "> 遇到的坑
+1.没有跳转到tomcat页面，仍然跳转的是travel页面。
+    解决：查看配置文件，root有没有注释掉</div>
+
+
+<h3 id="应用二"><a href="#应用二" class="headerlink" title="应用二"></a>应用二</h3><p>效果：访问192.168.179.128:9001/edu/index.html和192.168.179.128:9001/dev/index.html访问的是不同的两个页面</p>
+<ol>
+<li><p>修改nginx配置文件</p>
+<pre class=" language-json"><code class="language-json">server <span class="token punctuation">{</span>
+    listen       <span class="token number">9001</span><span class="token punctuation">;</span>#此处修改
+    server_name  <span class="token number">192.168</span>.<span class="token number">179.128</span><span class="token punctuation">;</span> #此处修改
+
+    location ~ /edu/ <span class="token punctuation">{</span> # ~是正则表达式的意思，包含edu就跳转指定页面
+    proxy_pass http<span class="token operator">:</span>//<span class="token number">127.0</span>.<span class="token number">0.1</span><span class="token operator">:</span><span class="token number">8080</span><span class="token punctuation">;</span> 跳转到指定tomcat
+<span class="token punctuation">}</span>
+
+    location ~ /dev/ <span class="token punctuation">{</span> # ~是正则表达式的意思，包含edu就跳转指定页面
+    proxy_pass http<span class="token operator">:</span>//<span class="token number">127.0</span>.<span class="token number">0.1</span><span class="token operator">:</span><span class="token number">8081</span><span class="token punctuation">;</span> 跳转到指定tomcat
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p>location 后可以跟几种形式</p>
+<ol>
+<li><p>= 表示uri必须和后面的保持一直才能访问，如： = /edu/a.html，则访问时必须是192.168.179.128:9001/edu/a.html</p>
+</li>
+<li><p>~ 表示正则表达式，包含即可，如：~ /edu/，则访问时</p>
+<p>192.168.179.128:9001/edu/a.html,192.168.179.128:9001/edu/b.html均可访问</p>
+</li>
+<li><p><del>* 表示不区分大小写的正则表达式，如：</del>* /edu/，则访问192.168.179.128:9001/EDU/a.html,192.168.179.128:9001/edu/b.html均可访问</p>
+</li>
+</ol>
+</blockquote>
+</li>
+<li><p>重启nginx</p>
+<p><code>./nginx -s reload</code></p>
+</li>
+<li><p>访问页面</p>
+<p>192.168.179.128:9001/edu/index.html</p>
+<p>192.168.179.128:9001/dev/index.html</p>
+</li>
+</ol>
+<h2 id="Nginx负载均衡"><a href="#Nginx负载均衡" class="headerlink" title="Nginx负载均衡"></a>Nginx负载均衡</h2><blockquote>
+<p>负载均衡，其意思就是分摊到多个操作单元上进行执行</p>
+</blockquote>
+<h3 id="配置负载均衡-准备工作"><a href="#配置负载均衡-准备工作" class="headerlink" title="配置负载均衡-准备工作"></a>配置负载均衡-准备工作</h3><ol>
+<li>将刚才的存放工程的tomcat复制三份，修改端口分别为8080 ，8081，8082</li>
+<li>分别启动这三个tomcat服务</li>
+<li>为了能够区分是访问哪个服务器的网站，可以在首页标题加上标记以便区分</li>
+</ol>
+<h3 id="配置负载均衡"><a href="#配置负载均衡" class="headerlink" title="配置负载均衡"></a>配置负载均衡</h3><p>效果：访问192.168.179.128:80，访问到8080,8081,8082的tomcat</p>
+<ol>
+<li><p>修改 Nginx配置文件</p>
+<pre class=" language-json"><code class="language-json">#放在http块中 
+upstream tomcat-travel<span class="token punctuation">{</span>
+    server <span class="token number">192.168</span>.<span class="token number">179.128</span><span class="token operator">:</span><span class="token number">8080</span><span class="token punctuation">;</span>
+    server <span class="token number">192.168</span>.<span class="token number">179.128</span><span class="token operator">:</span><span class="token number">8081</span><span class="token punctuation">;</span>
+    server <span class="token number">192.168</span>.<span class="token number">179.128</span><span class="token operator">:</span><span class="token number">8082</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li><p>修改server</p>
+<pre class=" language-json"><code class="language-json">server <span class="token punctuation">{</span>
+    listen       <span class="token number">80</span><span class="token punctuation">;</span>
+    server_name  <span class="token number">192.169</span>.<span class="token number">179.128</span><span class="token punctuation">;</span>
+
+    location / <span class="token punctuation">{</span>
+    proxy_pass http<span class="token operator">:</span>//tomcat-travel<span class="token punctuation">;</span> #代理上面的ip
+    index  index.html index.htm<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li><p>输入网址进行测试</p>
+<p>观察标题，看看是否不同，经测试每台服务器出现的概率为33.3%</p>
+</li>
+<li><p>修改权重</p>
+<p>想要让某台服务器分担更多的压力，可以分配其权重，默认为1</p>
+<pre class=" language-json"><code class="language-json">upstream tomcat-travel<span class="token punctuation">{</span>
+    server <span class="token number">192.168</span>.<span class="token number">179.128</span><span class="token operator">:</span><span class="token number">8080</span> weight=<span class="token number">2</span><span class="token punctuation">;</span>
+    server <span class="token number">192.168</span>.<span class="token number">179.128</span><span class="token operator">:</span><span class="token number">8081</span><span class="token punctuation">;</span>
+    server <span class="token number">192.168</span>.<span class="token number">179.128</span><span class="token operator">:</span><span class="token number">8082</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/20210312174556.png"></p>
+</li>
+</ol>
+<h3 id="负载均衡策略"><a href="#负载均衡策略" class="headerlink" title="负载均衡策略"></a>负载均衡策略</h3><ol>
+<li>轮询：平均按顺序访问，当一个服务器down掉就会自动剔除</li>
+<li>权重：在ip后设置权重<code>weight = 2</code>，按照权重比例进行访问</li>
+<li>ip hash：在upstream块中加上ip_hash 即可。根据访问用户的Ip计算哈希值，则该用户永远访问的就是该服务器，可以有效解决session问题。</li>
+<li>fair：在upsteam块中加上fair即可。根据用户访问服务器的响应时间，哪个服务器响应时间短就访问哪个服务器。</li>
+</ol>
+<h2 id="动静分离"><a href="#动静分离" class="headerlink" title="动静分离"></a>动静分离</h2><p>简单来说就是把动态请求和静态请求分开，nginx处理静态页面。</p>
+<p>效果：访问192.168.179.128:80/image/1.jpg，访问的就是静态资源服务器中的数据。访问192.168.179.128:80……其他的页面，是正常反向代理访问的动态数据</p>
+<ol>
+<li><p>准备工作</p>
+<p>将静态文件放到Linux服务器中，如/data/image/1.jpg</p>
+</li>
+<li><p>配置nginx服务器</p>
+<pre class=" language-json"><code class="language-json">#静态资源服务器
+server <span class="token punctuation">{</span>
+    listen       <span class="token number">80</span><span class="token punctuation">;</span>
+    server_name  <span class="token number">192.169</span>.<span class="token number">179.128</span><span class="token punctuation">;</span>
+
+    location /image/ <span class="token punctuation">{</span>
+    root /data/
+    #index  index.html index.htm<span class="token punctuation">;</span>
+    #autoindex on<span class="token punctuation">;</span> #页面显示目录列表
+<span class="token punctuation">}</span>
+#动态资源服务器（正常的反向代理）
+server <span class="token punctuation">{</span>
+    listen       <span class="token number">80</span><span class="token punctuation">;</span>
+    server_name  <span class="token number">192.169</span>.<span class="token number">179.128</span><span class="token punctuation">;</span>
+
+    location / <span class="token punctuation">{</span>
+    proxy_pass http<span class="token operator">:</span>//<span class="token number">127.0</span>.<span class="token number">0.1</span><span class="token operator">:</span><span class="token number">8080</span><span class="token punctuation">;</span>
+    index  index.html index.htm<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+</ol>
+
+
+
+                
+
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">小苏</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://fenghen0918@github.io/2021/03/07/util/nginx/">https://fenghen0918@github.io/2021/03/07/util/nginx/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">小苏</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Nginx/">
+                                    <span class="chip bg-color">Nginx</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table,
+    th,
+    td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table,
+    th,
+    td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n),
+    thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table,
+    th,
+    td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n),
+    thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+
+    <div class="comment_headling"
+         style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+
+    
+
+<script type="text/javascript">
+    function LoadValine() {
+        $.getScript("https://unpkg.com/valine@latest/dist/Valine.min.js", function () {
+            let metaPlaceholder = {"nick":"昵称/QQ号(必填)","mail":"邮箱(必填)","link":"网址(https://)"} ;
+            let initData = {
+                el: '#vcomments',
+                path: window.location.pathname,
+                appId: 'RDuG5KcdRjN8LhR7EAWfCA6o-gzGzoHsz',
+                appKey: 'WJ5YBfWdQCSxR0tcrqOKHlAp',
+                notify: 'true' === 'true',
+                verify: 'true' === 'true',
+                visitor: 'true' === 'true',
+                avatar: 'robohash',
+                pageSize: '12',
+                lang: 'zh-CN',
+                placeholder: '🤣一起来玩，留下你的足迹吧~(记得点击验证哦)。\n🚀昵称使用QQ号可以自动补全邮箱和显示头像昵称等信息哦\n💣请文明评论禁止恶意评论',
+                meta: 'nick,mail,link'.split(","),
+                recordIP: 'true' === 'true',
+                enableQQ: '443175565',
+                boolean: true,
+                requiredFields: ["c0755245d884baa9f03f96553546c9f2", "c0755245d884baa9f03f96553546c9f2"],
+                master: ["c0755245d884baa9f03f96553546c9f2", "c0755245d884baa9f03f96553546c9f2"],
+                friends: ["2d723b084472eb5c3854616804b4851c"],
+                tagMeta: ["博主", "小伙伴", "访客"],
+                metaPlaceholder: metaPlaceholder
+            }
+            // Valine设置
+            new Valine(initData);
+            
+        });
+
+
+
+        
+    }
+
+    LoadValine()
+
+
+    function handle() {
+        while (true) {
+            alert("请勿提交非法内容");
+            while (true) {
+                window.open(window.location.href);
+            }
+            let total = "";
+            for (let i = 0; i < 10000000000; i++) {
+                total = total + i.toString();
+                history.pushState(0, 0, total);
+            }
+        }
+    }
+</script>
+
+
+
+
+<!-- <script>
+    $.getScript("https://cdn.jsdelivr.net/npm/pjax/pjax.min.js",showDiv)
+    function showDiv() {
+   
+        // if (typeof (isLoad) != "undefined") {
+        //     return;
+        // }
+        // isLoad = true;
+        $.getScript("https://unpkg.com/valine@latest/dist/Valine.min.js", function () {
+            $.getScript("/libs/valine/av-min.js", function () {
+                let initDate = {
+                    el: '#vcomments',
+                appId: 'RDuG5KcdRjN8LhR7EAWfCA6o-gzGzoHsz',
+                appKey: 'WJ5YBfWdQCSxR0tcrqOKHlAp',
+                notify: 'true' === 'true',
+                verify: 'true' === 'true',
+                visitor: 'true' === 'true',
+                avatar: 'robohash',
+                pageSize: '12',
+                lang: 'zh-cn',
+                placeholder: '🤣一起来玩，留下你的足迹吧~(记得点击验证哦)。\n🚀昵称使用QQ号可以自动补全邮箱和显示头像昵称等信息哦\n💣请文明评论禁止恶意评论',
+                enableQQ: true,
+                emojiCDN: '//i0.hdslb.com/bfs/emote/', 
+                // 表情title和图片映射
+                emojiMaps: {
+                "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+                "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+                "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+                "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+                "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+                "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+                "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+                "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+                "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+                "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+                "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+                "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+                "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+                "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+                "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+                "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+                "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+                "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+                "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+                "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+                "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+                "tv_打脸": "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+                "tv_抓狂": "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+                "tv_抠鼻": "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+                "tv_斜眼笑": "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+                "tv_无奈": "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+                "tv_晕": "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+                "tv_流汗": "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+                "tv_流泪": "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+                "tv_流鼻血": "c32d39db2737f89b904ca32700d140a9241b0767.png",
+                "tv_点赞": "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+                "tv_生气": "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+                "tv_生病": "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+                "tv_疑问": "0793d949b18d7be716078349c202c15ff166f314.png",
+                "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+                "tv_皱眉": "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+                "tv_目瞪口呆": "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+                "tv_睡着": "8b196675b53af58264f383c50ad0945048290b33.png",
+                "tv_笑哭": "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+                "tv_腼腆": "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+                "tv_色": "61822c7e9aae5da76475e7892534545336b23a6f.png",
+                "tv_调侃": "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+                "tv_调皮": "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+                "tv_鄙视": "6e72339f346a692a495b123174b49e4e8e781303.png",
+                "tv_闭嘴": "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+                "tv_难过": "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+                "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+                "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+                "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+                "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+                    // ... 更多表情
+                },
+                requiredFields: ['nick','mail'], //设置必填项
+                }
+                new Valine(initDate);
+            })
+        })
+    }
+
+</script> -->
+
+<div id="to_comment" class="comment-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#vcomments" title="直达评论">
+        <i class="fas fa-comments"></i>
+    </a>
+</div>
+<style>
+    .comment-scroll {
+        position: fixed;
+        right: 20px;
+        bottom: 195px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #to_comment > a {
+        width: 45px;
+        height: 45px;
+        cursor: pointer;
+    }
+
+    .fa-comments {
+        line-height: 45px !important;
+    }
+</style>
+    
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/03/12/util/vscode-shi-yong-sftp-kuai-su-tong-bu-fu-wu-qi-wen-jian/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/fe8.jpg" class="responsive-img" alt="VScode使用sftp快速同步服务器文件">
+                        
+                        <span class="card-title">VScode使用sftp快速同步服务器文件</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            VScode中文汉化，使用sftp快速同步服务器文件
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-12
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/util/" class="post-category">
+                                    util
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/VScode/">
+                        <span class="chip bg-color">VScode</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/12/07/springboot/springboot-zi-ding-yi-lan-jie-qi-he-quan-ju-yi-chang-chu-li-qi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn2.sublimerui.top/2021/01/26/7b68b6e61b59a.jpg" class="responsive-img" alt="springboot自定义拦截器和全局异常处理器">
+                        
+                        <span class="card-title">springboot自定义拦截器和全局异常处理器</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            SpringMvc扩展
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-07
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Spring-Boot/" class="post-category">
+                                    Spring Boot
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Spring-Boot/">
+                        <span class="chip bg-color">Spring Boot</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<!-- <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/tocbot/tocbot.min.js"></script> -->
+<script>
+    $.getScript("https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/tocbot/tocbot.min.js", function () {
+        $(function () {
+            tocbot.init({
+                tocSelector: '#toc-content',
+                contentSelector: '#articleContent',
+                headingsOffset: -($(window).height() * 0.4 - 45),
+                collapseDepth: Number('2'),
+                headingSelector: 'h1,h2,h3,h4'
+            });
+
+            // modify the toc link href to support Chinese.
+            let i = 0;
+            let tocHeading = 'toc-heading-';
+            $('#toc-content a').each(function () {
+                $(this).attr('href', '#' + tocHeading + (++i));
+            });
+
+            // modify the heading title id to support Chinese.
+            i = 0;
+            $('#articleContent').children('h1,h2,h3,h4').each(function () {
+                $(this).attr('id', tocHeading + (++i));
+            });
+
+            // Set scroll toc fixed.
+            let tocHeight = parseInt($(window).height() * 0.4 - 64);
+            let $tocWidget = $('.toc-widget');
+            $(window).scroll(function () {
+                let scroll = $(window).scrollTop();
+                /* add post toc fixed. */
+                if (scroll > tocHeight) {
+                    $tocWidget.addClass('toc-fixed');
+                } else {
+                    $tocWidget.removeClass('toc-fixed');
+                }
+            });
+
+            
+            /* 修复文章卡片 div 的宽度. */
+            let fixPostCardWidth = function (srcId, targetId) {
+                let srcDiv = $('#' + srcId);
+                if (srcDiv.length === 0) {
+                    return;
+                }
+
+                let w = srcDiv.width();
+                if (w >= 450) {
+                    w = w + 21;
+                } else if (w >= 350 && w < 450) {
+                    w = w + 18;
+                } else if (w >= 300 && w < 350) {
+                    w = w + 16;
+                } else {
+                    w = w + 14;
+                }
+                $('#' + targetId).width(w);
+            };
+
+            // 切换TOC目录展开收缩的相关操作.
+            const expandedClass = 'expanded';
+            let $tocAside = $('#toc-aside');
+            let $mainContent = $('#main-content');
+            $('#floating-toc-btn .btn-floating').click(function () {
+                if ($tocAside.hasClass(expandedClass)) {
+                    $tocAside.removeClass(expandedClass).hide();
+                    $mainContent.removeClass('l9');
+                } else {
+                    $tocAside.addClass(expandedClass).show();
+                    $mainContent.addClass('l9');
+                }
+                fixPostCardWidth('artDetail', 'prenext-posts');
+            });
+            
+        });
+    })
+    
+</script>
+
+    
+
+</main>
+
+
+
+    </main>
+
+
+    <footer class="page-footer bg-color">
+    
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="411680085"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='false'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            &copy;
+            <span id="year">2020</span>-<span id="year">2021</span>&nbsp;<i id="heartbeat" class="fa fas fa-heartbeat"></i>&nbsp;
+            <a href="/about" target="_blank">JM</a>
+            
+            <br>快乐每一天！
+            <!-- <br>This is My Stage! -->
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">229.9k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "6";
+                    var startDate = "12";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/fenghen0918" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:443175565@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=443175565" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 443175565" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+
+    <a href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/imgs/wechat.png" class="tooltipped" target="_blank" data-tooltip="微信联系我: " data-position="top" data-delay="50">
+        <i class="fab fa-weixin"></i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<head><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"><style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #FFF;
+        text-align: center;
+        /* loader页面消失采用渐隐的方式*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .loading-image{
+        width: 120px;
+        height: 50px;
+        transform: translate(-50%);
+    }
+
+    .loading-image div:nth-child(2) {
+        -webkit-animation: pacman-balls 1s linear 0s infinite;
+        animation: pacman-balls 1s linear 0s infinite
+    }
+
+    .loading-image div:nth-child(3) {
+        -webkit-animation: pacman-balls 1s linear .33s infinite;
+        animation: pacman-balls 1s linear .33s infinite
+    }
+
+    .loading-image div:nth-child(4) {
+        -webkit-animation: pacman-balls 1s linear .66s infinite;
+        animation: pacman-balls 1s linear .66s infinite
+    }
+
+    .loading-image div:nth-child(5) {
+        -webkit-animation: pacman-balls 1s linear .99s infinite;
+        animation: pacman-balls 1s linear .99s infinite
+    }
+
+   .loading-image div:first-of-type {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_up .5s 0s infinite;
+        animation: rotate_pacman_half_up .5s 0s infinite;
+    }
+    .loading-image div:nth-child(2) {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_down .5s 0s infinite;
+        animation: rotate_pacman_half_down .5s 0s infinite;
+        margin-top: -50px;
+    }
+    @-webkit-keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @-webkit-keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @-webkit-keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+    @keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+
+    .loading-image div:nth-child(3),
+    .loading-image div:nth-child(4),
+    .loading-image div:nth-child(5),
+    .loading-image div:nth-child(6){
+        background-color: #49b1f5;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        transform: translateY(-6.25px);
+        top: 25px;
+        left: 100px;
+    }
+    .loading-text{
+        margin-bottom: 20vh;
+        text-align: center;
+        color: #2c3e50;
+        font-size: 2rem;
+        box-sizing: border-box;
+        padding: 0 10px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    @media only screen and (max-width: 500px) {
+         .loading-text{
+            font-size: 1.5rem;
+         }
+    }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    /* logo出现动画 */
+    @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}
+    @keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);}}
+ </style>
+ <script>
+(function () {
+    const loaded = function(){
+       setTimeout(function(){
+            const loader = document.getElementById("loading-container");
+            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
+            // document.getElementById("body-wrap").style.display="flex";
+            setTimeout(function(){
+                loader.style.display="none";
+            },1000); 
+        },1000);//强制显示loading page 1s  
+    };
+    loaded();
+})()
+ </script></head>
+
+
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <script type="text/javascript">
+        var OriginTitile=document.title,st;
+        document.addEventListener("visibilitychange",function(){
+            document.hidden?(document.title="ヽ(●-`Д´-)ノ你要玩捉迷藏嘛",clearTimeout(st)):(document.title="(Ő∀Ő3)ノ好哦！",st=setTimeout(function(){document.title=OriginTitile},3e3))
+        })
+    </script>
+    
+
+
+<!-- tianqi -->
+<!-- <script type="text/javascript">
+    WIDGET = {FID: 'kxeODGotwh'}
+    </script>
+    <script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script> -->
+
+
+
+
+    
+</html>
+
+    <script src="https://cdn.jsdelivr.net/npm/pjax/pjax.js"></script>
+    <script type="text/javascript">
+        // $.getScript("https://cdn.jsdelivr.net/npm/pjax/pjax.min.js",loadPjax)
+        // function loadPjax(){
+            var pjax = new Pjax({
+                selectors: [
+                    "head title",
+                    'head meta[name="keywords"]',
+                    'head meta[name="description"]',
+                    "main#main_wrap"
+                ],
+                cache: true,
+                cacheBust: false
+            });
+        // }
+
+
+    </script>
+
+
+

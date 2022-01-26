@@ -1,0 +1,2232 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Jquery基础, Java,Linux,Mysql,Oracle">
+    <meta name="description" content="专注业务，专注代码,分享生活,分享知识">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Jquery基础 | 特仑苏</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/jquery/jquery.min.js"></script>
+
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+    <!-- <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script> -->
+
+
+
+    <link type='text/css' rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" media='all'/>
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+
+<meta name="generator" content="Hexo 6.0.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+ <div id="loading-container">
+     <p class="loading-text">玩命加载中 . . . </p> 
+     <div class="loading-image">
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div> 
+         <div></div>
+     </div>
+ </div><body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">特仑苏</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-book" style="zoom: 0.6;"></i>
+      
+      <span>文章</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tags" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>标签</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>分类</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/archives">
+          
+          <i class="fas fa-archive" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>归档</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于我</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/artitalk" class="waves-effect waves-light">
+      
+      <i class="fas fa-comment" style="zoom: 0.6;"></i>
+      
+      <span>特仑说</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留个言</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-rainbow" style="zoom: 0.6;"></i>
+      
+      <span>友人帐</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/galleries" class="waves-effect waves-light">
+      
+      <i class="fas fa-image" style="zoom: 0.6;"></i>
+      
+      <span>相册</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-bicycle" style="zoom: 0.6;"></i>
+      
+      <span>爱好</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/bangumis">
+          
+          <i class="fas fa-play-circle" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>追番</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>音乐</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+    <a onclick="switchNightMode()" id="sma" title="模式切换" class="waves-effect waves-light">
+      <i class="fa fa-moon-o" id="nightMode" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">特仑苏</div>
+        <div class="logo-desc">
+            
+            专注业务，专注代码,分享生活,分享知识
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-book"></i>
+			
+			文章
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/tags " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-tags" style="position: absolute;left:50px" ></i>
+			      
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/categories " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>分类</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/archives " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-archive" style="position: absolute;left:50px" ></i>
+			      
+		          <span>归档</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/artitalk" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comment"></i>
+			
+			特仑说
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-rainbow"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/galleries" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-image"></i>
+			
+			相册
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-bicycle"></i>
+			
+			爱好
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/bangumis " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-play-circle" style="position: absolute;left:50px" ></i>
+			      
+		          <span>追番</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/musics " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>音乐</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    <main id="main_wrap">
+        
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/fe8.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Jquery基础</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+        background-color: rgb(255, 255, 255,0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/javascript/">
+                                <span class="chip bg-color">javascript</span>
+                            </a>
+                        
+                            <a href="/tags/jquery/">
+                                <span class="chip bg-color">jquery</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-07-08
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.1k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    8 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="JQuery-基础"><a href="#JQuery-基础" class="headerlink" title="JQuery 基础"></a>JQuery 基础</h2><h3 id="概念：-一个JavaScript框架。简化JS开发"><a href="#概念：-一个JavaScript框架。简化JS开发" class="headerlink" title="概念： 一个JavaScript框架。简化JS开发"></a>概念： 一个JavaScript框架。简化JS开发</h3><ul>
+<li><p>jQuery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库（或JavaScript框架）。它封装JavaScript常用的功能代码，提供一种简便的JavaScript设计模式，优化HTML文档操作、事件处理、动画设计和Ajax交互。</p>
+</li>
+<li><p>JavaScript框架：本质上就是一些js文件，封装了js的原生代码而已</p>
+</li>
+</ul>
+<h3 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h3><ol>
+<li><p><strong>步骤：</strong></p>
+</li>
+<li><p>下载JQuery</p>
+<ul>
+<li>目前jQuery有三个大版本：<br>  1.x：兼容ie678,使用最为广泛的，官方只做BUG维护，<pre><code>   功能不再新增。因此一般项目来说，使用1.x版本就可以了，
+   最终版本：1.12.4 (2016年5月20日)
+</code></pre>
+  2.x：不兼容ie678，很少有人使用，官方只做BUG维护，<pre><code>   功能不再新增。如果不考虑兼容低版本的浏览器可以使用2.x，
+   最终版本：2.2.4 (2016年5月20日)
+</code></pre>
+  3.x：不兼容ie678，只支持最新的浏览器。除非特殊要求，<pre><code>   一般不会使用3.x版本的，很多老的jQuery插件不支持这个版本。
+   目前该版本是官方主要更新维护的版本。最新版本：3.2.1（2017年3月20日）
+</code></pre>
+</li>
+<li>jquery-xxx.js 与 jquery-xxx.min.js区别：<ol>
+<li>jquery-xxx.js：开发版本。给程序员看的，有良好的缩进和注释。体积大一些</li>
+<li>jquery-xxx.min.js：生产版本。程序中使用，没有缩进。体积小一些。程序加载更快</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>导入JQuery的js文件：导入min.js文件</p>
+</li>
+<li><p>使用：</p>
+<p>var div1 = $(“#div1”);</p>
+<p>alert(div1.html());</p>
+</li>
+</ol>
+<h3 id="JQuery对象和JS对象区别与转换"><a href="#JQuery对象和JS对象区别与转换" class="headerlink" title="JQuery对象和JS对象区别与转换"></a>JQuery对象和JS对象区别与转换</h3><ol>
+<li><p>JQuery对象在操作时，更加方便。</p>
+</li>
+<li><p><strong>JQuery对象和js对象方法不通用的.</strong></p>
+</li>
+<li><p><strong>两者相互转换</strong></p>
+</li>
+</ol>
+<ul>
+<li>jq – &gt; js : jq对象[索引] 或者 jq对象.get(索引)<ul>
+<li>js – &gt; jq : $(js对象)</li>
+</ul>
+</li>
+</ul>
+<h3 id="选择器：筛选具有相似特征的元素-标签"><a href="#选择器：筛选具有相似特征的元素-标签" class="headerlink" title="选择器：筛选具有相似特征的元素(标签)"></a>选择器：筛选具有相似特征的元素(标签)</h3><ol>
+<li>基本操作学习：</li>
+<li><strong>事件绑定</strong></li>
+</ol>
+<pre><code>``` 
+//1.获取b1按钮
+      $("#b1").click(function(){
+          alert("abc");
+      });
+```
+</code></pre>
+<ol start="2">
+<li><p><strong>入口函数(相当于window.onload )</strong></p>
+<pre><code>$(function(){
+});
+</code></pre>
+<p>  window.onload  和 $(function) 区别</p>
+<ul>
+<li>​    window.onload 只能定义一次,如果定义多次，后边的会将前边的覆盖掉</li>
+<li>​    $(function)可以定义多次的。</li>
+</ul>
+</li>
+<li><p><strong>样式控制：css方法</strong></p>
+<pre><code> $("#div1").css("background-color","red");
+ $("#div1").css("backgroundColor","pink");
+</code></pre>
+</li>
+<li><p><strong>选择器分类：</strong></p>
+<pre><code>1. 基本选择器
+    1. 标签选择器（元素选择器）
+        * 语法： $("html标签名") 获得所有匹配标签名称的元素
+        * 如：$("div")
+    2. id选择器 
+        * 语法： $("#id的属性值") 获得与指定id属性值匹配的元素
+        * 如：$("#d1")
+    3. 类选择器
+        * 语法： $(".class的属性值") 获得与指定的class属性值匹配的元素
+        * 如：$(".c1")
+    4. 并集选择器：
+        * 语法： $("选择器1,选择器2....") 获取多个选择器选中的所有元素
+        * 如：$("#d1,.c1")
+2. 层级选择器
+    1. 后代选择器
+        * 语法： $("A B ") 选择A元素内部的所有B元素    
+         * 如：$("#d1 #d2")
+    2. 子选择器
+        * 语法： $("A &gt; B") 选择A元素内部的所有B子元素
+        * 如：$("#d1&gt;#d2")
+3. 属性选择器
+    1. 属性名称选择器 
+        * 语法： $("A[属性名]") 包含指定属性的选择器
+        * 如：$("#d1[title]")
+    2. 属性选择器
+        * 语法： $("A[属性名='值']") 包含指定属性等于指定值的选择器
+        * 如：$("#d1[title='123']")属性值是123
+            $("#d1[title^='123']")属性值开头是123
+            $("#d1[title$='123']")属性值结尾是123
+            $("#d1[title*='123']")属性值包含123
+    3. 复合属性选择器
+        * 语法： $("A[属性名='值'][]...") 包含多个属性条件的选择器
+        * 如：$("#d1[title='123'][class]")
+4. 过滤选择器
+    1. 首元素选择器 
+        * 语法： :first 获得选择的元素中的第一个元素
+        * 如：$("div:first")第一个div
+    2. 尾元素选择器 
+        * 语法： :last 获得选择的元素中的最后一个元素
+        * 如：$("div:last")最后一个div
+    3. 非元素选择器
+        * 语法： :not(selector) 不包括指定内容的元素
+        * 如：$("div:not(.one))class属性值不是.one的div
+    4. 偶数选择器
+        * 语法： :even 偶数，从 0 开始计数
+        * 如：$("div:even")偶数的div
+    5. 奇数选择器
+        * 语法： :odd 奇数，从 0 开始计数
+        * 如：$("div:odd")奇数的div
+    6. 等于索引选择器
+        * 语法： :eq(index) 指定索引元素
+        * 如：$("div:eq(3)")第3个div
+    7. 大于索引选择器 
+        * 语法： :gt(index) 大于指定索引元素
+        * 如：$("div:gt(3)")第3个之后的div
+    8. 小于索引选择器 
+        * 语法： :lt(index) 小于指定索引元素
+        * 如：$("div:lt(3)")第3个之前的div
+    9. 标题选择器
+        * 语法： :header 获得标题（h1~h6）元素，固定写法
+        * 如：$(":header")所有标题
+5. 表单过滤选择器
+    1. 可用元素选择器 
+        * 语法： :enabled 获得可用元素
+        * 如：$("input[type='text']:enabled").val("aaa")可用文本输入框，改变值为aaa
+    2. 不可用元素选择器 
+        * 语法： :disabled 获得不可用元素
+        * 如：$("input[type='text']:disabled").val("aaa")不可用文本输入框，改变值为bbb
+    3. 选中选择器 
+        * 语法： :checked 获得单选/复选框选中的元素
+        * 如：$("input[type='checkbox']:checked").length已选择复选框的个数
+    4. 选中选择器 
+        * 语法： :selected 获得下拉框选中的元素
+        * 如：$("#job &gt; option:selected").length下拉框，选择复选项的个数
+</code></pre>
+</li>
+</ol>
+<h3 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h3><ol>
+<li><p>内容操作</p>
+<ol>
+<li><p>html(): 获取/设置元素的标签体内容   </p>
+<pre><code>&lt;a&gt;&lt;font&gt;内容&lt;/font&gt;&lt;/a&gt;  
+如：value = $("#id").html()  &lt;font&gt;内容&lt;/font&gt;
+    $("#id").html("aaa")     &lt;a&gt;aaa&lt;a&gt;
+</code></pre>
+</li>
+<li><p>text(): 获取/设置元素的标签体纯文本内容   </p>
+<pre><code>&lt;a&gt;&lt;font&gt;内容&lt;/font&gt;&lt;/a&gt; 
+如：value = $("#id").text()  内容
+    $("#id").html("aaa")     &lt;a&gt;aaa&lt;a&gt;
+</code></pre>
+</li>
+<li><p>val()： 获取/设置元素的value属性值</p>
+<pre><code>如：value = $("#id").val();
+    $("#id").val("aaa")
+</code></pre>
+</li>
+</ol>
+</li>
+<li><p>属性操作</p>
+<ol>
+<li><p>通用属性操作</p>
+<ol>
+<li>attr(): 获取/设置元素的属性</li>
+<li>removeAttr():删除属性</li>
+<li>prop():获取/设置元素的属性</li>
+<li>removeProp():删除属性</li>
+</ol>
+<ul>
+<li>attr和prop区别？<ol>
+<li>如果操作的是元素的固有属性，则建议使用prop</li>
+<li>如果操作的是元素自定义的属性，则建议使用attr</li>
+</ol>
+</li>
+</ul>
+<pre><code>获取：classValue = $("#id").attr("class")
+设置：$("#id").attr("class","nihao")
+</code></pre>
+</li>
+<li><p>对class属性操作</p>
+<ol>
+<li><p>addClass():添加class属性值</p>
+<pre><code>如：$("#id").addClass("haha")
+</code></pre>
+</li>
+<li><p>removeClass():删除class属性值</p>
+<pre><code>如：$("#id").removeClass("haha")
+</code></pre>
+</li>
+<li><p>toggleClass():切换class属性</p>
+<pre><code>toggleClass("one"): 
+判断如果元素对象上存在class="one"，则将属性值one删除掉。  如果元素对象上不存在class="one"，则添加
+</code></pre>
+</li>
+<li><p>css():获取/设置css属性</p>
+<pre><code>如：color = $("#id").css("backgroundColor")获取背景颜色
+$("#id").css("backgroundColor","red")
+</code></pre>
+</li>
+<li><p>CRUD操作:</p>
+<ol>
+<li><p>append():父元素将子元素追加到末尾</p>
+<pre><code> * 对象1.append(对象2): 将对象2添加到对象1元素内部，并且在末尾
+</code></pre>
+<pre><code>&lt;a id="a"&gt;&lt;a&gt;
+&lt;p id="b"&gt;&lt;p&gt;
+$("#a").append("#b") ---&gt; &lt;a&gt;&lt;p&gt;&lt;/p&gt;&lt;/a&gt;
+</code></pre>
+</li>
+<li><p>prepend():父元素将子元素追加到开头</p>
+<ul>
+<li>对象1.prepend(对象2):将对象2添加到对象1元素内部，并且在开头</li>
+</ul>
+</li>
+<li><p>after():添加元素到元素后边</p>
+<ul>
+<li>对象1.after(对象2)： 将对象2添加到对象1后边。对象1和对象2是兄弟关系</li>
+</ul>
+</li>
+<li><p>before():添加元素到元素前边</p>
+<ul>
+<li>对象1.before(对象2)： 将对象2添加到对象1前边。对象1和对象2是兄弟关系</li>
+</ul>
+</li>
+<li><p>remove():移除元素</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<ul>
+<li>对象.remove():将对象删除掉</li>
+</ul>
+<ol start="6">
+<li>empty():清空元素的所有后代元素。<pre><code>                    * 对象.empty():将对象的后代元素全部清空，但是保留当前对象以及其属性节点
+</code></pre>
+</li>
+</ol>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><pre class=" language-html"><code class="language-html">QQ表情：
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>word<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    对话框
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"ul img"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">".word"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+</code></pre>
+<pre class=" language-html"><code class="language-html">下拉列表左右移：
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+<span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//绑定单击事件</span>
+    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#toRight"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"right"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"left>option:selected"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">//绑定单击事件</span>
+    <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#toLeft"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"left"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"right>option:selected"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+</code></pre>
+<pre class=" language-html"><code class="language-html">全选和全不选：
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>selectAll(this)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+    <span class="token keyword">function</span> <span class="token function">selectAll</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//获取下面的复选框，将其属性设置成</span>
+        <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">".itemSelect"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">"checked"</span><span class="token punctuation">,</span>obj<span class="token punctuation">.</span>checked<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+错误：$(function() {
+    在这里面写就不行，因为obj是js的对象，不能调用jq的方法
+})
+</code></pre>
+<pre class=" language-html"><code class="language-html">隔行换色：
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+    <span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//将数据行的奇数背景颜色设置成pink</span>
+        <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"tr:gt(1):odd"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">"background-color"</span><span class="token punctuation">,</span><span class="token string">"pink"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//将数据行的偶数背景颜色设置成yellow</span>
+        <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"tr:gt(1):even"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">"backgroundColor"</span><span class="token punctuation">,</span><span class="token string">"yellow"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+</code></pre>
+
+
+
+                
+
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">小苏</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://fenghen0918@github.io/2020/07/08/qian-duan/jquery-ji-chu/">https://fenghen0918@github.io/2020/07/08/qian-duan/jquery-ji-chu/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">小苏</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/javascript/">
+                                    <span class="chip bg-color">javascript</span>
+                                </a>
+                            
+                                <a href="/tags/jquery/">
+                                    <span class="chip bg-color">jquery</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table,
+    th,
+    td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table,
+    th,
+    td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n),
+    thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table,
+    th,
+    td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n),
+    thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+
+    <div class="comment_headling"
+         style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+
+    
+
+<script type="text/javascript">
+    function LoadValine() {
+        $.getScript("https://unpkg.com/valine@latest/dist/Valine.min.js", function () {
+            let metaPlaceholder = {"nick":"昵称/QQ号(必填)","mail":"邮箱(必填)","link":"网址(https://)"} ;
+            let initData = {
+                el: '#vcomments',
+                path: window.location.pathname,
+                appId: 'RDuG5KcdRjN8LhR7EAWfCA6o-gzGzoHsz',
+                appKey: 'WJ5YBfWdQCSxR0tcrqOKHlAp',
+                notify: 'true' === 'true',
+                verify: 'true' === 'true',
+                visitor: 'true' === 'true',
+                avatar: 'robohash',
+                pageSize: '12',
+                lang: 'zh-CN',
+                placeholder: '🤣一起来玩，留下你的足迹吧~(记得点击验证哦)。\n🚀昵称使用QQ号可以自动补全邮箱和显示头像昵称等信息哦\n💣请文明评论禁止恶意评论',
+                meta: 'nick,mail,link'.split(","),
+                recordIP: 'true' === 'true',
+                enableQQ: '443175565',
+                boolean: true,
+                requiredFields: ["c0755245d884baa9f03f96553546c9f2", "c0755245d884baa9f03f96553546c9f2"],
+                master: ["c0755245d884baa9f03f96553546c9f2", "c0755245d884baa9f03f96553546c9f2"],
+                friends: ["2d723b084472eb5c3854616804b4851c"],
+                tagMeta: ["博主", "小伙伴", "访客"],
+                metaPlaceholder: metaPlaceholder
+            }
+            // Valine设置
+            new Valine(initData);
+            
+        });
+
+
+
+        
+    }
+
+    LoadValine()
+
+
+    function handle() {
+        while (true) {
+            alert("请勿提交非法内容");
+            while (true) {
+                window.open(window.location.href);
+            }
+            let total = "";
+            for (let i = 0; i < 10000000000; i++) {
+                total = total + i.toString();
+                history.pushState(0, 0, total);
+            }
+        }
+    }
+</script>
+
+
+
+
+<!-- <script>
+    $.getScript("https://cdn.jsdelivr.net/npm/pjax/pjax.min.js",showDiv)
+    function showDiv() {
+   
+        // if (typeof (isLoad) != "undefined") {
+        //     return;
+        // }
+        // isLoad = true;
+        $.getScript("https://unpkg.com/valine@latest/dist/Valine.min.js", function () {
+            $.getScript("/libs/valine/av-min.js", function () {
+                let initDate = {
+                    el: '#vcomments',
+                appId: 'RDuG5KcdRjN8LhR7EAWfCA6o-gzGzoHsz',
+                appKey: 'WJ5YBfWdQCSxR0tcrqOKHlAp',
+                notify: 'true' === 'true',
+                verify: 'true' === 'true',
+                visitor: 'true' === 'true',
+                avatar: 'robohash',
+                pageSize: '12',
+                lang: 'zh-cn',
+                placeholder: '🤣一起来玩，留下你的足迹吧~(记得点击验证哦)。\n🚀昵称使用QQ号可以自动补全邮箱和显示头像昵称等信息哦\n💣请文明评论禁止恶意评论',
+                enableQQ: true,
+                emojiCDN: '//i0.hdslb.com/bfs/emote/', 
+                // 表情title和图片映射
+                emojiMaps: {
+                "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+                "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+                "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+                "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+                "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+                "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+                "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+                "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+                "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+                "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+                "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+                "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+                "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+                "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+                "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+                "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+                "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+                "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+                "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+                "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+                "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+                "tv_打脸": "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+                "tv_抓狂": "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+                "tv_抠鼻": "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+                "tv_斜眼笑": "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+                "tv_无奈": "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+                "tv_晕": "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+                "tv_流汗": "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+                "tv_流泪": "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+                "tv_流鼻血": "c32d39db2737f89b904ca32700d140a9241b0767.png",
+                "tv_点赞": "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+                "tv_生气": "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+                "tv_生病": "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+                "tv_疑问": "0793d949b18d7be716078349c202c15ff166f314.png",
+                "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+                "tv_皱眉": "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+                "tv_目瞪口呆": "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+                "tv_睡着": "8b196675b53af58264f383c50ad0945048290b33.png",
+                "tv_笑哭": "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+                "tv_腼腆": "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+                "tv_色": "61822c7e9aae5da76475e7892534545336b23a6f.png",
+                "tv_调侃": "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+                "tv_调皮": "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+                "tv_鄙视": "6e72339f346a692a495b123174b49e4e8e781303.png",
+                "tv_闭嘴": "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+                "tv_难过": "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+                "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+                "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+                "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+                "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+                    // ... 更多表情
+                },
+                requiredFields: ['nick','mail'], //设置必填项
+                }
+                new Valine(initDate);
+            })
+        })
+    }
+
+</script> -->
+
+<div id="to_comment" class="comment-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#vcomments" title="直达评论">
+        <i class="fas fa-comments"></i>
+    </a>
+</div>
+<style>
+    .comment-scroll {
+        position: fixed;
+        right: 20px;
+        bottom: 195px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #to_comment > a {
+        width: 45px;
+        height: 45px;
+        cursor: pointer;
+    }
+
+    .fa-comments {
+        line-height: 45px !important;
+    }
+</style>
+    
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/07/09/qian-duan/jquery-gao-ji/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/20200826.jpg" class="responsive-img" alt="Jquery高级操作">
+                        
+                        <span class="card-title">Jquery高级操作</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Jquery高级详解，一个JavaScript框架。简化JS开发
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-09
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/javascript/">
+                        <span class="chip bg-color">javascript</span>
+                    </a>
+                    
+                    <a href="/tags/jquery/">
+                        <span class="chip bg-color">jquery</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/07/07/qian-duan/html-biao-dan/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/20200826.jpg" class="responsive-img" alt="Html表单">
+                        
+                        <span class="card-title">Html表单</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            html表单标签详解
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-07
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/html/">
+                        <span class="chip bg-color">html</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<!-- <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/tocbot/tocbot.min.js"></script> -->
+<script>
+    $.getScript("https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/tocbot/tocbot.min.js", function () {
+        $(function () {
+            tocbot.init({
+                tocSelector: '#toc-content',
+                contentSelector: '#articleContent',
+                headingsOffset: -($(window).height() * 0.4 - 45),
+                collapseDepth: Number('2'),
+                headingSelector: 'h1,h2,h3,h4'
+            });
+
+            // modify the toc link href to support Chinese.
+            let i = 0;
+            let tocHeading = 'toc-heading-';
+            $('#toc-content a').each(function () {
+                $(this).attr('href', '#' + tocHeading + (++i));
+            });
+
+            // modify the heading title id to support Chinese.
+            i = 0;
+            $('#articleContent').children('h1,h2,h3,h4').each(function () {
+                $(this).attr('id', tocHeading + (++i));
+            });
+
+            // Set scroll toc fixed.
+            let tocHeight = parseInt($(window).height() * 0.4 - 64);
+            let $tocWidget = $('.toc-widget');
+            $(window).scroll(function () {
+                let scroll = $(window).scrollTop();
+                /* add post toc fixed. */
+                if (scroll > tocHeight) {
+                    $tocWidget.addClass('toc-fixed');
+                } else {
+                    $tocWidget.removeClass('toc-fixed');
+                }
+            });
+
+            
+            /* 修复文章卡片 div 的宽度. */
+            let fixPostCardWidth = function (srcId, targetId) {
+                let srcDiv = $('#' + srcId);
+                if (srcDiv.length === 0) {
+                    return;
+                }
+
+                let w = srcDiv.width();
+                if (w >= 450) {
+                    w = w + 21;
+                } else if (w >= 350 && w < 450) {
+                    w = w + 18;
+                } else if (w >= 300 && w < 350) {
+                    w = w + 16;
+                } else {
+                    w = w + 14;
+                }
+                $('#' + targetId).width(w);
+            };
+
+            // 切换TOC目录展开收缩的相关操作.
+            const expandedClass = 'expanded';
+            let $tocAside = $('#toc-aside');
+            let $mainContent = $('#main-content');
+            $('#floating-toc-btn .btn-floating').click(function () {
+                if ($tocAside.hasClass(expandedClass)) {
+                    $tocAside.removeClass(expandedClass).hide();
+                    $mainContent.removeClass('l9');
+                } else {
+                    $tocAside.addClass(expandedClass).show();
+                    $mainContent.addClass('l9');
+                }
+                fixPostCardWidth('artDetail', 'prenext-posts');
+            });
+            
+        });
+    })
+    
+</script>
+
+    
+
+</main>
+
+
+
+    </main>
+
+
+    <footer class="page-footer bg-color">
+    
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="411680085"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='false'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            &copy;
+            <span id="year">2020</span>-<span id="year">2021</span>&nbsp;<i id="heartbeat" class="fa fas fa-heartbeat"></i>&nbsp;
+            <a href="/about" target="_blank">JM</a>
+            
+            <br>快乐每一天！
+            <!-- <br>This is My Stage! -->
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">229.9k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "6";
+                    var startDate = "12";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/fenghen0918" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:443175565@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=443175565" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 443175565" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+
+    <a href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/imgs/wechat.png" class="tooltipped" target="_blank" data-tooltip="微信联系我: " data-position="top" data-delay="50">
+        <i class="fab fa-weixin"></i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<head><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"><style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #FFF;
+        text-align: center;
+        /* loader页面消失采用渐隐的方式*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .loading-image{
+        width: 120px;
+        height: 50px;
+        transform: translate(-50%);
+    }
+
+    .loading-image div:nth-child(2) {
+        -webkit-animation: pacman-balls 1s linear 0s infinite;
+        animation: pacman-balls 1s linear 0s infinite
+    }
+
+    .loading-image div:nth-child(3) {
+        -webkit-animation: pacman-balls 1s linear .33s infinite;
+        animation: pacman-balls 1s linear .33s infinite
+    }
+
+    .loading-image div:nth-child(4) {
+        -webkit-animation: pacman-balls 1s linear .66s infinite;
+        animation: pacman-balls 1s linear .66s infinite
+    }
+
+    .loading-image div:nth-child(5) {
+        -webkit-animation: pacman-balls 1s linear .99s infinite;
+        animation: pacman-balls 1s linear .99s infinite
+    }
+
+   .loading-image div:first-of-type {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_up .5s 0s infinite;
+        animation: rotate_pacman_half_up .5s 0s infinite;
+    }
+    .loading-image div:nth-child(2) {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_down .5s 0s infinite;
+        animation: rotate_pacman_half_down .5s 0s infinite;
+        margin-top: -50px;
+    }
+    @-webkit-keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @-webkit-keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @-webkit-keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+    @keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+
+    .loading-image div:nth-child(3),
+    .loading-image div:nth-child(4),
+    .loading-image div:nth-child(5),
+    .loading-image div:nth-child(6){
+        background-color: #49b1f5;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        transform: translateY(-6.25px);
+        top: 25px;
+        left: 100px;
+    }
+    .loading-text{
+        margin-bottom: 20vh;
+        text-align: center;
+        color: #2c3e50;
+        font-size: 2rem;
+        box-sizing: border-box;
+        padding: 0 10px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    @media only screen and (max-width: 500px) {
+         .loading-text{
+            font-size: 1.5rem;
+         }
+    }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    /* logo出现动画 */
+    @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}
+    @keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);}}
+ </style>
+ <script>
+(function () {
+    const loaded = function(){
+       setTimeout(function(){
+            const loader = document.getElementById("loading-container");
+            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
+            // document.getElementById("body-wrap").style.display="flex";
+            setTimeout(function(){
+                loader.style.display="none";
+            },1000); 
+        },1000);//强制显示loading page 1s  
+    };
+    loaded();
+})()
+ </script></head>
+
+
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <script type="text/javascript">
+        var OriginTitile=document.title,st;
+        document.addEventListener("visibilitychange",function(){
+            document.hidden?(document.title="ヽ(●-`Д´-)ノ你要玩捉迷藏嘛",clearTimeout(st)):(document.title="(Ő∀Ő3)ノ好哦！",st=setTimeout(function(){document.title=OriginTitile},3e3))
+        })
+    </script>
+    
+
+
+<!-- tianqi -->
+<!-- <script type="text/javascript">
+    WIDGET = {FID: 'kxeODGotwh'}
+    </script>
+    <script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script> -->
+
+
+
+
+    
+</html>
+
+    <script src="https://cdn.jsdelivr.net/npm/pjax/pjax.js"></script>
+    <script type="text/javascript">
+        // $.getScript("https://cdn.jsdelivr.net/npm/pjax/pjax.min.js",loadPjax)
+        // function loadPjax(){
+            var pjax = new Pjax({
+                selectors: [
+                    "head title",
+                    'head meta[name="keywords"]',
+                    'head meta[name="description"]',
+                    "main#main_wrap"
+                ],
+                cache: true,
+                cacheBust: false
+            });
+        // }
+
+
+    </script>
+
+
+

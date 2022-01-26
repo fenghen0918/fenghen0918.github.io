@@ -1,0 +1,2211 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="学习历程, Java,Linux,Mysql,Oracle">
+    <meta name="description" content="专注业务，专注代码,分享生活,分享知识">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>学习历程 | 特仑苏</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/jquery/jquery.min.js"></script>
+
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+    <!-- <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script> -->
+
+
+
+    <link type='text/css' rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" media='all'/>
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+
+<meta name="generator" content="Hexo 6.0.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+ <div id="loading-container">
+     <p class="loading-text">玩命加载中 . . . </p> 
+     <div class="loading-image">
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div> 
+         <div></div>
+     </div>
+ </div><body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">特仑苏</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-book" style="zoom: 0.6;"></i>
+      
+      <span>文章</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tags" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>标签</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>分类</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/archives">
+          
+          <i class="fas fa-archive" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>归档</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于我</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/artitalk" class="waves-effect waves-light">
+      
+      <i class="fas fa-comment" style="zoom: 0.6;"></i>
+      
+      <span>特仑说</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留个言</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-rainbow" style="zoom: 0.6;"></i>
+      
+      <span>友人帐</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/galleries" class="waves-effect waves-light">
+      
+      <i class="fas fa-image" style="zoom: 0.6;"></i>
+      
+      <span>相册</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-bicycle" style="zoom: 0.6;"></i>
+      
+      <span>爱好</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/bangumis">
+          
+          <i class="fas fa-play-circle" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>追番</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>音乐</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+    <a onclick="switchNightMode()" id="sma" title="模式切换" class="waves-effect waves-light">
+      <i class="fa fa-moon-o" id="nightMode" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">特仑苏</div>
+        <div class="logo-desc">
+            
+            专注业务，专注代码,分享生活,分享知识
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-book"></i>
+			
+			文章
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/tags " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-tags" style="position: absolute;left:50px" ></i>
+			      
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/categories " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>分类</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/archives " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-archive" style="position: absolute;left:50px" ></i>
+			      
+		          <span>归档</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/artitalk" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comment"></i>
+			
+			特仑说
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-rainbow"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/galleries" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-image"></i>
+			
+			相册
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-bicycle"></i>
+			
+			爱好
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/bangumis " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-play-circle" style="position: absolute;left:50px" ></i>
+			      
+		          <span>追番</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/musics " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>音乐</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    <main id="main_wrap">
+        
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn2.sublimerui.top/2021/02/12/2233.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">学习历程</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                学习
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-06-15
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    9.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    35 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="学习历程"><a href="#学习历程" class="headerlink" title="学习历程"></a>学习历程</h1><p>4.21 540P-553P（14P）</p>
+<p>​        JDBC增删改查，</p>
+<p>​        DriverManager：驱动管理对象</p>
+<p>​        Connection：数据库连接对象</p>
+<p>​        Statement：执行sql的对象</p>
+<p>​        ResltSet：结果集对象</p>
+<p>​        遍历数据</p>
+<p>​        jdbc工具类</p>
+<p>​        获取src路径下的文件的方式：ClassLoader 类加载器</p>
+<p>4.22 554P-568P（15P）</p>
+<p>​        PreparedStatement：执行sql的对象(预处理,?占位符)</p>
+<p>​        jdbc工具类：配置文件，封装方法实现注册驱动，获取连接数据库对象，资源释放</p>
+<p>​        JDBC控制事务：setAutoCommit(boolean autoCommit)、commit（）、rollback()</p>
+<p>​        数据库连接池：帮助快速创建Connection对象，只需要配置文件就可以实现注册驱动，加载驱动</p>
+<p>​        C3P0:数据库连接池技术，xml配置文件    自动，DataSource ds = new ComboPooledDataSource();</p>
+<p>​        druid：数据库连接池技术，properties配置文件，手动，conn = JDBCUtils.getConnection();</p>
+<p>​        JDBCTemplate：简化JDBC开发 </p>
+<p>​                                    </p>
+<p>4.24 569P-602P（34P）</p>
+<p>​    HTML标签：文件标签、文本标签、图片标签、列表标签、链接标签、div和span、语义化标签、表格标签、                         表单标签</p>
+<p>​    CSS样式：CSS语法 “：”，使用内联样式、内部样式、外部样式</p>
+<p>​                        <link rel="stylesheet" href="css/a.css"></p>
+<p>​    CSS选择器：id选择器、元素选择器、类选择器、选择所有元素、并集选择器、子/父选择器、属性选择器、                         伪类选择器</p>
+<p>​    CSS属性：字体、文本、背景、边框、尺寸、盒子模型（根据视角）</p>
+<p>4.25 603P-639P(37P)</p>
+<p>​    JavaScript（ECMAScript）:基本语法、基本对象：Function对象、Array、Boolean、Date、Math、                                                Number、String、RegExp：正则表达式对象、Global（全局对象，编码解码）</p>
+<p>​    DOM（文档对象模型）： Document：文档对象（创建元素对象、其他DOM对象）、Element：元素对象                                            （设置/删除属性）、Node：节点对象，其他5个的父对象（创建/删除/替换子节                                                点）</p>
+<p>​    BOM（浏览器对象模型）：Window：窗口对象（定时器，弹窗，其他对象的父对象）、Navigator：浏览器                                                对象、Screen：显示器屏幕对象、History：历史记录对象、Location：地址栏对                                                象（刷新，设置/返回url）</p>
+<p>4.26 640P-659（20P）</p>
+<p>​    DOM：innerHTML（标签体设置/获得，样式控制）、事件监听机制：点击onclick、焦点onblur,onfocus、加载                onload、鼠标onmouse…、键盘onkey…、选择和改变onchange,onselect、表单onsubmit</p>
+<p>​    Bootstrap（一个前端开发的框架）：响应式布局（栅格系统）：container,container-fluid,row,col-设备代号-格                        子数目(一个格子占几个位置)，CSS样式和JS插件：按钮、图片、表格、表单、组件（导航条、                        分页条）、插件（轮播图）</p>
+<p>4.27 660P-674P(15P)</p>
+<p>XML(可扩展标记语言)：用于配置文件，语法、约束：用于约束xml的写法（DTD简单约束，XSD复杂约束）、引                                        入约束的方法，读取（解析）xml文档：Jsoup解析器（对象）、快捷查询方式：                                        selector：选择器、xpath</p>
+<p>4.28 675P-695P（21P）</p>
+<p>​    WEB服务器（tomcat）:文件目录，idea安装、配置tomcat</p>
+<p>​    Servlet：一个接口，定义了Java类被浏览器访问到(tomcat识别)的规则，</p>
+<p>​                    步骤：1.继承HttpServlet/GenericServlet/实现Servlet，2.实现方法doGet/doPost，3.配置（Servlet3.0                    注解）@WebServlet(“资源路径”)、Servlet中的生命周期方法：init初始化、service服务、destroy销毁</p>
+<p>​    HTTP:（类似约束，约束客户端和服务器之间发送数据的格式）默认端口号:80、请求消息数据格式：请求行(请                求方式 请求url 请求协议/版本)、请求头（User-Agent：浏览器版本信息，Referer：当前请求的由来）、                请求空行、请求体（封装post参数）</p>
+<p>4.29 696-712（17P）</p>
+<p>​    request功能：获取虚拟目录 getContextPath()、获取请求URI：/day14/demo1 getRequestURI()、请求头的名称获取请                            求头的值getHeader(String name)</p>
+<p>​    getParameter(String name)根据参数名称获取参数值、getParameterMap():获取所有参数    的map集合、中文乱码request.setCharacterEncoding(“utf-8”);请求转发(forward)、request    域：set/getAttribute（）</p>
+<p>4.30 713-728（16P）</p>
+<p>​    JavaBean（标准的Java类）：有空参的构造器、类必须被public修饰、成员变量必须使用                                                    private修饰、公共setter和getter方法</p>
+<p>​    BeanUtils工具类，用于封装JavaBean：set/getProperty（将javabean封装/获取值）、populate(Object obj , Map map)                                                                    封装所有信息进javaBean</p>
+<p>​    HTTP协议（响应消息）：响应行（状态码）、响应头（Content-Type编码格式、Content-disposition打开方式）、响应                                            体（传输的数据）</p>
+<p>​    Response对象：重定向：sendRedirect(“虚拟路径+资源名称”)、重定向/转发的特点、服务器输出字符/字节数据到浏览                                            器、乱码问题：response.setContentType(“text/html;charset=utf-8”);、路径写法</p>
+<p>5.3 729-761(33P)</p>
+<p>​    ServletContext对象：获取MIME类型：getMimeType(String file)、域对象：共享数据（所有用户都可使用）、获取文                                        件的真实(服务器)路径getRealPath(String path)</p>
+<p>​    客户端会话技术（Cookie）：1.new Cookie(String name, String value) 、2.response.addCookie(Cookie cookie) 、                                                    3.setPath(String path)、request.getCookies()  </p>
+<p>​    服务器端会话技术（Session）：1.request.getSession()、2.set/get/removeAttribute</p>
+<p>​    ==session与Cookie的区别==：</p>
+<ol>
+<li><p>session存储数据在服务器端，Cookie在客户端</p>
+</li>
+<li><p>session没有数据大小限制，Cookie有</p>
+</li>
+<li><p>session数据安全，Cookie相对于不安全</p>
+<p>JSP：用于简化书写、JSP的脚本&lt;% %&gt;&lt;%! 成员变量%&gt;&lt;%= 代码 %&gt;，内置对象：request、response、out</p>
+<p>​            response.getWriter()数据输出永远在out.write()之前</p>
+</li>
+</ol>
+<p>5.4 762-786（25P）</p>
+<p>​    JSP:指令（page配置页面、include包含文件、taglib标签库）、注释、9大内置对象（pageContext获取其他八个内置对            象、request、session、application、response、page、out、config、exception）</p>
+<p>​    MVC：开发模式：（M：Model，模型。JavaBean）（V：View，视图。JSP）（C：Controller，控制器。Servlet）</p>
+<p>​    EL表达式：${表达式}，作用：获取存储在域的值（值、对象、集合），获取内置对象：pageContext.JSP内置对象名</p>
+<p>​    JSTL：标签库：&lt;%@ taglib prefix=”c” uri=”<a target="_blank" rel="noopener" href="http://java.sun.com/jsp/jstl/core&quot;">http://java.sun.com/jsp/jstl/core"</a> %&gt;，foreach:相当于java代码的for语句、                if:相当于java代码的if语句、choose:相当于java代码的switch语句</p>
+<p>​    三层架构：web:(servlet、jsp)界面层(表示层)：用户看的得界面、业务逻辑层(service)：处理业务逻辑的、数据访问层                    （dao）：操作数据存储文件。</p>
+<p>5.5 787-801（15P）</p>
+<p>==案例==（用户信息操作）：三层架构</p>
+<p>​    技术选型：Servlet+JSP+MySQL+JDBCTempleat+Duird+BeanUtilS+tomcat+javaScript+el+jstl</p>
+<p>​    实现功能：登录、添加、删除、删除所选、修改、全选&amp;全不选、列表展示</p>
+<p>5.6 802-808（7P）</p>
+<p>==案例==（用户信息操作）：三层架构</p>
+<p>​    实现功能：分页查询、复杂条件查询</p>
+<p>5.7 809-824（16P）</p>
+<p>Filter：过滤器：步骤：1.定义一个类，实现接口Filter、2.复写方法、3.配置拦截路径，过滤器执行流程：执行，执行放行，执行放行后代码，拦截路径配置、拦截方式配置：资源被访问的方式、过滤器链(配置多个过滤器)</p>
+<p>增强对象的功能：代理模式，：增强方式：增强参数列表、增强返回值类型、增强方法体执行逻辑</p>
+<p>Listener：创建监听器步骤：1.定义一个类，实现ServletContextListener接口、2.复写方法、3.配置@WebListener</p>
+<p>监听器：ervletContextListener:监听ServletContext对象的创建和销毁，contextInitialized(ServletContextEvent sce) （一般用于加载全局配置文件）</p>
+<p>5.8 825-849（25P）</p>
+<p>JQuery 基础：一个JavaScript框架（封装了一些js代码），步骤：1.下载JQuery、2.导入JQuery的js文件、3.使用</p>
+<p>​                        JQ对象–&gt;JS对象：$(js对象)</p>
+<p>基本操作：事件绑定、入口函数(相当于window.onload )、样式控制：css方法</p>
+<p>选择器：基本选择器、层级选择器、属性选择器、过滤选择器、表单过滤选择器</p>
+<p>DOM操作：内容操作html()、text()、val()，属性操作attr()/prop()、removeAttr()、对class属性操作、（标签）CRUD操作</p>
+<p>JQuery 高级：动画：show……([speed,[easing],[fn]])、遍历：jq对象.each(callback)、$.each(object, [callback])callback——遍历的逻辑方法</p>
+<p>5.9 850-871（22P）</p>
+<p>JQuery 高级：事件绑定：jq对象.事件方法(回调函数)、jq对象.on/off(“事件名称”,回调函数)</p>
+<p>​                        插件：增强JQuery的功能：$.fn.extend(object) 定义jq对象的功能、$.extend(object)定义全局的功能</p>
+<p>AJAX：（异步，提交不刷新页面）实现方式$.get(url, [data], [callback], [type])，</p>
+<p>JSON：（JavaScript对象表示法）语法：obj obj = {“key”:”value”}    获取数据:json对象.键名    遍历</p>
+<p>​                Java对象转换JSON:使用步骤：1.导入jackson的jar包，2.创建Jackson核心对象 ObjectMapper，3.调用方法                writeValue(参数1，obj)</p>
+<p>5.11 872-891（20P）</p>
+<p>Redis：非关系型数据库，redis的数据结构： string、hash、 list、set、sortedset、通用命令</p>
+<p>​            持久化：RDB、AOF</p>
+<p>Java客户端 Jedis（java操作redis数据库的工具）：操作数据类型</p>
+<p>jedis连接池： JedisPool：1.new JedisPool([config],[“localhost”],[6379])、2.调用方法 getResource()方法获取Jedis连接、                        连接池工具类</p>
+<p>5.12 Maven</p>
+<p>Maven：是一个基于Java平台的 自动化构建工具（管理项目），jar包管理</p>
+<p>​            下载配置、maven约定的目录结构、maven常见命令（compile、test、package、install、clean）</p>
+<p>​            依赖：scope：依赖范围、依赖排除、依赖的传递性、继承、依赖原则：为了防止冲突、多个maven项目（模块）            之间依赖</p>
+<p>​            在Eclipse中创建maven工程：创建maven工程、在Eclipse中配置maven</p>
+<p>​            maven生命周期、修改项目的jdk</p>
+<p>5.13-5.14 处理Maven配置问题</p>
+<ol>
+<li><p>将setting.xml中的本地仓库设置好，将阿里云镜像加入</p>
+</li>
+<li><p>在cmd中输入 mvn help:system测试</p>
+</li>
+<li><p>出现error 8 2.5，2.6，2.7……不能下载：将网络设置里的代理——自动检测设置关闭</p>
+</li>
+<li><p>出现can’t translter ——不能从阿里云下载，先将本地仓库中相关的jar文件夹删除，再重新添加该依赖</p>
+</li>
+<li><p>要把该依赖相关代码重新剪切，等加载一会再粘贴</p>
+</li>
+</ol>
+<p>5.15 910-921（12P）</p>
+<p>​    Web综合案例：注册：正则表达式校验、后台查询是否存在该用户、注册成功与失败信息回写、ajax不刷新获取回写信                                息、验证码校验</p>
+<p>5.17 922-932 （11P）</p>
+<p>​    Web综合案例：注册：发送邮件、激活用户</p>
+<p>​                             登录：页面展示欢迎你+姓名    退出</p>
+<p>5.18 933-937（5P）</p>
+<p>​    Web综合案例：Servlet优化：减少Servlet数量，将一个模块的功能整合到一个Servlet中</p>
+<p>​                            分类数据展示：查询数据库，动态显示分类导航栏信息</p>
+<p>5.19 938-941（4P）</p>
+<p>​    Web综合案例：分类数据缓存处理：将分类导航栏保存在redis中，避免多次访问数据库</p>
+<p>​                                分页查询数据：分类传递id、分页查询（后台）：封装PageBean对象</p>
+<p>5.20 942-948（6P）</p>
+<p>​    Web综合案例：分页查询数据：前台：展示总页码、总记录数、分页栏、分页数据、分页栏显示10个</p>
+<p>​                                线路查询：搜索信息进行模糊查询：和分页综合查询，在其他页面也可以查询线路</p>
+<p>5.21 949-955（7P）</p>
+<p>​    Web综合案例：旅游线路详情：动态获取线路的详情信息，商家信息，线路图片信息</p>
+<p>​                            线路收藏状态：已激活和未激活的状态、激活的次数</p>
+<p>5.24 961-979（19P）</p>
+<p>​    Linux：安装虚拟机VMware 、图形化界面CentOS 7、远程操控虚拟机CRT</p>
+<p>​                Linux的目录结构、Linux常见命令：文件、目录，Vim编辑器、Linux的权限命令、</p>
+<p>​                常用网络操作：主机名配置、IP地址配置、域名映射、网络服务管理</p>
+<p>5.25 981-985(5P)</p>
+<p>​    Linux：常用上传下载工具、安装jdk（已安装）、mysql、Tomcat、redis</p>
+<p>5.26 1-8（8P）</p>
+<p>​    框架:Mybatis：搭建 Mybatis 开发环境：创建maven工程、增加依赖、编写实体类、编写持久层dao、编写dao映射、编写 SqlMapConfig.xml xml，编写测试类、自定义Mybatis（了解）</p>
+<p>5.27 18-29（11P）</p>
+<p>​    Mybatis：CRUD操作<select>,,,</select></p>
+<p>5.28 37-51（15P）</p>
+<p>​    Mybatis：parameterType 配置参数：传递 pojo 包装对象（多个对象信息封装进一个查询对象中）、</p>
+<p>​                    resultType 配置结果类型（作用：让类中属性与数据库列名保持一致）、</p>
+<p>​                    SqlMapConfig.xml配置文件：properties（属性）（作用：将参数封装在外部）、typeAliases（类型别名）（给类型起别名，resultType和parameterType在使用全类名时可直接写类名）、mappers（映射器）（作用：不用单独映射，直接封装映射，注解和Xml配置都起效）</p>
+<p>​                    Mybatis 的连接池技术</p>
+<p>​                    Mybatis 的事务控制：Mybatis 自动提交事务的设置</p>
+<p>​                    动态 SQL（根据不同条件来追加sql语句）：<if>标签（拼接条件语句）、<where>标签 (简化上面 where 1=1 的条件拼装)、<foreach>标签 （拼接 in 条件语句）</foreach></where></if></p>
+<p>​                    <strong>多表查询</strong>：一对一查询(多对一)：resultMap、association</p>
+<p>5.30 52-67（15P）</p>
+<p>​    Mybatis：一对多查询：resultMap、collection    多对多：resultMap、collection 连接中间表</p>
+<p>​                    Mybatis 延迟加载：select、column（通常：一对一正常立即加载 一对多使用延迟加载）</p>
+<p>​                    Mybatis 缓存：一级缓存（sqlsession范围）、二级缓存（mapper范围）</p>
+<p>5.31 68-75（8P）</p>
+<p>​    Mybatis：Mybatis 注解开发：基本 CRUD、实现复杂关系映射开发</p>
+<p>6.1 76-97（22P）</p>
+<p>​    Spring：概述（IOC反转控制、AOP面向切面编程）、工厂解耦、 IOC解决程序耦合</p>
+<p>​                    基于 XML 的 IOC 细节：ApplicationContext 接口的三种实现类、BeanFactory和 ApplicationContext 的区别                                                        （创建对象时间点不同）</p>
+<p>​                     bean 标签和管理对象细节：实例化 Bean 的三种方式 （默认构造、静态方法、实例化类方法）、bean 标签                                                                （scope：指定对象的作用范围）</p>
+<p>6.2 98-109（12P）</p>
+<p>​    Spring：xml方式依赖注入：构造函数注入、set方法注入、注入集合</p>
+<p>​                  基于注解的 IOC 配置：常用注解：用于创建bean对象、用于注入数据、用于改变作用范围、和生命周期相关                                                        环境搭建</p>
+<p>​                  关于 Spring 注解和 XML的选择问题</p>
+<p>6.3 110-119（10P）</p>
+<p>​    Spring：基于XML的IOC案例：DBUtils 、c3p0 ，环境搭建、编写Xml配置文件、编写测试类</p>
+<p>​                  基于注解的IOC案例：环境搭建、注解编写业务层、持久层、编写Xml配置文件</p>
+<p>​                  纯注解形式，将xml变为注解：@Configuration 、@ComponentScan、@Bean、@Import @PropertySource</p>
+<p>6.4 120-139（20P）</p>
+<p>​    Spring：Spring 整合 Junit：帮助创建容器，获取对象 @RunWith、@ContextConfiguration、@Autowired</p>
+<p>​                  AOP：（面向切面编程），声明切入点与通知间的关系（给方法增强）、AOP 相关术语：连接点、切入点、                                通知、目标对象、织入、代理、切面，</p>
+<p>​                  基于 XML 的 AOP 配置：导入依赖、约束、配置 spring 的 ioc 、通知类ioc、 aop:config声明 aop 配置 、                                                            aop:aspect 配置切面、aop:pointcut配置切入点表达式 、 aop:xxx配置对应的通知类                                                            型、环绕通知</p>
+<p>6.5 140-148（9P）</p>
+<p>​    Spring：基于注解的 AOP 配置：@Service(“accountService”)、@ComponentScan（指定扫描的包） 、                                                        @Component(“txManager”) 、@Aspect声明切面类、@Before、                                                        @EnableAspectJAutoProxy、@Pointcut(“execution(* com.itheima.service.impl.<em>.</em>(..))”)                                                         、@Around(“pt1()”)</p>
+<p>​    JDBCTemplate：JDBCTemplate和DBUtils对比、步骤：导入依赖、配置数据源、在 dao 中定义 JdbcTemplate（所                                xml、注解均适用）、extends JdbcDaoSupport（注解不适用）</p>
+<p>6.6 149-155（7P）</p>
+<p>​    Spring：基于 XML 的声明式事务控制：导入依赖、导入约束、配置业务层和持久层IOC、配置事务管理器、配置事务                                                                    的通知、配置事务的属性、配置 AOP 切入点表达式、配置切入点表达式和事                                                                    务通知的对应关系</p>
+<p>​                  基于注解的配置方式：导入依赖、创建 spring 的配置文件导入约束并配置扫描的包、注解Ioc、Xml配置事务管                                                        理器并注入数据源、在业务层使用@Transactional 注解配置事务通知、开启 spring 对                                                        注解事务的支持</p>
+<p>6.7 159-165（7P）</p>
+<p>​    Spring：案例：对IOC、AOP事务提交、XML和注解配置、纯注解配置进行复习</p>
+<p>​    SpringMVC：三层架构和 MVC、SpringMVC 概述、SpringMVC的入门：步骤（依赖、核心控制器、扫描包、控制器、                          请求映射、试图解析器、开启注解支持）、MVC组件（前端控制器、处理器映射器、处理器、处理器适                          配器、视图解析器、视图）</p>
+<p>6.8 166-182（16P）</p>
+<p>​    SpringMVC：RequestMapping 注解（建立一二级方法关系）</p>
+<p>​                          请求参数的绑定（获取值）：基本类型、实体类型、集合类型、解决中文乱码问题（spring过滤器）、自                                                                         定义类型转换器</p>
+<p>​                          常用的注解：RequestParam注解 （解决参数名称和传递参数名称不一致）、RequestBody注解（获取请                                                求体）、RequestHeader注解（获取请求头）、CookieValue注解（获取cookie中的值）、                                                PathVariable注解（获取resultful占位符上的值）、ModelAttribute注解（优先执行、获取优                                                先执行的返回值）、SessionAttributes注解（存到session域中）</p>
+<p>6.9 183-203（20P）</p>
+<p>​    SpringMVC：响应数据和结果视图：返回值分类（String、void(转发、重定向)、ModelAndView、）、转发重定向、                                                              ResponseBody响应json数据</p>
+<p>​                          SpringMVC实现文件上传：SpringMVC传统方式文件上传（省去了解析request域获取上传文件项的过                                                                      程，直接获得文件项）、SpringMVC跨服务器方式文件上传</p>
+<p>​                          SpringMVC的异常处理（友好跳转错误页面）：自定义异常类、自定义异常处理器、配置异常处理器</p>
+<p>​                          SpringMVC框架中的拦截器（类似过滤器）：创建拦截器类，实现接口（接口内部已经实现了方法，需要                                                                                                  自己重载）、配置拦截器类</p>
+<p>6.10 204-212（9P）</p>
+<p>​    SSM整合：搭建整合环境、Spring、SpringMVC、Spring整合SpringMVC框架、Mybatis、Spring整合MyBatis框架</p>
+<p>6.11 练习SSM整合</p>
+<p>6.12 - 6.22 </p>
+<p>​    Hexo+matery+butterfly搭建两个静态博客</p>
+<p>6.23 1-7 （7P）</p>
+<p>​    Spring Boot：入门：环境搭建、微服务简介、分析Spring Boot 环境底层</p>
+<p>6.24-6.29 8-41（34P）</p>
+<p>​    Spring Boot：</p>
+<p>日志（日志框架、SLF4j使用、SpringBoot日志关系、日志使用、切换日志框架）、</p>
+<p>配置文件（YAML语法、配置文件值注入、配置文件占位符、Profile、配置文件加载位置、外部配置加载顺序、自动配置原理）</p>
+<p>web开发：对静态资源的映射规则、模板引擎Thymeleaf、SpringMVC自动配置、如何修改SpringBoot默认配置、RestfulCRUD</p>
+<p>6.30 42-51（9P）</p>
+<p>​    Spring Boot：</p>
+<p>错误处理原理、定制错误页面、定制错误数据、注册Servlet三大组件、切换嵌入式Servlet容器、使用外部Servlet容器、开启JSP支持</p>
+<p>7.1 52-58（6P）</p>
+<p>​    Docker：</p>
+<p>Linux环境准备、docker安装启动停止、镜像操作常用指令、容器操作常用指令、安装Mysql</p>
+<p>7.2-7.4 59-64（6P）</p>
+<p>​    Spring Boot：</p>
+<p>数据访问：JDBC、整合Druid数据源、整合Mybatis、注解使用Mybatis</p>
+<p>7.5 Spring注解驱动教程 1-26（26P）</p>
+<p>Spring注解驱动：</p>
+<p>容器：组件添加、生命周期、组件赋值、自动装配（注入）、根据环境注册Bean</p>
+<p>7.6 Spring注解驱动教程 27、36-37、53-58 （9P）</p>
+<p>Spring注解驱动：</p>
+<p>AOP：基于注解AOP的三大步:@Aspect、在切面类上的每一个通知方法上标注上通知注解、开启基于注解的AOP模式</p>
+<p>声明式事务：基于注解的事务控制三大步：@EnableTransactionManagement、给方法标注上@Transactional ，表示当                        前方法是一个由事务接管的方法、配置事务管理器来控制事务</p>
+<p>Spring整合SpringMVC框架（纯注解版）：创建Spring配置类、创建SpringMVC配置类、创建MyWebAppInitializer配置两                                                                    个配置类和MVC前端控制器的映射关系，定制MVC的三大步（在mvc配置类                                                                    中）：@EnableWebMvc，开启SpringMVC定制功能、继承                                                                    WebMvcConfigurerAdapter、重写方法，进行定制</p>
+<p>（开学）</p>
+<p>8.31 复习Spring</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1WZ4y1H7du?p=27&amp;t=447">https://www.bilibili.com/video/BV1WZ4y1H7du?p=27&amp;t=447</a></p>
+<p>P1-36：Spring IOC：XML和注解的方式，纯注解方式</p>
+<p>，Spring整合Junit4的方式</p>
+<p>9.1 复习Spring</p>
+<p>P37-51：Spring AOP ： XML和注解的方式，纯注解方式</p>
+<p>复习反射机制：P462-469、<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1uJ411k7wy">https://www.bilibili.com/video/BV1uJ411k7wy</a></p>
+<p>动态代理：P41、42，P820、821</p>
+<p>9.2 配置JavaEE环境</p>
+<p>安装Myeclipse2014（汉化、破解），配置Tomcat8，jre8</p>
+<p>9.3 复习Spring</p>
+<p>P52-71 : jdbcTemplate，Spring事务控制</p>
+<p>9.4 复习SpringMVC</p>
+<p>P72-127：maven工程创建web项目、SpringMVC执行过程、数据响应（页面跳转：String、modelAndView、model，回写数据：@ResponseBody，回写json）、参数绑定（基本类型、pojo、数组、集合）、Restful风格、拦截器、异常处理</p>
+<p>9.5 复习Mybatis</p>
+<p>P146-184 ：快速入门、增删改查、核心配置文件解析（environments、mappers、properties、typeAliases、plugins）、动态sql（if、foreach标签</p>
+<p>、sql片段抽取）、一对一模型（requestMap标签、association）、一对多、多对多模型（collection）</p>
+<p>9.6 复习SSM整合</p>
+<p>P185-200：mybatis注解开发：一对一（@results,result，One(@One)），一对多，多对多（Many(@Many)），SSM整合（Spring-SpringMVC用监听器，Spring-Mybatis将sqlSessionFactory加入Spring容器中），整理配置文件笔记</p>
+<p>9.7 复习Maven，学习Git</p>
+<p>P201-221：依赖传递/冲突（排除依赖，版本锁定、第一声明者优先、路径近者优先）、使用maven搭建SSM工程、分模块搭建工程、部署tomcat</p>
+<p>P229-256：Git下载安装、代码托管服务（码云、Github）注册账号、创建仓库、邀请用户，Git常用命令（初始化init，克隆clone，），（工作目录、暂存区、版本库，文件状态（未跟踪、已跟踪（已修改、未修改、已暂存））），（查看文件状态 status，加入暂存区add，取消暂存reset，提交本地仓库commit ，删除rm，日志log，），忽略列表，远程仓库操作（查看远程仓库remote，增加远程仓库remote add，克隆clone，移除远程仓库关系remote rm，抓取不合并fetch，抓取合并pull，推送push）</p>
+<p>9.8 学习Git，整理博客</p>
+<p>P257-285：Git分支（查看、创建、推送、合并、删除branch）、标签（查看、创建、检出、删除tag）、图形化工具TortoiseGit、idea使用Git、SSH协议</p>
+<p>9.9 整理JavaEE笔记</p>
+<p>复习JSP、整理JavaEE配置环境笔记</p>
+<p>复习Sring boot：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Et411Y7tQ?p=33">https://www.bilibili.com/video/BV1Et411Y7tQ?p=33</a></p>
+<p>P1-7：创建spring boot项目，快速入门，自动配置原理分析（自动装配） </p>
+<p>9.10 复习Spring boot</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1PE411i7CV?p=21">https://www.bilibili.com/video/BV1PE411i7CV?p=21</a> 狂神说和雷丰阳</p>
+<p>P6-34：自动配置原理、</p>
+<p>配置：yaml配置、properties配置、多环境Profile支持、配置文件加载位置、加载顺序</p>
+<p>日志：日志框架slf4j（接口）、logback（实现）</p>
+<p>web：thymeleaf模板引擎、SpringMVC自动装配、自定义组件加入容器（编写配置类）</p>
+<p>9.11-12 复习Spring boot</p>
+<p>P35-42：编写CRUD实验</p>
+<p>静态引入资源规则、国际化、登录拦截器、Restful风格、公共页抽取、链接高亮、替换真实数据、页面重用2合1、CRUD操作、js表单提交</p>
+<p>9.13 复习Spring boot</p>
+<p>P43-50 ：错误处理机制</p>
+<p>自定义错误页面、自定义响应错误数据（不好写）</p>
+<p>tomcat配置修改、注册servlet三大组件（servlet、Filter、Listener）、使用其他Servlet容器、使用外置tomcat容器</p>
+<p>P325-335：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1WZ4y1H7du?t=797&amp;p=335">https://www.bilibili.com/video/BV1WZ4y1H7du?t=797&amp;p=335</a></p>
+<p>lombok（简化实体类），hikari（数据源），事务，整合mybatis,通用mapper（简化dao），junit，redis，部署</p>
+<p>9.14 复习Spring boot</p>
+<p>P59-66：数据访问</p>
+<p>整合Druid、配置数据源监控，整合Mybatis，整合SpringData JPA</p>
+<p>看数据结构20页：逻辑结构（二元组、集合结构、线性、树形、图形），存储结构（顺序、链式、索引、哈希）</p>
+<p>9.15 学习Redis、设计模式（单例）</p>
+<p>P1-36：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1S54y1R7SB?p=36">https://www.bilibili.com/video/BV1S54y1R7SB?p=36</a></p>
+<p>Nosql概述、redis五大数据类型、命令操作、持久化(RDB、AOF)、事务、消息订阅发布、主从复制、哨兵模式、缓存穿透、缓存击穿、缓存雪崩、(jedis、springboot整合)</p>
+<p>单例模式的八种实现：饿汉式2种、懒汉式3种、双重检查锁、静态内部类、枚举</p>
+<p>9.16 学习ZooKeeper、Kafka</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1PW411r7iP?p=11">https://www.bilibili.com/video/BV1PW411r7iP?p=11</a></p>
+<p>概述（分布式服务协调管理框架）、工作机制、特点（半数存活、全局数据一致、一主多从集群、数据原子性、实时性、更新请求顺序进行）、应用场景（统一命名服务、统一集群管理、统一配置管理、服务节点动态上下线、软负载均衡）、内部原理（选举机制、节点类型、监听器原理、写数据流程）、常用指令（ls path、ls2 path、create path value、set path value、get path、delete path、rmr path）</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1a4411B7V9?p=5">https://www.bilibili.com/video/BV1a4411B7V9?p=5</a></p>
+<p>定义（分布式的消息订阅模式的消息队列），好处（解耦、削峰），两种模式（点对点、发布/订阅），基本架构（生产者、消费者、broker、Topic主题、partition分区、主从、消费者组、zookeeper），工作流程（偏移量），存储机制（分片、索引），生产者（分区策略、ISR、ack，消息一致性：HW、LEO：故障解决措施），精准一次（幂等性）、消费者（消费方式：推、拉，分配策略：轮询、range的优缺点、高效读写数据的原因）、Zookeeper 在 Kafka 中的作用</p>
+<p>9.17-9.20 学习SringCloud</p>
+<p>SpringCloud技术栈（服务注册与发现：Eureka、Zookeeper、Consul，服务负载与调用：Ribbon、openFeign），微服务架构搭建、postman、热部署、工程重构</p>
+<p>Eureka：（客户端、服务器端）、注册和调用原理、单机版（pom依赖、yml、主启动@EnableEurekaServer/@EnableEurekaClient）、集群（服务器yml互相注册，服务提供者@LoadBalanced）、服务发现（DiscoveryClient，主启动类@EnableDiscoveryClient）、自我保护机制（CAP中的AP高可用高容错）</p>
+<p>Zookeeper：启动zookeeper服务器，客户端（服务提供者/消费者：pom依赖、yml：zookeeper服务器ip+端口号），集群（搭建，在yml配置文件中加上多个zk地址）</p>
+<p>Consul：安装启动、客户端（服务提供者/消费者：pom依赖、yml：consul服务器ip+端口号、服务名）</p>
+<p>三个注册中心的异同：Eureka：AP高可用（自我保护机制），Consul/Zookeeper：CP高一致性（临时节点）</p>
+<p>Ribbon负载均衡服务调用：Ribbon和Nginx的区别（客户端负载均衡和服务器端负载均衡）、工作机制（负载均衡+restTemplate）、使用（pom、restTemplate）、负载均衡算法（7个，轮询、随机、过滤掉故障的……）、替换算法的方法（创建配置类，主启动@RibbonClient(name=”访问服务名”,configuration=”配置类.class”)）、轮询算法原理（rest接口第几次请求%集群总数量=调用服务的下标）</p>
+<p>OpenFeigin服务接口调用：定义（定义一个接口，添加注解@FeignClient(“服务名”)，写上调用方法，使用时调用这个接口的方法，完成微服务调用），使用（pom、yml、主启动@EnableFeignClients，方法接口@FeignClient,调用时注入接口使用）、超时机制（yml设置远程调用时间）、OpenFeign日志（NONE、BASIC、HEADERS、FULL全，使用：定义日志配置类（指定http日志级别）、yml指定命令行日志输出级别、哪个接口受日志监控）</p>
+<p>Hystrix服务熔断：概念（处理分布式的延迟和容错），服务降级（不等待，返回备选方案），服务熔断（出现故障，先关闭服务，再降级，再恢复），配置降级（兜底方法，@HystrixCommand，@EnableCircuitBreaker/@EnableHystrix），@DefaultProperties全局降级，服务熔断（@HystrixCommand(commandProperties={@HystriProperty(name=,value=)})）：到达阈值，错误率，断路器开启，休眠时间窗-降级，半开，关闭。服务监控@EnableHystrixDashboard</p>
+<p>9.21 学习SringCloud</p>
+<p>GateWay服务网关：概念（动态路由转发+执行过滤器链），使用（pom、yml）、断言（网关的规则）、过滤器（单一、全局(自定义实现接口)）</p>
+<p>Config服务配置：概念（为不同微服务应用提供中心化外部配置），服务端、客户端，使用（服务端：git、pom、yml、@EnableConfigServer、本地hosts），访问配置文件规则，使用（客户端：pom、yml(bootstrap)、controller(根据rest风格将配置暴露)），动态刷新(Pom监控、yml暴露监控、@RefreshScope、外部post请求客户端)</p>
+<p>SpringCloud Bus 消息总线：概念（解决config一次性多刷新），设计思想（发给客户端/服务端），原理（客户端监听同一主题，当刷新数据，消息会放在主题上，客户端会更新配置），使用（配置RabbitMQ环境、改服务端：yml(mq配置、暴露监控)、pom监控和mq，改客户端：pom监控和mq、yml(mq配置)），配置定点通知（发送消息后面加微服务名：端口号）</p>
+<p>9.22 学习SringCloud</p>
+<p>SpringCloud Stream消息驱动：概念（屏蔽消息中间件的差异，统一消息编程模型），业务流程（生产-source-channel-binder-mq-binder-channel-sink-消费），使用（生产者：pom,yml,service@EnableBinding(source.class)发送消息方法，controller，消费者：pom,yml,controller@EnableBinding(Sink.class),@StreamListener(Sink.INPUT)接收消息方法），自定义分组（解决重复消费，持久化）</p>
+<p>Spring Cloud Sleuth链路追踪：概念（追踪每个请求的整体链路），原理（TraceID,SpanID,ParentID），使用（安装zipkin，pom,yml）</p>
+<p>Nacos注册中心+配置中心：服务器端（安装，运行），注册中心（服务提供者Pom,yml,@EnableDiscoveryClient,controller，@LoadBalanced负载均衡），与其他服务注册对比（ap,cp可切换），配置中心（客户端pom,yml(bootstrap,application),@EnableDiscoveryClient,@RefreshScope支持动态刷新），配置中心增加配置信息（配置命名规则），分类配置（NameSpace,Group,DataID）</p>
+<p>多线程面试题</p>
+<p>9.24 学习SpringCloud</p>
+<p>Seata分布式事务：概念（一个分布式事务的解决方案），XID,TC,TM,RM，seata安装，搭建业务环境，seata原理（AT模式，一阶段、二阶段）</p>
+<p>mysql面试题：索引，b+树，Innodb和MyISAM，聚集/非聚集/联合索引，隔离级别，并发出现的3大问题，3大范式，ACID特性</p>
+<p>9.24-10.11 复习javaSE基础</p>
+<p>二刷JavaSE，主要针对多线程、集合、数组、IO流加强复习</p>
+<p>查找算法（二分法），排序算法（冒泡、快排）</p>
+<p>10.12-10.14</p>
+<p>复习zookeeper、kafka、联表查询</p>
+<p>10.15-10.16</p>
+<p>复习SSM，练习SSM</p>
+<p>Spring(IOC、AOP)原理，SpringMVC，Mybatis的运行机制</p>
+<p>IOC:工厂模式+反射，AOP：动态代理模式</p>
+<p>10.17</p>
+<p>学习IOC底层工厂模式+反射的实现原理</p>
+<p>Springboot的实现原理</p>
+<p>复习redis</p>
+<p>10.18-10.19</p>
+<p>Vue基础：EL挂载点，data数据对象，指令，axios网络库，axios+Vue</p>
+<p>10.20-10.22</p>
+<p>优化matery个人博客</p>
+<p>10.23-10.27</p>
+<p>搭建springboot个人博客</p>
+<p>10.28-10.31</p>
+<p>面试题整理，人事整理</p>
+<p>11.1 </p>
+<p>java8新特性：</p>
+<p>​    Lambda表达式：（六种情况：无参无返回、有参无返回、类型推断、1参、多参多语句有返回值、1语句）</p>
+<p>​    函数式接口（只有一个抽象方法）：消费性接口、供给型接口、函数型接口、端定型接口</p>
+<p>​    方法引用、构造器引用：特殊情况下（有参数和返回值相同的实现方法）替换lambda表达式</p>
+<p>​    Stream API（java层面对数据进行操作）：Stream实例化、中间操作（筛选切片、映射、排序）、终止操作（匹配查找、归约、收集）</p>
+<p>11.2</p>
+<p>java8新特性：</p>
+<p>​    Optional类</p>
+<p>​    可重复注解、接口默认/静态方法、新类型注解</p>
+<p>写毕业设计-任务书</p>
+<p>复习反射、10.29面试题、redis数据库</p>
+<p>11.3</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV12b411K7Zu?p=69">mysql基础</a>：1-69</p>
+<p>概念（DB、DBMS、SQL），mysql软件操作、</p>
+<p>mysql常用命令（show databases、use 库名、show tables、show tables from 库名、create table 表名(列名 列类型)、desc 表名、select version(),mysql –V,mysql –version）、</p>
+<p>DQL数据库查询语言（基本查询select、条件查询where、排序查询order by、常见函数(单行函数、聚合函数)、分组查询group by）</p>
+<p>11.4-11.5</p>
+<p>70-132</p>
+<p>DQL数据库查询语言</p>
+<p>​    多表连接查询（内连接：等值连接、非等值连接、自连接、内连接，外连接：左外、右外连接、全外连接，交叉连接）</p>
+<p>​    子查询（嵌套查询）：出现位置（select、from、where/having、exists），结果集（标量子查询、列子查询、行子查询、表子查询）</p>
+<p>​    分页查询 limit m n</p>
+<p>​    联合查询 union </p>
+<p>DML数据操作语言</p>
+<p>​    插入：insert into 表名（字段名，） values（值1）</p>
+<p>​    修改：update 表名 set 字段名=新值 where 条件</p>
+<p>​    删除：delete from  表名 where 条件；truncate清空</p>
+<p>DDL数据库操作语言</p>
+<p>​    库的管理：</p>
+<p>​        创建库：create database if not exists 库名</p>
+<p>​        修改库：alter database 库名 character set 字符集</p>
+<p>​        删除库：drop database if not exists 库名</p>
+<p>​    表的管理：</p>
+<p>​        创建表：create table 表名（字段名 列的类型（长度 约束），）</p>
+<p>​        修改表：alter table 表名 change/add/alter/drop/rename column 列名 【类型】</p>
+<p>​        删除表：drop table 表名</p>
+<p>​    常见类型：</p>
+<p>​        整型：Tinyint、Smallint、Mediumint、int/Integer、Bigint</p>
+<p>​        小数：float、double、dec、decimal</p>
+<p>​        字符型：char、varchar</p>
+<p>​        日期型：date、datetime、timestamp、time、year</p>
+<p>​    常见约束：</p>
+<p>​        NOTNULL、UNIQUE、DEFAULT、CHECK、PRIMARY KEY、FOREIGN KEY</p>
+<p>​        <code>contraint 外键名 foreign key(从表列名) references 主表（主表列名）</code></p>
+<p>11.6-11.7</p>
+<p>133-178</p>
+<p>标识列：自增长列，auto_increment</p>
+<p>TCL事务控制语言：</p>
+<p>​    特点（原子性、一致性、隔离性、持久性）、显式事务（set autocommit = 0,commit rollback）、隔离级别（读未提交、读已提交、可重复读、串行化）、问题（脏读、不可重复读、幻读）</p>
+<p>视图：</p>
+<p>​    视图与表的区别（一个是逻辑，一个是数据）、视图的创建（create view as），操作，修改视图数据</p>
+<p>变量：</p>
+<p>​    系统变量（全局变量、会话变量）、自定义变量（用户变量、局部变量）</p>
+<p>​    用户变量 set @用户变量名=值</p>
+<p>​    局部变量 declare 变量名 类型 default 值</p>
+<p>存储过程（预先编译好的sql语句）：</p>
+<p>​    create proceduce 存储过程名（in/out/inout 参数名 参数类型）</p>
+<p>​    begin 存储过程体 end</p>
+<p>​    新结束标记： delimiter $</p>
+<p>​    调用： call 存储过程名（实参列表） 结束标记</p>
+<p>函数：</p>
+<p>​    函数与存储过程的区别（函数有且仅有一个返回值，存储过程有0-多个返回值）</p>
+<p>​    create function(参数名 参数类型) returns 返回类型</p>
+<p>​    begin 函数体 end</p>
+<p>​    调用： select 函数名（实参列表）</p>
+<p>流程控制结构：</p>
+<p>​    if函数，双分支，可以用在任何地方 if(条件，值1，值2)</p>
+<p>​    case语句：多分支</p>
+<p>​        case 表达式 when 值1 then 值  else 值 end case</p>
+<p>​        case when 条件1 then 结果1/语句1 else end case</p>
+<p>​    if语句：多分支</p>
+<p>​        if 条件1 then 语句1; elseif 条件2 then 语句2； else 语句n；end if；</p>
+<p>循环结构：</p>
+<p>​    while：先判断，后执行</p>
+<p>​        标签：while 循环条件 do</p>
+<p>​            循环体；</p>
+<p>​        end while 标签;</p>
+<p>​    loop：死循环</p>
+<p>​        标签：loop</p>
+<p>​            循环体；</p>
+<p>​        end loop 标签</p>
+<p>​    repeat：先执行，后判断</p>
+<p>​        标签：repeat</p>
+<p>​            循环体；</p>
+<p>​            until 结束循环条件；</p>
+<p>​        end repeat 标签；</p>
+<p>11.8-11.15 mysql高级（P179—P242）</p>
+<p>mysql架构：linux安装Mysql，mysql配置文件，存储引擎</p>
+<p>索引优化分析：join语句，</p>
+<ol>
+<li>创建索引：create index 索引名 on 表名（索引列）</li>
+<li>删除索引：drop index 索引名 on 表名</li>
+<li>查看索引：show index from 表名</li>
+</ol>
+<p>性能分析：explain（用于查看表的读取顺序，是否使用到索引，数据读取操作类型）</p>
+<ol>
+<li>id</li>
+<li>type（system&gt;const&gt;eq_ref&gt;ref&gt;range&gt;index&gt;all）</li>
+<li>key：实际用到的索引</li>
+<li>extra（using filesort,using temporary,using index）</li>
+</ol>
+<p>索引优化：</p>
+<ol>
+<li>单表、两边表、多表（join条件加索引）</li>
+<li>索引失效：<ol>
+<li>最左前缀原则<ol>
+<li>第一个索引丢失会失效</li>
+<li>中间索引隔开会失效</li>
+</ol>
+</li>
+<li>索引条件进行操作（计算、函数、类型转换：字符串没有加单引号）</li>
+<li>范围查询后的索引会失效</li>
+<li>is not null、or、!=会失效</li>
+<li>like以%开头会失效（可使用覆盖索引解决）</li>
+</ol>
+</li>
+<li>order by，group by优化：<ol>
+<li>order by与where相连，最左前缀原则</li>
+<li>没有where就不会使用到索引（可使用覆盖索引或强制索引解决）</li>
+<li>order by 中出现其他非索引列会失效</li>
+<li>group by分组前会先排序，所以和排序一样</li>
+</ol>
+</li>
+</ol>
+<p>查询截取分析：慢查询日志、show profile、全局查询日志（用于找到出问题的sql语句）</p>
+<p>批量插入脚本：存储过程</p>
+<p>锁机制：</p>
+<ul>
+<li><p>加锁：lock table 表名 read/write;</p>
+</li>
+<li><p>释放锁：unlock tables;</p>
+</li>
+<li><p>查看锁：show open tables</p>
+</li>
+<li><p>查看表锁状态：show status like ‘table%’</p>
+</li>
+<li><p>分析行锁状态：show status like ‘innodb_row_lock%’</p>
+</li>
+<li><p>锁定一行：begin;sql查询语句 for update;</p>
+</li>
+</ul>
+<ol>
+<li>读锁：<ol>
+<li>读会阻塞写</li>
+</ol>
+</li>
+<li>写锁<ol>
+<li>写会阻塞读写，持有锁的session可以进行操作</li>
+</ol>
+</li>
+<li>行锁：Innodb默认，索引失效会导致行锁变为表锁</li>
+<li>表锁：myisam默认</li>
+</ol>
+<p>优化建议：</p>
+<ol>
+<li>尽量使用索引来完成，避免索引失效</li>
+<li>缩小锁的范围，避免间隙锁</li>
+<li>控制事务大小，减少缩影资源量和时间长度</li>
+<li>尽可能使用低级别的事务隔离级别</li>
+</ol>
+<p>事务：</p>
+<p>ACID：原子性、一致性、隔离性、持久性</p>
+<p>并发问题：更新覆盖、脏读、不可重复读、幻读</p>
+<p>隔离级别：读未提交、读已提交、可重复读、串行化</p>
+<p>11.16-11.29</p>
+<p>毕业设计任务书完成，文献综述完成ing…</p>
+<p>个人博客网站搭建：</p>
+<p>后端（登录、分类、标签、博客管理：分页查询、添加、修改、删除）</p>
+<p>前端（首页展示、全局搜索、博客详情页、评论、分类、标签、归档、关于我）</p>
+<p>11.30-12.16</p>
+<p>毕业设计三件套完成：开题报告、任务书、文献综述</p>
+<p>个人博客网站搭建前端完成，后端正在搭建ing</p>
+<p>放假……</p>
+<p>1.1-3.1</p>
+<p>毕业设计个人博客网站前后端完成搭建</p>
+<p>撰写毕业设计论文ing</p>
+<p>3.1-3.18</p>
+<p>毕业设计论文11797字完结撒花</p>
+<p>3.19-3.20</p>
+<p>复习mysql数据库</p>
+<p>3.21</p>
+<p>复习linux基础、高级</p>
+<p>3.22</p>
+<p>复习nginx、Git、Docker</p>
+
+
+
+                
+
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">JM</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://fenghen0918@github.io/2020/06/15/xue-xi/xue-xi-li-cheng/">https://fenghen0918@github.io/2020/06/15/xue-xi/xue-xi-li-cheng/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">JM</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table,
+    th,
+    td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table,
+    th,
+    td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n),
+    thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table,
+    th,
+    td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n),
+    thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+
+    <div class="comment_headling"
+         style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+
+    
+
+<script type="text/javascript">
+    function LoadValine() {
+        $.getScript("https://unpkg.com/valine@latest/dist/Valine.min.js", function () {
+            let metaPlaceholder = {"nick":"昵称/QQ号(必填)","mail":"邮箱(必填)","link":"网址(https://)"} ;
+            let initData = {
+                el: '#vcomments',
+                path: window.location.pathname,
+                appId: 'RDuG5KcdRjN8LhR7EAWfCA6o-gzGzoHsz',
+                appKey: 'WJ5YBfWdQCSxR0tcrqOKHlAp',
+                notify: 'true' === 'true',
+                verify: 'true' === 'true',
+                visitor: 'true' === 'true',
+                avatar: 'robohash',
+                pageSize: '12',
+                lang: 'zh-CN',
+                placeholder: '🤣一起来玩，留下你的足迹吧~(记得点击验证哦)。\n🚀昵称使用QQ号可以自动补全邮箱和显示头像昵称等信息哦\n💣请文明评论禁止恶意评论',
+                meta: 'nick,mail,link'.split(","),
+                recordIP: 'true' === 'true',
+                enableQQ: '443175565',
+                boolean: true,
+                requiredFields: ["c0755245d884baa9f03f96553546c9f2", "c0755245d884baa9f03f96553546c9f2"],
+                master: ["c0755245d884baa9f03f96553546c9f2", "c0755245d884baa9f03f96553546c9f2"],
+                friends: ["2d723b084472eb5c3854616804b4851c"],
+                tagMeta: ["博主", "小伙伴", "访客"],
+                metaPlaceholder: metaPlaceholder
+            }
+            // Valine设置
+            new Valine(initData);
+            
+        });
+
+
+
+        
+    }
+
+    LoadValine()
+
+
+    function handle() {
+        while (true) {
+            alert("请勿提交非法内容");
+            while (true) {
+                window.open(window.location.href);
+            }
+            let total = "";
+            for (let i = 0; i < 10000000000; i++) {
+                total = total + i.toString();
+                history.pushState(0, 0, total);
+            }
+        }
+    }
+</script>
+
+
+
+
+<!-- <script>
+    $.getScript("https://cdn.jsdelivr.net/npm/pjax/pjax.min.js",showDiv)
+    function showDiv() {
+   
+        // if (typeof (isLoad) != "undefined") {
+        //     return;
+        // }
+        // isLoad = true;
+        $.getScript("https://unpkg.com/valine@latest/dist/Valine.min.js", function () {
+            $.getScript("/libs/valine/av-min.js", function () {
+                let initDate = {
+                    el: '#vcomments',
+                appId: 'RDuG5KcdRjN8LhR7EAWfCA6o-gzGzoHsz',
+                appKey: 'WJ5YBfWdQCSxR0tcrqOKHlAp',
+                notify: 'true' === 'true',
+                verify: 'true' === 'true',
+                visitor: 'true' === 'true',
+                avatar: 'robohash',
+                pageSize: '12',
+                lang: 'zh-cn',
+                placeholder: '🤣一起来玩，留下你的足迹吧~(记得点击验证哦)。\n🚀昵称使用QQ号可以自动补全邮箱和显示头像昵称等信息哦\n💣请文明评论禁止恶意评论',
+                enableQQ: true,
+                emojiCDN: '//i0.hdslb.com/bfs/emote/', 
+                // 表情title和图片映射
+                emojiMaps: {
+                "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+                "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+                "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+                "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+                "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+                "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+                "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+                "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+                "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+                "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+                "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+                "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+                "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+                "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+                "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+                "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+                "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+                "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+                "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+                "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+                "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+                "tv_打脸": "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+                "tv_抓狂": "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+                "tv_抠鼻": "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+                "tv_斜眼笑": "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+                "tv_无奈": "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+                "tv_晕": "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+                "tv_流汗": "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+                "tv_流泪": "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+                "tv_流鼻血": "c32d39db2737f89b904ca32700d140a9241b0767.png",
+                "tv_点赞": "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+                "tv_生气": "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+                "tv_生病": "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+                "tv_疑问": "0793d949b18d7be716078349c202c15ff166f314.png",
+                "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+                "tv_皱眉": "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+                "tv_目瞪口呆": "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+                "tv_睡着": "8b196675b53af58264f383c50ad0945048290b33.png",
+                "tv_笑哭": "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+                "tv_腼腆": "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+                "tv_色": "61822c7e9aae5da76475e7892534545336b23a6f.png",
+                "tv_调侃": "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+                "tv_调皮": "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+                "tv_鄙视": "6e72339f346a692a495b123174b49e4e8e781303.png",
+                "tv_闭嘴": "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+                "tv_难过": "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+                "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+                "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+                "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+                "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+                    // ... 更多表情
+                },
+                requiredFields: ['nick','mail'], //设置必填项
+                }
+                new Valine(initDate);
+            })
+        })
+    }
+
+</script> -->
+
+<div id="to_comment" class="comment-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#vcomments" title="直达评论">
+        <i class="fas fa-comments"></i>
+    </a>
+</div>
+<style>
+    .comment-scroll {
+        position: fixed;
+        right: 20px;
+        bottom: 195px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #to_comment > a {
+        width: 45px;
+        height: 45px;
+        cursor: pointer;
+    }
+
+    .fa-comments {
+        line-height: 45px !important;
+    }
+</style>
+    
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/06/15/xue-xi/bug/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/fe8.jpg" class="responsive-img" alt="BUG">
+                        
+                        <span class="card-title">BUG</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            这是小苏学习踩坑的经历，记录下来，方便以后查找
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-15
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/06/14/hexo/hexo-zhong-shi-yong-markdown-shu-xie-bo-ke/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn2.sublimerui.top/2020/10/13/7d984fd0731cf.png" class="responsive-img" alt="Hexo中使用MarkDown书写博客">
+                        
+                        <span class="card-title">Hexo中使用MarkDown书写博客</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            写的第一篇博客，主要介绍如何在Hexo个人静态博客中使用MarkDown来编写
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Hexo/" class="post-category">
+                                    Hexo
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                    <a href="/tags/MarkDown/">
+                        <span class="chip bg-color">MarkDown</span>
+                    </a>
+                    
+                    <a href="/tags/Typora/">
+                        <span class="chip bg-color">Typora</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    
+
+</main>
+
+
+
+    </main>
+
+
+    <footer class="page-footer bg-color">
+    
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="411680085"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='false'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            &copy;
+            <span id="year">2020</span>-<span id="year">2021</span>&nbsp;<i id="heartbeat" class="fa fas fa-heartbeat"></i>&nbsp;
+            <a href="/about" target="_blank">JM</a>
+            
+            <br>快乐每一天！
+            <!-- <br>This is My Stage! -->
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">229.9k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "6";
+                    var startDate = "12";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/fenghen0918" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:443175565@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=443175565" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 443175565" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+
+    <a href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/imgs/wechat.png" class="tooltipped" target="_blank" data-tooltip="微信联系我: " data-position="top" data-delay="50">
+        <i class="fab fa-weixin"></i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<head><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"><style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #FFF;
+        text-align: center;
+        /* loader页面消失采用渐隐的方式*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .loading-image{
+        width: 120px;
+        height: 50px;
+        transform: translate(-50%);
+    }
+
+    .loading-image div:nth-child(2) {
+        -webkit-animation: pacman-balls 1s linear 0s infinite;
+        animation: pacman-balls 1s linear 0s infinite
+    }
+
+    .loading-image div:nth-child(3) {
+        -webkit-animation: pacman-balls 1s linear .33s infinite;
+        animation: pacman-balls 1s linear .33s infinite
+    }
+
+    .loading-image div:nth-child(4) {
+        -webkit-animation: pacman-balls 1s linear .66s infinite;
+        animation: pacman-balls 1s linear .66s infinite
+    }
+
+    .loading-image div:nth-child(5) {
+        -webkit-animation: pacman-balls 1s linear .99s infinite;
+        animation: pacman-balls 1s linear .99s infinite
+    }
+
+   .loading-image div:first-of-type {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_up .5s 0s infinite;
+        animation: rotate_pacman_half_up .5s 0s infinite;
+    }
+    .loading-image div:nth-child(2) {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_down .5s 0s infinite;
+        animation: rotate_pacman_half_down .5s 0s infinite;
+        margin-top: -50px;
+    }
+    @-webkit-keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @-webkit-keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @-webkit-keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+    @keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+
+    .loading-image div:nth-child(3),
+    .loading-image div:nth-child(4),
+    .loading-image div:nth-child(5),
+    .loading-image div:nth-child(6){
+        background-color: #49b1f5;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        transform: translateY(-6.25px);
+        top: 25px;
+        left: 100px;
+    }
+    .loading-text{
+        margin-bottom: 20vh;
+        text-align: center;
+        color: #2c3e50;
+        font-size: 2rem;
+        box-sizing: border-box;
+        padding: 0 10px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    @media only screen and (max-width: 500px) {
+         .loading-text{
+            font-size: 1.5rem;
+         }
+    }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    /* logo出现动画 */
+    @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}
+    @keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);}}
+ </style>
+ <script>
+(function () {
+    const loaded = function(){
+       setTimeout(function(){
+            const loader = document.getElementById("loading-container");
+            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
+            // document.getElementById("body-wrap").style.display="flex";
+            setTimeout(function(){
+                loader.style.display="none";
+            },1000); 
+        },1000);//强制显示loading page 1s  
+    };
+    loaded();
+})()
+ </script></head>
+
+
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <script type="text/javascript">
+        var OriginTitile=document.title,st;
+        document.addEventListener("visibilitychange",function(){
+            document.hidden?(document.title="ヽ(●-`Д´-)ノ你要玩捉迷藏嘛",clearTimeout(st)):(document.title="(Ő∀Ő3)ノ好哦！",st=setTimeout(function(){document.title=OriginTitile},3e3))
+        })
+    </script>
+    
+
+
+<!-- tianqi -->
+<!-- <script type="text/javascript">
+    WIDGET = {FID: 'kxeODGotwh'}
+    </script>
+    <script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script> -->
+
+
+
+
+    
+</html>
+
+    <script src="https://cdn.jsdelivr.net/npm/pjax/pjax.js"></script>
+    <script type="text/javascript">
+        // $.getScript("https://cdn.jsdelivr.net/npm/pjax/pjax.min.js",loadPjax)
+        // function loadPjax(){
+            var pjax = new Pjax({
+                selectors: [
+                    "head title",
+                    'head meta[name="keywords"]',
+                    'head meta[name="description"]',
+                    "main#main_wrap"
+                ],
+                cache: true,
+                cacheBust: false
+            });
+        // }
+
+
+    </script>
+
+
+

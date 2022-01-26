@@ -1,0 +1,2589 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="redis非关系型数据库, Java,Linux,Mysql,Oracle">
+    <meta name="description" content="专注业务，专注代码,分享生活,分享知识">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>redis非关系型数据库 | 特仑苏</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/jquery/jquery.min.js"></script>
+
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+    <!-- <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script> -->
+
+
+
+    <link type='text/css' rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" media='all'/>
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+
+<meta name="generator" content="Hexo 6.0.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+ <div id="loading-container">
+     <p class="loading-text">玩命加载中 . . . </p> 
+     <div class="loading-image">
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div> 
+         <div></div>
+     </div>
+ </div><body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">特仑苏</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-book" style="zoom: 0.6;"></i>
+      
+      <span>文章</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tags" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>标签</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>分类</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/archives">
+          
+          <i class="fas fa-archive" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>归档</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于我</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/artitalk" class="waves-effect waves-light">
+      
+      <i class="fas fa-comment" style="zoom: 0.6;"></i>
+      
+      <span>特仑说</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留个言</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-rainbow" style="zoom: 0.6;"></i>
+      
+      <span>友人帐</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/galleries" class="waves-effect waves-light">
+      
+      <i class="fas fa-image" style="zoom: 0.6;"></i>
+      
+      <span>相册</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-bicycle" style="zoom: 0.6;"></i>
+      
+      <span>爱好</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/bangumis">
+          
+          <i class="fas fa-play-circle" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>追番</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/musics">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>音乐</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+    <a onclick="switchNightMode()" id="sma" title="模式切换" class="waves-effect waves-light">
+      <i class="fa fa-moon-o" id="nightMode" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">特仑苏</div>
+        <div class="logo-desc">
+            
+            专注业务，专注代码,分享生活,分享知识
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-book"></i>
+			
+			文章
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/tags " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-tags" style="position: absolute;left:50px" ></i>
+			      
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/categories " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>分类</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/archives " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-archive" style="position: absolute;left:50px" ></i>
+			      
+		          <span>归档</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/artitalk" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comment"></i>
+			
+			特仑说
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-rainbow"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/galleries" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-image"></i>
+			
+			相册
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-bicycle"></i>
+			
+			爱好
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/bangumis " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-play-circle" style="position: absolute;left:50px" ></i>
+			      
+		          <span>追番</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/musics " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>音乐</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    <main id="main_wrap">
+        
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/20210110.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">redis非关系型数据库</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+        background-color: rgb(255, 255, 255,0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/redis/">
+                                <span class="chip bg-color">redis</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/nosql/" class="post-category">
+                                nosql
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-07-21
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    22 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><h3 id="概念：-redis是一款高性能的NOSQL系列的非关系型数据库"><a href="#概念：-redis是一款高性能的NOSQL系列的非关系型数据库" class="headerlink" title="概念： redis是一款高性能的NOSQL系列的非关系型数据库"></a>概念： redis是一款高性能的NOSQL系列的非关系型数据库</h3><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/redis1.png" alt="image-20200510215548542" style="zoom:80%;">
+
+<pre><code>1.1.什么是NOSQL
+    NoSQL(NoSQL = Not Only SQL)，意即“不仅仅是SQL”，是一项全新的数据库理念，泛指非关系型的数据库。
+    
+    1.1.1.    NOSQL和关系型数据库比较
+        优点：
+            1）成本：nosql数据库简单易部署，基本都是开源软件，不需要像使用oracle那样花费大量成本购买使用，相比关系型数据库价格便宜。
+            2）查询速度：nosql数据库将数据存储于缓存之中，关系型数据库将数据存储在硬盘中，自然查询速度远不及nosql数据库。
+            3）存储数据的格式：nosql的存储格式是key,value形式、文档形式、图片形式等等，所以可以存储基础类型以及对象或者是集合等各种格式，而数据库则只支持基础类型。
+            4）扩展性：关系型数据库有类似join这样的多表查询机制的限制导致扩展很艰难。
+
+        缺点：
+            1）维护的工具和资料有限，因为nosql是属于新的技术，不能和关系型数据库10几年的技术同日而语。
+            2）不提供对sql的支持，如果不支持sql这样的工业标准，将产生一定用户的学习和使用成本。
+            3）不提供关系型数据库对事务的处理。
+
+    1.1.2.    非关系型数据库的优势：
+        1）性能NOSQL是基于键值对的，可以想象成表中的主键和值的对应关系，而且不需要经过SQL层的解析，所以性能非常高。
+        2）可扩展性同样也是因为基于键值对，数据之间没有耦合性，所以非常容易水平扩展。
+
+    1.1.3.    关系型数据库的优势：
+        1）复杂查询可以用SQL语句方便的在一个表以及多个表之间做非常复杂的数据查询。
+        2）事务支持使得对于安全性能很高的数据访问要求得以实现。对于这两类数据库，对方的优势就是自己的弱势，反之亦然。
+
+    1.1.4.    总结
+        关系型数据库与NoSQL数据库并非对立而是互补的关系，即通常情况下使用关系型数据库，在适合使用NoSQL的时候使用NoSQL数据库，
+        让NoSQL数据库对关系型数据库的不足进行弥补。
+        一般会将数据存储在关系型数据库中，在nosql数据库中备份存储关系型数据库的数据
+
+1.2.主流的NOSQL产品
+    •    键值(Key-Value)存储数据库
+            相关产品： Tokyo Cabinet/Tyrant、Redis、Voldemort、Berkeley DB
+            典型应用： 内容缓存，主要用于处理大量数据的高访问负载。 
+            数据模型： 一系列键值对
+            优势： 快速查询
+            劣势： 存储的数据缺少结构化
+    •    列存储数据库
+            相关产品：Cassandra, HBase, Riak
+            典型应用：分布式的文件系统
+            数据模型：以列簇式存储，将同一列数据存在一起
+            优势：查找速度快，可扩展性强，更容易进行分布式扩展
+            劣势：功能相对局限
+    •    文档型数据库
+            相关产品：CouchDB、MongoDB
+            典型应用：Web应用（与Key-Value类似，Value是结构化的）
+            数据模型： 一系列键值对
+            优势：数据结构要求不严格
+            劣势： 查询性能不高，而且缺乏统一的查询语法
+    •    图形(Graph)数据库
+            相关数据库：Neo4J、InfoGrid、Infinite Graph
+            典型应用：社交网络
+            数据模型：图结构
+            优势：利用图结构相关算法。
+            劣势：需要对整个图做计算才能得出结果，不容易做分布式的集群方案。
+1.3 什么是Redis
+    Redis是用C语言开发的一个开源的高性能键值对（key-value）数据库，且Redis通过提供多种键值数据类型来适应不同场景下的存储需求，目前为止Redis支持的键值数据类型如下：
+        1) 字符串类型 string
+        2) 哈希类型 hash
+        3) 列表类型 list
+        4) 集合类型 set
+        5) 有序集合类型 sortedset
+    1.3.1 redis的应用场景
+        •    缓存（数据查询、短连接、新闻内容、商品内容等等）
+        •    聊天室的在线好友列表
+        •    任务队列。（秒杀、抢购、12306等等）
+        •    应用排行榜
+        •    网站访问统计
+        •    数据过期处理（可以精确到毫秒
+        •    分布式集群架构中的session分离
+
+表锁:MyISAM
+行锁：Innodb
+
+大数据：3v:海量数据、数据多样、实时数据 3高：高并发、高可拓、高性能
+
+单线程：redis是基于内存操作，CPU不是Redis性能瓶颈，而是根据内存和网络带宽，redis将全部数据放在内存当中。
+</code></pre>
+<h3 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h3><ol>
+<li>官网：<a target="_blank" rel="noopener" href="https://redis.io/">https://redis.io</a><ol start="2">
+<li>中文网：<a target="_blank" rel="noopener" href="http://www.redis.net.cn/">http://www.redis.net.cn/</a></li>
+<li>解压直接可以使用：<ul>
+<li>redis.windows.conf：配置文件</li>
+<li>redis-cli.exe：redis的客户端</li>
+<li>redis-server.exe：redis服务器端</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="命令操作"><a href="#命令操作" class="headerlink" title="命令操作"></a>命令操作</h3><h4 id="redis的数据结构："><a href="#redis的数据结构：" class="headerlink" title="redis的数据结构："></a>redis的数据结构：</h4><ul>
+<li>redis存储的是：key,value格式的数据，其中key都是字符串，value有5种不同的数据结构<ul>
+<li>value的数据结构：<ol>
+<li>字符串类型 string</li>
+<li>哈希类型 hash ： map格式  </li>
+<li>列表类型 list ： linkedlist格式。支持重复元素</li>
+<li>集合类型 set  ： 不允许重复元素</li>
+<li>有序集合类型 sortedset：不允许重复元素，且元素有顺序</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-字符串类型-string"><a href="#1-字符串类型-string" class="headerlink" title="1. 字符串类型 string"></a>1. 字符串类型 string</h4><ol>
+<li><p>存储： set key value</p>
+<pre><code>    127.0.0.1:6379&gt; set username zhangsan
+    OK
+</code></pre>
+</li>
+<li><p>获取： get key</p>
+<pre><code>127.0.0.1:6379&gt; get username
+"zhangsan"
+</code></pre>
+</li>
+<li><p>删除： del key</p>
+<pre><code>127.0.0.1:6379&gt; del age
+(integer) 1
+</code></pre>
+</li>
+<li><p>增加字符串：APPEND <key> <value></value></key></p>
+<p>如果key不存在，就相当于set</p>
+</li>
+<li><p>获取字符串长度：STRLEN <key></key></p>
+</li>
+<li><p>自增1：incr <key></key></p>
+</li>
+<li><p>自减1：decr <key></key></p>
+</li>
+<li><p>自增步长：INCRBY <key> &lt;步长&gt;</key></p>
+</li>
+<li><p>自减步长：DECRBY <key> &lt;步长&gt;</key></p>
+</li>
+<li><p>截取字符串：GETRANGE <key> &lt;起始索引0&gt; &lt;终止索引&gt; 如：03就是[0,3]，0 -1就是get</key></p>
+</li>
+<li><p>替换字符串：SETRANGE <key> &lt;索引&gt; <value> 如：原来是abcc  ,1 aa  就是aaac</value></key></p>
+</li>
+<li><p>设置过期时间：setex <key> &lt;秒&gt; <value></value></key></p>
+</li>
+<li><p>不存在时再set：setnx <key> <value></value></key></p>
+</li>
+<li><p>批量set/get/setex/setnx：mset <key> <value><key> <value></value></key></value></key></p>
+</li>
+<li><p>先get后set：getset <key> <value> 如果存在值就获取原值，并设置新值</value></key></p>
+</li>
+</ol>
+<h4 id="2-哈希类型-hash"><a href="#2-哈希类型-hash" class="headerlink" title="2. 哈希类型 hash"></a>2. 哈希类型 hash</h4><ol>
+<li><p>存储： hset key field value</p>
+<pre><code>127.0.0.1:6379&gt; hset myhash username lisi
+(integer) 1
+127.0.0.1:6379&gt; hset myhash password 123
+(integer) 1
+</code></pre>
+<p>批量存储：hmset <key> <field> <value><field> <value></value></field></value></field></key></p>
+</li>
+<li><p>获取： </p>
+<ul>
+<li><p>hget key field: 获取指定的field对应的值</p>
+<pre><code>127.0.0.1:6379&gt; hget myhash username
+"lisi"
+</code></pre>
+</li>
+<li><p>批量获取：hmget <key> <field><field><field></field></field></field></key></p>
+</li>
+<li><p>获取所有field：hkeys <key></key></p>
+</li>
+<li><p>获取所有value：hvals <key></key></p>
+</li>
+<li><p>hgetall key：获取所有的field和value</p>
+<pre><code>127.0.0.1:6379&gt; hgetall myhash
+1) "username"
+2) "lisi"
+3) "password"
+4) "123"
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>删除： hdel key field</p>
+<pre><code>127.0.0.1:6379&gt; hdel myhash username
+(integer) 1
+</code></pre>
+</li>
+<li><p>key中键值对数量：hlen <key></key></p>
+</li>
+<li><p>判断key中是否存在key：hexists <key> <filed></filed></key></p>
+</li>
+<li><p>按步长增加value的值：hincrby/hincrbyfloat <key> <filed> &lt;步长&gt;</filed></key></p>
+</li>
+<li><p>不存在时再set：hsetnx <key> <filed> <value></value></filed></key></p>
+</li>
+</ol>
+<h4 id="3-列表类型-list-可以添加一个元素到列表的头部（左边）或者尾部（右边）"><a href="#3-列表类型-list-可以添加一个元素到列表的头部（左边）或者尾部（右边）" class="headerlink" title="3. 列表类型 list:可以添加一个元素到列表的头部（左边）或者尾部（右边）"></a>3. 列表类型 list:可以添加一个元素到列表的头部（左边）或者尾部（右边）</h4><ol>
+<li><p>添加：</p>
+<ol>
+<li><p>lpush key value: 将元素加入列表左表</p>
+</li>
+<li><p>rpush key value：将元素加入列表右边</p>
+<pre><code>127.0.0.1:6379&gt; lpush myList a
+(integer) 1
+127.0.0.1:6379&gt; lpush myList b
+(integer) 2
+127.0.0.1:6379&gt; rpush myList c
+(integer) 3
+</code></pre>
+</li>
+</ol>
+</li>
+<li><p>获取：</p>
+<ul>
+<li>lrange key start end ：范围获取<pre><code>127.0.0.1:6379&gt; lrange myList 0 -1
+        1) "b"
+        2) "a"
+        3) "c"
+</code></pre>
+</li>
+<li>lindex <key> <index>：通过下标获取值，从0开始</index></key></li>
+</ul>
+</li>
+<li><p>删除：</p>
+<ul>
+<li>lpop key： 删除列表最左边的元素，并将元素返回</li>
+<li>rpop key： 删除列表最右边的元素，并将元素返回</li>
+<li>lrem <key> &lt;数量&gt; <value>：移除对应数量的值</value></key></li>
+</ul>
+</li>
+<li><p>获取列表长度：Llen <key> </key></p>
+</li>
+<li><p>截取：ltrim <key> &lt;起始index&gt;&lt;终止index&gt;</key></p>
+</li>
+<li><p>移除列表最后一个元素，并移动到新列表中：rpoplpush <key> <otherkey></otherkey></key></p>
+</li>
+<li><p>更新值，将列表指定下标的值替换为另一个值：lset <key> <index> <value>，不存在会报错</value></index></key></p>
+</li>
+</ol>
+<h4 id="4-无序集合类型-set-：-不允许重复元素"><a href="#4-无序集合类型-set-：-不允许重复元素" class="headerlink" title="4. 无序集合类型 set ： 不允许重复元素"></a>4. 无序集合类型 set ： 不允许重复元素</h4><ol>
+<li><p>存储：sadd key value</p>
+<pre><code>127.0.0.1:6379&gt; sadd myset a
+(integer) 1
+127.0.0.1:6379&gt; sadd myset a
+(integer) 0
+</code></pre>
+</li>
+<li><p>获取：smembers key:获取set集合中所有元素</p>
+<pre><code>127.0.0.1:6379&gt; smembers myset
+1) "a"
+</code></pre>
+</li>
+<li><p>判断是否有该值：sismember <key> <value></value></key></p>
+</li>
+<li><p>删除：srem key value:删除set集合中的某个元素    </p>
+<pre><code>127.0.0.1:6379&gt; srem myset a
+(integer) 1
+</code></pre>
+</li>
+<li><p>获取集合里面的元素个数：scard <key></key></p>
+</li>
+<li><p>随机出几个数字：srandmember <key></key></p>
+</li>
+<li><p>随机出栈：spop <key></key></p>
+</li>
+<li><p>将key1的值转到key2里：smove <key1> <key2> <value></value></key2></key1></p>
+</li>
+<li><p>差集（在set1中，不在set2中的值）：sdiff <key1> <key2></key2></key1></p>
+</li>
+<li><p>交集：sinter  <key1> <key2></key2></key1></p>
+</li>
+<li><p>并集：sunion  <key1> <key2></key2></key1></p>
+</li>
+</ol>
+<h4 id="5-有序集合类型-sortedset：不允许重复元素，且元素有顺序-每个元素都会关联一个double类型的分数。redis正是通过分数来为集合中的成员进行从小到大的排序。"><a href="#5-有序集合类型-sortedset：不允许重复元素，且元素有顺序-每个元素都会关联一个double类型的分数。redis正是通过分数来为集合中的成员进行从小到大的排序。" class="headerlink" title="5. 有序集合类型 sortedset：不允许重复元素，且元素有顺序.每个元素都会关联一个double类型的分数。redis正是通过分数来为集合中的成员进行从小到大的排序。"></a>5. 有序集合类型 sortedset：不允许重复元素，且元素有顺序.每个元素都会关联一个double类型的分数。redis正是通过分数来为集合中的成员进行从小到大的排序。</h4><ol>
+<li><p>存储（可批量）：zadd key score value</p>
+<pre><code>127.0.0.1:6379&gt; zadd mysort 60 zhangsan
+(integer) 1
+127.0.0.1:6379&gt; zadd mysort 50 lisi
+(integer) 1
+127.0.0.1:6379&gt; zadd mysort 80 wangwu
+(integer) 1
+</code></pre>
+</li>
+<li><p>获取：zrange/zrevrange key start end [withscores]</p>
+<pre><code>127.0.0.1:6379&gt; zrange mysort 0 -1
+1) "lisi"
+2) "zhangsan"
+3) "wangwu"
+127.0.0.1:6379&gt; zrange mysort 0 -1 withscores
+1) "zhangsan"
+2) "60"
+3) "wangwu"
+4) "80"
+5) "lisi"
+6) "500"
+</code></pre>
+<p>根据分数获取：zrangebyscore/zrevrangebyscore <key> &lt;开始score&gt;&lt;结束score&gt;</key></p>
+<p>[“（ ”表示不包含]：zrangebyscore <key> &lt;开始score&gt;（&lt;结束score&gt;： 开始≤分数＜结束</key></p>
+<p>截取：zrangebyscore <key> &lt;开始score&gt;&lt;结束score&gt; limit <index> &lt;截取个数&gt;</index></key></p>
+</li>
+<li><p>删除：zrem key value</p>
+<pre><code>127.0.0.1:6379&gt; zrem mysort lisi
+(integer) 1
+</code></pre>
+</li>
+<li><p>集合里面的元素个数：zcard <key></key></p>
+</li>
+<li><p>集合区间内的元素个数：zcount <key> &lt;开始score&gt;&lt;结束score&gt;</key></p>
+</li>
+<li><p>元素的下标：zrank/zrevrank <key> <value></value></key></p>
+</li>
+<li><p>元素的分数：zscore <key> <value></value></key></p>
+</li>
+</ol>
+<h4 id="6-通用命令"><a href="#6-通用命令" class="headerlink" title="6. 通用命令"></a>6. 通用命令</h4><ol>
+<li>keys * : 查询所有的键</li>
+<li>type key ： 获取键对应的value的类型</li>
+<li>del key：删除指定的key value</li>
+<li>select <index> ：切换数据库</index></li>
+<li>DBSIZE：数据库key的数量</li>
+<li>flushdb：清空数据库</li>
+<li>flushAll：清空全部数据库</li>
+<li>EXIST <key> ：是否存在</key></li>
+<li>EXPIRE <key> &lt;秒&gt;：设定过期时间</key></li>
+<li>ttl <key>：查看剩余时间</key></li>
+</ol>
+<h3 id="持久化"><a href="#持久化" class="headerlink" title="持久化"></a>持久化</h3><ol>
+<li><p>redis是一个内存数据库，当redis服务器重启，获取电脑重启，数据会丢失，我们可以将redis内存中的数据持久化保存到硬盘的文件中。</p>
+</li>
+<li><p>redis持久化机制：</p>
+<ol>
+<li><p><strong>RDB：默认方式，不需要进行配置，默认就使用这种机制</strong></p>
+<p>原理：</p>
+<p>在指定时间间隔内将内存中的数据集快照写入到磁盘中，当需要恢复的时候再将磁盘中的快照读到内存里</p>
+<p>redis会单独创建(fork)一个子线程进行持久化操作，会先将数据集写入到临时文件中，当持久化过程结束之后，临时文件就会替换原持久化好的rdb文件。在整个过程中，主进程没有任何io操作，确保了极高的性能。</p>
+<p>优点：</p>
+<ol>
+<li>适合于大规模数据的恢复</li>
+<li>对数据的完整性要求不高</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>容易丢失最后一次修改的数据，需要一定的时间间隔进程操作</li>
+<li>在fork进程的时候，会占用一定的内存空间</li>
+</ol>
+<ol>
+<li><p>编辑redis.windwos.conf文件</p>
+<pre><code>after 900 sec (15 min) if at least 1 key changed
+            save 900 1
+after 300 sec (5 min) if at least 10 keys changed
+            save 300 10
+after 60 sec if at least 10000 keys changed
+            save 60 10000
+</code></pre>
+</li>
+<li><p>重新启动redis服务器，并指定配置文件名称</p>
+<p>在此处打开命令行 redis-server.exe redis.windows.conf    </p>
+</li>
+</ol>
+</li>
+<li><p><strong>AOF：日志记录的方式，可以记录每一条命令的操作。可以每一次命令操作后，持久化数据</strong></p>
+<p>原理：</p>
+<p>以日志的形式记录每一次写操作，将redis执行过的每一个写的指令记录下来，只能追加文件，不能改写文件，在刚启动redis的时候会读取文件重新构建数据。</p>
+<p>优点:</p>
+<ol>
+<li>每一次修改都会保存，文件的完整性好</li>
+<li>每秒同步一次，只可能丢失一秒的数据</li>
+<li>从不同步，效率最高</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>数据文件aof要比rdb大很多，修复的速度要比rdb慢</li>
+<li>aof运行时要进行读写的操作，运行效率f会比rdb慢</li>
+</ol>
+<ol>
+<li><p>编辑redis.windwos.conf文件</p>
+<pre><code>appendonly no（关闭aof） --&gt; appendonly yes （开启aof）
+
+# appendfsync always ： 每一次操作都进行持久化
+appendfsync everysec ： 每隔一秒进行一次持久化
+# appendfsync no     ： 不进行持久化
+</code></pre>
+</li>
+<li><p>重新启动redis服务器，并指定配置文件名称</p>
+<p> 在此处打开命令行 redis-server.exe redis.windows.conf    </p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>​          </p>
+<h3 id="Java客户端-Jedis"><a href="#Java客户端-Jedis" class="headerlink" title="Java客户端 Jedis"></a>Java客户端 Jedis</h3><ul>
+<li><p>Jedis: 一款java操作redis数据库的工具.</p>
+</li>
+<li><p>使用步骤：</p>
+<ol>
+<li>下载jedis的jar包</li>
+<li>使用<ol>
+<li>获取连接<br>Jedis jedis = new Jedis(“localhost”,6379);</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<ol start="2">
+<li>操作<pre><code>   jedis.set("username","zhangsan");
+</code></pre>
+<ol start="3">
+<li>关闭连接</li>
+</ol>
+</li>
+</ol>
+<pre><code>           jedis.close();
+</code></pre>
+<ul>
+<li><p><strong>Jedis操作各种redis中的数据结构</strong></p>
+<ol>
+<li><p>字符串类型 string</p>
+<pre><code>   set
+</code></pre>
+<p>get</p>
+</li>
+<li><p>哈希类型 hash ： map格式 </p>
+<pre><code> hset
+   hget
+</code></pre>
+<p>hgetAll</p>
+</li>
+<li><p>列表类型 list ： linkedlist格式。支持重复元素</p>
+<pre><code> lpush / rpush
+   lpop / rpop
+</code></pre>
+<p>lrange start end : 范围获取</p>
+</li>
+<li><p>集合类型 set  ： 不允许重复元素</p>
+<pre><code>   sadd
+</code></pre>
+<p>smembers:获取所有元素</p>
+</li>
+<li><p>有序集合类型 sortedset：不允许重复元素，且元素有顺序</p>
+<pre><code>   zadd
+</code></pre>
+<p>   zrange</p>
+</li>
+</ol>
+</li>
+<li><p><strong>jedis连接池： JedisPool</strong></p>
+<ul>
+<li>使用：<ol>
+<li>创建JedisPool连接池对象 new JedisPool([config],[“localhost”],[6379])</li>
+<li>调用方法 getResource()方法获取Jedis连接</li>
+</ol>
+</li>
+</ul>
+<ol start="3">
+<li>使用</li>
+</ol>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//0.创建一个配置对象</span>
+JedisPoolConfig config <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JedisPoolConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+config<span class="token punctuation">.</span><span class="token function">setMaxTotal</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+config<span class="token punctuation">.</span><span class="token function">setMaxIdle</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//1.创建Jedis连接池对象</span>
+JedisPool jedisPool <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JedisPool</span><span class="token punctuation">(</span>config<span class="token punctuation">,</span><span class="token string">"localhost"</span><span class="token punctuation">,</span><span class="token number">6379</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//2.获取连接</span>
+Jedis jedis <span class="token operator">=</span> jedisPool<span class="token punctuation">.</span><span class="token function">getResource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//3. 使用</span>
+jedis<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"hehe"</span><span class="token punctuation">,</span><span class="token string">"heihei"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//4. 关闭 归还到连接池中</span>
+jedis<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<ul>
+<li>连接池工具类（加载配置文件，获取Jedis方法）<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JedisPoolUtils</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> JedisPool jedisPool<span class="token punctuation">;</span>
+
+    <span class="token keyword">static</span><span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//读取配置文件</span>
+        InputStream is <span class="token operator">=</span> JedisPoolUtils<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">.</span><span class="token function">getClassLoader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getResourceAsStream</span><span class="token punctuation">(</span><span class="token string">"jedis.properties"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//创建Properties对象</span>
+        Properties pro <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Properties</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//关联文件</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            pro<span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span>is<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">//获取数据，设置到JedisPoolConfig中</span>
+        JedisPoolConfig config <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JedisPoolConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        config<span class="token punctuation">.</span><span class="token function">setMaxTotal</span><span class="token punctuation">(</span>Integer<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>pro<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"maxTotal"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        config<span class="token punctuation">.</span><span class="token function">setMaxIdle</span><span class="token punctuation">(</span>Integer<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>pro<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"maxIdle"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//初始化JedisPool</span>
+        jedisPool <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JedisPool</span><span class="token punctuation">(</span>config<span class="token punctuation">,</span>pro<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"host"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>Integer<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>pro<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"port"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+                 * 获取连接方法
+                 */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Jedis <span class="token function">getJedis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> jedisPool<span class="token punctuation">.</span><span class="token function">getResource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>   
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><pre class=" language-javascript"><code class="language-javascript">bug1<span class="token punctuation">:</span>查询后的列表<span class="token punctuation">:</span>undefind
+没有遍历获取的集合
+$<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">"findProvinceServlet"</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token keyword">function</span> <span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//遍历</span>
+    <span class="token function">$</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">each</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> option <span class="token operator">=</span> <span class="token string">"&lt;option id='"</span><span class="token operator">+</span><span class="token keyword">this</span><span class="token punctuation">.</span>id<span class="token operator">+</span><span class="token string">"'>"</span><span class="token operator">+</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token operator">+</span><span class="token string">"&lt;/option>"</span><span class="token punctuation">;</span>
+        <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#province"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>option<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<pre><code>bug2:JedisConnectionException: Could not get a resource from the pool
+没有开redis服务器
+在运行前要先开启redis服务器挂着
+</code></pre>
+<pre><code>案例需求：
+    1. 提供index.html页面，页面中有一个省份 下拉列表
+    2. 当 页面加载完成后 发送ajax请求，加载所有省份
+</code></pre>
+<pre><code>* 注意：使用redis缓存一些不经常发生变化的数据。
+    * 数据库的数据一旦发生改变，则需要更新缓存。
+        * 数据库的表执行 增删改的相关操作，需要将redis缓存数据情况，再次存入
+        * 在service对应的增删改方法中，将redis数据删除。
+        //1.查询redis缓存中是否有数据
+        //1.1创建jedis
+        Jedis jedis = RedisUtils.getJedis();
+        String province_json = jedis.get("province");
+        if(province_json==null||province_json.length()==0){
+            //没有数据，查询数据库
+            List&lt;Province&gt; list = provinceDao.findProvince();
+            //将数据序列化为json对象
+            ObjectMapper mapper = new ObjectMapper();
+            try {
+                province_json = mapper.writeValueAsString(list);
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+            }
+            //存储进缓存中
+            jedis.set("province",province_json);
+            jedis.close();
+        }else {
+            return province_json;
+        }
+</code></pre>
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><h3 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h3><pre class=" language-yaml"><code class="language-yaml">bind 127.0.0.1 <span class="token comment" spellcheck="true">#绑定的Ip</span>
+protected<span class="token punctuation">-</span>mode yes <span class="token comment" spellcheck="true"># 保护模式</span>
+port 6379 <span class="token comment" spellcheck="true">#端口设置</span>
+</code></pre>
+<h3 id="通用GENERAL"><a href="#通用GENERAL" class="headerlink" title="通用GENERAL"></a>通用GENERAL</h3><pre class=" language-yaml"><code class="language-yaml">daemonize yes <span class="token comment" spellcheck="true"># 以守护进程的方式运行，默认为no，需要手动开启为yes</span>
+pidfile /var/run/redis_6379.pid <span class="token comment" spellcheck="true"># 如果以后台的方式运行，我们就需要指定一个pid文件</span>
+<span class="token comment" spellcheck="true">#日志</span>
+<span class="token comment" spellcheck="true"># notive生产环境</span>
+loglevel notice 
+logfile "" <span class="token comment" spellcheck="true">#日志的文件位置名</span>
+databases 16 <span class="token comment" spellcheck="true"># 数据库的数量，默认为16个</span>
+always<span class="token punctuation">-</span>show<span class="token punctuation">-</span>logo yes <span class="token comment" spellcheck="true">#是否显示logo</span>
+</code></pre>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><p><strong>Redis单条命令是保持原子性的，但是事务不保证原子性</strong>，没有隔离级别的概念</p>
+<p>一次性、顺序性、排他性</p>
+<p>所有命令在事务中，并没有直接被执行，只有执行命令之后才会被执行</p>
+<p>开启事务：multi</p>
+<p>命令入队：。。。</p>
+<p>执行事务：exec</p>
+<p>放弃事务：discard</p>
+<blockquote>
+<p>编译型异常（代码有问题）：所有命令都不会执行</p>
+<p>运行时异常：其他命令依然正常执行</p>
+</blockquote>
+<h2 id="消息订阅发布"><a href="#消息订阅发布" class="headerlink" title="消息订阅发布"></a>消息订阅发布</h2><p><strong>先订阅后发布</strong></p>
+<p>订阅端、频道、发布端</p>
+<p>订阅：subscribe &lt;频道名称&gt;</p>
+<p>发布：publish &lt;频道名称&gt; &lt;消息&gt;</p>
+<p>退订：unsubscribe &lt;频道名称&gt;</p>
+<p><strong>原理</strong>：redis-server里维护了一个字典，字典的键就是一个个频道，值是一个链表，链表中保存了所有订阅的客户端，订阅的命令核心就是将客户端添加到订阅的链表中。发布就是根据频道在字典中查到对应的值，遍历这个链表将其发布给订阅者。</p>
+<h2 id="主从复制"><a href="#主从复制" class="headerlink" title="主从复制"></a>主从复制</h2><p>指将一台redis服务器的数据，复制到其他redis服务器。</p>
+<p><strong>数据的复制时单向的，只有主节点到从节点</strong></p>
+<p>单个redis最大使用内存不应该超过20G</p>
+<p>作用：</p>
+<ol>
+<li>数据冗余</li>
+<li>故障恢复</li>
+<li>负载均衡：读写分离，主机为写为主，从机以读为主（只要配置了主从关系，就自动实现了这一点）</li>
+<li>高可用（集群）基石：哨兵模式、集群能够实施的基础</li>
+</ol>
+<h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><p>只配置从库，不用配置主库</p>
+<p>复制3个配置文件，然后修改对应的信息</p>
+<ol>
+<li>port端口（主不变，从变）</li>
+<li>pidfile名字 （不改为空）</li>
+<li>log文件名字</li>
+<li>dump.rdb名字</li>
+</ol>
+<p>修改之后，启动3个redis服务器，可以通过进程信息查看 ps -ef|grop redis</p>
+<p>查看当前库的信息：info replication（能看到角色master，从机数量）</p>
+<p>认老大：slaveof 127.0.0.1 6379</p>
+<blockquote>
+<p>想要持久化主从关系，需要在配置文件中配置 replicaof &lt;主ip&gt; &lt;主port&gt;</p>
+</blockquote>
+<p>测试：主机断开连接，从机依然可以连接到主机，但仍不能进行写操作，主机连接上之后，从机依然能读到主机写的新数据</p>
+<p>测试：如果使用命令行配置主从，从机断开连接，会变回主机</p>
+<blockquote>
+<p>复制原理：</p>
+<p>从机成功连接主机之后，会发送一条sync同步命令，主机接到命令，会启动后台存盘进程，同时收集所有用于修改数据集的命令，在后台进程执行完毕之后，主机会传送整个数据文件到从机，实现完全同步</p>
+<p>全量复制：从机接收到数据库文件，将其加载进内存</p>
+<p>增量复制：连接后，主机新收集的修改命令给从机，完成同步</p>
+</blockquote>
+<h4 id="连接方式"><a href="#连接方式" class="headerlink" title="连接方式"></a>连接方式</h4><ol>
+<li>一主二仆</li>
+<li>层层链路：M-S(M)-S，即当主又当从的节点，仍然不能写</li>
+<li>谋朝篡位：如果主机断开连接，使用<code>slaveof no one</code>，让自己变为主机，其他节点归顺</li>
+</ol>
+<h2 id="哨兵模式"><a href="#哨兵模式" class="headerlink" title="哨兵模式"></a>哨兵模式</h2><p><strong>原理</strong>：哨兵通过发送命令，等待redis服务器回应，从而监控运行的多个redis实例</p>
+<p>当主服务器宕机，哨兵1检测到结果，系统并不会进行failover(故障转移)操作，当之后的哨兵也检测到不可用，数量达到一定值，哨兵间就会进行投票，进行故障转移（选新主机）操作。切换成功后发布订阅模式，让各个监控的从服务器切换主机</p>
+<p><strong>步骤</strong>：</p>
+<ol>
+<li><p>目前状态时1主2从</p>
+</li>
+<li><p>配置哨兵配置文件 sentinel.conf</p>
+<pre class=" language-bash"><code class="language-bash">sentinel monitor 被监控的名称 127.0.0.1 6379 1
+<span class="token comment" spellcheck="true"># 后面的数字1，代表主机挂了，从机投票看谁接替为主机</span>
+</code></pre>
+</li>
+<li><p>启动哨兵</p>
+<pre class=" language-bash"><code class="language-bash">redis-sentinel kconfig/sentinel.conf
+</code></pre>
+</li>
+</ol>
+<blockquote>
+<p>当主机回来了，只能归到新的主机下，当作从机</p>
+</blockquote>
+<p><strong>优点</strong>：</p>
+<ol>
+<li>哨兵集群，基于主从复制模式，所有的主从配置优点都有</li>
+<li>主从自动切换，故障可以转移，系统可用性更好</li>
+</ol>
+<p><strong>缺点</strong>：</p>
+<ol>
+<li>Redis不好在线扩容，集群容量达到上限，扩容就会很麻烦</li>
+<li>哨兵模式配置麻烦</li>
+</ol>
+<h2 id="缓存穿透、雪崩"><a href="#缓存穿透、雪崩" class="headerlink" title="缓存穿透、雪崩"></a>缓存穿透、雪崩</h2><p>缓存穿透概念：<del>当查询一个数据，内存数据库中没有，也就是缓存没有命中，就去持久层查询，持久层也没有，本次查询失败，当用户很多的时候，缓存都没有命中（秒杀），都去访问持久层，带来了很大的压力，这就是缓存穿透。（大面积查不到）</del></p>
+<p>缓存穿透概念：<strong>缓存穿透</strong>是指缓存和数据库中都没有的数据，而用户不断发起请求，如发起为id为“-1”的数据或id为特别大不存在的数据。这时的用户很可能是攻击者，攻击会导致数据库压力过大。</p>
+<p><strong>解决方案：</strong></p>
+<ol>
+<li>接口层增加校验，如用户信息校验，id做基础校验，id&lt;=0的直接拦截；</li>
+<li>从缓存取不到的数据，在数据库中也没有取到，这时也可以将key-value对写为key-null，缓存有效时间可以设置短点，如30秒（设置太长会导致正常情况也没法使用）。这样可以防止攻击用户反复用同一个id暴力攻击</li>
+</ol>
+<p><strong>布隆过滤器</strong>：是一种数据结构，对所有可能查询的参数以哈希的形式存储，在控制层先进行校验，不符合就会被丢弃，减缓存储系统压力。</p>
+<p><strong>缓存空对象</strong>：当存储层不命中的时候，返回的空对象将其缓存起来，同时设定一个过期时间，之后如果再访问这个数据就可以在换从获取，避免了后端数据源压力。</p>
+<blockquote>
+<p>缓存空对象的两个问题：</p>
+<ol>
+<li>如果空值被缓存起来，意味着缓存需要更大的空间去存储更多的键</li>
+<li>即使对空值设置了过期时间，还是会存在缓存层和存储层有一段时间不一致，对于要保持一致性的业务有影响</li>
+</ol>
+</blockquote>
+<p>缓存击穿概念（量太大，缓存过期）：指一个Key非常热点，大并发集中在一个点上访问，当这个key失效的瞬间，持续的大并发就会穿破缓存，直接访问数据库。这一瞬间叫做缓存击穿。</p>
+<p>解决方案：</p>
+<p><strong>设置热点数据永不过期</strong></p>
+<p><strong>加互斥锁</strong>：分布式锁，保证对于每一个key只有一个线程可以访问后端服务，其他线程没有访问权限，只需要等待即可。这种方式将高并发的压力转移给了分布式锁。</p>
+<p><strong>缓存雪崩</strong>是指缓存中数据大批量到过期时间，而查询数据量巨大，引起数据库压力过大甚至down机。和缓存击穿不同的是，缓存击穿指并发查同一条数据，缓存雪崩是不同数据都过期了，很多数据都查不到从而查数据库。</p>
+<p><strong>解决方案</strong>：</p>
+<ol>
+<li>缓存数据的过期时间设置随机，防止同一时间大量数据过期现象发生。</li>
+<li>如果缓存数据库是分布式部署，将热点数据均匀分布在不同缓存数据库中。</li>
+<li>设置热点数据永远不过期。</li>
+<li>数据预热：在正式部署之前，先把数据提前访问一遍，保证大量访问的数据加载进缓存中。将大并发的数据设定不同的key和过期时间，失效时间尽量均匀分布。</li>
+<li>限流降级：通过加锁、队列来控制读数据库写缓存的线程数量</li>
+</ol>
+
+
+
+                
+
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">小苏</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://fenghen0918@github.io/2020/07/21/qian-duan/redis/">https://fenghen0918@github.io/2020/07/21/qian-duan/redis/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">小苏</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/redis/">
+                                    <span class="chip bg-color">redis</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table,
+    th,
+    td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table,
+    th,
+    td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n),
+    thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table,
+    th,
+    td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n),
+    thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+
+    <div class="comment_headling"
+         style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+
+    
+
+<script type="text/javascript">
+    function LoadValine() {
+        $.getScript("https://unpkg.com/valine@latest/dist/Valine.min.js", function () {
+            let metaPlaceholder = {"nick":"昵称/QQ号(必填)","mail":"邮箱(必填)","link":"网址(https://)"} ;
+            let initData = {
+                el: '#vcomments',
+                path: window.location.pathname,
+                appId: 'RDuG5KcdRjN8LhR7EAWfCA6o-gzGzoHsz',
+                appKey: 'WJ5YBfWdQCSxR0tcrqOKHlAp',
+                notify: 'true' === 'true',
+                verify: 'true' === 'true',
+                visitor: 'true' === 'true',
+                avatar: 'robohash',
+                pageSize: '12',
+                lang: 'zh-CN',
+                placeholder: '🤣一起来玩，留下你的足迹吧~(记得点击验证哦)。\n🚀昵称使用QQ号可以自动补全邮箱和显示头像昵称等信息哦\n💣请文明评论禁止恶意评论',
+                meta: 'nick,mail,link'.split(","),
+                recordIP: 'true' === 'true',
+                enableQQ: '443175565',
+                boolean: true,
+                requiredFields: ["c0755245d884baa9f03f96553546c9f2", "c0755245d884baa9f03f96553546c9f2"],
+                master: ["c0755245d884baa9f03f96553546c9f2", "c0755245d884baa9f03f96553546c9f2"],
+                friends: ["2d723b084472eb5c3854616804b4851c"],
+                tagMeta: ["博主", "小伙伴", "访客"],
+                metaPlaceholder: metaPlaceholder
+            }
+            // Valine设置
+            new Valine(initData);
+            
+        });
+
+
+
+        
+    }
+
+    LoadValine()
+
+
+    function handle() {
+        while (true) {
+            alert("请勿提交非法内容");
+            while (true) {
+                window.open(window.location.href);
+            }
+            let total = "";
+            for (let i = 0; i < 10000000000; i++) {
+                total = total + i.toString();
+                history.pushState(0, 0, total);
+            }
+        }
+    }
+</script>
+
+
+
+
+<!-- <script>
+    $.getScript("https://cdn.jsdelivr.net/npm/pjax/pjax.min.js",showDiv)
+    function showDiv() {
+   
+        // if (typeof (isLoad) != "undefined") {
+        //     return;
+        // }
+        // isLoad = true;
+        $.getScript("https://unpkg.com/valine@latest/dist/Valine.min.js", function () {
+            $.getScript("/libs/valine/av-min.js", function () {
+                let initDate = {
+                    el: '#vcomments',
+                appId: 'RDuG5KcdRjN8LhR7EAWfCA6o-gzGzoHsz',
+                appKey: 'WJ5YBfWdQCSxR0tcrqOKHlAp',
+                notify: 'true' === 'true',
+                verify: 'true' === 'true',
+                visitor: 'true' === 'true',
+                avatar: 'robohash',
+                pageSize: '12',
+                lang: 'zh-cn',
+                placeholder: '🤣一起来玩，留下你的足迹吧~(记得点击验证哦)。\n🚀昵称使用QQ号可以自动补全邮箱和显示头像昵称等信息哦\n💣请文明评论禁止恶意评论',
+                enableQQ: true,
+                emojiCDN: '//i0.hdslb.com/bfs/emote/', 
+                // 表情title和图片映射
+                emojiMaps: {
+                "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+                "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+                "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+                "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+                "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+                "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+                "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+                "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+                "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+                "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+                "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+                "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+                "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+                "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+                "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+                "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+                "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+                "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+                "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+                "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+                "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+                "tv_打脸": "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+                "tv_抓狂": "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+                "tv_抠鼻": "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+                "tv_斜眼笑": "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+                "tv_无奈": "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+                "tv_晕": "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+                "tv_流汗": "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+                "tv_流泪": "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+                "tv_流鼻血": "c32d39db2737f89b904ca32700d140a9241b0767.png",
+                "tv_点赞": "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+                "tv_生气": "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+                "tv_生病": "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+                "tv_疑问": "0793d949b18d7be716078349c202c15ff166f314.png",
+                "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+                "tv_皱眉": "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+                "tv_目瞪口呆": "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+                "tv_睡着": "8b196675b53af58264f383c50ad0945048290b33.png",
+                "tv_笑哭": "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+                "tv_腼腆": "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+                "tv_色": "61822c7e9aae5da76475e7892534545336b23a6f.png",
+                "tv_调侃": "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+                "tv_调皮": "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+                "tv_鄙视": "6e72339f346a692a495b123174b49e4e8e781303.png",
+                "tv_闭嘴": "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+                "tv_难过": "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+                "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+                "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+                "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+                "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+                    // ... 更多表情
+                },
+                requiredFields: ['nick','mail'], //设置必填项
+                }
+                new Valine(initDate);
+            })
+        })
+    }
+
+</script> -->
+
+<div id="to_comment" class="comment-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#vcomments" title="直达评论">
+        <i class="fas fa-comments"></i>
+    </a>
+</div>
+<style>
+    .comment-scroll {
+        position: fixed;
+        right: 20px;
+        bottom: 195px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #to_comment > a {
+        width: 45px;
+        height: 45px;
+        cursor: pointer;
+    }
+
+    .fa-comments {
+        line-height: 45px !important;
+    }
+</style>
+    
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/07/22/qian-duan/css-ye-mian-mei-hua-he-bu-ju-kong-zhi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/fe8.jpg" class="responsive-img" alt="CSS:页面美化和布局控制">
+                        
+                        <span class="card-title">CSS:页面美化和布局控制</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            CSS:页面美化和布局控制入门
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-22
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/css/">
+                        <span class="chip bg-color">css</span>
+                    </a>
+                    
+                    <a href="/tags/html/">
+                        <span class="chip bg-color">html</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/07/20/qian-duan/dom-shi-jian-he-bom/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn2.sublimerui.top/2021/02/12/2233.jpg" class="responsive-img" alt="DOM模型、BOM模型、事件">
+                        
+                        <span class="card-title">DOM模型、BOM模型、事件</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            DOM、BOM、事件详解
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/javascript/">
+                        <span class="chip bg-color">javascript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<!-- <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/tocbot/tocbot.min.js"></script> -->
+<script>
+    $.getScript("https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/tocbot/tocbot.min.js", function () {
+        $(function () {
+            tocbot.init({
+                tocSelector: '#toc-content',
+                contentSelector: '#articleContent',
+                headingsOffset: -($(window).height() * 0.4 - 45),
+                collapseDepth: Number('2'),
+                headingSelector: 'h1,h2,h3,h4'
+            });
+
+            // modify the toc link href to support Chinese.
+            let i = 0;
+            let tocHeading = 'toc-heading-';
+            $('#toc-content a').each(function () {
+                $(this).attr('href', '#' + tocHeading + (++i));
+            });
+
+            // modify the heading title id to support Chinese.
+            i = 0;
+            $('#articleContent').children('h1,h2,h3,h4').each(function () {
+                $(this).attr('id', tocHeading + (++i));
+            });
+
+            // Set scroll toc fixed.
+            let tocHeight = parseInt($(window).height() * 0.4 - 64);
+            let $tocWidget = $('.toc-widget');
+            $(window).scroll(function () {
+                let scroll = $(window).scrollTop();
+                /* add post toc fixed. */
+                if (scroll > tocHeight) {
+                    $tocWidget.addClass('toc-fixed');
+                } else {
+                    $tocWidget.removeClass('toc-fixed');
+                }
+            });
+
+            
+            /* 修复文章卡片 div 的宽度. */
+            let fixPostCardWidth = function (srcId, targetId) {
+                let srcDiv = $('#' + srcId);
+                if (srcDiv.length === 0) {
+                    return;
+                }
+
+                let w = srcDiv.width();
+                if (w >= 450) {
+                    w = w + 21;
+                } else if (w >= 350 && w < 450) {
+                    w = w + 18;
+                } else if (w >= 300 && w < 350) {
+                    w = w + 16;
+                } else {
+                    w = w + 14;
+                }
+                $('#' + targetId).width(w);
+            };
+
+            // 切换TOC目录展开收缩的相关操作.
+            const expandedClass = 'expanded';
+            let $tocAside = $('#toc-aside');
+            let $mainContent = $('#main-content');
+            $('#floating-toc-btn .btn-floating').click(function () {
+                if ($tocAside.hasClass(expandedClass)) {
+                    $tocAside.removeClass(expandedClass).hide();
+                    $mainContent.removeClass('l9');
+                } else {
+                    $tocAside.addClass(expandedClass).show();
+                    $mainContent.addClass('l9');
+                }
+                fixPostCardWidth('artDetail', 'prenext-posts');
+            });
+            
+        });
+    })
+    
+</script>
+
+    
+
+</main>
+
+
+
+    </main>
+
+
+    <footer class="page-footer bg-color">
+    
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="411680085"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='false'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            &copy;
+            <span id="year">2020</span>-<span id="year">2021</span>&nbsp;<i id="heartbeat" class="fa fas fa-heartbeat"></i>&nbsp;
+            <a href="/about" target="_blank">JM</a>
+            
+            <br>快乐每一天！
+            <!-- <br>This is My Stage! -->
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">229.9k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "6";
+                    var startDate = "12";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/fenghen0918" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:443175565@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=443175565" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 443175565" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+
+    <a href="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/imgs/wechat.png" class="tooltipped" target="_blank" data-tooltip="微信联系我: " data-position="top" data-delay="50">
+        <i class="fab fa-weixin"></i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<head><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"><style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #FFF;
+        text-align: center;
+        /* loader页面消失采用渐隐的方式*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .loading-image{
+        width: 120px;
+        height: 50px;
+        transform: translate(-50%);
+    }
+
+    .loading-image div:nth-child(2) {
+        -webkit-animation: pacman-balls 1s linear 0s infinite;
+        animation: pacman-balls 1s linear 0s infinite
+    }
+
+    .loading-image div:nth-child(3) {
+        -webkit-animation: pacman-balls 1s linear .33s infinite;
+        animation: pacman-balls 1s linear .33s infinite
+    }
+
+    .loading-image div:nth-child(4) {
+        -webkit-animation: pacman-balls 1s linear .66s infinite;
+        animation: pacman-balls 1s linear .66s infinite
+    }
+
+    .loading-image div:nth-child(5) {
+        -webkit-animation: pacman-balls 1s linear .99s infinite;
+        animation: pacman-balls 1s linear .99s infinite
+    }
+
+   .loading-image div:first-of-type {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_up .5s 0s infinite;
+        animation: rotate_pacman_half_up .5s 0s infinite;
+    }
+    .loading-image div:nth-child(2) {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_down .5s 0s infinite;
+        animation: rotate_pacman_half_down .5s 0s infinite;
+        margin-top: -50px;
+    }
+    @-webkit-keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @-webkit-keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @-webkit-keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+    @keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+
+    .loading-image div:nth-child(3),
+    .loading-image div:nth-child(4),
+    .loading-image div:nth-child(5),
+    .loading-image div:nth-child(6){
+        background-color: #49b1f5;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        transform: translateY(-6.25px);
+        top: 25px;
+        left: 100px;
+    }
+    .loading-text{
+        margin-bottom: 20vh;
+        text-align: center;
+        color: #2c3e50;
+        font-size: 2rem;
+        box-sizing: border-box;
+        padding: 0 10px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    @media only screen and (max-width: 500px) {
+         .loading-text{
+            font-size: 1.5rem;
+         }
+    }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    /* logo出现动画 */
+    @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}
+    @keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);}}
+ </style>
+ <script>
+(function () {
+    const loaded = function(){
+       setTimeout(function(){
+            const loader = document.getElementById("loading-container");
+            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
+            // document.getElementById("body-wrap").style.display="flex";
+            setTimeout(function(){
+                loader.style.display="none";
+            },1000); 
+        },1000);//强制显示loading page 1s  
+    };
+    loaded();
+})()
+ </script></head>
+
+
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <script type="text/javascript">
+        var OriginTitile=document.title,st;
+        document.addEventListener("visibilitychange",function(){
+            document.hidden?(document.title="ヽ(●-`Д´-)ノ你要玩捉迷藏嘛",clearTimeout(st)):(document.title="(Ő∀Ő3)ノ好哦！",st=setTimeout(function(){document.title=OriginTitile},3e3))
+        })
+    </script>
+    
+
+
+<!-- tianqi -->
+<!-- <script type="text/javascript">
+    WIDGET = {FID: 'kxeODGotwh'}
+    </script>
+    <script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script> -->
+
+
+
+
+    
+</html>
+
+    <script src="https://cdn.jsdelivr.net/npm/pjax/pjax.js"></script>
+    <script type="text/javascript">
+        // $.getScript("https://cdn.jsdelivr.net/npm/pjax/pjax.min.js",loadPjax)
+        // function loadPjax(){
+            var pjax = new Pjax({
+                selectors: [
+                    "head title",
+                    'head meta[name="keywords"]',
+                    'head meta[name="description"]',
+                    "main#main_wrap"
+                ],
+                cache: true,
+                cacheBust: false
+            });
+        // }
+
+
+    </script>
+
+
+
