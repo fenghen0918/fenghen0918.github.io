@@ -568,14 +568,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.6k
+                    6.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    22 分
+                    25 分
                 </div>
                 
 
@@ -622,6 +622,7 @@
 <p>动态查看日志：tail -f catalina.out，如果查看后100行：-100f</p>
 <h4 id="列出文件列表：ls（查看文件名列表）-ll（查看文件列表详细信息）"><a href="#列出文件列表：ls（查看文件名列表）-ll（查看文件列表详细信息）" class="headerlink" title="列出文件列表：ls（查看文件名列表） ll（查看文件列表详细信息）"></a>列出文件列表：ls（查看文件名列表） ll（查看文件列表详细信息）</h4><p><code>ls -a</code>显示所有文件、隐藏文件</p>
 <p><code>ll -h</code>显示所有文件信息，文件大小可读性较高</p>
+<p><code>ll -t</code>按创建时间倒序（正序-tr）排列</p>
 <p><code>du -sh 目录路径</code>显示目录的真实大小</p>
 <blockquote>
 <p>路径</p>
@@ -713,6 +714,7 @@
 <h4 id="查看时间-date"><a href="#查看时间-date" class="headerlink" title="查看时间 date"></a>查看时间 date</h4><p>date：输出形式 2021年3月21日 星期日 23:42:28</p>
 <p>date +%F：输出形式 2021-03-21</p>
 <p>date “+%F %T”：输出形式 2021-03-21 23:42:28</p>
+<p>date -s “20220810 22:25:35”</p>
 <p>cal：查看当前日历</p>
 <h4 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h4><ol>
 <li><code>free -mh</code>：<strong>查看内存使用情况</strong></li>
@@ -736,9 +738,10 @@
 <li>uptime：<strong>查看服务器运行时间</strong></li>
 <li>uname -a：<strong>查看系统信息</strong></li>
 <li>netstat -tnlp：查看进程<ul>
-<li>kill id：杀进程</li>
+<li>kill -9 id：杀进程</li>
 </ul>
 </li>
+<li>nohup 文件名 &amp;：</li>
 </ul>
 <h4 id="重定向输出-gt-和-gt-gt-（结果复制到对应文件中）"><a href="#重定向输出-gt-和-gt-gt-（结果复制到对应文件中）" class="headerlink" title="重定向输出>和>>（结果复制到对应文件中）"></a>重定向输出&gt;和&gt;&gt;（结果复制到对应文件中）</h4><ul>
 <li><p>cat /etc/passwd &gt; a.txt 将输出定向到a.txt中（覆盖）</p>
@@ -757,7 +760,12 @@
 <li>cmd：该进程名称/路径</li>
 </ul>
 </li>
-<li>ps –ef | grep ssh 查找含有ssh的进程</li>
+<li>ps –ef | grep ssh 查找含有ssh的进程<ul>
+<li>ef：系统所有进程信息</li>
+<li>ux：当前用户进程信息</li>
+<li>aux：所有用户进程信息</li>
+</ul>
+</li>
 <li>top（任务管理器）<ul>
 <li>pid：进程id</li>
 <li>user：用户</li>
@@ -799,8 +807,10 @@
 <li><p>命令行操作</p>
 <ul>
 <li>移动光标<ul>
-<li>行尾 shift+6</li>
+<li>行尾 shift+6<ul>
 <li>行首 shift+4</li>
+</ul>
+</li>
 <li>首行 gg</li>
 <li>末行 G</li>
 <li>上翻屏 PgUp 或 ctrl+b</li>
@@ -899,7 +909,74 @@
 </li>
 </ul>
 <hr>
-<h3 id="Linux上常用网络操作"><a href="#Linux上常用网络操作" class="headerlink" title="Linux上常用网络操作"></a>Linux上常用网络操作</h3><h4 id="id指令"><a href="#id指令" class="headerlink" title="id指令"></a>id指令</h4><ul>
+<h3 id="Linux上常用网络操作"><a href="#Linux上常用网络操作" class="headerlink" title="Linux上常用网络操作"></a>Linux上常用网络操作</h3><p>OSI7层网络模型：物理层、数据链路层、网络层、传输层、会话层、表示层、应用层（应表会传网数物）</p>
+<p>TCP/IP4层概念模型：数据链路层、网络层、传输层、应用层</p>
+<h4 id="网络常用命令"><a href="#网络常用命令" class="headerlink" title="网络常用命令"></a>网络常用命令</h4><p>重启网络（用于修改ip后）：systemctl restart network</p>
+<h4 id="网络相关的配置文件"><a href="#网络相关的配置文件" class="headerlink" title="网络相关的配置文件"></a>网络相关的配置文件</h4><table>
+<thead>
+<tr>
+<th>配置文件名</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/etc/sysconfig/network</td>
+<td>最基本的网络信息，系统启动时读取该文件</td>
+</tr>
+<tr>
+<td>/etc/sysconfig/network-scripts/*</td>
+<td>系统启动时初始化的网络信息：第一块网卡ifcfg-eth0</td>
+</tr>
+<tr>
+<td>/etc/host.conf</td>
+<td>域名解析的控制文件</td>
+</tr>
+<tr>
+<td>/etc/hosts</td>
+<td>域名或主机名与IP地址的映射文件</td>
+</tr>
+<tr>
+<td>/etc/resolv.conf</td>
+<td>域名服务器DNS设置文件</td>
+</tr>
+<tr>
+<td>/etc/services</td>
+<td>设定主机的不同端口的网络服务</td>
+</tr>
+</tbody></table>
+<h4 id="网络相关命令"><a href="#网络相关命令" class="headerlink" title="网络相关命令"></a>网络相关命令</h4><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ping</td>
+<td>测试主机连通性</td>
+</tr>
+<tr>
+<td>netstat</td>
+<td>显示网络状态，参数-a显示所有连接与监听端口。参数-n以数字形式显示地址与端口号</td>
+</tr>
+<tr>
+<td>ftp</td>
+<td>文件传输命令</td>
+</tr>
+<tr>
+<td>telnet</td>
+<td>远程登陆</td>
+</tr>
+<tr>
+<td>ssh</td>
+<td>加密功能远程管理工具</td>
+</tr>
+<tr>
+<td>ifconfig</td>
+<td>显示网络设备</td>
+</tr>
+</tbody></table>
+<h4 id="id指令"><a href="#id指令" class="headerlink" title="id指令"></a>id指令</h4><ul>
 <li>id ：查看用户的基本信息</li>
 <li>id 用户名：显示指定用户的基本信息</li>
 </ul>
@@ -910,18 +987,20 @@
 <li><p>hostname 查看主机名</p>
 <p>hostname -f 查看主机全限定域名</p>
 <p>hostname xxx 修改主机名 重启后无效</p>
-<p>如果想要永久生效，可以修改/etc/sysconfig/network文件</p>
+<p>hostnamectl set-hostname xxx 永久修改主机名，也可以修改/etc/sysconfig/network文件</p>
 </li>
 <li><p>修改域名 /etc/hosts</p>
 </li>
 </ul>
 <h4 id="IP地址配置"><a href="#IP地址配置" class="headerlink" title="IP地址配置"></a>IP地址配置</h4><ul>
-<li><p>ifconfig 查看(修改)ip地址</p>
+<li><p>ifconfig或ip a 查看(修改)ip地址</p>
+</li>
+<li><p>ip route 查看路由</p>
 <p>ifconfig eth0 192.168.12.22 修改ip地址(重启后无效)</p>
 <p>如果想要永久生效</p>
 <p>修改 /etc/sysconfig/network-scripts/ifcfg-eth0文件</p>
 <pre><code>DEVICE=eth0 #网卡名称
-BOOTPROTO=static #获取ip的方式(static/dhcp/bootp/none)
+BOOTPROTO=static #获取ip的方式(none/static,dhcp)
 NBOOT=yes #  系统启动时是否设置此网络接口，设置为yes时，系统启动时激活此设备。
 
 HWADDR=00:0C:29:B5:B2:69 #MAC地址
@@ -1032,6 +1111,12 @@ setenforce 0 关闭权限安全管理
 <li>使用alt + p 组合键打开sftp窗口</li>
 <li>使用put 命令上传：put h:/redis -2.4.5.zip</li>
 <li>使用get命令下载(默认下载位置在当前计算的的文档位置)</li>
+</ul>
+</li>
+<li>ftp<ul>
+<li>在linux上安装ftp客户端，windows上安装home ftp server。home ftp server添加linux成员，开始服务</li>
+<li>linux上输入<code>ftp</code>登录，ls查看的就是windows下的文件目录。前面加<code>l</code>就是linux下的命令，如lcd</li>
+<li>从windows取到linux<code>get 文件名</code>，反之是<code>put 文件名</code></li>
 </ul>
 </li>
 </ul>
@@ -1331,6 +1416,7 @@ flush privileges; 刷新，立即生效
 <h4 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h4><p>刚注册的用户没有密码，处于锁定状态，需要设置密码才能使用</p>
 <p>常用语法：<code>passwd 用户名</code></p>
 <h4 id="切换用户"><a href="#切换用户" class="headerlink" title="切换用户"></a>切换用户</h4><p>常用语法：<code>su 用户名</code></p>
+<p><code>su - root</code>的<code>-</code>代表该表用户变量</p>
 <h4 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h4><p>常用语法：<code>userdel 选项 用户名</code></p>
 <p>常用选项:</p>
 <ul>
@@ -1439,6 +1525,29 @@ fi
 -x file 是否为可执行
 -e file 是否存在
 </code></pre>
+<h2 id="调整存储分区"><a href="#调整存储分区" class="headerlink" title="调整存储分区"></a>调整存储分区</h2><p><code>df -h</code>查看是否/目录最大，如果不是，通过以下操作使根目录最大。</p>
+<ol>
+<li><p>备份home分区文件<br>tar cvf /tmp/home.tar /home</p>
+</li>
+<li><p>卸载/home，如果无法卸载，先终止使用/home文件系统的进程<br>umount /home （卸载）</p>
+<p>卸载时，发现/home在使用中，所以先终止。<br>fuser -km /home/（终止）<br>再次卸载，没有报错，表示成功。</p>
+</li>
+<li><p>删除/home所在的lv</p>
+<p>lvremove /dev/mapper/cl-home</p>
+</li>
+<li><p>扩展/root所在的lv<br>lvextend -L +460G /dev/mapper/cl-root （多少G，具体看自己）</p>
+</li>
+<li><p>扩展/root文件系统<br>xfs_growfs /dev/mapper/cl-root</p>
+</li>
+<li><p>创建/home所在的lv<br>lvcreate -L 50G -n home cl</p>
+</li>
+<li><p>创建文件系统<br>mkfs.xfs /dev/mapper/cl-home</p>
+</li>
+<li><p>挂载home<br>mount /dev/mapper/cl-home</p>
+</li>
+<li><p>home文件恢复<br>tar xvf /tmp/home.tar -C /home/</p>
+</li>
+</ol>
 
 
 
@@ -2353,7 +2462,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">234.2k</span>&nbsp;字
+                class="white-color">235.7k</span>&nbsp;字
             
             
             
