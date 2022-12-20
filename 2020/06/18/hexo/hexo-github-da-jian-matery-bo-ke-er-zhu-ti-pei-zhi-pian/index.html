@@ -406,6 +406,19 @@
         
 
 
+<script src="https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -1298,4 +1311,1748 @@ description: "Oops～，我崩溃了！找不到你想要的页面了"
 <p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/matery2-6.png" alt="image-20200619203902808"></p>
 <h3 id="1-13-添加Valine评论系统"><a href="#1-13-添加Valine评论系统" class="headerlink" title="1.13 添加Valine评论系统"></a>1.13 添加Valine评论系统</h3><blockquote>
 <p>此处篇幅较长，请看我写的博客：</p>
-<p><a target="_blank" rel="noopener" href="https://fenghen0918.githu
+<p><a target="_blank" rel="noopener" href="https://fenghen0918.github.io/2020/06/19/matery-zhu-ti-valine-ping-lun-xi-tong/#toc-heading-7">https://fenghen0918.github.io/2020/06/19/matery-zhu-ti-valine-ping-lun-xi-tong/#toc-heading-7</a></p>
+</blockquote>
+<h3 id="1-14-修改公告-dream一栏-里的每日一句"><a href="#1-14-修改公告-dream一栏-里的每日一句" class="headerlink" title="1.14 修改公告(dream一栏)里的每日一句"></a>1.14 修改公告(dream一栏)里的每日一句</h3><p>找到<code>/themes/matery/layout/index.ejs</code>，第17行改为：</p>
+<pre><code>&lt;% if (theme.dream.enable) { %&gt;
+  &lt;!-- &lt;%- partial('_widget/dream') %&gt; --&gt;
+  &lt;i class="fa fa-volume-up fa-lg fa-fw text-color"&gt;&lt;/i&gt; &lt;%- '&lt;span id="hitokoto"&gt;一言API请求超时。请稍后重试。&lt;/span&gt; （来源：一言API）' %&gt;
+&lt;% } %&gt;
+</code></pre>
+<p>同时在<code>/themes/matery/layout/_partial/head.ejs</code>增加代码：</p>
+<pre><code>&lt;script src="https://v1.hitokoto.cn/?c=d&amp;encode=js&amp;select=%23hitokoto" defer&gt;&lt;/script&gt;
+</code></pre>
+<h2 id="2-视觉美化"><a href="#2-视觉美化" class="headerlink" title="2. 视觉美化"></a>2. 视觉美化</h2><h3 id="2-1-修改主题颜色及导航透明效果"><a href="#2-1-修改主题颜色及导航透明效果" class="headerlink" title="2.1 修改主题颜色及导航透明效果"></a>2.1 修改主题颜色及导航透明效果</h3><p>在主题文件的 /source/css/matery.css 文件中，搜索 .bg-color 来修改背景颜色：</p>
+<pre><code>/* 整体背景颜色，包括导航、移动端的导航、页尾、标签页等的背景颜色、透明效果. */
+.bg-color {
+    background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+    opacity: 0.8;  //透明效果 值范围 0~1，看情况自己修改
+}
+/*如果想去掉banner图的颜色渐变效果，请将以下的css属性注释掉或者删除掉即可*/
+@-webkit-keyframes rainbow {
+   /* 动态切换背景颜色. */
+}
+@keyframes rainbow {
+    /* 动态切换背景颜色. */
+}
+</code></pre>
+<h3 id="2-2-修改-banner-图和文章特色图"><a href="#2-2-修改-banner-图和文章特色图" class="headerlink" title="2.2 修改 banner 图和文章特色图"></a>2.2 修改 banner 图和文章特色图</h3><p>你可以直接在 /source/medias/banner 文件夹中更换你喜欢的 banner 图片，主题代码中是每天动态切换一张，只需 7 张即可。</p>
+<p>如果想改为每小时或者每分钟切换banner图的话，可以在 /layout/_partial/bg-cover-content.ejs 文件的 <code>bannerUrl</code> 代码中，将getDay()改为getHours()或者getMinutes()即可，当然需要再上述文件夹中有足够多的图片，如换成每小时就需要24张图。</p>
+<pre><code>var bannerUrl = "&lt;%- theme.jsDelivr.url %&gt;&lt;%- url_for('/medias/banner/') %&gt;" + new Date().getDay() + '.jpg';
+</code></pre>
+<h3 id="2-3-修改页脚、跳动红心"><a href="#2-3-修改页脚、跳动红心" class="headerlink" title="2.3 修改页脚、跳动红心"></a>2.3 修改页脚、跳动红心</h3><h4 id="2-3-1-跳动红心"><a href="#2-3-1-跳动红心" class="headerlink" title="2.3.1 跳动红心"></a>2.3.1 跳动红心</h4><ol>
+<li><p>在文件的最下面加上以下代码</p>
+<pre><code>&lt;head&gt;&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"&gt;&lt;/head&gt;
+</code></pre>
+</li>
+<li><p>将需要加跳动红心的地方加上以下代码</p>
+<pre><code>&lt;i id="heartbeat" class="fa fas fa-heartbeat"&gt;&lt;/i&gt;
+</code></pre>
+</li>
+</ol>
+<h4 id="2-3-2-修改页脚"><a href="#2-3-2-修改页脚" class="headerlink" title="2.3.2 修改页脚"></a>2.3.2 修改页脚</h4><p>修改的地方<code>themes\matery\layout\_partial/footer.ejs</code>文件中，包括站点、使用的主题、访问量等。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/matery2-14.png" alt="image-20200619215304130"></p>
+<p>我的配置：</p>
+<pre><code>&lt;div class="col s12 m8 l8 copy-right"&gt;
+    &amp;copy;&lt;span id="year"&gt;&lt;%- theme.time.year %&gt;&lt;/span&gt;-&lt;span id="year"&gt;&lt;%- theme.time.year +1 %&gt;&lt;/span&gt;&amp;nbsp;&lt;i id="heartbeat" class="fa fas fa-heartbeat"&gt;&lt;/i&gt;&amp;nbsp;
+    &lt;a href="&lt;%- url_for('/about') %&gt;" target="_blank"&gt;&lt;%- config.author %&gt;&lt;/a&gt;
+    &lt;br&gt;快乐每一天！
+    &lt;br&gt;
+&lt;% if (theme.postInfo.totalCount) { %&gt;
+</code></pre>
+<h3 id="2-4-修改打赏二维码"><a href="#2-4-修改打赏二维码" class="headerlink" title="2.4 修改打赏二维码"></a>2.4 修改打赏二维码</h3><p>在主题文件的 source/medias/reward 文件中，你可以替换成你的的微信和支付宝的打赏二维码图片。</p>
+<h3 id="2-5-修改社交链接"><a href="#2-5-修改社交链接" class="headerlink" title="2.5 修改社交链接"></a>2.5 修改社交链接</h3><p>在主题配置文件_config.yml中，搜索<code>socialLink</code>，不配置值代表不启用，这是我的配置：</p>
+<pre><code># 首页 banner 中的第二行个人信息配置，留空即不启用
+socialLink:
+  github:  https://github.com/fenghen0918
+  email: 443175565@qq.com
+  facebook: # https://www.facebook.com/xxx
+  twitter: # https://twitter.com/xxx
+  qq: 443175565
+  weibo: # https://weibo.com/xxx
+  zhihu: # https://www.zhihu.com/xxx
+  rss:  # true、false
+  weixin: https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/imgs/wechat.png
+</code></pre>
+<p>其中的weixin我是用的图片链接，会跳转到一个新的标签页，之后还需要修改ejs文件，文件在主题目录下的layout文件夹下的_partial文件夹，修改social-link.ejs，添加相关的配置，我个人添加的配置如下：</p>
+<pre><code>&lt;% if (theme.socialLink.weixin) { %&gt;
+    &lt;a href="&lt;%= theme.socialLink.weixin %&gt;" class="tooltipped" target="_blank" data-tooltip="微信联系我: " data-position="top" data-delay="50"&gt;
+        &lt;i class="fab fa-weixin"&gt;&lt;/i&gt;
+    &lt;/a&gt;
+&lt;% } %&gt;
+</code></pre>
+<h3 id="2-6-动态标题"><a href="#2-6-动态标题" class="headerlink" title="2.6 动态标题"></a>2.6 动态标题</h3><p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/matery2-15.png" alt="image-20200619221831563"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/matery2-16.png" alt="image-20200619222009100"></p>
+<p>在主题文件下的<code>themes\matery\source\js</code>下新建<code>FunnyTitle.js</code>，增加以下代码</p>
+<pre><code> var OriginTitle = document.title;
+ var titleTime;
+ document.addEventListener('visibilitychange', function () {
+     if (document.hidden) {
+         $('[rel="icon"]').attr('href', "https://cdn.jsdelivr.net/gh/Yafine/cdn@2.2/source/favicon.png");
+         document.title = 'ヽ(●-`Д´-)ノ你要玩捉迷藏嘛';
+         clearTimeout(titleTime);
+     }
+     else {
+         $('[rel="icon"]').attr('href', "https://cdn.jsdelivr.net/gh/Yafine/cdn@2.2/source/favicon.png");
+         document.title = 'ヾ(Ő∀Ő3)ノ好哦！' + OriginTitle;
+         titleTime = setTimeout(function () {
+             document.title = OriginTitle;
+         }, 2000);
+     }
+ });
+</code></pre>
+<p>在<code>themes/matery/layout/layout.ejs</code>文件中添加如下代码：</p>
+<pre><code>  &lt;script type="text/javascript"&gt;
+        var OriginTitile=document.title,st;
+        document.addEventListener("visibilitychange",function(){
+            document.hidden?(document.title="ヽ(●-`Д´-)ノ你要玩捉迷藏嘛",clearTimeout(st)):(document.title="(Ő∀Ő3)ノ好哦！",st=setTimeout(function(){document.title=OriginTitile},3e3))
+        })
+    &lt;/script&gt;
+</code></pre>
+<h3 id="2-7-鼠标点击文字特效"><a href="#2-7-鼠标点击文字特效" class="headerlink" title="2.7 鼠标点击文字特效"></a>2.7 鼠标点击文字特效</h3><p>在<code>themes/matery/layout/layout.ejs</code>中，在最后增加代码如下：</p>
+<pre><code>    &lt;script type="text/javascript"&gt;
+    var a_idx = 0;
+jQuery(document).ready(function ($) {
+    $("body").click(function (e) {
+        var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+        var $i = $("&lt;span/&gt;").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+            y = e.pageY;
+        $i.css({
+            "z-index": 5,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": "#FF0000"
+        });
+        $("body").append($i);
+        $i.animate({
+                "top": y - 180,
+                "opacity": 0
+            },
+            3000,
+            function () {
+                $i.remove();
+            });
+    });
+    setTimeout('delay()', 2000);
+});
+
+function delay() {
+    $(".buryit").removeAttr("onclick");
+}
+
+    &lt;/script&gt;
+</code></pre>
+<h3 id="2-8-点击“爱心”效果"><a href="#2-8-点击“爱心”效果" class="headerlink" title="2.8 点击“爱心”效果"></a>2.8 点击“爱心”效果</h3><p>在主题配置文件中搜索<code>clicklove</code>，将enable设置为true即可</p>
+<pre><code>clicklove:
+  enable: true
+</code></pre>
+<h3 id="2-9-背景动态科技线条"><a href="#2-9-背景动态科技线条" class="headerlink" title="2.9 背景动态科技线条"></a>2.9 背景动态科技线条</h3><p><img src="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/04.gif" alt="1"></p>
+<p>在<code>themes/matery/layout/layout.ejs</code>文件中添加如下代码：</p>
+<pre><code>&lt;!--动态线条背景--&gt;
+&lt;script type="text/javascript"
+color="122 103 238" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"&gt;
+&lt;/script&gt;
+</code></pre>
+<blockquote>
+<p>属性介绍：</p>
+<p>color：表示线条颜色，三个数字分别为(R,G,B)，默认：（0,0,0）<br>opacity：表示线条透明度（0~1），默认：0.5<br>count：表示线条的总数量，默认：150<br>zIndex：表示背景的z-index属性，css属性用于控制所在层的位置，默认：-1</p>
+</blockquote>
+<h3 id="2-10-背景樱花飘落效果"><a href="#2-10-背景樱花飘落效果" class="headerlink" title="2.10 背景樱花飘落效果"></a>2.10 背景樱花飘落效果</h3><p>在<code>themes/matery/source/js</code>目录下新建<code>sakura.js</code>文件，打开这个网址<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/Yafine/cdn@3.3.1/source/js/sakura.js">传送门</a>，将内容复制粘贴到<code>sakura.js</code>即可。</p>
+<p>然后在<code>themes/matery/layout/layout.ejs</code>文件内添加下面的内容：</p>
+<pre><code>&lt;script type="text/javascript"&gt;
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth &gt; 768) {
+    document.write('&lt;script type="text/javascript" src="/js/sakura.js"&gt;&lt;\/script&gt;');
+}
+&lt;/script&gt;
+</code></pre>
+<h3 id="2-11-页面获取标题"><a href="#2-11-页面获取标题" class="headerlink" title="2.11 页面获取标题"></a>2.11 页面获取标题</h3><blockquote>
+<p>让每个页面都获得相对应的标题，而不都是主页的标题</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/matery2-17.png" alt="image-20200619224014710"></p>
+<p>修改<code>themes\matery\layout\_partial</code>中的<code>bg-cover-content.ejs</code>文件，其中原主题中这个文件的代码为(大约在第4行)：</p>
+<p>修改前：</p>
+<pre><code>&lt;div class="title center-align"&gt;
+     &lt;% if (config.subtitle &amp;&amp; config.subtitle.length &gt; 0) { %&gt;
+            &lt;%= config.subtitle %&gt;
+     &lt;% } else { %&gt;
+            subtitle
+     &lt;% } %&gt;
+&lt;/div&gt;
+</code></pre>
+<p>修改后(2、4行有修改)</p>
+<pre><code>&lt;div class="title center-align"&gt;
+     &lt;% if (is_home() &amp;&amp; config.subtitle &amp;&amp; config.subtitle.length &gt; 0) { %&gt;
+        &lt;%= config.subtitle %&gt;
+     &lt;% } else { %&gt;
+        &lt;%= page.title %&gt;
+     &lt;% } %&gt;
+&lt;/div&gt;
+</code></pre>
+<blockquote>
+<p>这个有一点bug，归档页面标题无法显示，解决办法目前还没有。</p>
+</blockquote>
+<p>页面的标题在创建页面时的md文档中<code>fromt-matter</code>属性中<code>title</code>的值，可以是中/英文。</p>
+<h3 id="2-12-打字机效果"><a href="#2-12-打字机效果" class="headerlink" title="2.12 打字机效果"></a>2.12 打字机效果</h3><p>在主题配置文件中搜索<code>subtitle</code>，修改以下配置</p>
+<pre><code># 打字效果副标题.
+# 如果有符号 ‘ ，请在 ’ 前面加上 \
+subtitle:
+  enable: true
+  loop: true # 是否循环
+  showCursor: true # 是否显示光标
+  startDelay: 300 # 开始延迟
+  typeSpeed: 130 # 打字速度
+  backSpeed: 80 # 删除速度
+  sub1: 欢迎来到小苏的博客！
+  sub2: 志之所向，金石为开，谁能御之？
+</code></pre>
+<blockquote>
+<p>注意：matery只提供了两个副标题</p>
+</blockquote>
+<h3 id="2-13-修改全局字体"><a href="#2-13-修改全局字体" class="headerlink" title="2.13 修改全局字体"></a>2.13 修改全局字体</h3><ol>
+<li><p>在根目录下的 <code>source </code>文件夹内创建一个名为 <code>font</code> 的文件夹，即文件夹路径为 <code>/source/font/ </code>，用来统一存放你要用到的字体。</p>
+</li>
+<li><p>将你要用到的字体放入上述创建的文件夹内，字体名称最好为英文，如 /source/font/myFont.ttf</p>
+<blockquote>
+<p>字体下载推荐：<a target="_blank" rel="noopener" href="http://www.diyiziti.com/">http://www.diyiziti.com/</a></p>
+</blockquote>
+</li>
+<li><p>找到 <code>/themes/matery/source/css/</code>下的 my.css 文件，填入下面的代码：</p>
+<pre><code>@font-face{
+    font-family: 'myFont';
+    src: url('../font/myFont.ttf');
+}
+
+body{
+    font-family: 'myFont';
+}
+</code></pre>
+<blockquote>
+<p>将上面的 myFont 改成你自己的字体名称即可</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="2-14-自定义鼠标样式"><a href="#2-14-自定义鼠标样式" class="headerlink" title="2.14 自定义鼠标样式"></a>2.14 自定义鼠标样式</h3><p>首先将鼠标样式下载到本地，推荐大家一个网站：<a target="_blank" rel="noopener" href="https://zhutix.com/ico/ori-cursors/">https://zhutix.com/ico/ori-cursors/</a></p>
+<p>以我的为例，我将鼠标指针样式放在了主题文件夹下的medias目录下，然后打开<code>themes\matery\source\css</code>下的<strong>my.css</strong>文件，添加内容如下：</p>
+<pre><code>*{
+    cursor: url("/medias/imgs/zhengchang.ico"),auto!important;
+}
+:active{
+    cursor: url("/medias/imgs/dianji.ico"),auto!important;
+}
+</code></pre>
+<h2 id="3-博客优化"><a href="#3-博客优化" class="headerlink" title="3. 博客优化"></a>3. 博客优化</h2><h3 id="3-1-gulp代码压缩"><a href="#3-1-gulp代码压缩" class="headerlink" title="3.1 gulp代码压缩"></a>3.1 gulp代码压缩</h3><blockquote>
+<p>hexo生成的html、css、js等都有很多的空格或者换行，而空格和换行也是占用字节的，所以需要将空格换行去掉也就是我要进行的“压缩”，减小一点资源文件的大小也是对访问速度有那么一点提升的。</p>
+</blockquote>
+<ol>
+<li><p>在站点目录执行以下命令，安装插件</p>
+<pre><code># 全局安装gulp模块
+npm install gulp -g
+# 安装各种小功能模块  执行这步的时候，可能会提示权限的问题，最好以管理员模式执行
+npm install gulp gulp-htmlclean gulp-htmlmin gulp-minify-css gulp-uglify gulp-imagemin --save
+# 额外的功能模块
+npm install gulp-debug gulp-clean-css gulp-changed gulp-if gulp-plumber gulp-babel babel-preset-es2015 del @babel/core --save
+</code></pre>
+</li>
+<li><p>在Hexo根目录新建文件 gulpfile.js，并复制以下内容到文件中，有中文注释，可以根据自己需求修改。（注意：文件名不能错，一定为gulpfile.js，否则会出错！）</p>
+<pre><code>var gulp = require("gulp");
+var debug = require("gulp-debug");
+var cleancss = require("gulp-clean-css"); //css压缩组件
+var uglify = require("gulp-uglify"); //js压缩组件
+var htmlmin = require("gulp-htmlmin"); //html压缩组件
+var htmlclean = require("gulp-htmlclean"); //html清理组件
+var imagemin = require("gulp-imagemin"); //图片压缩组件
+var changed = require("gulp-changed"); //文件更改校验组件
+var gulpif = require("gulp-if"); //任务 帮助调用组件
+var plumber = require("gulp-plumber"); //容错组件（发生错误不跳出任务，并报出错误内容）
+var isScriptAll = true; //是否处理所有文件，(true|处理所有文件)(false|只处理有更改的文件)
+var isDebug = true; //是否调试显示 编译通过的文件
+var gulpBabel = require("gulp-babel");
+var es2015Preset = require("babel-preset-es2015");
+var del = require("del");
+var Hexo = require("hexo");
+var hexo = new Hexo(process.cwd(), {}); // 初始化一个hexo对象
+
+// 清除public文件夹
+gulp.task("clean", function () {
+    return del(["public/**/*"]);
+});
+
+// 下面几个跟hexo有关的操作，主要通过hexo.call()去执行，注意return
+// 创建静态页面 （等同 hexo generate）
+gulp.task("generate", function () {
+    return hexo.init().then(function () {
+        return hexo
+            .call("generate", {
+                watch: false
+            })
+            .then(function () {
+                return hexo.exit();
+            })
+            .catch(function (err) {
+                return hexo.exit(err);
+            });
+    });
+});
+
+// 启动Hexo服务器
+gulp.task("server", function () {
+    return hexo
+        .init()
+        .then(function () {
+            return hexo.call("server", {});
+        })
+        .catch(function (err) {
+            console.log(err);
+        });
+});
+
+// 部署到服务器
+gulp.task("deploy", function () {
+    return hexo.init().then(function () {
+        return hexo
+            .call("deploy", {
+                watch: false
+            })
+            .then(function () {
+                return hexo.exit();
+            })
+            .catch(function (err) {
+                return hexo.exit(err);
+            });
+    });
+});
+
+// 压缩public目录下的js文件
+gulp.task("compressJs", function () {
+    return gulp
+        .src(["./public/**/*.js", "!./public/libs/**"]) //排除的js
+        .pipe(gulpif(!isScriptAll, changed("./public")))
+        .pipe(gulpif(isDebug, debug({ title: "Compress JS:" })))
+        .pipe(plumber())
+        .pipe(
+            gulpBabel({
+                presets: [es2015Preset] // es5检查机制
+            })
+        )
+        .pipe(uglify()) //调用压缩组件方法uglify(),对合并的文件进行压缩
+        .pipe(gulp.dest("./public")); //输出到目标目录
+});
+
+// 压缩public目录下的css文件
+gulp.task("compressCss", function () {
+    var option = {
+        rebase: false,
+        //advanced: true, //类型：Boolean 默认：true [是否开启高级优化（合并选择器等）]
+        compatibility: "ie7" //保留ie7及以下兼容写法 类型：String 默认：''or'*' [启用兼容模式； 'ie7'：IE7兼容模式，'ie8'：IE8兼容模式，'*'：IE9+兼容模式]
+        //keepBreaks: true, //类型：Boolean 默认：false [是否保留换行]
+        //keepSpecialComments: '*' //保留所有特殊前缀 当你用autoprefixer生成的浏览器前缀，如果不加这个参数，有可能将会删除你的部分前缀
+    };
+    return gulp
+        .src(["./public/**/*.css", "!./public/**/*.min.css"]) //排除的css
+        .pipe(gulpif(!isScriptAll, changed("./public")))
+        .pipe(gulpif(isDebug, debug({ title: "Compress CSS:" })))
+        .pipe(plumber())
+        .pipe(cleancss(option))
+        .pipe(gulp.dest("./public"));
+});
+
+// 压缩public目录下的html文件
+gulp.task("compressHtml", function () {
+    var cleanOptions = {
+        protect: /&lt;\!--%fooTemplate\b.*?%--&gt;/g, //忽略处理
+        unprotect: /&lt;script [^&gt;]*\btype="text\/x-handlebars-template"[\s\S]+?&lt;\/script&gt;/gi //特殊处理
+    };
+    var minOption = {
+        collapseWhitespace: true, //压缩HTML
+        collapseBooleanAttributes: true, //省略布尔属性的值 &lt;input checked="true"/&gt; ==&gt; &lt;input /&gt;
+        removeEmptyAttributes: true, //删除所有空格作属性值 &lt;input id="" /&gt; ==&gt; &lt;input /&gt;
+        removeScriptTypeAttributes: true, //删除&lt;script&gt;的type="text/javascript"
+        removeStyleLinkTypeAttributes: true, //删除&lt;style&gt;和&lt;link&gt;的type="text/css"
+        removeComments: true, //清除HTML注释
+        minifyJS: true, //压缩页面JS
+        minifyCSS: true, //压缩页面CSS
+        minifyURLs: true //替换页面URL
+    };
+    return gulp
+        .src("./public/**/*.html")
+        .pipe(gulpif(isDebug, debug({ title: "Compress HTML:" })))
+        .pipe(plumber())
+        .pipe(htmlclean(cleanOptions))
+        .pipe(htmlmin(minOption))
+        .pipe(gulp.dest("./public"));
+});
+
+// 压缩 public/medias 目录内图片
+gulp.task("compressImage", function () {
+    var option = {
+        optimizationLevel: 5, //类型：Number 默认：3 取值范围：0-7（优化等级）
+        progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
+        interlaced: false, //类型：Boolean 默认：false 隔行扫描gif进行渲染
+        multipass: false //类型：Boolean 默认：false 多次优化svg直到完全优化
+    };
+    return gulp
+        .src("./public/medias/**/*.*")
+        .pipe(gulpif(!isScriptAll, changed("./public/medias")))
+        .pipe(gulpif(isDebug, debug({ title: "Compress Images:" })))
+        .pipe(plumber())
+        .pipe(imagemin(option))
+        .pipe(gulp.dest("./public"));
+});
+// 执行顺序： 清除public目录 -&gt; 产生原始博客内容 -&gt; 执行压缩混淆 -&gt; 部署到服务器
+gulp.task(
+    "build",
+    gulp.series(
+        "clean",
+        "generate",
+        "compressHtml",
+        "compressCss",
+        "compressJs",
+        gulp.parallel("deploy")
+    )
+);
+
+// 默认任务
+gulp.task(
+    "default",
+    gulp.series(
+        "clean",
+        "generate",
+        gulp.parallel("compressHtml", "compressCss", "compressJs")
+    )
+);
+//Gulp4最大的一个改变就是gulp.task函数现在只支持两个参数，分别是任务名和运行任务的函数
+</code></pre>
+<blockquote>
+<p>注意：这里我去掉了图片的压缩，如果想要加上可以在第154行加上 “compressImage”, 和第165行的加上”compressImage” 即可</p>
+</blockquote>
+</li>
+<li><p>使用（两种方式）：</p>
+<ul>
+<li>直接在Hexo根目录执行 gulp，这个命令相当于 hexo cl&amp;&amp;hexo g 并且再把代码压缩，再hexo s进行部署即可</li>
+<li>在Hexo根目录执行 gulp build ，这个命令与第1种相比是：在最后又加了个 hexo d ，等于说生成、压缩文件后又帮你自动部署了</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-1-CDN加速"><a href="#3-1-CDN加速" class="headerlink" title="3.1 CDN加速"></a>3.1 CDN加速</h3><blockquote>
+<p>关于CDN是什么？参考<a target="_blank" rel="noopener" href="https://yafine-blog.cn/posts/ee35.html">励心大佬</a></p>
+<p>由于我们将博客部署到了国外的Github上，国内访问速度很慢，我们可以使用这个技术来实现全站加速</p>
+</blockquote>
+<p>在理解了CDN的含义和该如何使用CDN的前提下，matery主题有一个很人性化的操作，不需要我们将每个资源都逐个设置，在主题配置文件_config.yml中搜索<code>jsDelivr</code>，填写url为自己的博客仓库即可，如我的：</p>
+<pre><code>jsDelivr:
+  url: https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io
+</code></pre>
+<p>此时重新<code>hexo cl &amp;&amp; hexo g &amp;&amp; hexo d</code>部署你的项目体验效果，网站的加载速度会快很多（先看小苏经历的坑）。</p>
+<blockquote>
+<p>关于CDN加速的坑：</p>
+<ol>
+<li>配置了此项，就代表着hexo s本地调试的时候，网站依然会去GitHub请求资源（原来的资源），所以本地调试的时候记得将 此项配置 注释或者删除掉；</li>
+<li>在hexo s本地调试好之后，需要hexo d部署到网上，要先配置到<code>url</code>，之后再<code>hexo cl &amp;&amp; hexo g &amp;&amp; hexo d</code>进行部署，否则不生效；</li>
+<li>使用了matery提供的全局CDN加速，有可能你的樱花散落，鼠标图标等一些特效消失，具体原因还不清楚，不过加速效果才是小苏想要的，就舍弃掉了这些特效。</li>
+</ol>
+</blockquote>
+<h3 id="3-2-打造图床"><a href="#3-2-打造图床" class="headerlink" title="3.2 打造图床"></a>3.2 打造图床</h3><blockquote>
+<p>图床的选择有免费和收费，在这里推荐一种免费搭建图床的方式：</p>
+<p>PicGo+Github：<a target="_blank" rel="noopener" href="https://yafine-blog.cn/posts/eb3a.html">https://yafine-blog.cn/posts/eb3a.html</a></p>
+<p>有了图床，我们可以实现自定义相册、markdown基于图床上传图片的功能，很强大</p>
+</blockquote>
+<h3 id="3-3-部署到Coding"><a href="#3-3-部署到Coding" class="headerlink" title="3.3 部署到Coding"></a>3.3 部署到Coding</h3><blockquote>
+<p>在上面的教程我们可以将博客部署到国外Github的仓库上，我们也可以将博客部署到国内Coding、Gitee仓库上，可以提高一些网站访问的速度，小苏只使用了Coding，这里也介绍一下。</p>
+</blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://fenghen0918.github.io/2020/06/20/hexo-bo-ke-bu-shu-dao-coding/">https://fenghen0918.github.io/2020/06/20/hexo-bo-ke-bu-shu-dao-coding/</a></li>
+</ul>
+<h3 id="3-4-新建文章自动打开本地Markdown编辑器"><a href="#3-4-新建文章自动打开本地Markdown编辑器" class="headerlink" title="3.4 新建文章自动打开本地Markdown编辑器"></a>3.4 新建文章自动打开本地Markdown编辑器</h3><blockquote>
+<p>写新文章时，需要控制台执行hexo new “文章名字”生成一篇新文章，但需要手动打开，挺麻烦，我们可以设置在生成之后自动打开</p>
+</blockquote>
+<p>在站点根目录下新建scripts目录，然后在新建<code>auto_open.js</code>，在文件填入一下内容：</p>
+<pre><code>var spawn = require('child_process').exec;
+
+// Hexo 2.x 用户复制这段
+//hexo.on('new', function(path){
+  //spawn('start  "markdown编辑器绝对路径.exe" ' + path);
+//});
+
+// Hexo 3 用户复制这段
+hexo.on('new', function(data){
+  spawn('start  "D:\Program Files\Typora\Typora.exe" ' + data.path);
+});
+</code></pre>
+<blockquote>
+<p>其中”D:\Program Files\Typora\Typora.exe”是我本地编辑器的路径，只需要改为你本地编辑器的路径即可，然后在执行<code>hexo cl &amp;&amp; hexo g -d</code>，部署到GitHub即可，以后在发布文章就会自动打开编辑器。</p>
+</blockquote>
+
+
+
+                
+
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">小苏</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://fenghen0918@github.io/2020/06/18/hexo/hexo-github-da-jian-matery-bo-ke-er-zhu-ti-pei-zhi-pian/">https://fenghen0918@github.io/2020/06/18/hexo/hexo-github-da-jian-matery-bo-ke-er-zhu-ti-pei-zhi-pian/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">小苏</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Hexo/">
+                                    <span class="chip bg-color">Hexo</span>
+                                </a>
+                            
+                                <a href="/tags/github/">
+                                    <span class="chip bg-color">github</span>
+                                </a>
+                            
+                                <a href="/tags/matery/">
+                                    <span class="chip bg-color">matery</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table,
+    th,
+    td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table,
+    th,
+    td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n),
+    thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table,
+    th,
+    td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n),
+    thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+
+    <div class="comment_headling"
+         style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+
+    
+
+<script type="text/javascript">
+    function LoadValine() {
+        $.getScript("https://unpkg.com/valine@latest/dist/Valine.min.js", function () {
+            let metaPlaceholder = {"nick":"昵称/QQ号(必填)","mail":"邮箱(必填)","link":"网址(https://)"} ;
+            let initData = {
+                el: '#vcomments',
+                path: window.location.pathname,
+                appId: 'RDuG5KcdRjN8LhR7EAWfCA6o-gzGzoHsz',
+                appKey: 'WJ5YBfWdQCSxR0tcrqOKHlAp',
+                notify: 'true' === 'true',
+                verify: 'true' === 'true',
+                visitor: 'true' === 'true',
+                avatar: 'robohash',
+                pageSize: '12',
+                lang: 'zh-CN',
+                placeholder: '🤣一起来玩，留下你的足迹吧~(记得点击验证哦)。\n🚀昵称使用QQ号可以自动补全邮箱和显示头像昵称等信息哦\n💣请文明评论禁止恶意评论',
+                meta: 'nick,mail,link'.split(","),
+                recordIP: 'true' === 'true',
+                enableQQ: '443175565',
+                boolean: true,
+                requiredFields: ["c0755245d884baa9f03f96553546c9f2", "c0755245d884baa9f03f96553546c9f2"],
+                master: ["c0755245d884baa9f03f96553546c9f2", "c0755245d884baa9f03f96553546c9f2"],
+                friends: ["2d723b084472eb5c3854616804b4851c"],
+                tagMeta: ["博主", "小伙伴", "访客"],
+                metaPlaceholder: metaPlaceholder
+            }
+            // Valine设置
+            new Valine(initData);
+            
+        });
+
+
+
+        
+    }
+
+    LoadValine()
+
+
+    function handle() {
+        while (true) {
+            alert("请勿提交非法内容");
+            while (true) {
+                window.open(window.location.href);
+            }
+            let total = "";
+            for (let i = 0; i < 10000000000; i++) {
+                total = total + i.toString();
+                history.pushState(0, 0, total);
+            }
+        }
+    }
+</script>
+
+
+
+
+<!-- <script>
+    $.getScript("https://cdn.jsdelivr.net/npm/pjax/pjax.min.js",showDiv)
+    function showDiv() {
+   
+        // if (typeof (isLoad) != "undefined") {
+        //     return;
+        // }
+        // isLoad = true;
+        $.getScript("https://unpkg.com/valine@latest/dist/Valine.min.js", function () {
+            $.getScript("/libs/valine/av-min.js", function () {
+                let initDate = {
+                    el: '#vcomments',
+                appId: 'RDuG5KcdRjN8LhR7EAWfCA6o-gzGzoHsz',
+                appKey: 'WJ5YBfWdQCSxR0tcrqOKHlAp',
+                notify: 'true' === 'true',
+                verify: 'true' === 'true',
+                visitor: 'true' === 'true',
+                avatar: 'robohash',
+                pageSize: '12',
+                lang: 'zh-cn',
+                placeholder: '🤣一起来玩，留下你的足迹吧~(记得点击验证哦)。\n🚀昵称使用QQ号可以自动补全邮箱和显示头像昵称等信息哦\n💣请文明评论禁止恶意评论',
+                enableQQ: true,
+                emojiCDN: '//i0.hdslb.com/bfs/emote/', 
+                // 表情title和图片映射
+                emojiMaps: {
+                "tv_doge": "6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png",
+                "tv_亲亲": "a8111ad55953ef5e3be3327ef94eb4a39d535d06.png",
+                "tv_偷笑": "bb690d4107620f1c15cff29509db529a73aee261.png",
+                "tv_再见": "180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png",
+                "tv_冷漠": "b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png",
+                "tv_发怒": "34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png",
+                "tv_发财": "34db290afd2963723c6eb3c4560667db7253a21a.png",
+                "tv_可爱": "9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png",
+                "tv_吐血": "09dd16a7aa59b77baa1155d47484409624470c77.png",
+                "tv_呆": "fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png",
+                "tv_呕吐": "9f996894a39e282ccf5e66856af49483f81870f3.png",
+                "tv_困": "241ee304e44c0af029adceb294399391e4737ef2.png",
+                "tv_坏笑": "1f0b87f731a671079842116e0991c91c2c88645a.png",
+                "tv_大佬": "093c1e2c490161aca397afc45573c877cdead616.png",
+                "tv_大哭": "23269aeb35f99daee28dda129676f6e9ea87934f.png",
+                "tv_委屈": "d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png",
+                "tv_害羞": "a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png",
+                "tv_尴尬": "7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png",
+                "tv_微笑": "70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png",
+                "tv_思考": "90cf159733e558137ed20aa04d09964436f618a1.png",
+                "tv_惊吓": "0d15c7e2ee58e935adc6a7193ee042388adc22af.png",
+                "tv_打脸": "56ab10b624063e966bfcb76ea5dc4794d87dfd47.png",
+                "tv_抓狂": "fe31c08edad661d63762b04e17b8d5ae3c71a757.png",
+                "tv_抠鼻": "c666f55e88d471e51bbd9fab9bb308110824a6eb.png",
+                "tv_斜眼笑": "911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png",
+                "tv_无奈": "ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png",
+                "tv_晕": "5443c22b4d07fb1907ccc610c8e6db254f2461b7.png",
+                "tv_流汗": "cead1c351ab8d79e9f369605beb90148db0fbed3.png",
+                "tv_流泪": "7e71cde7858f0cd50d74b0264aa26db612a8a167.png",
+                "tv_流鼻血": "c32d39db2737f89b904ca32700d140a9241b0767.png",
+                "tv_点赞": "f85c354995bd99e28fc76c869bfe42ba6438eff4.png",
+                "tv_生气": "26702dcafdab5e8225b43ffd23c94ac1ff932654.png",
+                "tv_生病": "8b0ec90e6b86771092a498c54f09fc94621c1900.png",
+                "tv_疑问": "0793d949b18d7be716078349c202c15ff166f314.png",
+                "tv_白眼": "c1d59f439e379ee50eef488bcb5e5378e5044ea4.png",
+                "tv_皱眉": "72ccad6679fea0d14cce648b4d818e09b8ffea2d.png",
+                "tv_目瞪口呆": "0b8cb81a68de5d5365212c99375e7ace3e7891b7.png",
+                "tv_睡着": "8b196675b53af58264f383c50ad0945048290b33.png",
+                "tv_笑哭": "1abc628f6d4f4caf9d0e7800878f4697abbc8273.png",
+                "tv_腼腆": "89712c0d4af73e67f89e35cbc518420380a7f6f4.png",
+                "tv_色": "61822c7e9aae5da76475e7892534545336b23a6f.png",
+                "tv_调侃": "4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png",
+                "tv_调皮": "b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png",
+                "tv_鄙视": "6e72339f346a692a495b123174b49e4e8e781303.png",
+                "tv_闭嘴": "c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png",
+                "tv_难过": "87f46748d3f142ebc6586ff58860d0e2fc8263ba.png",
+                "tv_馋": "fc7e829b845c43c623c8b490ee3602b7f0e76a31.png",
+                "tv_鬼脸": "0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png",
+                "tv_黑人问号": "45821a01f51bc867da9edbaa2e070410819a95b2.png",
+                "tv_鼓掌": "1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"
+                    // ... 更多表情
+                },
+                requiredFields: ['nick','mail'], //设置必填项
+                }
+                new Valine(initDate);
+            })
+        })
+    }
+
+</script> -->
+
+<div id="to_comment" class="comment-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#vcomments" title="直达评论">
+        <i class="fas fa-comments"></i>
+    </a>
+</div>
+<style>
+    .comment-scroll {
+        position: fixed;
+        right: 20px;
+        bottom: 195px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #to_comment > a {
+        width: 45px;
+        height: 45px;
+        cursor: pointer;
+    }
+
+    .fa-comments {
+        line-height: 45px !important;
+    }
+</style>
+    
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/06/19/hexo/matery-zhu-ti-valine-ping-lun-xi-tong/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/suoluetu4.jpg" class="responsive-img" alt="matery主题+Valine评论系统">
+                        
+                        <span class="card-title">matery主题+Valine评论系统</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            介绍如何在matery主题上搭建Valine系统，坑较多，全面为你分析
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-19
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Hexo/" class="post-category">
+                                    Hexo
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                    <a href="/tags/matery/">
+                        <span class="chip bg-color">matery</span>
+                    </a>
+                    
+                    <a href="/tags/Valine/">
+                        <span class="chip bg-color">Valine</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/06/18/util/typora-jian-yao-yu-fa/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/suoluetu3.jpg" class="responsive-img" alt="Typora简要语法">
+                        
+                        <span class="card-title">Typora简要语法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            关于Typora的一些常用语法，方便查阅使用
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/util/" class="post-category">
+                                    util
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Typora/">
+                        <span class="chip bg-color">Typora</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<!-- <script src="https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/tocbot/tocbot.min.js"></script> -->
+<script>
+    $.getScript("https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/tocbot/tocbot.min.js", function () {
+        $(function () {
+            tocbot.init({
+                tocSelector: '#toc-content',
+                contentSelector: '#articleContent',
+                headingsOffset: -($(window).height() * 0.4 - 45),
+                collapseDepth: Number('2'),
+                headingSelector: 'h1,h2,h3,h4'
+            });
+
+            // modify the toc link href to support Chinese.
+            let i = 0;
+            let tocHeading = 'toc-heading-';
+            $('#toc-content a').each(function () {
+                $(this).attr('href', '#' + tocHeading + (++i));
+            });
+
+            // modify the heading title id to support Chinese.
+            i = 0;
+            $('#articleContent').children('h1,h2,h3,h4').each(function () {
+                $(this).attr('id', tocHeading + (++i));
+            });
+
+            // Set scroll toc fixed.
+            let tocHeight = parseInt($(window).height() * 0.4 - 64);
+            let $tocWidget = $('.toc-widget');
+            $(window).scroll(function () {
+                let scroll = $(window).scrollTop();
+                /* add post toc fixed. */
+                if (scroll > tocHeight) {
+                    $tocWidget.addClass('toc-fixed');
+                } else {
+                    $tocWidget.removeClass('toc-fixed');
+                }
+            });
+
+            
+            /* 修复文章卡片 div 的宽度. */
+            let fixPostCardWidth = function (srcId, targetId) {
+                let srcDiv = $('#' + srcId);
+                if (srcDiv.length === 0) {
+                    return;
+                }
+
+                let w = srcDiv.width();
+                if (w >= 450) {
+                    w = w + 21;
+                } else if (w >= 350 && w < 450) {
+                    w = w + 18;
+                } else if (w >= 300 && w < 350) {
+                    w = w + 16;
+                } else {
+                    w = w + 14;
+                }
+                $('#' + targetId).width(w);
+            };
+
+            // 切换TOC目录展开收缩的相关操作.
+            const expandedClass = 'expanded';
+            let $tocAside = $('#toc-aside');
+            let $mainContent = $('#main-content');
+            $('#floating-toc-btn .btn-floating').click(function () {
+                if ($tocAside.hasClass(expandedClass)) {
+                    $tocAside.removeClass(expandedClass).hide();
+                    $mainContent.removeClass('l9');
+                } else {
+                    $tocAside.addClass(expandedClass).show();
+                    $mainContent.addClass('l9');
+                }
+                fixPostCardWidth('artDetail', 'prenext-posts');
+            });
+            
+        });
+    })
+    
+</script>
+
+    
+
+</main>
+
+
+
+    </main>
+
+
+    <footer class="page-footer bg-color">
+    
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            &copy;
+            <span id="year">2020</span>-<span id="year">2021</span>&nbsp;<i id="heartbeat" class="fa fas fa-heartbeat"></i>&nbsp;
+            <a href="/about" target="_blank">JM</a>
+            
+            <br>快乐每一天！
+            <!-- <br>This is My Stage! -->
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">235.7k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2020";
+                    var startMonth = "6";
+                    var startDate = "12";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/fenghen0918" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:443175565@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=443175565" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 443175565" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+
+    <a href="medias/imgs/wechat.png" class="tooltipped" target="_blank" data-tooltip="微信联系我: " data-position="top" data-delay="50">
+        <i class="fab fa-weixin"></i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<head><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"><style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #FFF;
+        text-align: center;
+        /* loader页面消失采用渐隐的方式*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .loading-image{
+        width: 120px;
+        height: 50px;
+        transform: translate(-50%);
+    }
+
+    .loading-image div:nth-child(2) {
+        -webkit-animation: pacman-balls 1s linear 0s infinite;
+        animation: pacman-balls 1s linear 0s infinite
+    }
+
+    .loading-image div:nth-child(3) {
+        -webkit-animation: pacman-balls 1s linear .33s infinite;
+        animation: pacman-balls 1s linear .33s infinite
+    }
+
+    .loading-image div:nth-child(4) {
+        -webkit-animation: pacman-balls 1s linear .66s infinite;
+        animation: pacman-balls 1s linear .66s infinite
+    }
+
+    .loading-image div:nth-child(5) {
+        -webkit-animation: pacman-balls 1s linear .99s infinite;
+        animation: pacman-balls 1s linear .99s infinite
+    }
+
+   .loading-image div:first-of-type {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_up .5s 0s infinite;
+        animation: rotate_pacman_half_up .5s 0s infinite;
+    }
+    .loading-image div:nth-child(2) {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_down .5s 0s infinite;
+        animation: rotate_pacman_half_down .5s 0s infinite;
+        margin-top: -50px;
+    }
+    @-webkit-keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @-webkit-keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @-webkit-keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+    @keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+
+    .loading-image div:nth-child(3),
+    .loading-image div:nth-child(4),
+    .loading-image div:nth-child(5),
+    .loading-image div:nth-child(6){
+        background-color: #49b1f5;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        transform: translateY(-6.25px);
+        top: 25px;
+        left: 100px;
+    }
+    .loading-text{
+        margin-bottom: 20vh;
+        text-align: center;
+        color: #2c3e50;
+        font-size: 2rem;
+        box-sizing: border-box;
+        padding: 0 10px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    @media only screen and (max-width: 500px) {
+         .loading-text{
+            font-size: 1.5rem;
+         }
+    }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    /* logo出现动画 */
+    @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}
+    @keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);}}
+ </style>
+ <script>
+(function () {
+    const loaded = function(){
+       setTimeout(function(){
+            const loader = document.getElementById("loading-container");
+            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
+            // document.getElementById("body-wrap").style.display="flex";
+            setTimeout(function(){
+                loader.style.display="none";
+            },1000); 
+        },1000);//强制显示loading page 1s  
+    };
+    loaded();
+})()
+ </script></head>
+
+
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/aos/aos.js"></script>
+    <script src="https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <script type="text/javascript">
+        var OriginTitile=document.title,st;
+        document.addEventListener("visibilitychange",function(){
+            document.hidden?(document.title="ヽ(●-`Д´-)ノ你要玩捉迷藏嘛",clearTimeout(st)):(document.title="(Ő∀Ő3)ノ好哦！",st=setTimeout(function(){document.title=OriginTitile},3e3))
+        })
+    </script>
+    
+
+
+<!-- tianqi -->
+<!-- <script type="text/javascript">
+    WIDGET = {FID: 'kxeODGotwh'}
+    </script>
+    <script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script> -->
+
+
+
+
+    
+</html>
+
+
+
