@@ -601,7 +601,7 @@
                 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在上面的教程我们可以将博客部署到国外Github的仓库上，我们也可以将博客部署到国内Coding、Gitee仓库上，可以提高一些网站访问的速度，小苏只使用了Coding，这里也介绍一下。</p>
 <h2 id="1-注册Coding"><a href="#1-注册Coding" class="headerlink" title="1. 注册Coding"></a>1. 注册Coding</h2><p>首先去官网进行<a target="_blank" rel="noopener" href="https://e.coding.net/signup?from=dev-tencent">注册</a>，也可以用第三方微信进行注册。</p>
 <h2 id="2-创建新项目"><a href="#2-创建新项目" class="headerlink" title="2. 创建新项目"></a>2. 创建新项目</h2><p>注册完成之后就会进入主页面，然后创建新项目，如下图所示：</p>
-<p><img src="/2020/06/20/hexo/hexo-bo-ke-bu-shu-dao-coding/markdown/coding1.png" alt="image-20200620163359904"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/coding1.png" alt="image-20200620163359904"></p>
 <p>填写信息</p>
 <blockquote>
 <p>注意：</p>
@@ -610,10 +610,10 @@
 <li>如果是有多个博客，想将其他博客也部署到coding上，项目名称、项目标识也可以自己定义，不过还需要其他配置，下面会提到</li>
 </ul>
 </blockquote>
-<p><img src="/2020/06/20/hexo/hexo-bo-ke-bu-shu-dao-coding/markdown/coding2.png" alt="image-20200620163544075"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/coding2.png" alt="image-20200620163544075"></p>
 <h2 id="3-增加公钥"><a href="#3-增加公钥" class="headerlink" title="3. 增加公钥"></a>3. 增加公钥</h2><p>在个人设置里面，点击SSH公钥，点击新增公钥。</p>
-<p><img src="/2020/06/20/hexo/hexo-bo-ke-bu-shu-dao-coding/markdown/coding3.png" alt="image-20200620163938095"></p>
-<p><img src="/2020/06/20/hexo/hexo-bo-ke-bu-shu-dao-coding/markdown/coding4.png" alt="image-20200620164001605"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/coding3.png" alt="image-20200620163938095"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/coding4.png" alt="image-20200620164001605"></p>
 <blockquote>
 <p>公钥名称：自定义<br>公钥内容：可以使用之前连接GitHub的公钥，在本地的C:\Users\你的电脑账户名.ssh，我的为C:\Users\Administrator.ssh，用文本编辑器打开id_rsa.pub，将里面的内容复制粘贴到此处即可。<br>公钥有效期：选择永久有效</p>
 </blockquote>
@@ -630,29 +630,29 @@
 <ul>
 <li>用户名和密码是你创建Coding用户的时候输入的</li>
 </ul>
-<p><img src="/2020/06/20/hexo/hexo-bo-ke-bu-shu-dao-coding/markdown/coding5.png" alt="image-20200620164413966"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/coding5.png" alt="image-20200620164413966"></p>
 <ul>
 <li>如果你输入错误，之后会出现<code>Authentication failed</code>的错误</li>
 <li>win10的解决方法：</li>
 <li>控制面板 –&gt;凭据管理器</li>
 <li>找到要修改的那条, 编辑正确的用户名和密码，再次尝试即可</li>
 </ul>
-<p><img src="/2020/06/20/hexo/hexo-bo-ke-bu-shu-dao-coding/markdown/coding6.png" alt="image-20200620164903120"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/coding6.png" alt="image-20200620164903120"></p>
 </blockquote>
 <h2 id="5-修改配置文件"><a href="#5-修改配置文件" class="headerlink" title="5. 修改配置文件"></a>5. 修改配置文件</h2><p>复制你的项目地址，粘贴到<strong>站点</strong>配置文件_config.yml，搜索<code>deploy</code>，如图所示：</p>
-<p><img src="/2020/06/20/hexo/hexo-bo-ke-bu-shu-dao-coding/markdown/coding7.png" alt="image-20200620165115645"></p>
-<p><img src="/2020/06/20/hexo/hexo-bo-ke-bu-shu-dao-coding/markdown/coding8.png" alt="image-20200620165350936"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/coding7.png" alt="image-20200620165115645"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/coding8.png" alt="image-20200620165350936"></p>
 <h2 id="6-部署项目"><a href="#6-部署项目" class="headerlink" title="6. 部署项目"></a>6. 部署项目</h2><p>执行<code>hexo clean &amp;&amp; hexo g -d</code>部署到coding，你会发现代码仓库出现了很多文件</p>
-<p><img src="/2020/06/20/hexo/hexo-bo-ke-bu-shu-dao-coding/markdown/coding9.png" alt="image-20200620165603076"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/coding9.png" alt="image-20200620165603076"></p>
 <p>打开你的coding项目管理页，进行静态网站构建，页面如下，按图中步骤操作即可：</p>
-<p><img src="/2020/06/20/hexo/hexo-bo-ke-bu-shu-dao-coding/markdown/coding10.png" alt="image-20200620165734561"></p>
-<p><img src="/2020/06/20/hexo/hexo-bo-ke-bu-shu-dao-coding/markdown/coding11.png" alt="image-20200620165800376"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/coding10.png" alt="image-20200620165734561"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/coding11.png" alt="image-20200620165800376"></p>
 <p>接着会让你验证个人信息，跟着验证即可</p>
-<p><img src="/2020/06/20/hexo/hexo-bo-ke-bu-shu-dao-coding/markdown/codng12.png" alt="image-20200620170007413"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/codng12.png" alt="image-20200620170007413"></p>
 <p>验证之后继续上面的步骤</p>
-<p><img src="/2020/06/20/hexo/hexo-bo-ke-bu-shu-dao-coding/markdown/coding13.png" alt="image-20200620170218940"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/coding13.png" alt="image-20200620170218940"></p>
 <p>保存之后，点击立即部署，等待一会标识显示为绿色即部署成功，点击上面的网址查看一下，以后在coding仓库访问就是这个网址</p>
-<p><img src="/2020/06/20/hexo/hexo-bo-ke-bu-shu-dao-coding/markdown/coding14.png" alt="image-20200620170446083"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/coding14.png" alt="image-20200620170446083"></p>
 <p>大功告成！之后使用<code>hexo d</code> 就会同时部署Github和coding两个仓库。</p>
 <h2 id="部署gitee"><a href="#部署gitee" class="headerlink" title="部署gitee"></a>部署gitee</h2><blockquote>
 <p>因为coding的静态网站服务已下线，改用Gitee，具体步骤如下</p>

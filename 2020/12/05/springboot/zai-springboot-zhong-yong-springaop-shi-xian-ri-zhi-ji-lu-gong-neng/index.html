@@ -604,7 +604,7 @@
 <p>spring中实现aop，需要@Aspect注解，要在spring的配置文件中加入</p>
 <p>&lt;aop:aspectj-autoproxy /&gt;或者纯注解方式EnableAspectJAutoProxy</p>
 <p>那么我们这里要不要在程序的主类中增加@EnableAspectJAutoProxy来启用呢？   实际并<strong>不需要</strong>，可以看下面关于AOP的默认配置属性，其中spring.aop.auto属性默认是开启的，也就是说只要引入了AOP依赖后，默认已经增加了@EnableAspectJAutoProxy。</p>
-<p><img src="/2020/12/05/springboot/zai-springboot-zhong-yong-springaop-shi-xian-ri-zhi-ji-lu-gong-neng/markdown/20201208002944.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/20201208002944.png"></p>
 <p>好的也就是说，只要引入SpringAOP相关的jar包依赖，我们就可以开始相关的Aspet的编程了。</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Aspect</span>
 <span class="token annotation punctuation">@Component</span>

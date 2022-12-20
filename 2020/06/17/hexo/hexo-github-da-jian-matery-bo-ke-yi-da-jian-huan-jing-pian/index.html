@@ -607,7 +607,7 @@
 <p>搭建静态博客网站，最重要的两个软件：Node.js、Git</p>
 </blockquote>
 <h3 id="1-1-下载、安装、配置Node-js"><a href="#1-1-下载、安装、配置Node-js" class="headerlink" title="1.1 下载、安装、配置Node.js"></a>1.1 下载、安装、配置Node.js</h3><h4 id="1-1-1-下载、安装"><a href="#1-1-1-下载、安装" class="headerlink" title="1.1.1 下载、安装"></a>1.1.1 下载、安装</h4><p>首先去<a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">Node.js</a>官网 下载node.js的安装程序，根据你电脑系统的配置信息，下载对应的安装程序，具体安装步骤参考<a target="_blank" rel="noopener" href="https://yafine-blog.cn/posts/4ab2.html">励心大佬</a>的文章。</p>
-<p><img src="/2020/06/17/hexo/hexo-github-da-jian-matery-bo-ke-yi-da-jian-huan-jing-pian/markdown/matery1.png" alt="image-20200618220836840"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/matery1.png" alt="image-20200618220836840"></p>
 <blockquote>
 <p>Node.js安装的坑</p>
 <ol>
@@ -620,7 +620,7 @@
 <h4 id="1-1-2设置npm的内置路径——-gt-全局模块路径和缓存路径"><a href="#1-1-2设置npm的内置路径——-gt-全局模块路径和缓存路径" class="headerlink" title="1.1.2设置npm的内置路径——>全局模块路径和缓存路径"></a>1.1.2设置npm的内置路径——&gt;全局模块路径和缓存路径</h4><ul>
 <li>在node.js安装目录创建两个文件夹【node_global】及【node_cache】</li>
 </ul>
-<p><img src="/2020/06/17/hexo/hexo-github-da-jian-matery-bo-ke-yi-da-jian-huan-jing-pian/markdown/matery2.png" alt="image-20200618222325444"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/matery2.png" alt="image-20200618222325444"></p>
 <ul>
 <li><p>命令行输入</p>
 <pre><code>npm config set prefix"D:\Develop\nodejs\node_global"
@@ -633,12 +633,12 @@ npm config set cache "D:\Develop\nodejs\node_cache"
 <li><p>点击“我的电脑”-右键-“属性”-“高级系统设置”-“高级”-“环境变量”</p>
 </li>
 <li><p>将【用户变量】下的【Path】修改为【D:\Develop\nodejs\node_global】</p>
-<p><img src="/2020/06/17/hexo/hexo-github-da-jian-matery-bo-ke-yi-da-jian-huan-jing-pian/markdown/matery5.png" alt="image-20200618223314624"></p>
-<p><img src="/2020/06/17/hexo/hexo-github-da-jian-matery-bo-ke-yi-da-jian-huan-jing-pian/markdown/matery6.png" alt="image-20200618223352441"></p>
-<p><img src="/2020/06/17/hexo/hexo-github-da-jian-matery-bo-ke-yi-da-jian-huan-jing-pian/markdown/matery7.png" alt="image-20200618223417825"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/matery5.png" alt="image-20200618223314624"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/matery6.png" alt="image-20200618223352441"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/matery7.png" alt="image-20200618223417825"></p>
 </li>
 <li><p>将【系统变量】下的【Path】修改为【D:\Develop\nodejs\】</p>
-<p><img src="/2020/06/17/hexo/hexo-github-da-jian-matery-bo-ke-yi-da-jian-huan-jing-pian/markdown/matery8.png" alt="image-20200618223816282"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/matery8.png" alt="image-20200618223816282"></p>
 </li>
 </ul>
 <blockquote>
@@ -662,13 +662,13 @@ npm config set registry https://registry.npm.taobao.org
 <h3 id="1-2-Git的安装与配置"><a href="#1-2-Git的安装与配置" class="headerlink" title="1.2 Git的安装与配置"></a>1.2 Git的安装与配置</h3><ul>
 <li>首先就是去<a target="_blank" rel="noopener" href="https://git-scm.com/">Git官网</a>下载Git，根据你电脑系统的配置信息，下载对应的安装程序，具体安装步骤参考<a target="_blank" rel="noopener" href="https://yafine-blog.cn/posts/4ab2.html">励心大佬</a></li>
 </ul>
-<p><img src="/2020/06/17/hexo/hexo-github-da-jian-matery-bo-ke-yi-da-jian-huan-jing-pian/markdown/matery9.png" alt="image-20200618224848221"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/matery9.png" alt="image-20200618224848221"></p>
 <ul>
 <li>回到桌面，点击鼠标右键，会出现两个选项Git GUI Here和Git Bash Here，在打开Cmd(Win+R)，分别输入git和git –version，如果出现版本号，即安装成功！</li>
 </ul>
 <h2 id="2-Github注册以及Github-Pages创建"><a href="#2-Github注册以及Github-Pages创建" class="headerlink" title="2. Github注册以及Github Pages创建"></a>2. Github注册以及Github Pages创建</h2><h3 id="2-1Github注册"><a href="#2-1Github注册" class="headerlink" title="2.1Github注册"></a>2.1Github注册</h3><p>打开<a target="_blank" rel="noopener" href="https://github.com/">Github</a>官网首页，点击右上角的Sign Up ，然后在出现的页面上填写你的相关信息，进行注册，具体步骤按<a target="_blank" rel="noopener" href="https://yafine-blog.cn/posts/4ab2.html">励心大佬</a>的来</p>
 <h3 id="2-2Github-Pages创建"><a href="#2-2Github-Pages创建" class="headerlink" title="2.2Github Pages创建"></a>2.2Github Pages创建</h3><p>开始创建库，如下图所示，仓库名创建格式必须为：&lt;用户名&gt;.github.io，勾选Initialize this repository with a README点击Creat repository进行创建。</p>
-<p><img src="/2020/06/17/hexo/hexo-github-da-jian-matery-bo-ke-yi-da-jian-huan-jing-pian/markdown/matery10.png" alt="image-20200618230042789"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/matery10.png" alt="image-20200618230042789"></p>
 <p>我们来测试一下，点击Create new file，出现如下界面，然后命名文件名为index.html，在填写如图的内容，再点击Commit new file，即创建成功，然后打开一个新的网页，输入网址https://&lt;你的用户名&gt;.github.io，即可以看见一个新的网页，其中的内容就是你写的内容。</p>
 <h2 id="3-配置Git用户名和邮箱"><a href="#3-配置Git用户名和邮箱" class="headerlink" title="3.配置Git用户名和邮箱"></a>3.配置Git用户名和邮箱</h2><p>在桌面点击鼠标右键，点击Git Bash Here，然后分别输入下面的两个命令，并回车：</p>
 <pre><code>git config --global user.name "此处填写你注册时的用户名"
@@ -687,7 +687,7 @@ npm install  # 安装博客所需要的依赖文件
 hexo s #本地部署文件
 </code></pre>
 <p>之后在浏览器中打开<a href="http://locakhost:4000或者127.0.0.1:4000，可以看到一个网页，说明Hexo博客已经成功在本地运行。">http://locakhost:4000或者127.0.0.1:4000，可以看到一个网页，说明Hexo博客已经成功在本地运行。</a></p>
-<p><img src="/2020/06/17/hexo/hexo-github-da-jian-matery-bo-ke-yi-da-jian-huan-jing-pian/markdown/matery11.png" alt="image-20200618231036493"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/matery11.png" alt="image-20200618231036493"></p>
 <h3 id="4-2-本地博客发布到Github-Pages"><a href="#4-2-本地博客发布到Github-Pages" class="headerlink" title="4.2 本地博客发布到Github Pages"></a>4.2 本地博客发布到Github Pages</h3><p>具体步骤按<a target="_blank" rel="noopener" href="https://yafine-blog.cn/posts/4ab2.html">励心大佬</a>的来</p>
 
 
@@ -1881,73 +1881,4 @@ $(function () {
 
 
     <script src="https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/materialize/materialize.min.js"></script>
-    <script src="https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/aos/aos.js"></script>
-    <script src="https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/js/matery.js"></script>
-
-    <!-- Baidu Analytics -->
-
-    <!-- Baidu Push -->
-
-<script>
-    (function () {
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        } else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-        }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
-</script>
-
-    
-    <script src="https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/others/clicklove.js" async="async"></script>
-    
-    
-    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <script type="text/javascript" src="https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/background/ribbon-dynamic.js" async="async"></script>
-    
-
-    
-    <script src="https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/instantpage/instantpage.js" type="module"></script>
-    
-
-    <script type="text/javascript">
-        var OriginTitile=document.title,st;
-        document.addEventListener("visibilitychange",function(){
-            document.hidden?(document.title="ヽ(●-`Д´-)ノ你要玩捉迷藏嘛",clearTimeout(st)):(document.title="(Ő∀Ő3)ノ好哦！",st=setTimeout(function(){document.title=OriginTitile},3e3))
-        })
-    </script>
-    
-
-
-<!-- tianqi -->
-<!-- <script type="text/javascript">
-    WIDGET = {FID: 'kxeODGotwh'}
-    </script>
-    <script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script> -->
-
-
-
-
-    
-</html>
-
-
-
+    <script src="https://fastly.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/libs/masonry/masonry.pkgd.min.js"><
