@@ -578,22 +578,22 @@
 <li>如果删除不完全，在之后第二个问题中会出现问题，后面会说</li>
 </ol>
 </li>
-<li><p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/fenghen0918/jm-imgs/markdown/20210422095332.png"></p>
+<li><p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/20210422095332.png"></p>
 <blockquote>
 <p>解决方案：</p>
 <p>原因：由于创建虚拟机时将虚拟磁盘拆分成了多个文件，如下图所示。我们需要将文件合并成一个大文件，再对大文件进行扩容操作</p>
-<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/fenghen0918/jm-imgs/markdown/20210422095436.png" alt="安装时的选择"></p>
-<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/fenghen0918/jm-imgs/markdown/20210422095522.png" alt="磁盘"></p>
+<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/20210422095436.png" alt="安装时的选择"></p>
+<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/20210422095522.png" alt="磁盘"></p>
 <p>解决：</p>
 <ol>
 <li><p>首先找到你的虚拟机位置，记住磁盘位置，如<code>G:\system\CentOS 7 64 位\CentOS 7 64 位-000001.vmdk</code></p>
-<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/fenghen0918/jm-imgs/markdown/20210422095825.png"></p>
+<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/20210422095825.png"></p>
 </li>
 <li><p>之后新建一个文件夹，可以在虚拟机镜像文件夹中新建（名字随意），并记录新文件夹的位置，如：<code>G:\system\CentOS 7 64 位\new\</code></p>
-<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/fenghen0918/jm-imgs/markdown/20210422095952.png"></p>
+<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/20210422095952.png"></p>
 </li>
 <li><p>找到Vmware虚拟机安装目录，就是虚拟机平台的目录，如：<code>D:\Linux\VMware</code></p>
-<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/fenghen0918/jm-imgs/markdown/20210422100227.png"></p>
+<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/20210422100227.png"></p>
 <p>在目录上输入cmd，打开终端</p>
 </li>
 <li><p>输入命令</p>
@@ -614,8 +614,8 @@ Virtual&nbsp;disk&nbsp;conversion&nbsp;successful.
 <p>注意：一定确保已经创建了新文件夹，并且磁盘空间充足，否则会失败。这里合并之后的文件大小和你原来的虚拟机镜像大小一样，所以要提前保证空间充足</p>
 </li>
 <li><p>完成后，将原虚拟镜像中的配置文件.vmx复制到新文件夹中</p>
-<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/fenghen0918/jm-imgs/markdown/20210422100906.png"></p>
-<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/fenghen0918/jm-imgs/markdown/20210422100930.png"></p>
+<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/20210422100906.png"></p>
+<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/20210422100930.png"></p>
 </li>
 <li><p>在vm虚拟机中，左上角文件-打开，选择新文件夹中的vmx文件，打开合并后的虚拟机，启动</p>
 </li>
@@ -626,7 +626,7 @@ Virtual&nbsp;disk&nbsp;conversion&nbsp;successful.
 <li><p>完成</p>
 <ol>
 <li><p><strong>注意！</strong>：vm扩展的大概原理会先将大文件复制，之后再扩展，也就是说磁盘剩余空间必须要超过当前空间，如：想扩展10个G，系统会先复制28.9G再扩展，也就是总体系统可用空间要超过38.9G。否则会提示文件系统空间不足，无法执行</p>
-<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/fenghen0918/jm-imgs/markdown/20210422101350.png"></p>
+<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/20210422101350.png"></p>
 </li>
 <li><p><strong>注意！</strong>：如果点击扩展，还是提示在部分链……请选择父虚拟磁盘。证明你的快照没有完全删除。</p>
 <ol>
@@ -641,14 +641,14 @@ Virtual&nbsp;disk&nbsp;conversion&nbsp;successful.
 <p>windows2012R2分区操作如下：</p>
 <ol>
 <li><p>右键我的电脑，管理，工具，计算机管理，磁盘管理</p>
-<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/fenghen0918/jm-imgs/markdown/20210422102258.png"></p>
+<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/20210422102258.png"></p>
 </li>
 <li><p>发现多出来了未分配的分区，我们可以进行分配。</p>
 <ol>
 <li>如果想给先有磁盘，如C盘扩容，右键C盘，扩展卷，按照向导操作</li>
 <li>如果想新建磁盘，如新增D盘，右键未分配的卷，新建卷，按照向导操作</li>
 </ol>
-<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/fenghen0918/jm-imgs/markdown/20210422102425.png"></p>
+<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/20210422102425.png"></p>
 </li>
 </ol>
 </li>

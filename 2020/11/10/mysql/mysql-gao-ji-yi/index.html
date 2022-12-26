@@ -698,7 +698,7 @@
 <li>windows：my.ini文件</li>
 <li>linux：/etc/my.cnf文件</li>
 </ol>
-<h3 id="Mysql逻辑架构"><a href="#Mysql逻辑架构" class="headerlink" title="Mysql逻辑架构"></a>Mysql逻辑架构</h3><p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/fenghen0918/jm-imgs/markdown/20201108210850.png"></p>
+<h3 id="Mysql逻辑架构"><a href="#Mysql逻辑架构" class="headerlink" title="Mysql逻辑架构"></a>Mysql逻辑架构</h3><p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/20201108210850.png"></p>
 <ol>
 <li><p>连接层</p>
 </li>
@@ -730,7 +730,7 @@
 </ol>
 </li>
 <li><p>MyISAM和InnoDB</p>
-<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/fenghen0918/jm-imgs/markdown/20201031134947.png"></p>
+<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/20201031134947.png"></p>
 </li>
 </ol>
 <hr>
@@ -753,9 +753,9 @@
 </ol>
 <h3 id="常见通用的Join查询"><a href="#常见通用的Join查询" class="headerlink" title="常见通用的Join查询"></a>常见通用的Join查询</h3><ol>
 <li><p>机读sql执行顺序</p>
-<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/fenghen0918/jm-imgs/markdown/20201109121045.png"></p>
+<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/20201109121045.png"></p>
 </li>
-<li><p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/fenghen0918/jm-imgs/markdown/20201109121527.png"></p>
+<li><p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/20201109121527.png"></p>
 <p>注意：mysql不支持full join</p>
 <ol>
 <li><p>全外连：</p>
@@ -843,7 +843,7 @@
 <li>表之间的引用</li>
 <li>每张表有多少行被优化器查询</li>
 </ol>
-<h4 id="各字段的解释"><a href="#各字段的解释" class="headerlink" title="各字段的解释"></a>各字段的解释</h4><p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/fenghen0918/jm-imgs/markdown/20201109172842.png"></p>
+<h4 id="各字段的解释"><a href="#各字段的解释" class="headerlink" title="各字段的解释"></a>各字段的解释</h4><p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/20201109172842.png"></p>
 <ol>
 <li>id：查询中执行select子句或操作表达顺序<ol>
 <li>id相同，执行顺序从上到下</li>
@@ -952,7 +952,7 @@
 </ol>
 </li>
 </ol>
-<h4 id="索引失效"><a href="#索引失效" class="headerlink" title="索引失效"></a>索引失效</h4><p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/fenghen0918/jm-imgs/markdown/20201110200535.png"></p>
+<h4 id="索引失效"><a href="#索引失效" class="headerlink" title="索引失效"></a>索引失效</h4><p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/20201110200535.png"></p>
 <ol>
 <li><p>全值匹配：复合索引3个，用到的查询条件也是3个。</p>
 </li>
@@ -1014,7 +1014,7 @@
 <li><p>少用or，索引会失效</p>
 </li>
 </ol>
-<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/fenghen0918/jm-imgs/markdown/20201111160635.png"></p>
+<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/20201111160635.png"></p>
 <p><strong>案例</strong></p>
 <pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">#复合索引c1,c2,c3,c4</span>
 <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> test <span class="token keyword">where</span> <span class="token number">c1</span><span class="token operator">=</span><span class="token string">'a1'</span> <span class="token operator">and</span> <span class="token number">c2</span><span class="token operator">=</span><span class="token string">'a2'</span> <span class="token operator">and</span> <span class="token number">c4</span><span class="token operator">=</span><span class="token string">'a4'</span> <span class="token keyword">order</span> <span class="token keyword">by</span> <span class="token number">c3</span><span class="token punctuation">;</span>
@@ -1142,8 +1142,8 @@
 <li>查看抓取了几条慢查询sql：<code>show global status like '%Slow_queries%'</code></li>
 </ol>
 <p><strong>慢查询日志分析工具mysqldumpslow</strong></p>
-<p> <img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/fenghen0918/jm-imgs/markdown/20201112140911.png"></p>
-<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/fenghen0918/jm-imgs/markdown/20201112141001.png"></p>
+<p> <img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/20201112140911.png"></p>
+<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/20201112141001.png"></p>
 <h3 id="批量插入数据脚本"><a href="#批量插入数据脚本" class="headerlink" title="批量插入数据脚本"></a>批量插入数据脚本</h3><p>案例需求：插入50w个记录，要求员工名和部门编号为随机</p>
 <ol>
 <li><p>建表</p>

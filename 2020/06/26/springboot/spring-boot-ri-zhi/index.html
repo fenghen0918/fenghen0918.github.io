@@ -599,10 +599,10 @@
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/fenghen0918/jm-imgs/markdown/sblog1.png" alt="sblog1">每一个日志的实现框架都有自己的配置文件。使用slf4j以后，配置文件还是做成日志<strong>实现框架自己本身的配置文件；</strong></p>
+<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/sblog1.png" alt="sblog1">每一个日志的实现框架都有自己的配置文件。使用slf4j以后，配置文件还是做成日志<strong>实现框架自己本身的配置文件；</strong></p>
 <h3 id="2、遗留问题（多个框架不同日志文件的处理办法）"><a href="#2、遗留问题（多个框架不同日志文件的处理办法）" class="headerlink" title="2、遗留问题（多个框架不同日志文件的处理办法）"></a>2、遗留问题（多个框架不同日志文件的处理办法）</h3><p>a（slf4j+logback）: Spring（commons-logging）、Hibernate（jboss-logging）、MyBatis、xxxx</p>
 <p>统一日志记录，即使是别的框架和我一起统一使用slf4j进行输出？</p>
-<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/fenghen0918/jm-imgs/markdown/sblog2.png" alt="sblog2"></p>
+<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/sblog2.png" alt="sblog2"></p>
 <p><strong>如何让系统中所有的日志都统一到slf4j；</strong></p>
 <p>==1、将系统中其他日志框架先排除出去；==</p>
 <p>==2、用中间包来替换原有的日志框架；==</p>
@@ -620,7 +620,7 @@
 </code></pre>
 <p>底层依赖关系</p>
 <p>右键pom.xml空白处，Diagrams,show Dependencies</p>
-<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/fenghen0918/jm-imgs/markdown/sblog3.png" alt="sblog3"></p>
+<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/sblog3.png" alt="sblog3"></p>
 <p>总结：</p>
 <p>​    1）、SpringBoot底层也是使用slf4j+logback的方式进行日志记录</p>
 <p>​    2）、SpringBoot也把其他的日志都替换成了slf4j；</p>
@@ -632,7 +632,7 @@
 <span class="token comment" spellcheck="true">//实际上用的是slf4j的日志工厂</span>
     <span class="token keyword">static</span> LogFactory logFactory <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SLF4JLogFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/fenghen0918/jm-imgs/markdown/sblog4.png" alt="sblog4"></p>
+<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/sblog4.png" alt="sblog4"></p>
 <p>4）、如果我们要引入其他框架？一定要把这个框架的默认日志依赖移除掉</p>
 <p>​            Spring框架用的是commons-logging的排除方法；</p>
 <pre class=" language-xml"><code class="language-xml">        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>

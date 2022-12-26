@@ -644,7 +644,7 @@ xxxxProperties:配置类来封装配置文件的内容；
 </code></pre>
 <p>==1）、所有 /webjars/** ，都去 classpath:/META-INF/resources/webjars/ 找资源；==</p>
 <p>​    webjars：以jar包的方式引入静态资源；<a target="_blank" rel="noopener" href="http://www.webjars.org/">http://www.webjars.org/</a></p>
-<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/fenghen0918/jm-imgs/markdown/sbweb1.png" alt="sbweb1"></p>
+<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/sbweb1.png" alt="sbweb1"></p>
 <p>localhost:8080/webjars/jquery/3.3.1/jquery.js</p>
 <pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--引入jquery-webjar--></span>在访问的时候只需要写webjars下面资源的名称即可
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
@@ -666,7 +666,7 @@ xxxxProperties:配置类来封装配置文件的内容；
 <p>==4）、所有的 **/favicon.ico  都是在静态资源文件下找；==</p>
 <p>想修改静态资源文件夹的位置：<code>spring.resources.static-locations=classpath:/hello/</code></p>
 <h2 id="3、模板引擎"><a href="#3、模板引擎" class="headerlink" title="3、模板引擎"></a>3、模板引擎</h2><p>JSP、Velocity、Freemarker、Thymeleaf</p>
-<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/fenghen0918/jm-imgs/markdown/sbweb2.png" alt="sbweb2"></p>
+<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/sbweb2.png" alt="sbweb2"></p>
 <p>SpringBoot推荐的Thymeleaf；</p>
 <h3 id="1、引入thymeleaf；"><a href="#1、引入thymeleaf；" class="headerlink" title="1、引入thymeleaf；"></a>1、引入thymeleaf；</h3><pre class=" language-xml"><code class="language-xml">        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
@@ -714,7 +714,7 @@ xxxxProperties:配置类来封装配置文件的内容；
 </code></pre>
 <h3 id="3、语法规则"><a href="#3、语法规则" class="headerlink" title="3、语法规则"></a>3、语法规则</h3><p>1）、th:text；改变当前元素里面的文本内容；</p>
 <p>​    th：任意html属性；来替换原生属性的值</p>
-<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/fenghen0918/jm-imgs/markdown/sbweb3.png" alt="sbweb3"></p>
+<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/sbweb3.png" alt="sbweb3"></p>
 <p>th:each语法：<code>&lt;span th:each="user:${users}"&gt;[[user]]&lt;/span&gt;</code></p>
 <p>2）、表达式</p>
 <pre class=" language-properties"><code class="language-properties"><span class="token attr-name">Simple</span> <span class="token attr-value">expressions:（表达式语法）</span>
@@ -942,9 +942,9 @@ Literals（字面量）
 <p>3）、在页面使用fmt:message取出国际化内容</p>
 <p>步骤：</p>
 <p>1）、编写国际化配置文件，抽取页面需要显示的国际化消息</p>
-<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/fenghen0918/jm-imgs/markdown/sbweb11.png" alt="image-20200627180810368"></p>
-<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/fenghen0918/jm-imgs/markdown/sbweb12.png" alt="image-20200627180856525"></p>
-<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/fenghen0918/jm-imgs/markdown/sbweb13.png" alt="image-20200627181119740"></p>
+<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/sbweb11.png" alt="image-20200627180810368"></p>
+<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/sbweb12.png" alt="image-20200627180856525"></p>
+<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/sbweb13.png" alt="image-20200627181119740"></p>
 <p>2）、SpringBoot自动配置好了管理国际化资源文件的组件；</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@ConfigurationProperties</span><span class="token punctuation">(</span>prefix <span class="token operator">=</span> <span class="token string">"spring.messages"</span><span class="token punctuation">)</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MessageSourceAutoConfiguration</span> <span class="token punctuation">{</span>
