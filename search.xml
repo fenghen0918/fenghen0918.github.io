@@ -4,11 +4,88 @@
   
     
     <entry>
+      <title>Hexo博客优化篇(matery)(三)</title>
+      <link href="/2022/12/25/hexo/hexo-bo-ke-you-hua-pian-matery-san/"/>
+      <url>/2022/12/25/hexo/hexo-bo-ke-you-hua-pian-matery-san/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>又是一年年底，小站又迎来年更啦（doge），2022年，小苏做了两种尝试：</p><ol><li><p><strong>Hexo迁移云服务器</strong></p><ol><li>先说结果：成功。</li><li>原因：由于coding早在21年大概5月份就已经不支持搭建静态网站，github作为国外站点，搭建国内的网站加载速度往往不尽人意。于是小苏一不做二不休，将Hexo迁移到了云服务器上，效果确实很快，再也不用担心免费带来的不稳定性了，但随之而来的是云服务器的费用问题。</li></ol></li><li><p><strong>typecho博客搭建</strong></p><ol><li>先说结果：成功，但废弃了。</li><li>原因：迁移Hexo时有一个思考，Hexo体量属于比较大的（100M+），上传文章需要打开控制台输入指令，手机也不能上传，于是有了换博客引擎的想法。不得不说，typecho博客完美解决了这些问题，搭建起来非常方便，安装宝塔相当于傻瓜式操作，最主要还有后台web页面，方便小白上手使用博客。</li><li>但为什么废弃了呢？typecho我正能用别人设置好的主题，通过web后台页面改一些可配置的参数，但如果主题作者没有设置改的地方，是无法调整的，这就给我这个喜欢DIY的带来了局限性。其次是对Hexo的不舍，小站体量虽然大，但都是我一点点diy出来的结果，而且发博客一般都是电脑操作，对于手机写博客其实是个”伪需求“，于是，还是选择Hexo辣！</li></ol></li></ol><p>本次优化重点在：图片失效的恢复，主要因为<code>jsdelivr</code>挂了，导致原先图床上的图片都无法访问，解决方法是换了阿里云的oss对象存储作为图床。</p><p><strong>言归正传</strong></p><h2 id="调整记录"><a href="#调整记录" class="headerlink" title="调整记录"></a>调整记录</h2><blockquote><p>本次不能说是优化了，对一些地方做了简单的调整</p></blockquote><h2 id="❌删除"><a href="#❌删除" class="headerlink" title="❌删除"></a>❌删除</h2><ul><li><input disabled="" type="checkbox"> 相册</li></ul><h2 id="✅新增功能"><a href="#✅新增功能" class="headerlink" title="✅新增功能"></a>✅新增功能</h2><ul><li><input checked="" disabled="" type="checkbox"> 无</li></ul><h2 id="✅新增美化"><a href="#✅新增美化" class="headerlink" title="✅新增美化"></a>✅新增美化</h2><ul><li><input checked="" disabled="" type="checkbox"> 无</li></ul><h2 id="🆗内容修改"><a href="#🆗内容修改" class="headerlink" title="🆗内容修改"></a>🆗内容修改</h2><ul><li><input checked="" disabled="" type="checkbox"> 追番信息更新</li><li><input checked="" disabled="" type="checkbox"> logo更换</li></ul><h2 id="🔱博客优化"><a href="#🔱博客优化" class="headerlink" title="🔱博客优化"></a>🔱博客优化</h2><ul><li><p><input checked="" disabled="" type="checkbox">  CDN图片失效，更换图床（重点）</p></li><li><p><input disabled="" type="checkbox">  字体、搜索加载速度优化（尝试）</p></li></ul><h1 id="正片开始"><a href="#正片开始" class="headerlink" title="正片开始"></a>正片开始</h1><h2 id="1-❌删除功能"><a href="#1-❌删除功能" class="headerlink" title="1. ❌删除功能"></a>1. ❌删除功能</h2><h3 id="1-1相册"><a href="#1-1相册" class="headerlink" title="1.1相册"></a>1.1相册</h3><p>“关于我”页面有相册功能，为缩减博客体量，将相册的标签页去掉。</p><p>方法：根据<code>Hexo+github搭建matery博客二（主题配置篇） </code>的相册搭建方法去掉即可。</p><hr><h2 id="2-✅新增功能"><a href="#2-✅新增功能" class="headerlink" title="2.  ✅新增功能"></a>2.  ✅新增功能</h2><p>无</p><hr><h2 id="3-✅新增美化"><a href="#3-✅新增美化" class="headerlink" title="3.✅新增美化"></a>3.✅新增美化</h2><p>无</p><hr><h2 id="4-🆗内容修改"><a href="#4-🆗内容修改" class="headerlink" title="4.🆗内容修改"></a>4.🆗内容修改</h2><h3 id="4-1追番信息更新"><a href="#4-1追番信息更新" class="headerlink" title="4.1追番信息更新"></a>4.1追番信息更新</h3><ol><li><p>删除过去的追番信息</p><pre><code>hexo bangumi -d</code></pre><p>注意：该插件不需要我们每次部署都要输入更新数据的命令，只有你自己番剧更新时才需要执行更新指令，之前的番剧数据会一直保留，直到被你删除</p></li><li><p>更新追番信息</p><pre><code>hexo bangumi -u</code></pre></li><li><p>正常部署即可</p><pre><code>hexo clhexo ghexo s</code></pre></li></ol><h3 id="4-2Logo更新"><a href="#4-2Logo更新" class="headerlink" title="4.2Logo更新"></a>4.2Logo更新</h3><blockquote><p>原先的logo，favicon都是cdn加速的链接，由于<code>jsdelivr</code>失效，因此更换图床。</p></blockquote><p>在主题的_config.yml文件中，修改链接即可。</p><hr><h2 id="5-🔱博客优化"><a href="#5-🔱博客优化" class="headerlink" title="5.🔱博客优化"></a>5.🔱博客优化</h2><h3 id="5-1CDN图片失效，更换图床"><a href="#5-1CDN图片失效，更换图床" class="headerlink" title="5.1CDN图片失效，更换图床"></a>5.1CDN图片失效，更换图床</h3><blockquote><p><code>jsdelivr</code>失效，原先我的图床是github+jsdelivr的方式搭建，因此所有图片均为404。</p><p>有三种解决方法：</p><ol><li><p>在网上找免费图床，将图片上传上去生成图片，但免费图床不好找，如果之后也失效，咱们一点办法也没</p></li><li><p>（小苏选择）找大厂的收费存储当图床，便宜好用放心，我用的阿里云oss对象存储，40G存储/年9元。</p></li><li><p>服务器存储，顾名思义直接将图片放博客服务器里，但Hexo的markdown不清楚怎么放图片进文章里，Hexo5.0之前都可以用插件实现。但我的是Hexo6.0，以后琢磨琢磨可以的话用这种方式，就更省钱了。唯一缺点就是对服务器有一定负载，博客体量变大。</p></li></ol></blockquote><p>具体教程可参考：<a href="https://blog.csdn.net/weixin_46471601/article/details/124932929">https://blog.csdn.net/weixin_46471601/article/details/124932929</a></p><p>我是按照一步步走下来没问题的，用的是阿里云OSS+Picgo。</p><p><strong>有两点需要注意：</strong></p><ol><li><p>由于我是github图床迁移，先将github上的图片下载下来，再上传到oss上。</p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/20221228151819.png"></li><li><p>替换markdown文章上的图片链接时，要选择好前缀<code>https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/</code>，直到图片名称的上一级，一级级的替换，不能全部<code>https://cdn.jsdelivr.net</code>覆盖，后缀没有去掉会导致图片加载不出来。（替换链接前，<strong>一定要备份文章！</strong>不然替换错了后悔莫及）</p></li></ol><blockquote><p>这里拓展一点，对象存储：</p><p>通俗来说，对象存储就类似于一个云盘，可以把任何东西存进去，并且给你生成一个网络链接，可以通过链接访问和下载。</p><p>当我把文章图片放对象存储器后，我访问博客，页面是服务器加载的，而图片是阿里云帮我加载，不占用我的博客资源，并且速度很快。</p><p>关于收费：对象存储的收费条例很复杂，通俗可理解为：基本使用费（40G，9元/年）+流量费（按量计费），流量费是根据你的文件访问量下载量来计费，我的博客访问量很低，所以这个费用微乎其微，几分钱，可以忽略不计。如果你的访问量很大，可以买流量包（下行流量包），如果不买就是按量计费。</p></blockquote><h3 id="5-2字体、全局搜索加速"><a href="#5-2字体、全局搜索加速" class="headerlink" title="5.2字体、全局搜索加速"></a>5.2字体、全局搜索加速</h3><p><strong>字体：</strong></p><ol><li><p>找到 <code>/themes/matery/source/css/</code>下的 my.css 文件，填入下面的代码：</p><pre><code>@font-face{    font-family: 'myFont';    src: url('https://sulog.oss-cn-hangzhou.aliyuncs.com/myfont.ttf');}body{    font-family: 'myFont';}</code></pre></li></ol><p><strong>全局搜索：</strong></p><blockquote><p>在网站F12时查看了加载逻辑，全局搜索是加载了search.xml文件。该文件是在hexo g构建时，会在public文件夹中生成了该文件，该文件就是遍历了所有文章的结果集。</p></blockquote><p>于是，我把生成后的search.xml上传到了oss上，并在<code>themes\matery\layout\_partial\search.ejs</code>中，对链接进行更换。</p><pre class=" language-js"><code class="language-js"><span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token function">searchFunc</span><span class="token punctuation">(</span><span class="token string">"https://sulog.oss-cn-hangzhou.aliyuncs.com/search.xml"</span><span class="token punctuation">,</span> <span class="token string">'searchInput'</span><span class="token punctuation">,</span> <span class="token string">'searchResult'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><blockquote><p>在你更新了文章后，需要将xml文件重新上传一次图床，以保证结果集是最新的，当然更新比较少时，你不介意可以隔一段时间再更新索引。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> matery </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>搭建Typecho博客</title>
+      <link href="/2022/10/22/hexo/da-jian-typecho-bo-ke/"/>
+      <url>/2022/10/22/hexo/da-jian-typecho-bo-ke/</url>
+      
+        <content type="html"><![CDATA[<h1 id="搭建typecho博客"><a href="#搭建typecho博客" class="headerlink" title="搭建typecho博客"></a>搭建typecho博客</h1><blockquote><p>只记录了必要的内容，详情可看第四步的搭建教程。</p></blockquote><h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><ol><li><p>Centos7</p></li><li><p>typecho程序 <a href="http://typecho.org/download">http://typecho.org/download</a> （下载最新版即可）</p></li><li><p>主题下载（我使用的是Joe）</p><ol><li><a href="https://laolion.com/archives/2591.html">Joe魔改版</a></li><li><a href="https://github.com/Dreamer-Paul/Fantasy">Fantasy</a>粉色版<img src="/2022/10/22/hexo/da-jian-typecho-bo-ke/Users\44317\AppData\Roaming\Typora\typora-user-images\image-20220223133227598.png" alt="image-20220223133227598"></li><li><a href="https://typecho.me/969.html">single</a>简约</li></ol></li><li><p><a href="https://blog.csdn.net/qq_19273419/article/details/108660112">搭建教程</a></p><blockquote><p>搭建过程按上面就可以搭建完成e</p><p>需要注意的点：</p><ol><li>此教程是使用IP搭建的，如果是使用域名，请注意将IP换成域名</li><li>宝塔的地址：<a href="http://ip:8888/">http://ip:8888</a></li><li>忘记宝塔地址或账号密码，命令行输入<code>bt default</code>，查看默认登录信息</li></ol></blockquote></li></ol><h3 id="typecho使用"><a href="#typecho使用" class="headerlink" title="typecho使用"></a>typecho使用</h3><p>地址：<a href="http://ip/admin%EF%BC%8C%E9%BB%98%E8%AE%A4%E8%B4%A6%E5%8F%B7admin%EF%BC%8C%E5%AF%86%E7%A0%81%E5%B0%B1%E6%98%AF%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B%E4%B8%AD%E8%AE%BE%E7%BD%AE%E7%9A%84%E5%AF%86%E7%A0%81">http://ip/admin，默认账号admin，密码就是搭建过程中设置的密码</a></p><p><strong>外观设置</strong></p><p>对外观的自定义设置，这个看外观作者开启了有哪些自定义功能</p><p><strong>创建单独页面（友链、留言板、音乐盒）</strong></p><p>主题中包含有模板，选择需要的模板，高级选项中关闭评论，引用，集中等功能（留言板不要关闭评论功能）</p><img src="https://cdn.jsdelivr.net/gh/fenghen0918/jm-imgs/markdown/20220211103408.png"><p><strong>创建分类</strong></p><blockquote><p>标签不需要创建，在写文章时添加标签即可</p></blockquote><p><strong>设置-基本设置</strong></p><p>站点名称……</p><h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><ol><li>宝塔界面的“安全”，可以关闭防火墙。另外注意阿里云服务器的安全端口规则是否开启</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Typecho </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Typecho </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Oracle</title>
+      <link href="/2022/04/16/mysql/oracle-zhan-yong-cpu100/"/>
+      <url>/2022/04/16/mysql/oracle-zhan-yong-cpu100/</url>
+      
+        <content type="html"><![CDATA[<h1 id="oracle占用CPU100"><a href="#oracle占用CPU100" class="headerlink" title="oracle占用CPU100%"></a>oracle占用CPU100%</h1><p>背景：迁移4.5迎新windows数据库服务器后，经常出现cpu100%占用，后来排查到是迎新系统有财务的定时调度，数据量比较大导致cpu占满。此文档记录查到原因的过程与解决方案。</p><ol><li><p>windows有个很强大的软件Process Explorer</p><ol><li>下载地址：<a href="https://www.onlinedown.net/soft/31805.htm">https://www.onlinedown.net/soft/31805.htm</a></li></ol></li><li><p>下载这个软件，里面有3个可执行文件，选第一个就行，放到问题服务器上（数据库服务器）</p></li><li><p>打开任务管理器，发现是oracle rdbms占用cpu较高</p></li><li><p>打开该软件，找到oracle rdbms进程，双击，点击Threads</p></li><li><p>查看到使用最高的线程tid</p><p><img src="/2022/04/16/mysql/oracle-zhan-yong-cpu100/Users\44317\AppData\Roaming\Typora\typora-user-images\image-20220116162912007.png" alt="image-20220116162912007"></p></li><li><p>进入plsql，查询sql_id</p><p>需要多次执行，找到出现频率最高的sql_id</p><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> sql_id <span class="token keyword">from</span> v$<span class="token keyword">session</span>    <span class="token keyword">where</span> paddr <span class="token operator">in</span><span class="token punctuation">(</span>      <span class="token keyword">select</span> addr <span class="token keyword">from</span> v$process      <span class="token keyword">where</span> spid <span class="token operator">in</span><span class="token punctuation">(</span><span class="token string">'70224'</span><span class="token punctuation">)</span>   <span class="token punctuation">)</span>  </code></pre></li><li><p>根据6中的sql_id查询具体执行占用CPU过高的sql语句</p><p>这时就可以判断出是什么sql语句在占用cpu，这里查到是财务缴费的sql语句</p><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> v$sqlarea <span class="token keyword">where</span> sql_id <span class="token operator">in</span><span class="token punctuation">(</span>sql_id1<span class="token punctuation">,</span>sql_id2<span class="token punctuation">,</span>sql_id3<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  </code></pre></li><li><p>根据6中的sql_id，查询sid和serial</p><p>需要多次执行，找到出现频率最高的（执行一次可能会查询不到，因此需要多执行）</p><pre class=" language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> sid<span class="token punctuation">,</span><span class="token keyword">serial</span><span class="token comment" spellcheck="true">#,sql_id from v$session where sql_id in(sql_id1,sql_id2,sql_id3...)  </span></code></pre></li><li><p>杀掉进程</p><pre class=" language-sql"><code class="language-sql"><span class="token keyword">alter</span> system <span class="token keyword">kill</span> <span class="token keyword">session</span> 'sid<span class="token punctuation">,</span><span class="token keyword">serial</span><span class="token comment" spellcheck="true">#';  </span></code></pre><blockquote><p>这时问题得以解决，但只是暂时的，因为迎新会定时调度执行，到时候还是会占用。</p><p>因此后期还需要排查为什么会占用，优化sql，当然这些工作就交给研发，我们排查到这里就可以了。</p></blockquote></li></ol><blockquote><p>如果不是sql占用导致的，也有可能是监听的日志文件较大导致的。</p><p>原因：windows的oracle数据库会有这种情况，不会自动清理监听日志，需要我们手动清理</p><p>解决：</p><ol><li>找到监听日志地址<code>/u01/app/grid_base/diag/tnslsnr/rac1/listener/trace</code></li><li>如果过大就清空即可</li></ol></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> oracle </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> oracle </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>实用资源链接整理</title>
       <link href="/2022/02/15/xue-xi/zi-yuan-lian-jie/"/>
       <url>/2022/02/15/xue-xi/zi-yuan-lian-jie/</url>
       
-        <content type="html"><![CDATA[<p>链接整理</p><h3 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h3><ol><li>BootCDN（JS加速链接库）：<a href="http://www.bootcdn.cn/">www.bootcdn.cn</a></li><li>oci鼠标图标：<a href="https://zhutix.com/ico/ori-cursors/">https://zhutix.com/ico/ori-cursors/</a></li><li>图标：<a href="https://fontawesome.com/icons?d=gallery&amp;q=rain">https://fontawesome.com/icons?d=gallery&amp;q=rain</a></li><li>emoji符号大全：<a href="http://www.fhdq.net/emoji/emojifuhao.html">http://www.fhdq.net/emoji/emojifuhao.html</a></li><li>小歪API：<a href="https://api.ixiaowai.cn/">https://api.ixiaowai.cn/</a></li><li>Microsoft Office 2016免费破解版下载：<a href="http://www.paid8.com/">http://www.paid8.com/</a></li></ol><h3 id="工具链接"><a href="#工具链接" class="headerlink" title="工具链接"></a>工具链接</h3><ol><li>重装win10系统：<a href="https://iknow.lenovo.com.cn/detail/dc_177365.html">https://iknow.lenovo.com.cn/detail/dc_177365.html</a></li><li>RGB颜色值转换：<a href="https://www.sioe.cn/yingyong/yanse-rgb-16/">https://www.sioe.cn/yingyong/yanse-rgb-16/</a></li><li>图片去底：<a href="https://www.aigei.com/bgremover">https://www.aigei.com/bgremover</a></li><li>短视频解析下载：<a href="https://www.heytoolman.com/rmwatermark">https://www.heytoolman.com/rmwatermark</a></li><li>抖音背景音乐获取：<a href="http://tool.qqjsz.cn/douyin_music/">http://tool.qqjsz.cn/douyin_music/</a></li></ol>]]></content>
+        <content type="html"><![CDATA[<p>链接整理</p><h3 id="资源链接"><a href="#资源链接" class="headerlink" title="资源链接"></a>资源链接</h3><ol><li>BootCDN（JS加速链接库）：<a href="http://www.bootcdn.cn/">www.bootcdn.cn</a></li><li>oci鼠标图标：<a href="https://zhutix.com/ico/ori-cursors/">https://zhutix.com/ico/ori-cursors/</a></li><li>图标：<a href="https://fontawesome.com/icons?d=gallery&amp;q=rain">https://fontawesome.com/icons?d=gallery&amp;q=rain</a></li><li>emoji符号大全：<a href="http://www.fhdq.net/emoji/emojifuhao.html">http://www.fhdq.net/emoji/emojifuhao.html</a></li><li>小歪API：<a href="https://api.ixiaowai.cn/">https://api.ixiaowai.cn/</a></li><li>Microsoft Office 2016免费破解版下载：<a href="http://www.paid8.com/">http://www.paid8.com/</a></li></ol><h3 id="工具链接"><a href="#工具链接" class="headerlink" title="工具链接"></a>工具链接</h3><ol><li>重装win10系统：<a href="https://iknow.lenovo.com.cn/detail/dc_177365.html">https://iknow.lenovo.com.cn/detail/dc_177365.html</a></li><li>RGB颜色值转换：<a href="https://www.sioe.cn/yingyong/yanse-rgb-16/">https://www.sioe.cn/yingyong/yanse-rgb-16/</a></li><li>图片去底：<a href="https://www.aigei.com/bgremover">https://www.aigei.com/bgremover</a></li><li>图片尺寸、大小：<a href="https://www.gaitubao.com/">https://www.gaitubao.com/</a></li><li>短视频解析下载：<a href="https://www.heytoolman.com/rmwatermark">https://www.heytoolman.com/rmwatermark</a></li><li>抖音背景音乐获取：<a href="http://tool.qqjsz.cn/douyin_music/">http://tool.qqjsz.cn/douyin_music/</a></li></ol>]]></content>
       
       
       <categories>
