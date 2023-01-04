@@ -746,6 +746,15 @@ vim nginx.conf
 <p>这时通过ip访问即可</p>
 </li>
 </ol>
+<blockquote>
+<p>问题：访问时出现nginx403 forbiden</p>
+<p>原因：因为文件夹权限不足，导致git上传文件没有正确上传。</p>
+<p>解决方法：</p>
+<pre><code>cd home
+chmod 777 www
+chmod 777 website/
+</code></pre>
+</blockquote>
 <h3 id="阿里云申请ssl证书"><a href="#阿里云申请ssl证书" class="headerlink" title="阿里云申请ssl证书"></a>阿里云申请ssl证书</h3><blockquote>
 <p>背景：我们已经迁移了博客，但是没有配置域名，如果需要域名访问云服务器，两种方式，</p>
 <ol>
@@ -1952,7 +1961,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("https://sulog.oss-cn-hangzhou.aliyuncs.com/search.xml", 'searchInput', 'searchResult');
+    searchFunc("search.xml", 'searchInput', 'searchResult');
 });
 </script>
 
@@ -2008,8 +2017,6 @@ $(function () {
     <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
     
 
-    
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
     <script type="text/javascript">

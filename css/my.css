@@ -59,7 +59,7 @@
 
 @font-face{
     font-family: 'myfont';
-    src: url('https://sulog.oss-cn-hangzhou.aliyuncs.com/myfont.ttf');
+    src: url('../font/myfont.ttf');
 
 }
 
