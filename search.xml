@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>搭建求生之路2Linux服务器</title>
+      <link href="/2023/01/04/linux/da-jian-qiu-sheng-zhi-lu-2-yun-fu-wu-qi/"/>
+      <url>/2023/01/04/linux/da-jian-qiu-sheng-zhi-lu-2-yun-fu-wu-qi/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/20230105162538.png"><p>求生之路2，作为一个08年的游戏，伴随了多少人的童年，至今还经久不衰。当初小苏下的盗版，到长大后在steam买的正版（大家也要支持正版噢），到目前为止依然还在玩的游戏，非常经典的4人合作游戏。</p><p>早在很多年前，V社作为求生之路的开发者已经停止了游戏的维护，开发者们也原地解散，导致这个游戏没有优化更新，虽然游戏内的优化已经足够好，但组队联机的不稳定一直是求生的一个诟病，加上steam是国外的，时不时就是ping值报表，mod冲突，rpg服污染，使我每次和小伙伴们玩游戏前都要连接好几次，非常影响时间和游戏体验。</p><p>那么，有没有什么办法解决服务器不稳定的问题呢？有！我们自己搭个服务端。服务端可以理解我们在游戏里创建个房间，玩家就相当于客户端，进入房间就需要连接服务端。</p><p>自己的服务器的好处：</p><ol><li>国内服务器（上海），延迟低</li><li>可安装插件，实现8人房等功能</li></ol><p><strong>言归正传</strong></p><h2 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h2><h3 id="购买云服务器"><a href="#购买云服务器" class="headerlink" title="购买云服务器"></a>购买云服务器</h3><p>这里购买的过程就不展开了，需要注意以下内容：</p><ol><li>购买时选择阿里云、腾讯云这种新用户首购一年的轻量服务器（到期后换厂商，不做冤大头），轻量服务器比云服务器的好处是配置稍高，价格实惠。</li><li>配置要求：2核2G4M（88园子首年）。经过两个月的测试，发现满载8人房，绝境求生（多特）模式下，可以稳定运行。波动图可发现基本上都是在4M以下。内存才500M左右。所以2G4M是足够的。如果你想加更多的插件+极限多特模式，经济充裕的话，4G6M也是可以选择的（159园子首年），再高就布局性价比了。</li><li>科普：带宽影响的是传输包的速度，如果长期承载超过带宽，就会有丢包的情况（前面有个witch，你准备一枪秒妹的时候，服务器加载中……），这就是因为数据包丢了。</li></ol><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/20230109103906.png"><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/20230109103953.png"><h3 id="服务器准备工作"><a href="#服务器准备工作" class="headerlink" title="服务器准备工作"></a>服务器准备工作</h3><ol><li><p>选择安装镜像：CentOS7.6</p></li><li><p>重置实例密码：在厂商控制台重置，就是你之后要连接linux服务器的管理员密码。</p></li><li><p>设置云服的防火墙，添加规则，TCP和UDP的协议，端口选择ALL，策略选择允许。</p><blockquote><p>只有开放了端口，我们把服务端建立在某个端口上，才能连上。如我们建了个图书馆，不把大门打开，人怎么进来。</p></blockquote></li><li><p>需要两个连接工具（网上有下载）</p><ol><li>Xftp：用于传输文件到服务器的工具</li><li>moba：远程连接ssh工具，用于命令行操作服务器</li></ol></li></ol><h3 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h3><ol><li><p>进入moba，用刚才重置的实例密码进入服务器</p></li><li><p>依次输入以下指令（–注释不需要）</p><pre><code>sudo yum install xulrunner.i686——安装运行环境yum install screen——安装托盘程序mkdir ~/Steam——在桌面创建steam文件夹cd ~/Steam——打开steam文件夹wget http://media.steampowered.com/installer/steamcmd_linux.tar.gz——下载steamtar -zxvf steamcmd_linux.tar.gz——解压steam./steamcmd.sh——执行steam cmdlogin anonymous——匿名登录app_update 222860 validate——安装求生之路2客户端安装好后这里需要输入quit</code></pre></li><li><p>打开xftp，用刚才重置的实例密码进入服务器</p></li><li><p>安装插件（视频里有教比较简单的方法，另外tickrate里面的dll文件需要删除，在视频提供的插件整合包里已经删除了，所以无需额外操作）</p><p><a href="https://www.bilibili.com/video/BV11G4y197uF/">https://www.bilibili.com/video/BV11G4y197uF/</a></p><blockquote><p>按需添加（建议按视频加），里面也有讲解手动安装单个插件的方法</p></blockquote></li><li><p>添加server</p><blockquote><p>这里可以配置你要访问的端口相关信息</p><p>详细看一下该配置文件，有些需要改</p><p>如：服务器名字可以在这里修改；模式最好去掉，否则通过管理员来换绝境求生的特殊模式时，切换章节就会又恢复成战役模式。</p></blockquote></li><li><p>添加管理员</p><blockquote><p>增加管理员的id，可进入游戏单人模式，控制台输入status，就会出现</p></blockquote></li><li><p>开服指令<code>.sh</code>文件拖至求生之路2客户端的路径：/root/Steam/steamapps/common/Left 4 Dead 2 Dedicated Server</p></li><li><p>进入moba，用刚才重置的实例密码进入服务器</p></li><li><p>依次输入以下指令（–注释不需要）</p><pre><code>cd ~/Steam/steamapps/common/Left\ 4\ Dead\ 2\ Dedicated\ Server/——移至求生路径screen -S l4d2——创建一个求生之路2的托盘,这样的好处就是即使关掉红色的软件，求生之路2也会正常运行，不开托盘的话会直接崩服。chmod +x start.sh——第一次进入需要输入，以后可以跳过这一步./start.sh进游戏，连接connect xxx.xxx.xxx.xxx:xxxx</code></pre></li><li><p>相关托盘指令</p></li></ol><pre><code>如果遇到服务器远程卡死的情况下screen -x——进入正在执行的托盘Ctrl +C——关闭服务器如果不行，就screen -ls——查看托盘kill xxx——删掉托盘screen -S l4d2——重新创建一个托盘./start.sh——开服</code></pre><h3 id="设置域名访问（可选）"><a href="#设置域名访问（可选）" class="headerlink" title="设置域名访问（可选）"></a>设置域名访问（可选）</h3><p>域名访问的作用，就是好记：</p><p>连接时connect ip+端口，变成域名+端口的方式。如123.234.345.456:1001，可以变为sulog.fun:1001</p><p>首先，你需要购买一个域名：</p><ol><li>建议选择与服务器同一厂商，对后续域名备案、域名绑定都会简便不少。</li><li>域名建议到期就换，不当冤大头。</li><li>购买域名前需要提前一天（审核1天左右）实名认证和身份模板，都在厂商控制台进行。</li></ol><p>以腾讯云为例，在此处增加解析即可：</p><p><img src="/2023/01/04/linux/da-jian-qiu-sheng-zhi-lu-2-yun-fu-wu-qi/Users\44317\AppData\Roaming\Typora\typora-user-images\image-20230109113004571.png" alt="image-20230109113004571"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 游戏 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 求生之路2 </tag>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hexo博客优化篇(matery)(三)</title>
       <link href="/2022/12/25/hexo/hexo-bo-ke-you-hua-pian-matery-san/"/>
       <url>/2022/12/25/hexo/hexo-bo-ke-you-hua-pian-matery-san/</url>
@@ -94,33 +121,6 @@
           
       </categories>
       
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>搭建求生之路2Linux服务器</title>
-      <link href="/2022/01/04/linux/da-jian-qiu-sheng-zhi-lu-2-yun-fu-wu-qi/"/>
-      <url>/2022/01/04/linux/da-jian-qiu-sheng-zhi-lu-2-yun-fu-wu-qi/</url>
-      
-        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/20230105162538.png"><p>求生之路2，作为一个08年的游戏，伴随了多少人的童年，至今还经久不衰。当初小苏下的盗版，到长大后在steam买的正版（大家也要支持正版噢），到目前为止依然还在玩的游戏，非常经典的4人合作游戏。</p><p>早在很多年前，V社作为求生之路的开发者已经停止了游戏的维护，开发者们也原地解散，导致这个游戏没有优化更新，虽然游戏内的优化已经足够好，但组队联机的不稳定一直是求生的一个诟病，加上steam是国外的，时不时就是ping值报表，mod冲突，rpg服污染，使我每次和小伙伴们玩游戏前都要连接好几次，非常影响时间和游戏体验。</p><p>那么，有没有什么办法解决服务器不稳定的问题呢？有！我们自己搭个服务端。服务端可以理解我们在游戏里创建个房间，玩家就相当于客户端，进入房间就需要连接服务端。</p><p>自己的服务器的好处：</p><ol><li>国内服务器（上海），延迟低</li><li>可安装插件，实现8人房等功能</li></ol><p><strong>言归正传</strong></p><h2 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h2><h3 id="购买云服务器"><a href="#购买云服务器" class="headerlink" title="购买云服务器"></a>购买云服务器</h3><p>这里购买的过程就不展开了，需要注意以下内容：</p><ol><li>购买时选择阿里云、腾讯云这种新用户首购一年的轻量服务器（到期后换厂商，不做冤大头），轻量服务器比云服务器的好处是配置稍高，价格实惠。</li><li>配置要求：2核2G4M（88园子首年）。经过两个月的测试，发现满载8人房，绝境求生（多特）模式下，可以稳定运行。波动图可发现基本上都是在4M以下。内存才500M左右。所以2G4M是足够的。如果你想加更多的插件+极限多特模式，经济充裕的话，4G6M也是可以选择的（159园子首年），再高就布局性价比了。</li><li>科普：带宽影响的是传输包的速度，如果长期承载超过带宽，就会有丢包的情况（前面有个witch，你准备一枪秒妹的时候，服务器加载中……），这就是因为数据包丢了。</li></ol><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/20230109103906.png"><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/20230109103953.png"><h3 id="服务器准备工作"><a href="#服务器准备工作" class="headerlink" title="服务器准备工作"></a>服务器准备工作</h3><ol><li><p>选择安装镜像：CentOS7.6</p></li><li><p>重置实例密码：在厂商控制台重置，就是你之后要连接linux服务器的管理员密码。</p></li><li><p>设置云服的防火墙，添加规则，TCP和UDP的协议，端口选择ALL，策略选择允许。</p><blockquote><p>只有开放了端口，我们把服务端建立在某个端口上，才能连上。如我们建了个图书馆，不把大门打开，人怎么进来。</p></blockquote></li><li><p>需要两个连接工具（网上有下载）</p><ol><li>Xftp：用于传输文件到服务器的工具</li><li>moba：远程连接ssh工具，用于命令行操作服务器</li></ol></li></ol><h3 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h3><ol><li><p>进入moba，用刚才重置的实例密码进入服务器</p></li><li><p>依次输入以下指令（–注释不需要）</p><pre><code>sudo yum install xulrunner.i686——安装运行环境yum install screen——安装托盘程序mkdir ~/Steam——在桌面创建steam文件夹cd ~/Steam——打开steam文件夹wget http://media.steampowered.com/installer/steamcmd_linux.tar.gz——下载steamtar -zxvf steamcmd_linux.tar.gz——解压steam./steamcmd.sh——执行steam cmdlogin anonymous——匿名登录app_update 222860 validate——安装求生之路2客户端安装好后这里需要输入quit</code></pre></li><li><p>打开xftp，用刚才重置的实例密码进入服务器</p></li><li><p>安装插件（视频里有教比较简单的方法，另外tickrate里面的dll文件需要删除，在视频提供的插件整合包里已经删除了，所以无需额外操作）</p><p><a href="https://www.bilibili.com/video/BV11G4y197uF/">https://www.bilibili.com/video/BV11G4y197uF/</a></p><blockquote><p>按需添加（建议按视频加），里面也有讲解手动安装单个插件的方法</p></blockquote></li><li><p>添加server</p><blockquote><p>这里可以配置你要访问的端口相关信息</p><p>详细看一下该配置文件，有些需要改</p><p>如：服务器名字可以在这里修改；模式最好去掉，否则通过管理员来换绝境求生的特殊模式时，切换章节就会又恢复成战役模式。</p></blockquote></li><li><p>添加管理员</p><blockquote><p>增加管理员的id，可进入游戏单人模式，控制台输入status，就会出现</p></blockquote></li><li><p>开服指令<code>.sh</code>文件拖至求生之路2客户端的路径：/root/Steam/steamapps/common/Left 4 Dead 2 Dedicated Server</p></li><li><p>进入moba，用刚才重置的实例密码进入服务器</p></li><li><p>依次输入以下指令（–注释不需要）</p><pre><code>cd ~/Steam/steamapps/common/Left\ 4\ Dead\ 2\ Dedicated\ Server/——移至求生路径screen -S l4d2——创建一个求生之路2的托盘,这样的好处就是即使关掉红色的软件，求生之路2也会正常运行，不开托盘的话会直接崩服。chmod +x start.sh——第一次进入需要输入，以后可以跳过这一步./start.sh进游戏，连接connect xxx.xxx.xxx.xxx:xxxx</code></pre></li><li><p>相关托盘指令</p></li></ol><pre><code>如果遇到服务器远程卡死的情况下screen -x——进入正在执行的托盘Ctrl +C——关闭服务器如果不行，就screen -ls——查看托盘kill xxx——删掉托盘screen -S l4d2——重新创建一个托盘./start.sh——开服</code></pre><h3 id="设置域名访问（可选）"><a href="#设置域名访问（可选）" class="headerlink" title="设置域名访问（可选）"></a>设置域名访问（可选）</h3><p>域名访问的作用，就是好记：</p><p>连接时connect ip+端口，变成域名+端口的方式。如123.234.345.456:1001，可以变为sulog.fun:1001</p><p>首先，你需要购买一个域名：</p><ol><li>建议选择与服务器同一厂商，对后续域名备案、域名绑定都会简便不少。</li><li>域名建议到期就换，不当冤大头。</li><li>购买域名前需要提前一天（审核1天左右）实名认证和身份模板，都在厂商控制台进行。</li></ol><p>以腾讯云为例，在此处增加解析即可：</p><p><img src="/2022/01/04/linux/da-jian-qiu-sheng-zhi-lu-2-yun-fu-wu-qi/Users\44317\AppData\Roaming\Typora\typora-user-images\image-20230109113004571.png" alt="image-20230109113004571"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 游戏 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 求生之路 </tag>
-            
-            <tag> linux </tag>
-            
-        </tags>
       
     </entry>
     
