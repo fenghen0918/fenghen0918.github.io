@@ -434,37 +434,28 @@
 </div>
 
 <main class="content">
-  <div class="container friends-container">
-      <div class="card">
-          <div class="card-content">
-              <!-- artitalk -->
-            <!-- <script type="text/javascript" src="https://unpkg.com/artitalk"></script> -->
-            <div id="artitalk_main"></div>
- 
-              <!-- artitalk.end -->
-          </div>
-      </div>
-  </div>
+    <div class="container friends-container">
+        <div class="card">
+            <div class="card-content">
+                <!-- artitalk -->
+                <script type="text/javascript" src="https://unpkg.com/artitalk">
+                  </script>
+                <div id="artitalk_main"></div>
+                <script>
+                    new Artitalk({
+                        appId: 'L0DQwgoqrBI3t8azuI5sjVuU-MdYXbMMI',
+                        appKey: 'wqky9qmnyUhaHprw5WCgH1s1',
+                        pagesize: '5',
+                        color1: '#6DD0F2',
+                        color2: '#F59ABE',
+                        color3: 'white'
+                    })
+                </script>
+                <!-- artitalk.end -->
+            </div>
+        </div>
+    </div>
 </main>
-
-<script type="text/javascript">
-  function LoadValine() {
-    $.getScript("https://unpkg.com/artitalk", function () {
-        let initArtitalk= {
-        appId: 'L0DQwgoqrBI3t8azuI5sjVuU-MdYXbMMI',
-        appKey: 'wqky9qmnyUhaHprw5WCgH1s1',
-        pagesize: '5',
-        color1: '#6DD0F2',
-        color2: '#F59ABE',
-        color3: 'white'
-        }
-        new Artitalk(initArtitalk);
-    })
-  }
-  LoadValine()
-  
-
-</script>
     </main>
 
 
