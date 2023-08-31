@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Nginx优化</title>
+      <link href="/2023/08/31/util/nginx-you-hua/"/>
+      <url>/2023/08/31/util/nginx-you-hua/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Nginx优化"><a href="#Nginx优化" class="headerlink" title="Nginx优化"></a>Nginx优化</h1><blockquote><p>背景：工作时出现过高并发访问时，用户访问网站偶尔会出现500报错，加载不出来页面，通过加服务器节点缓解的效率不高，通过排查，发现nginx服务器的最大打开文件数worker_rlimit_nofile没有配置，默认值为2000。在nginx配置该参数与服务器文件最大连接数ulimit -n一致为102400，恢复正常，因此查阅资料总结以下方法：</p></blockquote><h3 id="0、优化系统连接数"><a href="#0、优化系统连接数" class="headerlink" title="0、优化系统连接数"></a>0、优化系统连接数</h3><p>linux 默认值 open files为1024。查看当前系统值：</p><pre><code># ulimit -n1024</code></pre><p>说明server只允许同时打开1024个文件。</p><p>使用ulimit -a 可以查看当前系统的所有限制值，使用ulimit -n 可以查看当前的最大打开文件数。</p><p>新装的linux 默认只有1024 ，当作负载较大的服务器时，很容易遇到error: too many open files。因此，需要将其改大，在/etc/security/limits.conf最后增加：</p><pre><code>*               soft    nofile         102400*               hard    nofile         102400*               soft    noproc         102400*               hard    noproc         102400</code></pre><h3 id="1、Nginx运行工作进程数量"><a href="#1、Nginx运行工作进程数量" class="headerlink" title="1、Nginx运行工作进程数量"></a>1、Nginx运行工作进程数量</h3><p>Nginx运行工作进程个数一般设置CPU的核心或者核心数x2</p><p>如果不了解cpu的核数，可以top命令之后按1看出来</p><pre class=" language-linux"><code class="language-linux">[root@lx~]# vi/usr/local/nginx1.10/conf/nginx.confworker_processes 4;[root@lx~]# /usr/local/nginx1.10/sbin/nginx-s reload[root@lx~]# ps -aux | grep nginx |grep -v greproot 9834 0.0 0.0 47556 1948 ? &nbsp; &nbsp; Ss 22:36 0:00 nginx: master processnginxwww 10135 0.0 0.0 50088 2004 ? &nbsp; &nbsp; &nbsp; S &nbsp; 22:58 0:00 nginx: worker processwww 10136 0.0 0.0 50088 2004 ? &nbsp; &nbsp; &nbsp; S &nbsp; 22:58 0:00 nginx: worker processwww 10137 0.0 0.0 50088 2004 ? &nbsp; &nbsp; &nbsp; S &nbsp; 22:58 0:00 nginx: worker processwww 10138 0.0 0.0 50088 2004 ? &nbsp; &nbsp; &nbsp; S &nbsp; 22:58 0:00 nginx: worker process</code></pre><h3 id="2、Nginx运行CPU亲和力"><a href="#2、Nginx运行CPU亲和力" class="headerlink" title="2、Nginx运行CPU亲和力"></a>2、Nginx运行CPU亲和力</h3><p>比如4核配置：</p><pre><code>worker_processes 4;worker_cpu_affinity 0001 0010 0100 1000</code></pre><p>比如8核配置：</p><pre><code>worker_processes 8;worker_cpu_affinity 00000001 00000010 00000100 0000100000010000 00100000 01000000 10000000;</code></pre><p>worker_processes最多开启8个，8个以上性能提升不会再提升了，而且稳定性变得更低，所以8个进程够用了。</p><h3 id="3、Nginx最大打开文件数"><a href="#3、Nginx最大打开文件数" class="headerlink" title="3、Nginx最大打开文件数"></a>3、Nginx最大打开文件数</h3><pre><code>worker_rlimit_nofile 102400;</code></pre><p>这个指令是指当一个nginx进程打开的最多文件描述符数目，最好与ulimit -n的值保持一致</p><h3 id="4、Nginx事件处理模型"><a href="#4、Nginx事件处理模型" class="headerlink" title="4、Nginx事件处理模型"></a>4、Nginx事件处理模型</h3><pre><code>events {&nbsp; use epoll;&nbsp; worker_connections 102400;&nbsp; multi_accept on;}</code></pre><p>nginx采用epoll事件模型，处理效率高。</p><p>work_connections是单个worker进程允许客户端最大连接数，这个数值一般根据服务器性能和内存来制定，实际最大值就是worker进程数乘以work_connections。</p><p>multi_accept 告诉nginx收到一个新连接通知后接受尽可能多的连接，默认是on，设置为on后，多个worker按串行方式来处理连接，也就是一个连接只有一个worker被唤醒，其他的处于休眠状态，设置为off后，多个worker按并行方式来处理连接，也就是一个连接会唤醒所有的worker，直到连接分配完毕，没有取得连接的继续休眠。当你的服务器连接数不多时，开启这个参数会让负载有一定的降低，但是当服务器的吞吐量很大时，为了效率，可以关闭这个参数。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> util </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Nginx </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>搭建求生之路2Linux服务器</title>
       <link href="/2023/01/04/linux/da-jian-qiu-sheng-zhi-lu-2-yun-fu-wu-qi/"/>
       <url>/2023/01/04/linux/da-jian-qiu-sheng-zhi-lu-2-yun-fu-wu-qi/</url>
