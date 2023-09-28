@@ -550,14 +550,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    994
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
 
@@ -614,6 +614,41 @@
 <blockquote>
 <p>安装完环境后，搭建环境篇的第二、三步不需要，因为我们是迁移博客，只需要将老电脑上的hexo博客的源文件放到新电脑想要的位置即可</p>
 </blockquote>
+<h3 id="配置Git"><a href="#配置Git" class="headerlink" title="配置Git"></a>配置Git</h3><ol>
+<li><p>配置Git用户名和邮箱</p>
+<p>在桌面点击鼠标右键，点击Git Bash Here，然后分别输入下面的两个命令，并回车：</p>
+<pre><code>git config --global user.name "此处填写你注册时的用户名"
+git config --global user.email "此处填写你注册时的邮箱"
+# 执行完后在C盘用户文件夹中找.gitconfig文件，看是否修改成功
+</code></pre>
+</li>
+<li><p>配置Git免密登录，添加ssh-keys</p>
+<blockquote>
+<p>这里根据你是部署到哪里，github或云服务器，这里我以自己的云服务器为例，github可去看我博客<a target="_blank" rel="noopener" href="https://sulog.fun/2020/08/01/hexo/hexo-bo-ke-bei-fen/">Hexo博客备份</a>恢复步骤。</p>
+</blockquote>
+<ol>
+<li><p>在cmd下运行：<code>ssh-keygen -t rsa -C "yourname@email.com"</code>，一路回车；</p>
+</li>
+<li><p>会在.ssh目录生成<code>id_rsa</code>、<code>id_rsa.pub</code>两个文件，这就是密钥对，我们需要id_rsa.pub；</p>
+</li>
+<li><p>进入云服务器</p>
+<pre><code>su git    //切换到git用户
+cd ~    //切换目录
+mkdir .ssh    //新建.ssh文件夹
+cd .ssh    //进入文件夹
+vim authorized_keys    //创建文件
+将主机windows下的ssh公钥内容粘贴进去，位置在C:\Users\用户\.ssh\id_rsa.pub
+保存退出
+</code></pre>
+</li>
+<li><p>测试</p>
+<p>使用主机windows，以管理员的身份进入cmd命令行</p>
+<pre><code>ssh -v git@你的公网IP
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
 <h3 id="安装hexo框架环境"><a href="#安装hexo框架环境" class="headerlink" title="安装hexo框架环境"></a>安装hexo框架环境</h3><ol>
 <li><p>选择一个磁盘作为你博客文件的存放位置，然后新建一个文件夹，比如名为blog的文件夹，创建完后进入文件夹点击鼠标右键，选择Git Bash Here，输入命令<code>npm install -g hexo-cli</code></p>
 <blockquote>
@@ -1592,7 +1627,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">257.5k</span>&nbsp;字
+                class="white-color">257.8k</span>&nbsp;字
             
             
             
