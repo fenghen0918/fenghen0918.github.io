@@ -546,14 +546,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.6k
+                    2.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    12 分
                 </div>
                 
 
@@ -609,7 +609,7 @@ identified <span class="token keyword">by</span> 密码
 <p>数据库的物理存储单位。数据库的数据是存储在表空间中的，真正是在某一个或多个数据文件中。</p>
 </li>
 </ol>
-<p><img src="/2021/04/16/mysql/oracle/Users\44317\AppData\Roaming\Typora\typora-user-images\image-20210516173105991.png" alt="image-20210516173105991"></p>
+<p><img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/image-20210516173105991.png" alt="image-20210516173105991"></p>
 <h2 id="windows安装"><a href="#windows安装" class="headerlink" title="windows安装"></a>windows安装</h2><blockquote>
 <p>此处以oracle 11g为例</p>
 </blockquote>
@@ -868,25 +868,35 @@ grant select on 用户名1.视图名 to 用户名2;
           <span class="token operator">and</span> <span class="token number">b</span><span class="token punctuation">.</span>pk_code <span class="token operator">=</span> <span class="token string">'12'</span><span class="token punctuation">;</span>
 </code></pre>
 </li>
-<li><p><strong>表空间占满</strong>，将102.57的超过90%的扩容</p>
+<li><p><strong>表空间占满</strong></p>
 <ol>
-<li><p>进入102.57中的xydb、orcl实例，sys用户</p>
+<li><p>进入sys用户</p>
 </li>
 <li><p>查看表空间占用率</p>
-<pre class=" language-sql"><code class="language-sql"><span class="token keyword">SELECT</span>
-<span class="token function">mAX</span><span class="token punctuation">(</span>B<span class="token punctuation">.</span>file_id<span class="token punctuation">)</span> id<span class="token punctuation">,</span>
-B<span class="token punctuation">.</span>TABLESPACE_NAME 表空间<span class="token punctuation">,</span>
-B<span class="token punctuation">.</span>FILE_NAME 物理文件名<span class="token punctuation">,</span>
-B<span class="token punctuation">.</span>BYTES <span class="token operator">/</span> <span class="token number">1024</span> <span class="token operator">/</span> <span class="token number">1024</span> 大小M<span class="token punctuation">,</span>
-<span class="token punctuation">(</span>B<span class="token punctuation">.</span>BYTES <span class="token operator">-</span> <span class="token function">SUM</span><span class="token punctuation">(</span>NVL<span class="token punctuation">(</span>A<span class="token punctuation">.</span>BYTES<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">1024</span> <span class="token operator">/</span> <span class="token number">1024</span> 已使用M<span class="token punctuation">,</span>
-SUBSTR<span class="token punctuation">(</span><span class="token punctuation">(</span>B<span class="token punctuation">.</span>BYTES <span class="token operator">-</span> <span class="token function">SUM</span><span class="token punctuation">(</span>NVL<span class="token punctuation">(</span>A<span class="token punctuation">.</span>BYTES<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span>B<span class="token punctuation">.</span>BYTES<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span> 利用率
-<span class="token keyword">FROM</span> DBA_FREE_SPACE A<span class="token punctuation">,</span> DBA_DATA_FILES B
-<span class="token keyword">WHERE</span> A<span class="token punctuation">.</span>FILE_ID <span class="token operator">=</span> B<span class="token punctuation">.</span>FILE_ID
-<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> B<span class="token punctuation">.</span>TABLESPACE_NAME<span class="token punctuation">,</span> B<span class="token punctuation">.</span>FILE_NAME<span class="token punctuation">,</span> B<span class="token punctuation">.</span>BYTES
-<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> B<span class="token punctuation">.</span>TABLESPACE_NAME<span class="token punctuation">;</span>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">--因为表空间会涉及多个物理文件存储，此sql用于查看整个表空间的使用率（汇总版）</span>
+<span class="token keyword">SELECT</span> <span class="token number">a</span><span class="token punctuation">.</span>tablespace_name <span class="token punctuation">,</span> 
+<span class="token number">a</span><span class="token punctuation">.</span>bytes <span class="token operator">/</span> <span class="token number">1024</span> <span class="token operator">/</span> <span class="token number">1024</span> 大小M<span class="token punctuation">,</span> 
+<span class="token number">b</span><span class="token punctuation">.</span>bytes <span class="token operator">/</span> <span class="token number">1024</span> <span class="token operator">/</span> <span class="token number">1024</span> 已使用M<span class="token punctuation">,</span>
+<span class="token number">c</span><span class="token punctuation">.</span>bytes <span class="token operator">/</span> <span class="token number">1024</span> <span class="token operator">/</span> <span class="token number">1024</span> 空余M<span class="token punctuation">,</span> 
+<span class="token punctuation">(</span><span class="token number">b</span><span class="token punctuation">.</span>bytes <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">a</span><span class="token punctuation">.</span>bytes 使用率
+<span class="token keyword">FROM</span> sys<span class="token punctuation">.</span>sm$ts_avail <span class="token number">a</span><span class="token punctuation">,</span> sys<span class="token punctuation">.</span>sm$ts_used <span class="token number">b</span><span class="token punctuation">,</span> sys<span class="token punctuation">.</span>sm$ts_free <span class="token number">c</span> 
+<span class="token keyword">WHERE</span> <span class="token number">a</span><span class="token punctuation">.</span>tablespace_name <span class="token operator">=</span> <span class="token number">b</span><span class="token punctuation">.</span>tablespace_name 
+<span class="token operator">AND</span> <span class="token number">a</span><span class="token punctuation">.</span>tablespace_name <span class="token operator">=</span> <span class="token number">c</span><span class="token punctuation">.</span>tablespace_name<span class="token punctuation">;</span> 
 </code></pre>
 </li>
-<li><p>扩容</p>
+<li><p>查看表空间物理文件占用率</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">--此sql拆解查看表空间中具体哪个物理文件占用高</span>
+<span class="token keyword">SELECT</span> D<span class="token punctuation">.</span>TABLESPACE_NAME 表空间<span class="token punctuation">,</span>
+       D<span class="token punctuation">.</span>FILE_NAME 物理文件名<span class="token punctuation">,</span>
+       D<span class="token punctuation">.</span>AUTOEXTENSIBLE 是否开启自动扩展<span class="token punctuation">,</span>
+       <span class="token function">ROUND</span><span class="token punctuation">(</span>D<span class="token punctuation">.</span>BYTES <span class="token operator">/</span> <span class="token number">1024</span> <span class="token operator">/</span> <span class="token number">1024</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> 已使用M<span class="token punctuation">,</span>
+       <span class="token function">ROUND</span><span class="token punctuation">(</span>D<span class="token punctuation">.</span>MAXBYTES <span class="token operator">/</span> <span class="token number">1024</span> <span class="token operator">/</span> <span class="token number">1024</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> 总容量M<span class="token punctuation">,</span>
+       <span class="token function">ROUND</span><span class="token punctuation">(</span><span class="token punctuation">(</span>D<span class="token punctuation">.</span>BYTES <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token operator">/</span> D<span class="token punctuation">.</span>MAXBYTES<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> 文件使用率
+  <span class="token keyword">FROM</span> DBA_DATA_FILES D
+<span class="token comment" spellcheck="true">--WHERE D.TABLESPACE_NAME = 'SYSTEM';</span>
+</code></pre>
+</li>
+<li><p>找到对应占用高的物理文件扩容</p>
 <ol>
 <li><p>方法一（将原物理文件扩展）：</p>
 <pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">--物理文件不能超过32G</span>
@@ -898,13 +908,14 @@ SUBSTR<span class="token punctuation">(</span><span class="token punctuation">(<
 <li><p>方法二（增加物理文件个数）：</p>
 <pre class=" language-sql"><code class="language-sql"><span class="token keyword">alter</span> <span class="token keyword">tablespace</span> 表空间名称 <span class="token keyword">add</span> datafile <span class="token string">'新的数据文件地址'</span> size 数据文件大小
 例如：
-<span class="token keyword">alter</span>  <span class="token keyword">tablespace</span> system <span class="token keyword">add</span> datafile <span class="token string">'/ora_data/icsdb/system02.dbf'</span> size 1G；
+<span class="token keyword">alter</span>  <span class="token keyword">tablespace</span> system <span class="token keyword">add</span> datafile <span class="token string">'/ora_data/icsdb/system02.dbf'</span> size 10G<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">--增加后需要方法三，开启自动扩展</span>
 </code></pre>
 </li>
 <li><p>方法三（设置表空间自动扩展）：</p>
 <pre class=" language-sql"><code class="language-sql"><span class="token keyword">alter</span> <span class="token keyword">database</span> datafile <span class="token string">'数据文件位置'</span> autoextend <span class="token keyword">on</span> <span class="token keyword">next</span> 自动扩展大小 maxsize 最大扩展大小
 例如：
-<span class="token keyword">alter</span> <span class="token keyword">database</span> datafile <span class="token string">'/ora_data/icsdb/system02.dbf'</span> autoextend <span class="token keyword">on</span> <span class="token keyword">next</span> 500m maxsize 10000m；
+<span class="token keyword">alter</span> <span class="token keyword">database</span> datafile <span class="token string">'/ora_data/icsdb/system02.dbf'</span> autoextend <span class="token keyword">on</span> <span class="token keyword">next</span> 500m maxsize 31G<span class="token punctuation">;</span>
 </code></pre>
 <blockquote>
 <p>扩展：</p>
@@ -918,9 +929,32 @@ autoextend <span class="token keyword">on</span> <span class="token keyword">nex
 </li>
 </ol>
 </li>
+<li><p>删除表很大的日志文件，缩小表空间</p>
+<ol>
+<li><p>查询表空间下的表占用大小</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">--查表空间内的表占用大小，用去缩小占用，大多数用来清除日志文件</span>
+<span class="token keyword">select</span> t<span class="token punctuation">.</span>owner<span class="token punctuation">,</span>t<span class="token punctuation">.</span>segment_name<span class="token punctuation">,</span>t<span class="token punctuation">.</span>tablespace_name<span class="token punctuation">,</span>bytes<span class="token operator">/</span><span class="token number">1024</span><span class="token operator">/</span><span class="token number">1024</span><span class="token operator">/</span><span class="token number">1024</span> <span class="token keyword">as</span> sizes<span class="token punctuation">,</span>q<span class="token punctuation">.</span>num_rows<span class="token punctuation">,</span>t<span class="token punctuation">.</span>segment_type
+<span class="token keyword">from</span> dba_segments t
+<span class="token keyword">left</span> <span class="token keyword">join</span> dba_tables q
+<span class="token keyword">on</span> t<span class="token punctuation">.</span>segment_name<span class="token operator">=</span>q<span class="token punctuation">.</span>table_name
+<span class="token operator">and</span> t<span class="token punctuation">.</span>owner<span class="token operator">=</span>q<span class="token punctuation">.</span>owner
+<span class="token keyword">where</span> t<span class="token punctuation">.</span>segment_type<span class="token operator">=</span><span class="token string">'TABLE'</span>
+<span class="token operator">and</span> t<span class="token punctuation">.</span>tablespace_name<span class="token operator">=</span><span class="token string">'TS_AAA'</span> <span class="token comment" spellcheck="true">--需要查看的表空间</span>
+<span class="token keyword">order</span> <span class="token keyword">by</span> bytes<span class="token operator">/</span><span class="token number">1024</span><span class="token operator">/</span><span class="token number">1024</span><span class="token operator">/</span><span class="token number">1024</span> <span class="token keyword">desc</span>
+</code></pre>
+</li>
+<li><p>删除表数据</p>
+<p>truncate或delete</p>
+</li>
+<li><p>Oracle数据表删除后，表空间没有减少，需要压缩空间</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">alter</span> <span class="token keyword">table</span> 表<span class="token number">1</span> <span class="token keyword">enable</span> <span class="token keyword">row</span> movement<span class="token punctuation">;</span>
+<span class="token keyword">alter</span> <span class="token keyword">table</span> 表<span class="token number">1</span> shrink space<span class="token punctuation">;</span>    
+</code></pre>
+</li>
 </ol>
 </li>
-<li></li>
+</ol>
+</li>
 </ol>
 
 
@@ -1836,7 +1870,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">240.5k</span>&nbsp;字
+                class="white-color">257.5k</span>&nbsp;字
             
             
             
