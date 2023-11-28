@@ -546,14 +546,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.9k
+                    3.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    15 分
                 </div>
                 
 
@@ -954,6 +954,78 @@ autoextend <span class="token keyword">on</span> <span class="token keyword">nex
 </ol>
 </li>
 </ol>
+</li>
+</ol>
+<h2 id="表数量统计"><a href="#表数量统计" class="headerlink" title="表数量统计"></a>表数量统计</h2><p>mysql：</p>
+<pre><code>SELECT COUNT(*)
+FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_TYPE = 'BASE TABLE'
+</code></pre>
+<p>oracle：</p>
+<pre><code>--统计当前用户表
+SELECT COUNT(*) FROM USER_TABLES;
+--统计所有用户表
+SELECT COUNT(*) FROM all_tables；
+</code></pre>
+<h2 id="日志清理"><a href="#日志清理" class="headerlink" title="日志清理"></a>日志清理</h2><p>1、清理归档日志：<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=ORA&amp;spm=1001.2101.3001.7020">ORA</a>-00257:archiver error. Connect internal only. unitl freed.</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Ruishine/article/details/127299885">https://blog.csdn.net/Ruishine/article/details/127299885</a></p>
+<p>2、清理审计$AUD日志：磁盘满，system表空间满</p>
+<p><a target="_blank" rel="noopener" href="https://www.php.cn/faq/489599.html">https://www.php.cn/faq/489599.html</a></p>
+<p>3、清理监听日志：磁盘满</p>
+<p>linux:日志大小无限制</p>
+<p><a target="_blank" rel="noopener" href="http://www.manongjc.com/detail/60-vzeflwcchtyefxv.html">http://www.manongjc.com/detail/60-vzeflwcchtyefxv.html</a></p>
+<p>windows:日志4G封顶</p>
+<p>解决：\app\Administrator\diag\tnslsnr\LS–20171012URU\listener\trace\listener.log，找到该路径，备份到其他地方后删除掉（需要先关闭监听服务TNSListner）。</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ol>
+<li><p>plsql有表名，但select提示表不存在</p>
+<p>解决：加双引号，<code>select * from "user"</code></p>
+<p>原因：表名是小写的，通过<code>select * from user</code>查不到，oracle严格区分大小写，不加引号会默认变成大写。</p>
+<p>为什么有些表能查到呢，因为小写的表名在创建表语句时，<code>create table "user"</code>，导致固定了小写，我们只能用小写查。然而平时创建表时不加<code>create table user</code>，这样创建出来的表就不区分大小写，因此我们可以不加引号随意查。</p>
+</li>
+</ol>
+<h2 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h2><ol>
+<li><p>oracle查询重复数据</p>
+<blockquote>
+<pre class=" language-sql"><code class="language-sql">   <span class="token number">1</span>、查找表中多余的重复记录，重复记录是根据单个字段（Id）来判断
+   <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> 表 <span class="token keyword">where</span> Id <span class="token operator">in</span> <span class="token punctuation">(</span><span class="token keyword">select</span> Id <span class="token keyword">from</span> 表 <span class="token keyword">group</span> <span class="token keyword">by</span> Id <span class="token keyword">having</span> <span class="token function">count</span><span class="token punctuation">(</span>Id<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">)</span>
+   <span class="token number">2</span>、删除表中多余的重复记录，重复记录是根据单个字段（Id）来判断，只留有rowid最小的记录
+   <span class="token keyword">DELETE</span> <span class="token keyword">from</span> 表 <span class="token keyword">WHERE</span> <span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token operator">IN</span> <span class="token punctuation">(</span> <span class="token keyword">SELECT</span> id <span class="token keyword">FROM</span> 表 <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> id <span class="token keyword">HAVING</span> <span class="token function">COUNT</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">AND</span> 
+   ROWID <span class="token operator">NOT</span> <span class="token operator">IN</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span> <span class="token function">MIN</span><span class="token punctuation">(</span>ROWID<span class="token punctuation">)</span> <span class="token keyword">FROM</span> 表 <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> id <span class="token keyword">HAVING</span> <span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token number">3</span>、查找表中多余的重复记录（多个字段）
+   <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> 表 <span class="token number">a</span> <span class="token keyword">where</span> <span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">.</span>Id<span class="token punctuation">,</span><span class="token number">a</span><span class="token punctuation">.</span>seq<span class="token punctuation">)</span> <span class="token operator">in</span><span class="token punctuation">(</span><span class="token keyword">select</span> Id<span class="token punctuation">,</span>seq <span class="token keyword">from</span> 表 <span class="token keyword">group</span> <span class="token keyword">by</span> Id<span class="token punctuation">,</span>seq <span class="token keyword">having</span> 
+   <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">)</span>
+   <span class="token number">4</span>、删除表中多余的重复记录（多个字段），只留有rowid最小的记录
+   <span class="token keyword">delete</span> <span class="token keyword">from</span> 表 <span class="token number">a</span> <span class="token keyword">where</span> <span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">.</span>Id<span class="token punctuation">,</span><span class="token number">a</span><span class="token punctuation">.</span>seq<span class="token punctuation">)</span> <span class="token operator">in</span> <span class="token punctuation">(</span><span class="token keyword">select</span> Id<span class="token punctuation">,</span>seq <span class="token keyword">from</span> 表 <span class="token keyword">group</span> <span class="token keyword">by</span> Id<span class="token punctuation">,</span>seq <span class="token keyword">having</span> 
+   <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">and</span> rowid <span class="token operator">not</span> <span class="token operator">in</span> <span class="token punctuation">(</span><span class="token keyword">select</span> <span class="token function">min</span><span class="token punctuation">(</span>rowid<span class="token punctuation">)</span> <span class="token keyword">from</span> 表 <span class="token keyword">group</span> <span class="token keyword">by</span> Id<span class="token punctuation">,</span>seq 
+   <span class="token keyword">having</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token operator">></span><span class="token number">1</span><span class="token punctuation">)</span>
+</code></pre>
+</blockquote>
+</li>
+<li><p>一张表更新另一张表字段</p>
+<blockquote>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">UPDATE</span> table1 t1
+<span class="token keyword">SET</span> t1<span class="token punctuation">.</span>column_to_update <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span> t2<span class="token punctuation">.</span>column_to_copy
+                          <span class="token keyword">FROM</span> table2 t2
+                          <span class="token keyword">WHERE</span> t1<span class="token punctuation">.</span>join_column <span class="token operator">=</span> t2<span class="token punctuation">.</span>join_column<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+table1是要进行更新的表。
+​    table2是提供字段值的表。
+​    column_to_update是要更新的字段名。
+​    column_to_copy是提供值的字段名。
+​    join_column是用于连接两个表的列，通常是共有的某个关键列。
+</code></pre>
+</blockquote>
+</li>
+<li><p>查询系统参数是否会立即生效</p>
+<pre><code>select name,value ,ISSYS_MODIFIABLE from v$parameter where name like '%名字%';
+
+name                        value                      issys_mod
+sga_max_size           612368567            FALSE
+sga_target_size        612368567             immediate
+ISSYS_MODIFIABLE 返回是false 说明该参数无法用alter system语句动态修改，需要重启数据库。
+
+其中issys_mod有三种状态：1.IMMEDIATE 立即生效 2. DEFERRED 只对后续的session生效 3.FLASE 必须重启生效
+</code></pre>
 </li>
 </ol>
 
@@ -1626,6 +1698,43 @@ autoextend <span class="token keyword">on</span> <span class="token keyword">nex
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2021/04/22/linux/windows-xu-ni-ji-an-zhuang/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/suoluetu4.jpg" class="responsive-img" alt="windows虚拟机安装">
+                        
+                        <span class="card-title">windows虚拟机安装</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            windows2012R2 x64，安装和虚拟机扩容
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-22
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            小苏
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2021/04/16/linux/linux-xu-ni-ji-an-zhuang/">
                     <div class="card-image">
                         
@@ -1642,9 +1751,9 @@ autoextend <span class="token keyword">on</span> <span class="token keyword">nex
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1662,55 +1771,6 @@ autoextend <span class="token keyword">on</span> <span class="token keyword">nex
                     
                     <a href="/tags/%E5%AE%9E%E6%96%BD/">
                         <span class="chip bg-color">实施</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/03/12/util/vscode-shi-yong-sftp-kuai-su-tong-bu-fu-wu-qi-wen-jian/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/suoluetu1.jpg" class="responsive-img" alt="VScode使用sftp快速同步服务器文件">
-                        
-                        <span class="card-title">VScode使用sftp快速同步服务器文件</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            VScode中文汉化，使用sftp快速同步服务器文件
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-12
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/util/" class="post-category">
-                                    util
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/VScode/">
-                        <span class="chip bg-color">VScode</span>
                     </a>
                     
                 </div>
@@ -1870,7 +1930,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">258.6k</span>&nbsp;字
+                class="white-color">265.3k</span>&nbsp;字
             
             
             
