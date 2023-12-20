@@ -546,14 +546,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.6k
+                    4.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    15 分
+                    20 分
                 </div>
                 
 
@@ -633,31 +633,26 @@ identified <span class="token keyword">by</span> 密码
 <li>安装ing</li>
 <li>确定 完成</li>
 </ol>
-<h2 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h2><ol>
-<li>在oracle服务端登录oracle的方法<a target="_blank" rel="noopener" href="https://blog.csdn.net/heshushun/article/details/79773886">https://blog.csdn.net/heshushun/article/details/79773886</a></li>
-</ol>
+<h2 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h2><p>在oracle服务端登录oracle的方法<a target="_blank" rel="noopener" href="https://blog.csdn.net/heshushun/article/details/79773886">https://blog.csdn.net/heshushun/article/details/79773886</a></p>
 <h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><ol>
-<li><p><strong>先登录服务器后，切换到oracle用户状态下：</strong> su - oracle</p>
-<ol start="2">
-<li><strong>检查oracle监听器运行状态：</strong> lsnrctl status命令查看。<ol>
+<li>先登录服务器后，切换到oracle用户状态下： su - oracle</li>
+<li>检查oracle监听器运行状态： lsnrctl status命令查看。<ol>
 <li>若没启动，执行启动监听，通过命令： lsnrctl start （lsnrctl stop 关闭监听）</li>
-<li>如果启动报错，listener.ora文件打开，调整HOST IP</li>
 </ol>
 </li>
-<li><strong>进入sqlplus，命令：</strong> sqlplus /nolog</li>
+<li>管理员 sysdba 权限登陆oracle： sqlplus / as sysdba</li>
+<li>启动服务（实例）： startup</li>
 </ol>
-</li>
-<li><p><strong>管理员</strong> <strong>sysdba</strong> <strong>权限登陆oracle：</strong> conn /as sysdba</p>
-<ol start="5">
-<li><strong>启动服务（实例）：</strong> startup</li>
-</ol>
-<h3 id="关闭"><a href="#关闭" class="headerlink" title="关闭"></a>关闭</h3><p><strong>关闭服务（实例）：</strong> shutdown immediate;</p>
-<h3 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h3><p>SQL&gt; <code>shutdown immediate</code></p>
-<p>SQL&gt; <code>startup open</code></p>
-<h3 id="检验服务是否开启"><a href="#检验服务是否开启" class="headerlink" title="检验服务是否开启"></a>检验服务是否开启</h3><p>看数据库当前状态 </p>
-<p>SQL&gt;<code>select status from v$instance;</code></p>
-<p>如果status = open 就说明oracle服务正常。</p>
-</li>
+<h3 id="关闭"><a href="#关闭" class="headerlink" title="关闭"></a>关闭</h3><pre><code>sql&gt; shutdown immediate; --如果长时间没反应，因为有大事务要回滚，导致数据库一直在等待
+回滚执行完成，ctrl+c取消
+sql&gt; alter system checkpoint; --设置检查点。一般在shutdown前,为了防止类似情况发生而
+丢失数据
+sql&gt; shutdown abort; --强制关闭数据库
+</code></pre>
+<h3 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h3><pre><code>SQL&gt; shutdown immediate
+SQL&gt; startup
+</code></pre>
+<h3 id="检验服务是否开启"><a href="#检验服务是否开启" class="headerlink" title="检验服务是否开启"></a>检验服务是否开启</h3><ol>
 <li><p>在oracle客户端登录oracle的方法</p>
 <ol>
 <li><p>原始的登录方法</p>
@@ -968,7 +963,7 @@ SELECT COUNT(*) FROM USER_TABLES;
 SELECT COUNT(*) FROM all_tables；
 </code></pre>
 <h2 id="日志清理"><a href="#日志清理" class="headerlink" title="日志清理"></a>日志清理</h2><p>1、清理归档日志：<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=ORA&amp;spm=1001.2101.3001.7020">ORA</a>-00257:archiver error. Connect internal only. unitl freed.</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Ruishine/article/details/127299885">https://blog.csdn.net/Ruishine/article/details/127299885</a></p>
+<p>查看《Oracle归档日志清理.md》</p>
 <p>2、清理审计$AUD日志：磁盘满，system表空间满</p>
 <p><a target="_blank" rel="noopener" href="https://www.php.cn/faq/489599.html">https://www.php.cn/faq/489599.html</a></p>
 <p>3、清理监听日志：磁盘满</p>
@@ -976,11 +971,166 @@ SELECT COUNT(*) FROM all_tables；
 <p><a target="_blank" rel="noopener" href="http://www.manongjc.com/detail/60-vzeflwcchtyefxv.html">http://www.manongjc.com/detail/60-vzeflwcchtyefxv.html</a></p>
 <p>windows:日志4G封顶</p>
 <p>解决：\app\Administrator\diag\tnslsnr\LS–20171012URU\listener\trace\listener.log，找到该路径，备份到其他地方后删除掉（需要先关闭监听服务TNSListner）。</p>
+<h2 id="自动备份"><a href="#自动备份" class="headerlink" title="自动备份"></a>自动备份</h2><h3 id="数据库备份"><a href="#数据库备份" class="headerlink" title="数据库备份"></a>数据库备份</h3><p>本教程可使用 system 账户将整个实例备份（包含空表），并自动删除超过 6 天 的历史数据。</p>
+<ol>
+<li><p>root 用户登录服务器</p>
+<pre><code>mkdir -p /backup/oracledata #新建 Oracle 数据库备份目录
+chown -R oracle:oinstall /backup/oracledata #设置目录权限为 oinstall 用
+户组的 oracle 用户（用户 oracle 与用户组 oinstall 是在安装 Oracle 数据库时
+设置的）
+</code></pre>
+</li>
+<li><p>创建目录对象</p>
+<p>因为使用 expdp 命令需要使用到目录对象(directory)，所以首先需要创建目 录对象，并赋予某个用户对目录对象的操作权限。</p>
+<p><code>su – oracle #切换到 oracle 用户</code></p>
+<p><code> sqlplus / as sysdba #切换到 SQLPLUS 环境</code></p>
+<p>执行以下命令： </p>
+<p><code>create directory expdp_bak_dir as '/backup/oracledata'; #指定输出目录</code></p>
+<blockquote>
+<p>报错：</p>
+<pre><code>ERROR at line 1:
+ORA-01034: ORACLE not available
+</code></pre>
+<p>原因：一般是由于监听或Oracle没有启动</p>
+<ol>
+<li><p>首先先测试一下，监听是否启动：lsnrctl status；如果监听没有启动，则 lsnrctl start；</p>
+</li>
+<li><p>启动oracle</p>
+<ol>
+<li><p><code>sqlplus / as sysdba</code></p>
+</li>
+<li><p><code>startup</code></p>
+<blockquote>
+<p>报错：LRM-00109: could not open parameter file ‘/u01/app/oracle/product/11.2.0.4/dbhome_1/dbs/init<strong>ecard</strong>.ora’</p>
+<p>原因：看到找不到intecard.ora。记得自己的实例创建时是orcl。有可能是因为变量设置出现问题。实例名ORACLE_SID设置不对</p>
+<ol>
+<li><code>su - oracle</code></li>
+<li><code>vim .bash_profile</code></li>
+<li>修改ORACLE_SID=orcl</li>
+<li>重启变量<code>source .bash_profile</code></li>
+<li>再次尝试启动oracle</li>
+</ol>
+</blockquote>
+</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+</li>
+<li><p>编辑自动备份脚本</p>
+<p><code>vi /backup/oracledata/oradatabak.sh </code>#新建文件，输入以下代码</p>
+<pre><code>#!/bin/sh
+export ORACLE_SID=orcl
+export ORACLE_HOME=/u01/app/oracle/product/11.2.0.4/dbhome_1
+export NLS_LANG=american_america.al32utf8
+export DATA_DIR=/backup/oracledata
+now=` date +%Y%m%d%H%M%S ` 
+dmpfile=db$now.dmp
+echo start exp $dmpfile ... 
+/u01/app/oracle/product/11.2.0.4/dbhome_1/bin/expdp system/password DUMPFILE=$dmpfile logfile=db$now.log DIRECTORY=expdp_bak_dir full=y
+echo "Delete the file bakup before 6 days..."
+find /backup/oracledata/ -mtime +6 -name "*.dmp" -exec rm -rf '{}' \;
+echo "Delete the file bakup successfully. " 
+echo "Bakup completed."
+</code></pre>
+<blockquote>
+<p>注意点：</p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<ol>
+<li><p>第二行ORACLE_SID，改为数据库的实例名</p>
+</li>
+<li><p>第九行，必须是目录后，空格，用户名/密码</p>
+</li>
+<li><p>不能将用户名密码一直到full=y另起一行写，会出错，因为这是一个完整的语句。</p>
+<pre><code>错误信息
+/backup/oracledata/oradatabak.sh: line 10: system/password: No such file or directory
+</code></pre>
+</li>
+<li><p>备份文件目录：/backup/oracledata</p>
+</li>
+</ol>
+</blockquote>
+<p>   <code>chmod +x /home/backup/oracledata/ordatabak.sh #添加脚本执行权限</code></p>
+<ol start="4">
+<li><p>设置系统自动定时执行备份脚本</p>
+<p><code>vi /etc/crontab #编辑系统任务计划</code></p>
+<p>将下面的代码写入最后一行： <code>0 0 * * * oracle /backup/oracledata/oradatabak.sh</code></p>
+<p><code>./oradatabak.sh</code> 是<strong>手动备份</strong></p>
+<p>#每天凌晨 0 点 00 分，以 oracle 用户执行 oradatabak.sh 备份文件</p>
+<p><code>[root@db ~]# systemctl restart crond.service </code>或<code>service crond restart</code></p>
+<p><code>[root@db ~]# systemctl enable crond.service</code></p>
+<p>即每天凌晨 0 点 00 分进行备份，如需每天备份多次，可设置不同时间段备份： </p>
+<p>例如：* 3,13,18 * * * oracle /backup/oracledata/oradatabak.sh 即每天 3 点、13 点、18 点进行备份。 </p>
+<p>说明：文件备份目录，用户oracle必须有更改权限，否则无法备份。</p>
+<blockquote>
+<p>问题：到时间了却没有备份。查看当前时间<code>date</code>，发现系统时间不同步</p>
+<p>解决：</p>
+<ol>
+<li><code>yum -y install ntpdate </code></li>
+<li><code>ping baidu.com</code>，确定能访问外网</li>
+<li><code>/usr/sbin/ntpdate stdtime.gov.hk</code>同步时间</li>
+<li><code>date</code>查看时间</li>
+</ol>
+<p>问题：时区有问题</p>
+<p>解决：</p>
+<ol>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42167759/article/details/90648225">https://blog.csdn.net/weixin_42167759/article/details/90648225</a></p>
+</li>
+<li><p><code>ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</code></p>
+<p><code>timedatectl set-timezone Asia/Shanghai</code>    #其他时区以此类推</p>
+<p>如果是旧版（Cenos6及Ubuntu16以前版本）</p>
+<p><code>cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</code></p>
+</li>
+</ol>
+</blockquote>
+</li>
+</ol>
+<h3 id="数据库备份恢复"><a href="#数据库备份恢复" class="headerlink" title="数据库备份恢复"></a>数据库备份恢复</h3><p>恢复需在<strong>数据库服务器上</strong>进行，并保持程序、数据文件路径与备份前一致。</p>
+<ol>
+<li><p>在 PL/SQL 环境，设置数据库导入目录 <code>SQL&gt;create directory impdp_dir as '/backup/oracledata';</code> </p>
+</li>
+<li><p>在 PL/SQL 环境，授权 SYSTEM 用户访问授权 <code>SQL&gt;grant read,write on directory impdp_dir to system;</code></p>
+</li>
+<li><p>在控制台环境，在系统目录中创建目录 <code>mkdir -p /backup/oracledata </code></p>
+</li>
+<li><p>复制数据库备份文件至/backup/oracledata/目录 </p>
+</li>
+</ol>
+<p>5）修改复制过来文件的权限</p>
+<p>​    <code>chown -R oracle:oinstall /backup/oracledata</code></p>
+<ol start="6">
+<li>在控制台环境，恢复数据库(全库恢复) <code>impdp system/kingstar@orcl DIRECTORY=EXPDP_BAK_DIR DUMPFILE= db20220104023001.dmp logfile= dmpfile.log full=y ignore=y</code></li>
+</ol>
+<blockquote>
+<p>注意：</p>
+<ol>
+<li>logfile会在当前目录自动创建，不需要修改</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>问题：bash: Impdp: command not found…</p>
+<p>解决：是因为没有切换用户，<code>su - oracle</code>，再次尝试</p>
+</blockquote>
+<blockquote>
+<p>问题：oracle用户的权限不够</p>
+<pre><code>ORA-31640: unable to open dump file "/backup/oracledata/expdat.dmp" for read
+ORA-27041: unable to open file
+Linux-x86_64 Error: 13: Permission denied
+</code></pre>
+<p>解决：是因为复制过来的备份文件所有者是root，需要修改为oracle</p>
+<p>​    <code>chown -R oracle:oinstall /backup/oracledata</code></p>
+</blockquote>
 <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ol>
 <li><p>plsql有表名，但select提示表不存在</p>
 <p>解决：加双引号，<code>select * from "user"</code></p>
 <p>原因：表名是小写的，通过<code>select * from user</code>查不到，oracle严格区分大小写，不加引号会默认变成大写。</p>
 <p>为什么有些表能查到呢，因为小写的表名在创建表语句时，<code>create table "user"</code>，导致固定了小写，我们只能用小写查。然而平时创建表时不加<code>create table user</code>，这样创建出来的表就不区分大小写，因此我们可以不加引号随意查。</p>
+</li>
+<li><p>oracle占用CPU100%</p>
+<p>查看《oracle占用CPU100%.md》</p>
 </li>
 </ol>
 <h2 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h2><ol>
@@ -1698,43 +1848,6 @@ ISSYS_MODIFIABLE 返回是false 说明该参数无法用alter system语句动态
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/04/22/linux/windows-xu-ni-ji-an-zhuang/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/suoluetu4.jpg" class="responsive-img" alt="windows虚拟机安装">
-                        
-                        <span class="card-title">windows虚拟机安装</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            windows2012R2 x64，安装和虚拟机扩容
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-22
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            小苏
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2021/04/16/linux/linux-xu-ni-ji-an-zhuang/">
                     <div class="card-image">
                         
@@ -1751,9 +1864,9 @@ ISSYS_MODIFIABLE 返回是false 说明该参数无法用alter system语句动态
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-16
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-16
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1771,6 +1884,55 @@ ISSYS_MODIFIABLE 返回是false 说明该参数无法用alter system语句动态
                     
                     <a href="/tags/%E5%AE%9E%E6%96%BD/">
                         <span class="chip bg-color">实施</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/03/12/util/vscode-shi-yong-sftp-kuai-su-tong-bu-fu-wu-qi-wen-jian/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/suoluetu1.jpg" class="responsive-img" alt="VScode使用sftp快速同步服务器文件">
+                        
+                        <span class="card-title">VScode使用sftp快速同步服务器文件</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            VScode中文汉化，使用sftp快速同步服务器文件
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-12
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/util/" class="post-category">
+                                    util
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/VScode/">
+                        <span class="chip bg-color">VScode</span>
                     </a>
                     
                 </div>
@@ -1930,7 +2092,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">265.3k</span>&nbsp;字
+                class="white-color">266.4k</span>&nbsp;字
             
             
             
