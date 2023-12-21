@@ -753,7 +753,7 @@ icon: fas fa-comment
 <li>因为浏览器缓存了你以前的css静态文件，需要清除缓存再进行访问</li>
 <li>因为cdn会缓存你以前的css静态文件，而且cdn的缓存文件是24小时内才刷新，这才导致你短时间不能查看效果</li>
 </ol>
-<p>解决方法：</p>
+<p>解决方法：<a target="_blank" rel="noopener" href="https://fastly.jsdelivr.net/npm/typed.js@2.0.11">https://fastly.jsdelivr.net/npm/typed.js@2.0.11</a></p>
 <ol>
 <li>清除浏览器缓存：部署之后，尝试ctrl+f5页面（ctrl+f5的作用：把浏览器中的临时文件夹的文件删除再重新从服务器下载）</li>
 <li>刷新cdn：这个并不知道管不管用，可以尝试访问<code>https://purge.jsdelivr.net/gh/你的github账号/你的仓库名/css/matery.css</code>，如我的：<code>https://cdn.jsdelivr.net/gh/fenghen0918/fenghen0918.github.io/css/matery.css</code>，访问之后再ctrl+f5查看页面</li>
@@ -764,7 +764,8 @@ icon: fas fa-comment
 <h3 id="3-2-整体背景修改"><a href="#3-2-整体背景修改" class="headerlink" title="3.2 整体背景修改"></a>3.2 整体背景修改</h3><p>在<code>themes\Matery\source\css\matery.css</code>，ctrl+F快捷键查找<code>body</code><br>修改样式如下：</p>
 <pre class=" language-css"><code class="language-css"><span class="token selector">body </span><span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">/* background-color: #eaeaea; */</span>
-    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span><span class="token number">60</span>deg, <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">255</span>, <span class="token number">165</span>, <span class="token number">150</span>, <span class="token number">0.5</span><span class="token punctuation">)</span> <span class="token number">5%</span>, <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span>, <span class="token number">228</span>, <span class="token number">255</span>, <span class="token number">0.35</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token number">0%</span> <span class="token number">0%</span> / cover, <span class="token url">url("https://ae01.alicdn.com/kf/H18a4b998752a4ae68b8e85d432a5aef0l.png")</span>, <span class="token url">url("https://ae01.alicdn.com/kf/H21b5f6b8496141a1979a33666e1074d9x.jpg")</span> <span class="token number">0</span>px <span class="token number">0</span>px<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span><span class="token number">60</span>deg, <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">255</span>, <span class="token number">165</span>, <span class="token number">150</span>, <span class="token number">0.5</span><span class="token punctuation">)</span> <span class="token number">5%</span>, <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span>, <span class="token number">228</span>, <span class="token number">255</span>, <span class="token number">0.35</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token number">0%</span> <span class="token number">0%</span> / cover, <span class="token url">url("https://sulog.oss-cn-hangzhou.aliyuncs.com/beijing2.jpg")</span>, <span class="token url">url("https://sulog.oss-cn-hangzhou.aliyuncs.com/beijing2.jpg")</span> <span class="token number">0</span>px <span class="token number">0</span>px<span class="token punctuation">;</span>
+    <span class="token property">background-size</span><span class="token punctuation">:</span><span class="token number">100%</span><span class="token punctuation">;</span>
     <span class="token property">background-attachment</span><span class="token punctuation">:</span> fixed<span class="token punctuation">;</span>
     <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
     <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#7F95D1</span><span class="token punctuation">;</span>
@@ -2098,7 +2099,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 <div class="progress-bar"></div>
 
-<head><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"><style type="text/css" lang="css">
+<head><link rel="stylesheet" href="https://sulog.oss-cn-hangzhou.aliyuncs.com/heartbeat.min.css"><style type="text/css" lang="css">
     #loading-container{
         position: fixed;
         top: 0;
