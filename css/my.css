@@ -57,14 +57,10 @@
     }
 }
 
-@font-face{
-    font-family: 'myfont';
-    src: url('https://sulog.oss-cn-hangzhou.aliyuncs.com/myfont.ttf');
 
-}
 
 body{
-    font-family: 'myfont';
+    font-family: 'SimHei';
 }
 
 ol{
