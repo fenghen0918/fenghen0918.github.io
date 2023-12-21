@@ -546,7 +546,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.7k
+                    4.8k
                 </div>
                 
 
@@ -603,6 +603,14 @@ identified <span class="token keyword">by</span> 密码
 <span class="token keyword">grant</span> <span class="token keyword">select</span><span class="token operator">/</span><span class="token keyword">delete</span><span class="token operator">/</span><span class="token keyword">update</span><span class="token operator">/</span><span class="token keyword">insert</span> <span class="token keyword">on</span> 其他用户名<span class="token punctuation">.</span>表名 <span class="token keyword">to</span> 用户名<span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">--取消用户权限</span>
 <span class="token keyword">revoke</span> 权限 <span class="token keyword">from</span> 用户名<span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p>设置同义词</p>
+<p>oracle里，用户A要访问用户B的表需要带用户B的前缀，使用不便，可以使用同义词解决</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">--使用dba用户授权创建同义词</span>
+<span class="token keyword">grant</span> <span class="token keyword">CREATE</span> SYNONYM <span class="token keyword">to</span> jwxtzzjg<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">--创建同义词</span>
+<span class="token keyword">create</span> synonym gf_zzjgdygxb <span class="token keyword">for</span> idc_data_sharedb<span class="token punctuation">.</span>gf_zzjgdygxb<span class="token punctuation">;</span>
 </code></pre>
 </li>
 <li><p>数据文件</p>
@@ -2080,7 +2088,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">266.4k</span>&nbsp;字
+                class="white-color">266.5k</span>&nbsp;字
             
             
             
