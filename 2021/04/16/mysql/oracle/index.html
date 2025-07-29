@@ -546,14 +546,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.8k
+                    5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    20 分
+                    21 分
                 </div>
                 
 
@@ -1183,6 +1183,24 @@ sga_target_size        612368567             immediate
 ISSYS_MODIFIABLE 返回是false 说明该参数无法用alter system语句动态修改，需要重启数据库。
 
 其中issys_mod有三种状态：1.IMMEDIATE 立即生效 2. DEFERRED 只对后续的session生效 3.FLASE 必须重启生效
+</code></pre>
+</li>
+<li><p>低版本客户端（plsql、navicat）连接高版本数据库报错</p>
+<pre><code>问题现象1：使用oracle 11.2.0.1 的客户端，对19c的服务端进行连接时，报错：ORA-28040: No matching authentication protocol
+处理办法：在服务器端添加了允许登录的客户端版本
+su - oracle
+vi $ORACLE_HOME/network/admin/sqlnet.ora
+粘贴以下语句到文件里：
+SQLNET.ALLOWED_LOGON_VERSION_SERVER=11 
+SQLNET.ALLOWED_LOGON_VERSION_CLIENT=11
+
+问题现象2：低版本客户端连接高版本数据库报错ORA-01017账号密码错误，能确定账号密码是对的就是登录不上去。
+处理办法：
+1、查询用户的PASSWORD_VERSIONS密码版本：
+SQL&gt; select username, password_versions from dba_users where password_versions is not null;
+2、修改密码
+alter user 用户 identified by "密码";
+3、再次查询步骤1的密码版本，看是否有变化。再尝试登录
 </code></pre>
 </li>
 </ol>
@@ -1856,43 +1874,6 @@ ISSYS_MODIFIABLE 返回是false 说明该参数无法用alter system语句动态
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/04/22/linux/windows-xu-ni-ji-an-zhuang/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/suoluetu4.jpg" class="responsive-img" alt="windows虚拟机安装">
-                        
-                        <span class="card-title">windows虚拟机安装</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            windows2012R2 x64，安装和虚拟机扩容
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-22
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            小苏
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2021/04/16/linux/linux-xu-ni-ji-an-zhuang/">
                     <div class="card-image">
                         
@@ -1909,9 +1890,9 @@ ISSYS_MODIFIABLE 返回是false 说明该参数无法用alter system语句动态
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-16
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-16
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1929,6 +1910,55 @@ ISSYS_MODIFIABLE 返回是false 说明该参数无法用alter system语句动态
                     
                     <a href="/tags/%E5%AE%9E%E6%96%BD/">
                         <span class="chip bg-color">实施</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/03/12/util/vscode-shi-yong-sftp-kuai-su-tong-bu-fu-wu-qi-wen-jian/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://sulog.oss-cn-hangzhou.aliyuncs.com/suoluetu1.jpg" class="responsive-img" alt="VScode使用sftp快速同步服务器文件">
+                        
+                        <span class="card-title">VScode使用sftp快速同步服务器文件</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            VScode中文汉化，使用sftp快速同步服务器文件
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-12
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/util/" class="post-category">
+                                    util
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/VScode/">
+                        <span class="chip bg-color">VScode</span>
                     </a>
                     
                 </div>
@@ -2088,7 +2118,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">266.5k</span>&nbsp;字
+                class="white-color">267.3k</span>&nbsp;字
             
             
             
